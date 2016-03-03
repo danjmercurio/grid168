@@ -1,0 +1,91 @@
+<div id='offer_user_chart'>
+</div>
+
+<div id='bid_user_chart'>
+</div>
+
+<div id='offer_outlet_chart'></div>
+
+<div id='bid_outlet_chart'></div>
+
+<% category_highchart = User.category_for_highchart(:email) %>
+<script type="text/javascript" charset="utf-8">
+  $(function () {
+    new Highcharts.Chart({
+      chart: { renderTo: 'offer_user_chart', type: 'column' },
+      title: { text: 'Number of offers by sales person' },
+      xAxis: { categories: <%= raw category_highchart %> },
+      yAxis: {
+        title: { text: 'Offers'}
+      },
+      tooltip: {
+        formatter: function () {
+          return this.x + '<br/>' + 'Number of offers: ' + this.y;
+        }
+      },
+      series: [
+        {
+          name: "Offers",
+          data: <%= User.highchart_amount_offers %>
+        }
+      ]
+    });
+
+    new Highcharts.Chart({
+      chart: { renderTo: 'bid_user_chart', type: 'column' },
+      title: { text: 'Amount of bids by sales person' },
+      xAxis: { categories: <%= raw category_highchart %> },
+      yAxis: { title: { text: 'Bids amount' } },
+      tooltip: {
+        formatter: function () {
+          return this.x + '<br/>' + 'Amount of bids: ' + formatCurrency(this.y);
+        }
+      },
+      series: [{
+          name: 'Bids',
+          data: <%= User.highchart_amount_bids %>
+        }]
+    });
+
+    new Highcharts.Chart({
+      chart: { renderTo: 'offer_outlet_chart', type: 'column' },
+      title: { text: 'Number of offers by media outlet' },
+      xAxis: { categories: ['Broadcast', 'Cable System', 'Network', 'Sub channel'] },
+      yAxis: {
+        title: { text: 'Offers'}
+      },
+      tooltip: {
+        formatter: function () {
+          return this.x + '<br/>' + 'Number of offers: ' + this.y;
+        }
+      },
+      series: [
+        {
+          name: "Offers",
+          data: <%= Outlet.highchart_amount_offers %>
+        }
+      ]
+    });
+
+    new Highcharts.Chart({
+      chart: { renderTo: 'bid_outlet_chart', type: 'column' },
+      title: { text: 'Amount of bids by media outlet' },
+      xAxis: { categories: ['Broadcast', 'Cable System', 'Network', 'Sub Channel'] },
+      yAxis: {
+        title: { text: 'Bids'}
+      },
+      tooltip: {
+        formatter: function () {
+          return this.x + '<br/>' + 'Amount of bids: ' + formatCurrency(this.y);
+        }
+      },
+      series: [
+        {
+          name: "Amount bids",
+          data: <%= Outlet.highchart_amount_bids %>
+        }
+      ]
+    });
+  });
+</script>
+

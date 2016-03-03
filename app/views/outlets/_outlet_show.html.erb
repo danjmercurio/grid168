@@ -1,0 +1,25 @@
+<div id="outlet_info">
+  
+	<span class="name"><%= outlet.name %></span>
+	<span class="dma">DMA:<%= outlet.dma.name rescue "None" %></span>
+	<span class="subs"><%= number_with_delimiter outlet.subs %> subscribers</span>
+
+        | <%= link_to "Edit", edit_outlet_path(outlet) %> |
+        <%= link_to 'Destroy', outlet_path(outlet), :confirm => 'Are you sure?', :method => :delete %>
+</div>
+
+<table id="table_outlet_show" class="tablesorter">
+	<thead>
+		<tr>
+			<th>Programmer</th>
+			<th>Dollar amount</th>
+			<th>Created at</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%= render outlet.offers %>
+	</tbody>
+</table>
+
+<%= link_to(image_tag("new_offer.png"), new_outlet_offer_path(outlet)) %>

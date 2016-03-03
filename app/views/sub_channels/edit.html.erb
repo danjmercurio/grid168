@@ -1,0 +1,36 @@
+<%= form_for(@sub_channel) do |f| %>
+	<% if @sub_channel.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@sub_channel.errors.count, "error") %> prohibited this sub channel from being saved:</h2>
+
+			<ul>
+				<% @sub_channel.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<div class="field">
+			<%= f.label :name %><br />
+			<%= f.text_field :name %>
+	</div>
+
+	<div class="field">
+		<%= f.label :subscribers %>
+		<%= f.text_field :subs, value: number_with_delimiter(@sub_channel.subs) %>
+	</div>
+
+	<div class="field">
+		<%= f.label :sub_channel_type %>
+		<%= collection_select :sub_channel, :sub_channel_type_id, SubChannelType.all, :id, :name %>
+	</div>
+
+	<!-- <div class="field">
+		<%#= f.label :outlet %>
+		<%#= collection_select :sub_channel, :outlet_id, current_user.outlets, :id, :name %>
+	</div> -->
+
+	<div class="actions">
+		<%= f.submit %> <%= f.submit "Cancel", :name => 'cancel' %>
+	</div>
+<% end %>

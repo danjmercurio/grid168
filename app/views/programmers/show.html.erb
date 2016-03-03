@@ -1,0 +1,40 @@
+
+<p>
+  <b>Name:</b>
+  <%= @programmer.name %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @programmer.description %>
+</p>
+<table id="table_programmer_show" class="tablesorter">
+	<thead>
+		<tr>
+			<th>Company name</th>
+			<th>DMA</th>
+			<th>Subs</th>
+			<th>Dollar amount</th>
+			<th>Created at</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @programmer.offers.each do |offer| %>
+			<tr>
+				<td><%= offer.outlet.name %></td>
+				<td><%= offer.outlet.dma.name rescue "None" %></td>
+				<td><%= number_with_delimiter offer.outlet.subs %></td>
+				<td><%= number_to_currency offer.dollar_amount %></td>
+				<td><%= offer.created_at.strftime "%m/%d/%Y" %></td>
+				<td>
+					<%= link_to 'Edit', edit_outlet_offer_path(offer.outlet, offer) %> |
+		  		<%= link_to 'Destroy', outlet_offer_path(offer.outlet, offer), :confirm => 'Are you sure?', :method => :delete %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<%= link_to 'Edit', edit_programmer_path(@programmer) %> |
+<%= link_to 'Back', :back %>

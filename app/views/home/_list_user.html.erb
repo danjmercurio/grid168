@@ -1,0 +1,21 @@
+<table id="list_users" class="tablesorter">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Email</th>
+			<th>Offers</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+		<% users.each do |user| %>
+			<tr>
+				<td><%= user.id %></td>
+				<td><%= user.email %></td>
+				<td><%= user.count_offers %></td>
+				<td><%= link_to "Show", "#", :id => "link_user_#{user.id}" %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

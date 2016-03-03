@@ -1,0 +1,66 @@
+<h1>My Deals</h1>
+
+<table id="table_my_deals" class="tablesorter">
+	<thead>
+		<tr>
+			<th>Company name</th>
+			<th>Offer amount</th>
+			<th>Outlet</th>
+			<th>Type</th>
+			<th>Subscribers</th>
+			<th>Hours</th>
+			<th>DMA</th>
+			<th>Created</th>
+			<th>Updated</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @offers.each do |offer| %>
+			<% outlet = offer.outlet %>
+			<% offer.programmers.each do |programmer| %>
+				<tr>
+					<td><%= link_to programmer.name, programmer %></td>
+					<td><%= number_to_currency offer.dollar_amount %></td>
+					<td><%= link_to outlet.name, outlet %></td>
+					<td><%= get_type outlet.outlet_type %></td>
+					<td><%= number_with_delimiter outlet.subs %></td>
+					<td><%= offer.total_hours %></td>
+					<td><%= outlet.dma.name rescue "None" %></td>
+					<td><%= display_date offer.created_at %></td>
+					<td><%= display_date offer.updated_at %></td>
+					<td>
+						<%= link_to "Show", [outlet, offer] %> |
+						<%= link_to "Delete", [outlet, offer], method: :delete, confirm: "Are you sure?" %>
+					</td>
+				</tr>
+			<% end %><!-- end programmer -->
+		<% end %><!-- end offer -->
+
+		<% @sub_channel_offers.each do |sub_channel_offer| %>
+			<% sub_channel = sub_channel_offer.sub_channel %>
+			<% outlet = sub_channel.outlet %>
+			<% sub_channel_offer.programmers.each do |programmer| %>
+				<tr>
+					<td><%= link_to programmer.name, programmer %></td>
+					<td><%= number_to_currency sub_channel_offer.dollar_amount %></td>
+					<td><%= link_to sub_channel.name, sub_channel %></td>
+					<td>Sub channel</td>
+					<td><%= number_with_delimiter sub_channel.subs %></td>
+					<td><%= sub_channel_offer.total_hours %></td>
+					<td><%= outlet.dma.name rescue "None" %></td>
+					<td><%= display_date sub_channel_offer.created_at %></td>
+					<td><%= display_date sub_channel_offer.updated_at %></td>
+					<td>
+						<%= link_to "Show", [sub_channel, sub_channel_offer] %> |
+						<%= link_to "Delete", [sub_channel, sub_channel_offer], method: :delete, confirm: "Are you sure?" %>
+					</td>
+				</tr>	
+			<% end %><!-- end programmer -->
+		<% end %><!-- end sub offer -->
+	</tbody>
+</table>
+
+<br />
+
+<%= link_to 'New Programmer', new_programmer_path %>

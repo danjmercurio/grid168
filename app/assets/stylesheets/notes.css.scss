@@ -1,0 +1,41 @@
+@import 'bootstrap';
+
+.note_container {
+  margin: {
+    top: 20px;
+    bottom: 10px;
+    right: 100px;
+    left: 30px;
+  }
+  
+  width: 1000px;
+  
+  padding: {
+    top: 5px;
+    left: 10px;
+    bottom: 5px;
+    right: 10px;
+  }
+  border-radius: 10px;
+  border: 1px solid $infoBackground;
+  
+  .note_content {
+    color: $infoText;
+    width: 70%;
+    float: left;
+  }// end note content
+  
+  .note_time {
+    float: right;
+  }// end note time
+  
+  .note_actions {
+    a {
+      color: $linkColor;
+      &hover {
+        color: $linkColorHover;
+      }
+    }
+    float: right;
+  }// end note actions
+}// end note container

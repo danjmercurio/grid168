@@ -1,0 +1,23 @@
+<h2><%= programmer.name %></h2>
+<table id="list_offers_programmer_<%= programmer.id %>" class="tablesorter">
+	<thead>
+		<tr>
+			<th>Media Outlet</th>
+			<th>Price</th>
+			<th>Date</th>
+			<th>Actions</th>
+		</tr>
+	</thead>
+	
+	<tbody>
+		<% programmer.offers.each do |offer| %>
+			<tr>
+				<td><%= offer.outlet.name %></td>
+				<td><%= number_to_currency offer.dollar_amount %></td>
+				<td><%= offer.created_at.strftime "%m/%d/%y" %></td>
+				<td><%= link_to "Edit", edit_outlet_offer_path(offer.outlet, offer, :url => "homepage") %> | 
+					<%= link_to "Delete", [offer.outlet, offer], confirm: "Are you sure?", method: :delete%></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>

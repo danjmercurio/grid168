@@ -1,0 +1,82 @@
+// Place all the styles related to the Outlets controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+$distance_info: 30px;
+#outlet_info {
+	margin: {
+		top: 20px;
+	}
+	
+	span.name {
+		font: {
+			weight: bold;
+			size: 2.5em;
+		}
+	}
+	
+	span.dma {
+		margin-left: $distance_info;
+	}
+	
+	span.location {
+		margin-left: $distance_info;
+	}
+	
+	span.subs {
+		margin-left: $distance_info;
+	}
+}
+
+.sub_channel {
+	select {
+		width: 180px;
+	}
+	.col1, .col2, .col3, .col4 {
+		float: left;
+		width: 200px;
+	}
+	.action {
+		float: left;
+		width: 80px;
+		margin-top: 20px;
+	}
+}
+
+#outlet_sub_channel {
+	width: 900px;
+	#outlet {
+		#outlet_name {
+			float: left;
+			// width: 115px;
+		}
+		#outlet_dma {
+			float: left;
+			margin-left: 20px;
+			// width: 250px;
+		}
+		#outlet_subs {
+			float: left;
+			margin-left: 20px;
+			// width: 100px;
+		}
+		#outlet_action {
+			float: left;
+			margin-left: 20px;
+
+		}
+	}
+
+	#sub_channels {
+		.sub_channel {
+			margin-left: 30px;
+			margin-top: 10px;
+
+			.sub_channel_name, .sub_channel_dma, .sub_channel_subs, .sub_channel_action {
+				float: left;
+				margin-left: 20px;
+			}
+
+		}
+	}
+}
+

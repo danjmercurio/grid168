@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	  <title>Grid168</title>
+	  <%= stylesheet_link_tag    "application" %>
+	  <%= javascript_include_tag "application", "jquery.tablesorter.js" %>
+	  <%= csrf_meta_tags %>
+	</head>
+	<body>
+		<div id="container">
+			<div id="header">
+				<span id="name"><%= link_to "Grid 168", root_path %></span>
+				<% if user_signed_in? %>
+					<span id="menu_links">
+						<%= link_to "My Deals", my_deals_path %>
+						<%= link_to "All Deals", home_all_deals_path %>
+						<%= link_to "My Media Outlets", outlets_path %>
+						<%= link_to "New Media Outlet", new_outlet_path %>
+					</span>
+					<span id="outlet_dropdown"><b>Media Outlet</b>
+						<%= form_tag(root_path) do %>
+							<%= hidden_field_tag "outlet_id" %>
+						  <%= autocomplete_field_tag 'name', '', home_autocomplete_outlet_name_path, :id_element => "#outlet_id" %>
+						  <%= submit_tag "Go" %>
+						<% end %>
+					</span>
+				
+					<span id="user_name"><%= link_to "Edit My Account",  edit_user_registration_path %></span>
+					<span id="logout"><%= link_to "logout", destroy_user_session_path, :method => :delete %></span>
+				<% else %>
+					<span id="sign_in"><%= link_to "sign in", new_user_session_path %></span>
+				<% end %>
+			</div>
+			<div id="content">
+		  	<p class="notice"><%= notice %></p>
+			  <p class="alert"><%= alert %></p>
+
+				<%= yield %>
+			</div>
+			<div id="footer">
+			</div>
+		</div>
+	</body>
+</html>

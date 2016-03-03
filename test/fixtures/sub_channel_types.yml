@@ -1,0 +1,19 @@
+# == Schema Information
+#
+# Table name: sub_channel_types
+#
+#  id         :integer(4)      not null, primary key
+#  name       :string(255)
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  sub_channel_id: 1
+
+two:
+  name: MyString
+  sub_channel_id: 1

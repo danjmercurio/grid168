@@ -1,0 +1,40 @@
+# == Schema Information
+#
+# Table name: offervalues
+#
+#  id         :integer(4)      not null, primary key
+#  time       :string(255)
+#  monday     :float
+#  tuesday    :float
+#  wednesday  :float
+#  thursday   :float
+#  friday     :float
+#  saturday   :float
+#  sunday     :float
+#  created_at :datetime
+#  updated_at :datetime
+#
+
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  id: 1
+  time: 1
+  monday: 1.5
+  tuesday: 1.5
+  wednesday: 1.5
+  thursday: 1.5
+  friday: 1.5
+  saturday: 1.5
+  sunday: 1.5
+
+two:
+  id: 1
+  time: 1
+  monday: 1.5
+  tuesday: 1.5
+  wednesday: 1.5
+  thursday: 1.5
+  friday: 1.5
+  saturday: 1.5
+  sunday: 1.5

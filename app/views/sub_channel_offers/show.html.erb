@@ -1,0 +1,82 @@
+<div class="outlet_info">
+	<div class="outlet_field">
+		<%= @outlet.name %>
+	</div>
+	<div class="outlet_field">
+		DMA: <%= @outlet.dma.name rescue "None" %>
+	</div>
+	<div class="outlet_field">
+		Subs: <span id="subs"><%= number_with_delimiter @outlet.subs%></span>
+	</div>
+</div> <!-- end div outlet_info -->
+
+<div class="sub_channel_info">
+	<h1>Sub Channel</h1>
+	<div class="sub_channel_field">
+		Name: <%= @sub_channel.display_name_with_type %>
+	</div>
+	<div class="sub_channel_field">
+		Subs: <%= number_with_delimiter @sub_channel.subs %>
+	</div>
+</div>
+
+<div>Dollar amount: <%= number_to_currency @sub_channel_offer.dollar_amount %></div>
+
+<div class="hour_info">
+	<div class="hours_div">
+		<table class="table">
+			<tr>
+				<th>Monday</th>
+				<th>Tuesday</th>
+				<th>Wednesday</th>
+				<th>Thursday</th>
+				<th>Friday</th>
+				<th>Saturday</th>
+				<th>Sunday</th>
+			</tr>
+			<% @values.each do |v| %>
+				<tr>
+					<% day_arr.each do |day| %>
+						<td>
+							<% if contain_day_hour @sub_channel_offer.half_hour_clicked, day, v.hour %>
+								<div id="hour_id_<%= day %>_<%= v.time %>_<%= v.send day %>" class="clicked_cell">
+									<%= display_hour v.time %>
+								</div>
+							<% else %>
+								<div id="hour_id_<%= day %>_<%= v.time %>_<%= v.send day %>">
+									<%= display_hour v.time %>
+								</div>
+							<% end %><!-- end if contain day hour condition -->
+						</td>
+					<% end %>
+				</tr>
+			<% end %>
+		</table>
+	</div>
+</div>
+
+<div class="rate_info">
+	<h1>Rate</h1>
+	Hours: <%= @sub_channel_offer.total_hours %><br/>
+	Hour rate: <%= number_to_currency @sub_channel_offer.hourly_rate %><br/>
+	Weekly rate: <%= number_to_currency @sub_channel_offer.weekly_offer %><br/>
+	Monthly rate: <%= number_to_currency @sub_channel_offer.monthly_offer %><br/>
+	Yearly rate: <%= number_to_currency @sub_channel_offer.yearly_offer %><br/>
+	<h1>Programmers</h1>
+	<% if @programmers.empty? %>
+		This sub_channel_offer isn't belongs to any programmers
+	<% else %>
+		<ul>
+			<% @programmers.each do |programmer| %>
+				<li>
+					<%= programmer.name %><br/>
+					email: <%= programmer.email %><br/>
+					phone: <%= number_to_phone programmer.phone %>
+				</li>
+			<% end %>
+		</ul>
+	<% end %>
+	<%= link_to "Back", :back %>
+</div>
+
+<div class="clr">&nbsp;</div>

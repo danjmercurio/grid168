@@ -1,0 +1,5 @@
+Outlet: <b><%= @outlet.name %></b><br/>
+DMA: <%= @outlet.dma.name rescue "None" %><br/>
+<h2><%= @sub_channel.name %></h2>
+Subscribers: <%= number_with_delimiter @sub_channel.subs %><br/>
+<%= link_to 'Back', :back %>

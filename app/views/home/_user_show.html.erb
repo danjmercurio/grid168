@@ -1,0 +1,47 @@
+<% users.each do |user| %>
+	<% user.offers.each do |offer| %>
+		<% outlet = offer.outlet %>
+		<% offer.programmers.each do |programmer| %>
+			<tr>
+				<td><%= user.email %></td>
+				<td><%= programmer.name %></td>
+				<td><%= number_to_currency offer.dollar_amount %></td>
+				<td><%= outlet.name %></td>
+				<td><%= get_type outlet.outlet_type %></td>
+				<td><%= outlet.dma.name rescue "None" %></td>
+				<td><%= number_with_delimiter outlet.subs %></td>
+				<td><%= display_date offer.created_at %></td>
+				<td><%= display_date offer.updated_at %></td>
+				<td>
+					<%= link_to "Show", outlet_offer_path(outlet, offer) %> |
+					<%= link_to "Edit", edit_outlet_offer_path(outlet, offer) %> |
+					<%= link_to "Delete", [outlet, offer], method: :delete, confirm: "Are you sure?" %>
+				</td>
+			</tr>
+		<% end %><!-- end offer of programmer -->
+	<% end %><!-- end offer -->
+
+	<% user.sub_channel_offers.each do |sub_channel_offer| %>
+		<% sub_channel = sub_channel_offer.sub_channel %>
+		<% outlet = sub_channel.outlet %>
+		<% sub_channel_offer.programmers.each do |programmer| %>
+			<tr>
+				<td><%= user.email %></td>
+				<td><%= programmer.name %></td>
+				<td><%= number_to_currency sub_channel_offer.dollar_amount %></td>
+				<td><%= sub_channel.display_name_with_type %></td>
+				<td>Sub channel</td>
+				<td><%= outlet.dma.name rescue "None" %></td>
+				<td><%= number_with_delimiter outlet.subs %></td>
+				<td><%= display_date sub_channel_offer.created_at %></td>
+				<td><%= display_date sub_channel_offer.updated_at %></td>
+				<td>
+					<%= link_to "Show", [sub_channel, sub_channel_offer] %> |
+					<%= link_to "Edit", edit_sub_channel_sub_channel_offer_path(sub_channel, sub_channel_offer) %> |
+					<%= link_to "Delete", [sub_channel, sub_channel_offer], method: :delete, confirm: "Are you sure?" %>
+				</td>
+			</tr>
+		<% end %><!-- end sub offer of programmer -->
+	<% end %><!-- end sub offer -->
+<% end %><!-- end user -->
+

@@ -1,0 +1,75 @@
+<h1>All Deals</h1>
+<table id='all_deals_table' class='tablesorter'>
+	<thead>
+		<tr>
+			<th>User</th>
+			<th>Programmer</th>
+			<th>Offer amount</th>
+			<th>Outlet</th>
+			<th>Type</th>
+			<th>Subscribers</th>
+			<th>Hours</th>
+			<th>DMA</th>
+			<th>Created</th>
+			<th>Updated</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<% @offers.each do |offer| %>
+			<% user = offer.user %>
+			<% outlet = offer.outlet %>
+			<% offer.programmers.each do |programmer| %>
+				<tr>
+					<td><%= user.name %></td>
+					<td><%= link_to programmer.name, programmer %></td>
+					<td><%= number_to_currency offer.dollar_amount %></td>
+					<td><%= outlet.name %></td>
+					<td><%= get_type outlet.outlet_type %></td>
+					<td><%= number_with_delimiter outlet.subs %></td>
+					<td><%= offer.total_hours %></td>
+					<td><%= outlet.dma.name rescue "None" %></td>
+					<td><%= display_date offer.created_at %></td>
+					<td><%= display_date offer.updated_at %></td>
+					<td>
+						<% if user.id == current_user.id %>
+							<%= link_to "Edit", edit_outlet_offer_path(outlet, offer) %> |
+							<%= link_to "Delete", [outlet, offer], method: :delete, confirm: 'Are you sure?' %>
+						<% else %>
+							<%= link_to "Show", outlet_offer_path(outlet, offer) %>
+						<% end %>
+					</td>
+				</tr>
+			<% end %><!-- end programmer -->
+		<% end %><!-- end offer -->
+
+		<% @sub_channel_offers.each do |sub_channel_offer| %>
+			<% sub_channel = sub_channel_offer.sub_channel %>
+			<% outlet = sub_channel.outlet %>
+			<% user = outlet.user %>
+			<% sub_channel_offer.programmers.each do |programmer| %>
+				<tr>
+					<td><%= user.name %></td>
+					<td><%= link_to programmer.name, programmer %></td>
+					<td><%= number_to_currency sub_channel_offer.dollar_amount %></td>
+					<td><%= sub_channel.name %></td>
+					<td>Sub channel</td>
+					<td><%= number_with_delimiter sub_channel.subs%></td>
+					<td><%= sub_channel_offer.total_hours %></td>
+					<td><%= outlet.dma.name rescue "None" %></td>
+					<td><%= display_date sub_channel_offer.created_at %></td>
+					<td><%= display_date sub_channel_offer.updated_at %></td>
+					<td>
+						<% if user.id == current_user.id %>
+							<%= link_to "Edit", edit_sub_channel_sub_channel_offer_path(sub_channel, sub_channel_offer) %> |
+							<%= link_to "Delete", [sub_channel, sub_channel_offer], method: :delete, confirm: 'Are you sure?' %>
+						<% else %>
+							<%= link_to"Show", [sub_channel, sub_channel_offer] %>
+						<% end %>
+					</td>
+				</tr>
+			<% end %>
+		<% end %><!-- end sub_channel_offer -->
+	</tbody>
+</table>

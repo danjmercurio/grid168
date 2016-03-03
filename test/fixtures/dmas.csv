@@ -1,0 +1,210 @@
+1,'New York',308
+2,'Los Angeles' ,40
+3,'Chicago' ,151
+4,'Philadelphia' ,356
+5,'Dallas-Ft. Worth' ,401
+6,'San Francisco-Oak-San Jose' ,51
+7,'Boston  Manchester ' ,198
+8,'Atlanta' ,119
+9,'Washington, DC  Hagrstwn ' ,83
+10,'Houston' ,405
+11,'Detroit' ,216
+12,'Phoenix  Prescott ' ,26
+13,'Tampa-St. Pete  Sarasota ' ,114
+14,'Seattle-Tacoma' ,448
+15,'Minneapolis-St. Paul' ,230
+16,'Miami-Ft. Lauderdale' ,99
+17,'Cleveland-Akron  Canton ' ,322
+18,'Denver' ,69
+19,'Orlando-Daytona Bch-Melbrn' ,102
+20,'Sacramnto-Stkton-Modesto' ,48
+21,'St. Louis' ,238
+22,'Portland, OR' ,208
+23,'Pittsburgh' ,357
+24,'Charlotte' ,257
+25,'Indianapolis' ,166
+26,'Baltimore' ,202
+27,'Raleigh-Durham  Fayetvlle ' ,267
+28,'San Diego' ,50
+29,'Nashville' ,391
+30,'Hartford & New Haven' ,77
+31,'Kansas City' ,236
+32,'Columbus, OH' ,122
+33,'Salt Lake City' ,425
+34,'Cincinnati' ,321
+35,'Milwaukee' ,457
+36,'Greenvll-Spart-Ashevll-And' ,240
+37,'San Antonio' ,414
+38,'West Palm Beach-Ft. Pierce' ,116
+39,'Grand Rapids-Kalmzoo-B.Crk' ,218
+40,'Birmingham  Ann and Tusc ' ,6
+41,'Harrisburg-Lncstr-Leb-York' ,351
+42,'Las Vegas' ,296
+43,'Norfolk-Portsmth-Newpt Nws' ,434
+44,'Albuquerque-Santa Fe' ,290
+45,'Oklahoma City' ,334
+46,'Greensboro-H.Point-W.Salem' ,260
+47,'Jacksonville' ,95
+48,'Memphis' ,389
+49,'Austin' ,471
+50,'Louisville' ,182
+51,'Buffalo' ,300
+52,'Providence-New Bedford' ,375
+53,'New Orleans' ,194
+54,'Wilkes Barre-Scranton' ,363
+55,'Fresno-Visalia' ,37
+56,'Little Rock-Pine Bluff' ,19
+57,'Albany-Schenectady-Troy' ,470
+58,'Richmond-Petersburg' ,435
+59,'Knoxville' ,386
+60,'Mobile-Pensacola  Ft Walt ' ,11
+61,'Tulsa' ,335
+62,'Ft. Myers-Naples' ,91
+63,'Lexington' ,181
+64,'Dayton' ,323
+65,'Charleston-Huntington' ,376
+66,'Flint-Saginaw-Bay City' ,217
+67,'Roanoke-Lynchburg' ,436
+68,'Tucson  Sierra Vista ' ,27
+69,'Wichita-Hutchinson Plus' ,175
+70,'Green Bay-Appleton' ,454
+71,'Des Moines-Ames' ,134
+72,'Honolulu' ,130
+73,'Toledo' ,330
+74,'Springfield, MO' ,162
+75,'Spokane' ,449
+76,'Omaha' ,280
+77,'Portland-Auburn' ,208
+78,'Paducah-Cape Girard-Harsbg' ,183
+79,'Columbia, SC' ,203
+80,'Rochester, NY' ,231
+81,'Syracuse' ,315
+82,'Huntsville-Decatur  Flor ' ,10
+83,'Champaign&Sprngfld-Decatur' ,150
+84,'Shreveport' ,197
+85,'Madison' ,456
+86,'Chattanooga' ,384
+87,'Harlingen-Wslco-Brnsvl-McA' ,410
+88,'Cedar Rapids-Wtrlo-IWC&Dub' ,132
+89,'South Bend-Elkhart' ,169
+90,'Jackson, MS' ,243
+91,'Colorado Springs-Pueblo' ,67
+92,'Tri-Cities, TN-VA' ,499
+93,'Burlington-Plattsburgh' ,441
+94,'Waco-Temple-Bryan' ,421
+95,'Baton Rouge' ,187
+96,'Savannah' ,128
+97,'Davenport-R.Island-Moline' ,133
+98,'El Paso  Las Cruces ' ,403
+99,'Charleston, SC' ,376
+100,'Ft. Smith-Fay-Sprngdl-Rgrs' ,16
+101,'Johnstown-Altoona-St Colge' ,353
+102,'Evansville' ,164
+103,'Greenville-N.Bern-Washngtn' ,240
+104,'Myrtle Beach-Florence' ,379
+105,'Tallahassee-Thomasville' ,113
+106,'Lincoln & Hastings-Krny' ,
+107,'Ft. Wayne' ,
+108,'Reno' ,
+109,'Youngstown' ,
+110,'Tyler-Longview Lfkn&Ncgd ' ,
+111,'Springfield-Holyoke' ,
+112,'Boise' ,
+113,'Sioux Falls Mitchell ' ,
+114,'Lansing' ,
+115,'Augusta' ,
+116,'Peoria-Bloomington' ,
+117,'Traverse City-Cadillac' ,
+118,'Montgomery-Selma' ,
+119,'Eugene' ,
+120,'Fargo-Valley City' ,
+121,'SantaBarbra-SanMar-SanLuOb' ,
+122,'Macon' ,
+123,'Lafayette, LA' ,
+124,'Monterey-Salinas' ,
+125,'Bakersfield' ,
+126,'Yakima-Pasco-Rchlnd-Knnwck' ,
+127,'La Crosse-Eau Claire' ,
+128,'Columbus, GA  Opelika, AL ' ,
+129,'Corpus Christi' ,
+130,'Chico-Redding' ,
+131,'Amarillo' ,
+132,'Rockford' ,
+133,'Columbus-Tupelo-West Point' ,
+134,'Wilmington' ,
+135,'Wausau-Rhinelander' ,
+136,'Monroe-El Dorado' ,
+137,'Columbia-Jefferson City' ,
+138,'Topeka' ,
+139,'Duluth-Superior' ,
+140,'Medford-Klamath Falls' ,
+141,'Beaumont-Port Arthur' ,
+142,'Palm Springs' ,
+143,'Lubbock' ,
+144,'Salisbury' ,
+145,'Wichita Falls & Lawton' ,423
+146,'Erie' ,
+147,'Albany, GA' ,118
+148,'Joplin-Pittsburg' ,
+149,'Sioux City' ,
+150,'Anchorage' ,
+151,'Panama City' ,
+152,'Terre Haute' ,
+153,'Bangor' ,
+154,'Rochestr-Mason City-Austin' ,226
+155,'Bluefield-Beckley-Oak Hill' ,
+156,'Odessa-Midland' ,
+157,'Binghamton' ,
+158,'Minot-Bismarck-Dickinson' ,
+159,'Wheeling-Steubenville' ,
+160,'Gainesville' ,
+161,'Sherman-Ada' ,
+162,'Idaho Fals-Pocatllo Jcksn ' ,
+163,'Biloxi-Gulfport' ,
+164,'Yuma-El Centro' ,
+165,'Abilene-Sweetwater' ,
+166,'Missoula' ,
+167,'Hattiesburg-Laurel' ,
+168,'Clarksburg-Weston' ,
+169,'Utica' ,
+170,'Billings' ,
+171,'Quincy-Hannibal-Keokuk' ,
+172,'Dothan' ,
+173,'Jackson, TN' ,
+174,'Rapid City' ,
+175,'Elmira  Corning ' ,
+176,'Lake Charles' ,
+177,'Watertown' ,
+178,'Harrisonburg' ,
+179,'Alexandria, LA' ,
+180,'Marquette' ,
+181,'Jonesboro' ,
+182,'Bowling Green' ,
+183,'Charlottesville' ,
+184,'Grand Junction-Montrose' ,
+185,'Meridian' ,
+186,'Lima' ,
+187,'Greenwood-Greenville' ,
+188,'Laredo' ,
+189,'Lafayette, IN' ,
+190,'Butte-Bozeman' ,
+191,'Great Falls' ,
+192,'Bend, OR' ,
+193,'Parkersburg' ,
+194,'Twin Falls' ,
+195,'Eureka' ,
+196,'San Angelo' ,
+197,'Casper-Riverton' ,
+198,'Cheyenne-Scottsbluff' ,
+199,'Mankato' ,
+200,'Ottumwa-Kirksville' ,137
+201,'St. Joseph' ,52
+202,'Fairbanks' ,2
+203,'Zanesville' ,93
+204,'Presque Isle' ,209
+205,'Victoria' ,420
+206,'Helena' ,253
+207,'Juneau' ,3
+208,'Alpena' ,
+209,'North Platte' ,310
+210,'Glendive' ;251

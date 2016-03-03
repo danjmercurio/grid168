@@ -1,0 +1,22 @@
+<%= render 'highcharts' %>
+
+<table id='table_admin' class='tablesorter'>
+	<thead>
+		<tr>
+			<th>Email</th>
+			<th>Programmer</th>
+			<th>Offer amount</th>
+			<th>Outlet</th>
+			<th>Type</th>
+			<th>DMA</th>
+			<th>Subscriber</th>
+			<th>Created</th>
+			<th>Updated</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<%= render 'user_show', users: @users %>
+	</tbody>
+</table>

@@ -1,0 +1,19 @@
+<h1>My Media outlets</h1>
+<table id="table_outlet" class="tablesorter">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Offers</th>
+			<th>Subs</th>
+			<th>DMA</th>
+			<th>Created at</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<%= render @outlets %>
+	</tbody>
+</table>
+
+<br/>
+<%= link_to "New media outlet", new_outlet_path %>

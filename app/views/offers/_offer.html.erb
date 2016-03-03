@@ -1,0 +1,24 @@
+<% unless offer.programmers.empty? %>
+	<tr>
+		<td>
+			<% offer.programmers.each do |programmer| %>
+				<%= programmer.name %><br/>
+			<% end %>
+		</td>
+		<td>
+			<%= number_to_currency offer.dollar_amount %>
+		</td>
+		<td>
+			<%= offer.updated_at.strftime("%m/%d/%Y") %>
+		</td>
+
+		<td>
+			<%= link_to "edit", edit_outlet_offer_path(offer.outlet, offer) %> |
+			<%= link_to "delete", [offer.outlet, offer], :confirm => "Are you sure?", :method => :delete %>
+		</td>
+	</tr>
+<% else %>
+	<div class="offer_field">
+		"You not have any programmer"
+	</div>
+<% end %>

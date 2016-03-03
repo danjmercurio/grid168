@@ -1,0 +1,84 @@
+<%= form_for(@outlet) do |f| %>
+	<% if @outlet.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@outlet.errors.count, "error") %> prohibited this outlet from being saved:</h2>
+
+			<ul>
+				<% @outlet.errors.full_messages.each do |msg| %>
+					<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+	<div class="field">
+			<%= f.label :company_name %><br />
+			<%= f.text_field :name %>
+	</div>
+	<div class="field">
+		<%= f.label :first_name %><br/>
+		<%= f.text_field :first_name %>
+	</div>
+	<div class="field">
+		<%= f.label :last_name %><br/>
+		<%= f.text_field :last_name %>
+	</div>
+	<div class="field">
+		<%= f.label :phone_number %><br/>
+		<%= f.text_field :phone_number %>
+	</div>
+
+	<div class="field">
+		<%= f.label :dma, "DMA" %>
+		<%= select("outlet", "dma_id", Dma.order(:name).collect {|d| [ d.name, d.id ] }, {:include_blank => 'None'}) %>
+	</div>
+
+	<div class="field">
+		<%= f.label :type %>
+		<%= f.select :outlet_type, outlet_types[0...-1], {:include_blank => 'Undefined'} %>
+	</div>
+
+	<h2>Sub Channel</h2>
+	<div id="sub_channel_existed">
+		<% @outlet.sub_channels.each do |sub_channel| %>
+			<div class='sub_channel'>
+				<div class='col1'>
+					<label>Name</label>
+					<label><%= sub_channel.name %></label>
+				</div>
+				<div class='col2'>
+					<label>Type</label>
+					<label><%= sub_channel.sub_channel_type.name %></label>
+				</div>
+				<div class='col3'>
+					<label>Subscribers</label>
+					<label><%= number_with_delimiter sub_channel.subs %></label>
+				</div>
+				<div class='action' style='margin-top: 5px;'>
+					<%= link_to "Edit", edit_sub_channel_path(sub_channel) %>
+					<%= link_to "Remove", sub_channel, method: :delete, confirm: "Are you sure?", 
+									class: 'delete_child_div', remote: true %>
+				</div>
+
+				<div class='clr'>&nbsp;</div>
+			</div>
+		<% end %>
+	</div>
+	<div class="field" id="sub_channel_container">
+		
+	</div>
+
+	<div id='add_link' class='field'></div>
+
+	<div class="field">
+		<%= f.label :total_subscribers %>
+		<%= f.text_field :subs, value: number_with_delimiter(@outlet.subs) %>
+	</div>
+	<div class="field">
+		<%= f.label :description %><br />
+		<%= f.text_area :description %>
+	</div>
+	<%= hidden_field_tag "count_sub_channel", 0 %>
+	<div class="actions">
+		<%= f.submit "Submit", :class => 'submit_outlet' %> <%= f.submit "Cancel", :name => 'cancel' %>
+	</div>
+<% end %>

@@ -1,0 +1,49 @@
+<%= form_for(@programmer) do |f| %>
+  <% if @programmer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@programmer.errors.count, "error") %> prohibited this programmer from being saved:</h2>
+
+      <ul>
+        <% @programmer.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :company_name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :first_name, :required => true %><br />
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="field">
+    <%= f.label :last_name %><br />
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.text_field :email %>
+  </div>
+  <div class="field">
+    <%= f.label :phone_number %><br />
+    <%= f.text_field :phone %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+
+  <% if @back_url %>
+    <%= hidden_field_tag 'back_url', @back_url %>
+  <% end %>
+
+  <div class="actions">
+    <%= f.submit %>
+    <% if params[:action].eql?('edit') || params[:action].eql?('update') %>
+      | <%= link_to "Delete", @programmer, method: :delete, confirm: "Are you sure?" %>
+    <% end %>
+  </div>
+<% end %>

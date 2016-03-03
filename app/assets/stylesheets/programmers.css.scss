@@ -1,0 +1,21 @@
+// Place all the styles related to the Programmers controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import 'bootstrap';
+
+#content {
+  form {
+    margin-top: 20px;
+    
+    .field {
+      width: 900px;
+      input {
+        width: 30%;
+      }
+      textarea {
+        width: 50%;
+        height: 221px;
+      }
+    }
+  }
+}

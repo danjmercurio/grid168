@@ -1,0 +1,94 @@
+<div id="outlet_info">
+		
+	<span class="name"><%= @outlet.name %></span>
+	<span class="dma">DMA:<%= @outlet.dma.name rescue "None" %></span>
+	<span class="subs"><%= number_with_delimiter @outlet.subs %> subscribers</span>
+
+	<% if current_user.id == @user_id %>
+		| <%= link_to "Edit", edit_outlet_path(@outlet) %> |
+		<%= link_to 'Destroy', @outlet, :confirm => 'Are you sure?', :method => :delete %>
+	<% end %>
+</div>
+
+<table id="table_outlet_show" class="tablesorter">
+	<thead>
+		<tr>
+			<th>Programmer</th>
+			<th>Dollar amount</th>
+			<th>Created at</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @outlet.offers.each do |offer| %>
+			<% offer.programmers.each do |programmer| %>
+				<tr>
+					<td><%= programmer.name %></td>
+					<td><%= number_to_currency offer.dollar_amount %></td>
+					<td><%= display_date offer.created_at %></td>
+					<td>
+						<% if (current_user.id == offer.user_id) || current_user.admin? %>
+							<%= link_to "Edit", edit_outlet_offer_path(@outlet, offer) %> |
+							<%= link_to "Delete", [@outlet, offer], method: :delete, confirm: "Are you sure?" %>
+						<% end %>
+					</td>
+				</tr>
+			<% end %><!-- end programmer -->
+		<% end %><!-- end offer of outlet -->
+
+		<% if @outlet.contain_sub_offers? %>
+			<% @outlet.array_sub_offers.each do |id| %>
+				<% sub_channel_offer = SubChannelOffer.find id %>
+				<% sub_channel = sub_channel_offer.sub_channel %>
+				<% sub_channel_offer.programmers.each do |programmer| %>
+					<tr>
+						<td><%= "#{programmer.name} - #{sub_channel.display_name_with_type}" %></td>
+						<td><%= number_to_currency sub_channel_offer.dollar_amount %></td>
+						<td><%= display_date sub_channel_offer.created_at %></td>
+						<td>
+							<% if (current_user.id == sub_channel_offer.user_id) || current_user.admin? %>
+								<%= link_to "Edit", edit_sub_channel_sub_channel_offer_path(sub_channel, sub_channel_offer) %> |
+								<%= link_to "Delete", [sub_channel, sub_channel_offer], method: :delete, confirm: "Are you sure?" %>
+							<% end %>
+						</td>
+					</tr>
+				<% end %><!-- end programmer -->
+			<% end %><!-- end sub offer -->
+		<% end %><!-- end if contain sub offer -->
+	</tbody>
+</table>
+
+<h1>Outlet info</h1>
+<div id='outlet_sub_channel'>
+	<div id='outlet'>
+		<div id='outlet_name'><%= @outlet.name %></div>
+		<div id='outlet_dma'><%= @outlet.dma.name rescue "None" %></div>
+		<div id='outlet_subs'><%=  number_with_delimiter @outlet.subs %></div>
+		<div id='outlet_action'>
+			<%= link_to "New offer", new_outlet_offer_path(@outlet) %>
+			<% if (current_user.id == @user_id) || current_user.admin? %>
+				| <%= link_to "Edit", edit_outlet_path(@outlet) %> |
+				<%= link_to "Destroy", @outlet, method: :delete, confirm: "Are you sure?" %>
+			<% end %>
+		</div>
+		<div class='clr'>&nbsp;</div>
+	</div>
+	<div id='sub_channels'>
+		<% @outlet.sub_channels.each do |sub_channel| %>
+			<div class='sub_channel'>
+				<div class='sub_channel_name'><%= sub_channel.display_name_with_type %></div>
+				<div class='sub_channel_dma'><%= @outlet.dma.name rescue "None" %></div>
+				<div class='sub_channel_subs'><%= number_with_delimiter sub_channel.subs %></div>
+				<div class='sub_channel_action'>
+					<%= link_to "New offer", new_sub_channel_sub_channel_offer_path(sub_channel) %>
+					<% if (current_user.id == @user_id) || current_user.admin? %>
+						| <%= link_to "Edit", edit_sub_channel_path(sub_channel) %> |
+						<%= link_to "Destroy", sub_channel, method: :delete, confirm: "Are you sure?",
+									remote: true, class: 'delete_child_div' %>
+					<% end %>
+				</div>
+				<div class='clr'>&nbsp;</div>
+			</div>
+		<% end %>
+	</div>
+</div>
