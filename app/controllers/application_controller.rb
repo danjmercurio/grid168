@@ -5,7 +5,7 @@ class ApplicationController < ActionController::Base
   private
   
   def populate_outlets
-    @outlets = Outlet.all(:order => "name ASC")
+    @outlets = Outlet.all.order(:name) # Ascending
   end
   
   def remove_comma(num_string)

@@ -1,37 +1,40 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.1.3'
+#gem 'rails'
 
 # Bundle edge Rails instead:
-# gem 'rails',     :git => 'git://github.com/rails/rails.git'
+#gem 'rails', :git => 'git://github.com/rails/rails.git'
+gem 'rails', '~> 4.2.4', git: 'git://github.com/rails/rails.git', branch: '4-2-stable'
 
-gem 'sqlite3'
-gem 'mysql2'
-gem 'devise'
+gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
+gem 'protected_attributes'
+gem 'mysql2', :git => 'https://github.com/brianmario/mysql2.git'
+gem 'devise'#, :git => 'https://github.com/plataformatec/devise.git'
+gem 'devise-encryptable'
 gem 'therubyracer'
-gem 'bootstrap-sass', '2.0.0'
+gem 'bootstrap-sass', :git => 'https://github.com/twbs/bootstrap-sass.git'
 gem 'hirb'
 
-
 # for autocomplete
-gem 'rails3-jquery-autocomplete'
+gem 'rails-jquery-autocomplete', :git => 'https://github.com/bigtunacan/rails-jquery-autocomplete.git'
 
 group :development do
-	gem 'annotate', '~> 2.4.1.beta'
+	gem 'annotate'
 end
 
 # Gems used only for assets and not required
 # in production environments by default.
 group :assets do
-  gem 'sass-rails',   '~> 3.1.5'
-  gem 'coffee-rails', '~> 3.1.1'
-  gem 'uglifier', '>= 1.0.3'
+  gem 'sass-rails'#, :git => 'https://github.com/rails/sass-rails.git'
+  gem 'coffee-rails'#, :git => 'https://github.com/spastorino/coffee-rails.git'
+  gem 'uglifier'#, :git => 'https://github.com/lautis/uglifier.git'
 end
 
-gem 'jquery-rails'
+gem 'jquery-rails', :git => 'https://github.com/rails/jquery-rails.git'
+gem 'jquery-ui-rails', :git => 'https://github.com/joliss/jquery-ui-rails.git'
 
 # To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+# gem 'bcrypt', '~> 3.0.0'
 
 # Use unicorn as the web server
 # gem 'unicorn'
@@ -44,5 +47,8 @@ gem 'jquery-rails'
 
 group :test do
   # Pretty printed test output
-  gem 'turn', '0.8.2', :require => false
+  gem 'turn', :require => false
 end
+
+#gem 'rake', :git => 'https://github.com/ruby/rake.git'
+

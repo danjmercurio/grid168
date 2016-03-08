@@ -1,7 +1,6 @@
 class CreateOffervalues < ActiveRecord::Migration
   def change
     create_table :offervalues do |t|
-      t.integer :id
       t.string :time
       t.float :monday
       t.float :tuesday

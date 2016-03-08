@@ -2,7 +2,7 @@ Grid168::Application.routes.draw do
 	
 	get 'home/autocomplete_outlet_name'
 
-	match 'my_deals' => 'programmers#index'
+	get 'my_deals' => 'programmers#index'
 
 	get 'home/all_deals'
 
@@ -25,7 +25,7 @@ Grid168::Application.routes.draw do
 		get "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
 	end
 
-	root :to => "Home#index"
+	root :to => "home#index"
 		
 		
 

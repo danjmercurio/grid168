@@ -132,7 +132,7 @@
 
 		<input type="hidden" name="url" value="<%= @url %>" />
 		<%= f.submit "", :style => !programmers.blank? ? "" : "display:none;" %>
-		<%= link_to_function(image_tag('submit.png'),"displayError()", :style => !programmers.blank? ? "display:none;" : "") %>
+		<%= link_to(image_tag('submit.png'), :onclick => "displayError()", :style => !programmers.blank? ? "display:none;" : "") %>
 	</div> <!-- end details_div -->
 <% end %>
 
