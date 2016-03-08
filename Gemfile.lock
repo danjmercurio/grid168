@@ -19,6 +19,14 @@ GIT
       railties (>= 3.2.16)
 
 GIT
+  remote: https://github.com/kavkaz/js_assets.git
+  revision: f8f818a94e70c710194926f3c5dd9f2e3e61eef0
+  specs:
+    js_assets (0.1.1)
+      rails
+      sprockets (>= 3.0)
+
+GIT
   remote: https://github.com/rails/jquery-rails.git
   revision: b4227beac55d74c327b59a058b0dcea9d0daef7f
   specs:
@@ -193,6 +201,7 @@ DEPENDENCIES
   hirb
   jquery-rails!
   jquery-ui-rails!
+  js_assets!
   mysql2!
   protected_attributes
   rails (~> 4.2.4)

@@ -34,6 +34,9 @@ end
 gem 'jquery-rails', :git => 'https://github.com/rails/jquery-rails.git'
 gem 'jquery-ui-rails', :git => 'https://github.com/joliss/jquery-ui-rails.git'
 
+# This gem lends a helper to generate asset path compatible URLs in JavaScript
+gem 'js_assets', :git => 'https://github.com/kavkaz/js_assets.git'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.0.0'
 

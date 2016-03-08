@@ -1,1 +1,1 @@
-Rails.application.config.assets.precompile += %w( jquery.tablesorter.js )
+Rails.application.config.assets.precompile += %w( jquery.tablesorter.js scripts.js placeholder.js jquery.backstretch.js jquery.backstretch.min.js form-elements.css style.css )

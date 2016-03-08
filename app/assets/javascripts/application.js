@@ -4,12 +4,11 @@
 // It's not advisable to add code directly here, but if you do, it'll appear at the bottom of the
 // the compiled file.
 //
-//= require jquery
 //= require jquery-ui
 //= require jquery_ujs
-//= require autocomplete-rails
-//= require highcharts
-//= require_tree .
+//= require jquery.tablesorter
+//= require app_assets
+
 $(document).ready(function() {
 
 	$('.delete_child').bind('ajax:success', function() {  
