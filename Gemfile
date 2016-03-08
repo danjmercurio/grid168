@@ -4,7 +4,7 @@ source 'http://rubygems.org'
 
 # Bundle edge Rails instead:
 #gem 'rails', :git => 'git://github.com/rails/rails.git'
-gem 'rails', '~> 4.2.4', git: 'git://github.com/rails/rails.git', branch: '4-2-stable'
+gem 'rails', '~> 4.2.4'#, git: 'git://github.com/rails/rails.git', branch: '4-2-stable'
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 gem 'protected_attributes'
@@ -14,6 +14,7 @@ gem 'devise-encryptable'
 gem 'therubyracer'
 gem 'bootstrap-sass', :git => 'https://github.com/twbs/bootstrap-sass.git'
 gem 'hirb'
+gem 'spring'
 
 # for autocomplete
 gem 'rails-jquery-autocomplete', :git => 'https://github.com/bigtunacan/rails-jquery-autocomplete.git'
