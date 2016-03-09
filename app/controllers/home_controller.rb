@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
 	autocomplete :outlet, :name
+	before_filter :authenticate_user!
   
 	def index
 		if params[:outlet_id].blank?

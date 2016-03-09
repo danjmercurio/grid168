@@ -1,1 +1,1 @@
-Rails.application.config.assets.precompile += %w( jquery.tablesorter.js scripts.js placeholder.js jquery.backstretch.js jquery.backstretch.min.js form-elements.css style.css )
+Rails.application.config.assets.precompile += %w( errors.coffee.js jquery.tablesorter.js scripts.js placeholder.js piple-styles.css.erb login_form-elements.css waves.min.css login_style.css jquery.backstretch.js jquery-ui.css jquery.backstretch.min.js form-elements.css style.css )

@@ -4,94 +4,94 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
 */
 // "bootstrap-sprockets" must be imported before "bootstrap" and "bootstrap/variables"
-@import "jquery-ui";
-@import "bootstrap-sprockets";
-@import "bootstrap";
-
-div#container
-{
-    margin-left: auto;
-    margin-right: auto;
-    width: 82em;
-}
-
-div#header,div#footer
-{
-    border: 1px solid;
-    padding: 15px 0px 15px 0px;
-    text-align:center
-}
-div#header {
-	position: relative;
-	height: 60px;
-}
-
-span#name {
-	position: absolute;
-	left: 126px;
-}
-
-span#menu_links
-{
-/*    margin-left: 50px;*/
-	position: absolute;
-	left: 391px;
-}
-span#outlet_dropdown
-{
-/*    margin-left: 30px;*/
-	position: absolute;
-	left: 400px;
-	top: 45px;
-	width: 370px;
-}
-
-span#outlet_dropdown b {
-	float: left;
-	width: 100px;
-}
-
-span#outlet_dropdown form {
-	float: right;
-	width: 270px;
-}
-
-span#user_name
-{
-/*    margin-left: 25px;*/
-	position: absolute;
-	right: 150px;
-}
-span#sign_in
-{
-/*    margin-left: 25px;*/
-	position: absolute;
-	right: 100px;
-}
-span#logout
-{
-/*    margin-left: 25px;*/
-	position: absolute;
-	right: 80px;
-}
-a#programmer
-{
-    height: 53px;
-    margin-top: 20px;
-    width: 134px;
-}
-
-p.notice {
-	color: green;
-}
-
-span.presence {
-	color: red;
-}
-
-.field {
-}
-
-.clr {
-	clear: both;
-}
+//@import "jquery-ui";
+//@import "bootstrap-sprockets";
+//@import "bootstrap";
+//
+//div#container
+//{
+//    margin-left: auto;
+//    margin-right: auto;
+//    width: 82em;
+//}
+//
+//div#header,div#footer
+//{
+//    border: 1px solid;
+//    padding: 15px 0px 15px 0px;
+//    text-align:center
+//}
+//div#header {
+//	position: relative;
+//	height: 60px;
+//}
+//
+//span#name {
+//	position: absolute;
+//	left: 126px;
+//}
+//
+//span#menu_links
+//{
+///*    margin-left: 50px;*/
+//	position: absolute;
+//	left: 391px;
+//}
+//span#outlet_dropdown
+//{
+///*    margin-left: 30px;*/
+//	position: absolute;
+//	left: 400px;
+//	top: 45px;
+//	width: 370px;
+//}
+//
+//span#outlet_dropdown b {
+//	float: left;
+//	width: 100px;
+//}
+//
+//span#outlet_dropdown form {
+//	float: right;
+//	width: 270px;
+//}
+//
+//span#user_name
+//{
+///*    margin-left: 25px;*/
+//	position: absolute;
+//	right: 150px;
+//}
+//span#sign_in
+//{
+///*    margin-left: 25px;*/
+//	position: absolute;
+//	right: 100px;
+//}
+//span#logout
+//{
+///*    margin-left: 25px;*/
+//	position: absolute;
+//	right: 80px;
+//}
+//a#programmer
+//{
+//    height: 53px;
+//    margin-top: 20px;
+//    width: 134px;
+//}
+//
+//p.notice {
+//	color: green;
+//}
+//
+//span.presence {
+//	color: red;
+//}
+//
+//.field {
+//}
+//
+//.clr {
+//	clear: both;
+//}

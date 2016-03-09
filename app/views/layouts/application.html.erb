@@ -6,10 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <title>Grid168</title>
     <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-    <%= stylesheet_link_tag    "application" %>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <%= stylesheet_link_tag 'jquery-ui' %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <%= stylesheet_link_tag 'form-elements' %>
-    <%= stylesheet_link_tag 'style' %>
+
 
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -27,8 +28,8 @@
 		<div class="top-content">
 			<div class="inner-bg">
         <div class="container">
-          <div class="menu">
-            <% if user_signed_in? %>
+          <% if user_signed_in? && controller_name != 'errors' %>
+            <div class="menu">
               <span id="menu_links">
                 <%= link_to "My Deals", my_deals_path %>
                 <%= link_to "All Deals", home_all_deals_path %>
@@ -42,13 +43,13 @@
                     <%= submit_tag "Go" %>
                 <% end %>
               </span>
+              <span id="user_name"><%= link_to "Edit My Account",  edit_user_registration_path %></span>
+              <span id="logout"><%= link_to "logout", destroy_user_session_path, :method => :delete %></span>
+            </div>
+          <% else %>
+            <!--<span id="sign_in"><%= link_to "sign in", new_user_session_path %></span>-->
+          <% end %>
 
-                <span id="user_name"><%= link_to "Edit My Account",  edit_user_registration_path %></span>
-                <span id="logout"><%= link_to "logout", destroy_user_session_path, :method => :delete %></span>
-            <% else %>
-                <!--<span id="sign_in"><%= link_to "sign in", new_user_session_path %></span>-->
-            <% end %>
-          </div>
           <% if notice %>
             <div class="alert alert-dismissible alert-info">
               <%= notice %>
@@ -65,12 +66,9 @@
               </button>
             </div>
           <% end %>
-
           <%= yield %>
         </div>
       </div>
 		</div>
-    <%= javascript_include_tag 'jquery.backstretch.min' %>
-    <%= javascript_include_tag 'scripts' %>
   </body>
 </html>

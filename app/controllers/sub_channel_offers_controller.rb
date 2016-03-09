@@ -1,4 +1,5 @@
 class SubChannelOffersController < ApplicationController
+
 	def show
 		@sub_channel = SubChannel.find(params[:sub_channel_id])
 		@sub_channel_offer = SubChannelOffer.find(params[:id])
@@ -12,7 +13,7 @@ class SubChannelOffersController < ApplicationController
 		@sub_channel_offer = @sub_channel.sub_channel_offers.build
 		@values = Offervalue.all
 		@outlet = @sub_channel.outlet
-   		@programmers = current_user.programmers
+    @programmers = current_user.programmers
 	end
 
 	def create
@@ -24,12 +25,12 @@ class SubChannelOffersController < ApplicationController
 		respond_to do |format|
 		    if @sub_channel_offer.save
 	      		format.html { redirect_to root_path, notice: "Sub channel offer was created successfully" }
-	      	else
+        else
 	      		@values = Offervalue.all
 	      		@outlet = @sub_channel.outlet
 	      		@programmers = current_user.programmers
 	        	format.html { render :new }
-	      	end
+        end
     	end #end respond_to
 	end
 
@@ -64,9 +65,8 @@ class SubChannelOffersController < ApplicationController
 		@sub_channel_offer.destroy
 		respond_to do |format|
 			format.html { redirect_to :back }
+		end
 	end
-
-
 
 	def process_cell_clicked(cell_arr)
 		str = ""

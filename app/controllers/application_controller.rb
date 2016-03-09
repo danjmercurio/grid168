@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
-  before_filter :authenticate_user!, :populate_outlets
+  before_filter :populate_outlets
 
   private
   
