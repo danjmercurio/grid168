@@ -20,11 +20,22 @@ GIT
 
 GIT
   remote: https://github.com/kavkaz/js_assets.git
-  revision: f8f818a94e70c710194926f3c5dd9f2e3e61eef0
+  revision: 17db84b301d7359c25114388178a24a5a65aadc1
   specs:
-    js_assets (0.1.1)
+    js_assets (0.1.2)
       rails
       sprockets (>= 3.0)
+
+GIT
+  remote: https://github.com/plataformatec/devise.git
+  revision: db901399f2ec411ab5dd6795f277ae26c1d7380e
+  specs:
+    devise (4.0.0.rc2)
+      bcrypt (~> 3.0)
+      orm_adapter (~> 0.1)
+      railties (>= 4.1.0, < 5.1)
+      responders
+      warden (~> 1.2.3)
 
 GIT
   remote: https://github.com/rails/jquery-rails.git
@@ -90,6 +101,7 @@ GEM
       execjs
     bcrypt (3.1.11)
     builder (3.2.2)
+    coderay (1.1.1)
     coffee-rails (4.1.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.1.x)
@@ -98,13 +110,6 @@ GEM
       execjs
     coffee-script-source (1.10.0)
     concurrent-ruby (1.0.1)
-    devise (3.5.6)
-      bcrypt (~> 3.0)
-      orm_adapter (~> 0.1)
-      railties (>= 3.2.6, < 5)
-      responders
-      thread_safe (~> 0.1)
-      warden (~> 1.2.3)
     devise-encryptable (0.2.0)
       devise (>= 2.1.0)
     erubis (2.7.0)
@@ -119,6 +124,7 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    method_source (0.8.2)
     mime-types (2.99.1)
     mini_portile2 (2.0.0)
     minitest (5.8.4)
@@ -127,6 +133,12 @@ GEM
     orm_adapter (0.5.0)
     protected_attributes (1.1.3)
       activemodel (>= 4.0.1, < 5.0)
+    pry (0.10.3)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-rails (0.3.4)
+      pry (>= 0.9.10)
     rack (1.6.4)
     rack-test (0.6.3)
       rack (>= 1.0)
@@ -165,6 +177,7 @@ GEM
       sprockets (>= 2.8, < 4.0)
       sprockets-rails (>= 2.0, < 4.0)
       tilt (>= 1.1, < 3)
+    slop (3.6.0)
     spring (1.6.4)
     sprockets (3.5.2)
       concurrent-ruby (~> 1.0)
@@ -196,7 +209,7 @@ DEPENDENCIES
   annotate
   bootstrap-sass!
   coffee-rails
-  devise
+  devise!
   devise-encryptable
   hirb
   jquery-rails!
@@ -204,6 +217,7 @@ DEPENDENCIES
   js_assets!
   mysql2!
   protected_attributes
+  pry-rails
   rails (~> 4.2.4)
   rails-jquery-autocomplete!
   sass-rails

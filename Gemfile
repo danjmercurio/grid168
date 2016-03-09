@@ -9,7 +9,7 @@ gem 'rails', '~> 4.2.4'#, git: 'git://github.com/rails/rails.git', branch: '4-2-
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 gem 'protected_attributes'
 gem 'mysql2', :git => 'https://github.com/brianmario/mysql2.git'
-gem 'devise'#, :git => 'https://github.com/plataformatec/devise.git'
+gem 'devise', :git => 'https://github.com/plataformatec/devise.git'
 gem 'devise-encryptable'
 gem 'therubyracer'
 gem 'bootstrap-sass', :git => 'https://github.com/twbs/bootstrap-sass.git'
@@ -21,6 +21,7 @@ gem 'rails-jquery-autocomplete', :git => 'https://github.com/bigtunacan/rails-jq
 
 group :development do
 	gem 'annotate'
+  gem 'pry-rails'
 end
 
 # Gems used only for assets and not required
