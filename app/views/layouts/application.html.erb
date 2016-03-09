@@ -46,11 +46,26 @@
                 <span id="user_name"><%= link_to "Edit My Account",  edit_user_registration_path %></span>
                 <span id="logout"><%= link_to "logout", destroy_user_session_path, :method => :delete %></span>
             <% else %>
-                <span id="sign_in"><%= link_to "sign in", new_user_session_path %></span>
+                <!--<span id="sign_in"><%= link_to "sign in", new_user_session_path %></span>-->
             <% end %>
           </div>
-          <p class="notice"><%= notice %></p>
-          <p class="alert"><%= alert %></p>
+          <% if notice %>
+            <div class="alert alert-dismissible alert-info">
+              <%= notice %>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          <% end %>
+          <% if alert %>
+            <div class="alert alert-dismissible alert-warning">
+              <%= alert %>
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          <% end %>
+
           <%= yield %>
         </div>
       </div>

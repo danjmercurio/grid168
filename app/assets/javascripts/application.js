@@ -8,6 +8,7 @@
 //= require jquery_ujs
 //= require jquery.tablesorter
 //= require app_assets
+//= require bootstrap
 
 $(document).ready(function() {
 
