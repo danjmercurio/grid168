@@ -9,6 +9,10 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 
     <%= stylesheet_link_tag 'jquery-ui' %>
+    <%= stylesheet_link_tag 'style' %>
+    <%= stylesheet_link_tag 'waves.min' %>
+    <%= stylesheet_link_tag 'menu-light' %>
+    <%= stylesheet_link_tag 'notis' %>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 
 
@@ -19,56 +23,250 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
     <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'metisMenu.min' %>
+    <%= javascript_include_tag 'jquery-jvectormap-1.2.2.min' %>
+    <%= javascript_include_tag 'jquery.flot' %>
+    <%= javascript_include_tag 'pace.min' %>
+    <%= javascript_include_tag 'waves.min' %>
+    <%= javascript_include_tag 'custom' %>
+
     <!-- Favicon and touch icons -->
     <%= favicon_link_tag %>
 	  <%= csrf_meta_tags %>
 	</head>
 	<body>
-		<div class="top-content">
-			<div class="inner-bg">
-        <div class="container">
+
           <% if user_signed_in? && controller_name != 'errors' %>
-            <div class="menu">
-              <span id="menu_links">
-                <%= link_to "My Deals", my_deals_path %>
-                <%= link_to "All Deals", home_all_deals_path %>
-                <%= link_to "My Media Outlets", outlets_path %>
-                <%= link_to "New Media Outlet", new_outlet_path %>
-              </span>
-              <span id="outlet_dropdown"><b>Media Outlet</b>
-                <%= form_tag(root_path) do %>
-                  <%= hidden_field_tag "outlet_id" %>
-                    <%= autocomplete_field_tag 'name', '', home_autocomplete_outlet_name_path, :id_element => "#outlet_id" %>
-                    <%= submit_tag "Go" %>
-                <% end %>
-              </span>
-              <span id="user_name"><%= link_to "Edit My Account",  edit_user_registration_path %></span>
-              <span id="logout"><%= link_to "logout", destroy_user_session_path, :method => :delete %></span>
-            </div>
-          <% else %>
+
+              <!-- Static navbar -->
+
+              <nav class="navbar navbar-default yamm navbar-fixed-top">
+                <div class="container-fluid">
+                  <button type="button" class="navbar-minimalize minimalize-styl-2  pull-left "><i class="fa fa-bars"></i></button>
+                  <span class="search-icon"><i class="fa fa-search"></i></span>
+                  <div class="search" style="display: none;">
+                    <form role="form">
+                      <input type="text" class="form-control" autocomplete="off" placeholder="Write something and press enter">
+                      <span class="search-close"><i class="fa fa-times"></i></span>
+                    </form>
+                  </div>
+                  <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">Grid168</a>
+                  </div>
+                  <div id="navbar" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle button-wave" data-toggle="dropdown" aria-expanded="true">Mega Menu<span class="caret"></span></a>
+                        <ul class="dropdown-menu mega-dropdown-menu" style="width: 900px;">
+                          <li>
+                            <div class="yamm-content">
+                              <div class="row ">
+                                <div class="col-sm-3 ">
+
+                                  <h3 class="yamm-category">Layout</h3>
+                                  <ul class="list-unstyled ">
+                                    <li><a href="">Admin style 1</a></li>
+                                    <li><a href="">Admin style 2</a></li>
+                                    <li><a href="">Admin style 3</a></li>
+                                    <li><a href="">Admin style 4</a></li>
+                                  </ul>
+
+
+                                </div>
+                                <div class="col-sm-3">
+
+                                  <h3 class="yamm-category">Ui Kit</h3>
+                                  <ul class="list-unstyled ">
+                                    <li><a href="">Typography</a></li>
+                                    <li><a href="">Buttons</a></li>
+                                    <li><a href="">Font Awesome</a></li>
+                                    <li><a href="">Tabs & Alerts</a></li>
+                                  </ul>
+
+
+                                </div>
+                                <div class="col-sm-3">
+
+                                  <h3 class="yamm-category">Analytics</h3>
+                                  <ul class="list-unstyled ">
+                                    <li><a href="">Flot</a></li>
+                                    <li><a href="">Sparklines</a></li>
+                                    <li><a href="">Morris</a></li>
+                                    <li><a href="">Chart Js</a></li>
+                                  </ul>
+
+
+                                </div>
+                                <div class="col-sm-3">
+                                  <h3 class="yamm-category">Architecto</h3>
+                                  <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium. totam rem aperiam eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
+                                </div>
+                              </div>
+                            </div>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="dropdown">
+                        <a href="#" class="dropdown-toggle button-wave" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Action</a></li>
+                          <li><a href="#">Another action</a></li>
+                          <li><a href="#">Something else here</a></li>
+                          <li role="separator" class="divider"></li>
+                          <li class="dropdown-header">Nav header</li>
+                          <li><a href="#">Separated link</a></li>
+                          <li><a href="#">One more separated link</a></li>
+                        </ul>
+                      </li>
+                    </ul>
+
+                    <ul class="nav navbar-nav navbar-right navbar-top-drops">
+                      <li class="dropdown"><a href="#" class="dropdown-toggle button-wave" data-toggle="dropdown"><i class="fa fa-envelope"></i> <span class="badge badge-xs badge-info">6</span></a>
+
+                        <ul class="dropdown-menu dropdown-lg">
+                          <li class="notify-title">
+                            3 New messages
+                          </li>
+                          <li class="clearfix">
+                            <a href="#">
+                                        <span class="pull-left">
+                                            <img src="<%= image_path('avatar-1.jpg') %>" alt="" class="img-circle" width="30">
+                                        </span>
+                                        <span class="block">
+                                            John Doe
+                                        </span>
+                                        <span class="media-body">
+                                            Lorem ipsum dolor sit amet
+                                            <em>28 minutes ago</em>
+                                        </span>
+                            </a>
+                          </li>
+                          <li class="clearfix">
+                            <a href="#">
+                                        <span class="pull-left">
+                                            <img src="<%= image_path('avatar-2.jpg') %>" alt="" class="img-circle" width="30">
+                                        </span>
+                                        <span class="block">
+                                            John Doe
+                                        </span>
+                                        <span class="media-body">
+                                            Lorem ipsum dolor sit amet
+                                            <em>28 minutes ago</em>
+                                        </span>
+                            </a>
+                          </li>
+                          <li class="clearfix">
+                            <a href="#">
+                                        <span class="pull-left">
+                                            <img src="<%= image_path('avatar-3.jpg') %>" alt="" class="img-circle" width="30">
+                                        </span>
+                                        <span class="block">
+                                            John Doe
+                                        </span>
+                                        <span class="media-body">
+                                            Lorem ipsum dolor sit amet
+                                            <em>28 minutes ago</em>
+                                        </span>
+                            </a>
+                          </li>
+                          <li class="read-more"><a href="#">View All Messages <i class="fa fa-angle-right"></i></a></li>
+                        </ul>
+                      </li>
+                      <li class="dropdown"><a href="#" class="dropdown-toggle button-wave" data-toggle="dropdown"><i class="fa fa-bell"></i> <span class="badge badge-xs badge-warning">6</span></a>
+
+                        <ul class="dropdown-menu dropdown-lg">
+                          <li class="notify-title">
+                            3 New messages
+                          </li>
+                          <li class="clearfix">
+                            <a href="#">
+                                        <span class="pull-left">
+                                            <i class="fa fa-envelope"></i>
+                                        </span>
+
+                                        <span class="media-body">
+                                            15 New Messages
+                                            <em>20 Minutes ago</em>
+                                        </span>
+                            </a>
+                          </li>
+                          <li class="clearfix">
+                            <a href="#">
+                                        <span class="pull-left">
+                                            <i class="fa fa-twitter"></i>
+                                        </span>
+
+                                        <span class="media-body">
+                                            13 New Followers
+                                            <em>2 hours ago</em>
+                                        </span>
+                            </a>
+                          </li>
+                          <li class="clearfix">
+                            <a href="#">
+                                        <span class="pull-left">
+                                            <i class="fa fa-download"></i>
+                                        </span>
+
+                                        <span class="media-body">
+                                            Download complete
+                                            <em>2 hours ago</em>
+                                        </span>
+                            </a>
+                          </li>
+                          <li class="read-more"><a href="#">View All Alerts <i class="fa fa-angle-right"></i></a></li>
+                        </ul>
+                      </li>
+
+                    </ul>
+                  </div><!--/.nav-collapse -->
+                </div><!--/.container-fluid -->
+              </nav>
+
+        <% else %>
             <!--<span id="sign_in"><%= link_to "sign in", new_user_session_path %></span>-->
           <% end %>
 
+
+
           <% if notice %>
-            <div class="alert alert-dismissible alert-info">
-              <%= notice %>
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+            <div id="message">
+              <div style="padding: 5px;">
+                <div id="inner-message" class="alert alert-info">
+                  <button type="button" class="close" data-dismiss="alert">&times;</button>
+                  <%= notice %>
+                </div>
+              </div>
             </div>
           <% end %>
           <% if alert %>
-            <div class="alert alert-dismissible alert-warning">
-              <%= alert %>
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
+            <div id="message">
+              <div style="padding: 5px;">
+                <div id="inner-message" class="alert alert-warning">
+                  <button type="button" class="close" data-dismiss="alert">&times;</button>
+                  <%= alert %>
+                </div>
+              </div>
+            </div>
+          <% end %>
+          <% if flash[:error] %>
+            <div id="message">
+              <div style="padding: 5px;">
+                <div id="inner-message" class="alert alert-error">
+                  <button type="button" class="close" data-dismiss="alert">&times;</button>
+                  <%= flash[:error] %>
+                </div>
+              </div>
             </div>
           <% end %>
           <%= yield %>
-        </div>
-      </div>
-		</div>
   </body>
 </html>
