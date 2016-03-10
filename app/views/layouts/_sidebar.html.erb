@@ -17,14 +17,14 @@
                     <i class="fa fa-user"></i>My Account
                 <% end %>
               </li>
-              <li><a href="#"><i class="fa fa-calendar"></i>My Calendar</a></li>
+              <!--<li><a href="#"><i class="fa fa-calendar"></i>My Calendar</a></li>
               <li><a href="#"><i class="fa fa-envelope"></i>My Inbox</a></li>
-              <li><a href="#"><i class="fa fa-barcode"></i>My Task</a></li>
-              <li class="divider"></li>
-              <li><a href="#"><i class="fa fa-lock"></i>Screen lock</a></li>
+              <li><a href="#"><i class="fa fa-barcode"></i>My Task</a></li> -->
+              <!-- <li class="divider"></li> -->
+              <!-- <li><a href="#"><i class="fa fa-lock"></i>Screen lock</a></li> -->
               <li>
                 <%= link_to destroy_user_session_path, :method => :delete do -%>
-                    <i class="fa fa-key"></i>Logout
+                    <i class="fa fa-key"></i>Log Out
                 <% end %>
               </li>
             </ul>
@@ -35,8 +35,6 @@
             <span class="nav-label">Dashboard </span><span class="fa arrow"></span></a>
           <ul class="nav nav-second-level collapse">
             <li><a href="<%= url_for(root_url) %>">Dashboard </a></li>
-
-
           </ul>
         </li>
         <li>

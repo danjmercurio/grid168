@@ -51,33 +51,13 @@
       </section>
   <% else %>
       <%= yield %>
-          <% end %>
-          <% if notice %>
+  <% end %>
+  <%= flash.each do |key, value| -%>
             <div id="message">
               <div style="padding: 5px;">
                 <div id="inner-message" class="alert alert-info">
                   <button type="button" class="close" data-dismiss="alert">&times;</button>
-                  <strong><%= notice %></strong>
-                </div>
-              </div>
-            </div>
-          <% end %>
-          <% if alert %>
-            <div id="message">
-              <div style="padding: 5px;">
-                <div id="inner-message" class="alert alert-warning">
-                  <button type="button" class="close" data-dismiss="alert">&times;</button>
-                  <strong><%= alert %></strong>
-                </div>
-              </div>
-            </div>
-          <% end %>
-          <% if flash[:error] %>
-            <div id="message">
-              <div style="padding: 5px;">
-                <div id="inner-message" class="alert alert-error">
-                  <button type="button" class="close" data-dismiss="alert">&times;</button>
-                  <strong><%= flash[:error] %></strong>
+                  <strong><%= value %></strong>
                 </div>
               </div>
             </div>
