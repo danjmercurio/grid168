@@ -37,30 +37,36 @@
 	  <%= csrf_meta_tags %>
 	</head>
 	<body>
-  <!-- render _menu partial -->
-
-  <% if signed_in? %>
-      <%= render :partial => 'layouts/menu' %>
-      <section class="page">
-        <%= render :partial => 'layouts/sidebar' %>
-        <div id="wrapper">
-          <div class="content-wrapper container">
-            <%= yield %>
+  <% if controller_name != 'errors' %>
+      <% if signed_in? %>
+          <%= render :partial => 'layouts/menu' %>
+          <section class="page">
+            <%= render :partial => 'layouts/sidebar' %>
+            <div id="wrapper">
+              <div class="content-wrapper container">
+                <%= yield %>
+              </div>
+            </div>
+          </section>
+      <% else %>
+          <%= yield %>
+      <% end %>
+      <% flash.each do |key, value| -%>
+          <div id="message">
+            <div style="padding: 5px;">
+              <div id="inner-message" class="alert alert-info">
+                <button type="button" class="close" data-dismiss="alert">&times;</button>
+                <script type="text/javascript">
+                  // This is just kind of here so the local variable 'key' doesn't go unused
+                  console.log("Notification => {:key => [<%= key %>], :message => [<%= value %>]}");
+                </script>
+                <%= value %>
+              </div>
+            </div>
           </div>
-        </div>
-      </section>
+      <% end %>
   <% else %>
       <%= yield %>
   <% end %>
-  <%= flash.each do |key, value| -%>
-            <div id="message">
-              <div style="padding: 5px;">
-                <div id="inner-message" class="alert alert-info">
-                  <button type="button" class="close" data-dismiss="alert">&times;</button>
-                  <strong><%= value %></strong>
-                </div>
-              </div>
-            </div>
-          <% end %>
   </body>
 </html>
