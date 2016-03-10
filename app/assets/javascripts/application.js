@@ -52,7 +52,7 @@ $(document).ready(function() {
 					$(this).find(">:first-child").val("0");
 				}
 			}
-		})
+        });
 					
 		$(document)
 			.mouseup(function() {
@@ -183,7 +183,7 @@ $(document).ready(function() {
 					sorter: false
 				}
 			}
-		})
+        });
 		
 		$('table[id^="list_offers"]').tablesorter({
 			headers: {
@@ -191,7 +191,7 @@ $(document).ready(function() {
 					sorter: false
 				}
 			}
-		})
+        });
 		
 		//programmer table sorter
 		$('#table_my_deals').tablesorter({
@@ -200,7 +200,7 @@ $(document).ready(function() {
 					sorter: false
 				}
 			}
-		})
+        });
 		
 		// table programmer show sorter
 		$('#table_programmer_show').tablesorter({
@@ -209,7 +209,7 @@ $(document).ready(function() {
 					sorter: false
 				}
 			}
-		})
+        });
 		
 		// table outlet sorter
 		$('#table_outlet').tablesorter({
@@ -218,7 +218,7 @@ $(document).ready(function() {
 					sorter: false
 				}
 			}
-		})
+        });
 		
 		// table outlet show sorter
 		$('#table_outlet_show').tablesorter({
@@ -227,7 +227,7 @@ $(document).ready(function() {
 					sorter: false
 				}
 			}
-		})
+        });
 
 		//table programmer outlets sorter
 		$('#table_programmer_outlet').tablesorter({
@@ -236,7 +236,7 @@ $(document).ready(function() {
 					sorter: false
 				}
 			}
-		})
+        });
 		
 		// admin view
 		$('#all_deals_table').tablesorter({
@@ -244,11 +244,17 @@ $(document).ready(function() {
 				10: { sorter: false }
 			}, 
 			sortList: [[0, 0]]
-		})
+        });
 
 		$('#table_admin').tablesorter({
 			headers: { 9: {sorter: false} }
-		})
+        });
+
+    // Display Devise gem error messages with Bootstrap error notis
+    $('#error_explanation').addClass('alert alert-warning');
+
+    // Fade out info-only alerts, don't make the user click to close them
+    $('.alert-info').fadeOut(1500);
 });
 
 function displayError(){
