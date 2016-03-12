@@ -12,16 +12,11 @@
   </div>
 </div><!-- end .page title-->
 <div class="row">
-  <h1>Welcome to the standard user page page</h1>
+  <h1>Welcome to your dashboard!</h1>
 </div><!--end .row-->
 <div class="row">
-  <h3>You are not an admin</h3>
+  <h3>This space can contain tables, graphs, forms, charts, remote content, or anything else you may want.</h3>
 </div>
 <div class="row">
-  <h3>Not right now, at least</h3>
-</div><!--end .row-->
-
-
-<div class="row">
-  <h3>Oh hi</h3>
+  <small><%= current_user.admin? ? 'Your account has administrator privileges.' : 'Your account does not currently have administrator privileges.' %></small>
 </div><!--end .row-->
