@@ -1,5 +1,5 @@
 Grid168::Application.routes.draw do
-	
+
 	get 'home/autocomplete_outlet_name'
 
 	get 'my_deals' => 'programmers#index'
@@ -21,13 +21,11 @@ Grid168::Application.routes.draw do
 	resources :programmers
 
 	# fix can't log out
-	devise_for :users do
-		get "/users/sign_out" => "devise/sessions#destroy", :as => :destroy_user_session
-	end
+	devise_for :users
+	resources :users
 
 	root :to => "home#index"
-		
-		
+
 
 	# The priority is based upon order of creation:
 	# first created -> highest priority.

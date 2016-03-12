@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
 
 	# Setup accessible (or protected) attributes for your model
 	attr_accessible :email, :password, :password_confirmation, :remember_me, :phone, :title,
-			:first_name, :last_name
+                  :first_name, :last_name, :admin
 
 	validates :first_name, :last_name, presence: true
 	
@@ -56,7 +56,11 @@ class User < ActiveRecord::Base
 		amount_offers + amount_sub_channel_offers
 	end #end count_amount_offer method
 
-	def self.category_for_highchart(name)
+  def admin?
+    self.admin
+  end
+
+  def self.category_for_highchart(name)
 		User.order(:id).select(name).map { |x| x.send name  }
 	end
 

@@ -4,24 +4,27 @@ class HomeController < ApplicationController
   before_filter :authenticate_user!
 
 
+  # def index
+  # 	if params[:outlet_id].blank?
+  # 		if params[:name].blank?
+  # 			@users = User.all
+  # 			@offers = Offer.all
+  # 			if current_user.admin?
+  # 				render 'admin'
+  # 			end #end admin check
+  #
+  # 		else
+  # 			outlet = Outlet.find_by_name params[:name]
+  # 			redirect_to outlet_path(outlet) unless outlet.nil?
+  # 			render text: "<h1>No result found</h1>", layout: true if outlet.nil?
+  # 		end #end check params[:name] blank
+  # 	else
+  # 		redirect_to outlet_path(params[:outlet_id])
+  # 	end #end check params[:outlet_id] blank
+  # end #end index action
   def index
-		if params[:outlet_id].blank?
-			if params[:name].blank?
-				@users = User.all
-				@offers = Offer.all
-				if current_user.admin?
-					render 'admin'
-				end #end admin check
-					
-			else
-				outlet = Outlet.find_by_name params[:name]
-				redirect_to outlet_path(outlet) unless outlet.nil?
-				render text: "<h1>No result found</h1>", layout: true if outlet.nil?
-			end #end check params[:name] blank
-		else
-			redirect_to outlet_path(params[:outlet_id])
-		end #end check params[:outlet_id] blank
-	end #end index action
+    @users = User.all
+  end
 
 	def all_deals
 		@offers = Offer.all
