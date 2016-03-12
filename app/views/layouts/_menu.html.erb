@@ -1,4 +1,3 @@
-<% if user_signed_in? && controller_name != 'errors' %>
     <!-- Static navbar -->
     <nav class="navbar navbar-default yamm navbar-fixed-top">
       <div class="container-fluid">
@@ -102,7 +101,3 @@
         </div><!--/.nav-collapse -->
       </div><!--/.container-fluid -->
     </nav>
-<% else %>
-    <!--<span id="sign_in"><%= link_to "sign in", new_user_session_path %></span>-->
-<% end %>
-

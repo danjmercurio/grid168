@@ -21,4 +21,8 @@ class ApplicationController < ActionController::Base
   def remove_comma(num_string)
   	num_string.gsub(",", "")
   end #end remove_comma method
+
+  def admin_only
+    redirect_to '/404' unless current_user.admin?
+  end
 end
