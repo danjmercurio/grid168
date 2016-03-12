@@ -1,4 +1,4 @@
-
+<%= stylesheet_link_tag 'application' %>
 <%= stylesheet_link_tag 'login_form-elements' %>
 <%= stylesheet_link_tag 'login_style' %>
 <%= javascript_include_tag 'jquery.backstretch.min' %>
@@ -44,7 +44,7 @@
                 <% if devise_mapping.rememberable? -%>
                     <div><%= f.check_box :remember_me %> <%= f.label :remember_me %></div>
                 <% end -%>
-                <%= button_tag(type: 'submit', class: 'btn') do -%>
+                <%= button_tag(type: 'submit', class: 'btn purple-bg') do -%>
                     Log In
                 <% end %>
             <% end %>

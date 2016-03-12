@@ -7,7 +7,7 @@ GIT
 
 GIT
   remote: https://github.com/brianmario/mysql2.git
-  revision: e58d02718fdec39e71e715133df4d9f90dd7bfd1
+  revision: f8187beb3a75bf98e4611a1827996676446e0c95
   specs:
     mysql2 (0.4.3)
 
@@ -39,9 +39,9 @@ GIT
 
 GIT
   remote: https://github.com/rails/jquery-rails.git
-  revision: b4227beac55d74c327b59a058b0dcea9d0daef7f
+  revision: f033f7757fecd7111a241e9e54182fa8e094e1ac
   specs:
-    jquery-rails (4.1.0)
+    jquery-rails (4.1.1)
       rails-dom-testing (>= 1, < 3)
       railties (>= 4.2.0)
       thor (>= 0.14, < 2.0)
