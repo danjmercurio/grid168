@@ -22,7 +22,8 @@ Grid168::Application.routes.draw do
 
 	# fix can't log out
 	devise_for :users
-	resources :users
+
+  resources :users
 
 	root :to => "home#index"
 

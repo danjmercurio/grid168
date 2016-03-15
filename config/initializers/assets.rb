@@ -20,4 +20,5 @@ jquery-ui.css
 jquery.backstretch.min.js
 form-elements.css
 menu-light.css
-style.css )
+style.css
+waves.min.js.map)
