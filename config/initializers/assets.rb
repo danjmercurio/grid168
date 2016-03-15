@@ -21,4 +21,6 @@ jquery.backstretch.min.js
 form-elements.css
 menu-light.css
 style.css
-waves.min.js.map)
+waves.min.js.map
+outlets.coffee
+tables.coffee)

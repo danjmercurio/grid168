@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="dataSourceStorageLocal">
+    <data-source name="Rails grid168: test" uuid="065c680e-40d6-4bd4-9640-11efd6b81acc">
+      <user-name>root</user-name>
+      <user-password>dfc7dfcbdfdadfcbdfdadfda</user-password>
+    </data-source>
+    <data-source name="Rails grid168: development" uuid="aab207ed-9350-4c35-a79a-491e8394c173">
+      <user-name>root</user-name>
+      <user-password>dfc7dfcbdfdadfcbdfdadfda</user-password>
+      <schema-pattern>grid168.*</schema-pattern>
+      <default-schemas>grid168.*</default-schemas>
+    </data-source>
+  </component>
+</project>

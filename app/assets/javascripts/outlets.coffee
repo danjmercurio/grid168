@@ -12,7 +12,7 @@ $ ->
 		$('#add_link > a').bind('click', ->
 			count = $('#sub_channel_container').children().length
 			$('#count_sub_channel').val((count + 1).toString())
-			render = '<div class="sub_channel">' + 
+			render = '<div class="sub_channel">' +
 				'<div class="col1">' +
 					'<label for="sub_channel_name">Name</label>' +
 					'<input type="text" size="30" name="sub_channel[name_' + count + ']" style="width: 175px"/><br/>' +
@@ -20,7 +20,7 @@ $ ->
 				'<div class="col2">' +
 					'<label for="sub_channel_type">Type</label>' +
 					'<select name="sub_channel[sub_channel_type_id_' + count + ']">' +
-						'<option value="1">DT1</option>' + 
+						'<option value="1">DT1</option>' +
 						'<option value="2">DT2</option>' +
 						'<option value="3">DT3</option>' +
 						'<option value="4">DT4</option>' +
@@ -56,7 +56,7 @@ $ ->
 			$('#add_link > a').bind('click', ->
 				count = $('#sub_channel_container').children().length
 				$('#count_sub_channel').val((count + 1).toString())
-				render = '<div class="sub_channel">' + 
+				render = '<div class="sub_channel">' +
 					'<div class="col1">' +
 						'<label for="sub_channel_name">Name</label>' +
 						'<input type="text" size="30" name="sub_channel[name_' + count + ']" style="width: 175px"/><br/>' +
@@ -64,7 +64,7 @@ $ ->
 					'<div class="col2">' +
 						'<label for="sub_channel_type">Type</label>' +
 						'<select name="sub_channel[sub_channel_type_id_' + count + ']">' +
-							'<option value="1">DT1</option>' + 
+							'<option value="1">DT1</option>' +
 							'<option value="2">DT2</option>' +
 							'<option value="3">DT3</option>' +
 							'<option value="4">DT4</option>' +

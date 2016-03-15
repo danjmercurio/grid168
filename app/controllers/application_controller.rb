@@ -13,11 +13,11 @@ class ApplicationController < ActionController::Base
   end
 
   private
-  
+
   def populate_outlets
     @outlets = Outlet.all.order(:name) # Ascending
   end
-  
+
   def remove_comma(num_string)
   	num_string.gsub(",", "")
   end #end remove_comma method

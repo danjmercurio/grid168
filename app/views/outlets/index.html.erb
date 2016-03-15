@@ -1,19 +1,60 @@
-<h1>My Media outlets</h1>
-<table id="table_outlet" class="tablesorter">
-	<thead>
-		<tr>
-			<th>Name</th>
-			<th>Offers</th>
-			<th>Subs</th>
-			<th>DMA</th>
-			<th>Created at</th>
-			<th>Action</th>
-		</tr>
-	</thead>
-	<tbody>
-		<%= render @outlets %>
-	</tbody>
-</table>
-
-<br/>
-<%= link_to "New media outlet", new_outlet_path %>
+<%= javascript_include_tag 'tables' %>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="page-title">
+      <h1>My Media Outlets
+        <small></small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i></a></li>
+        <li>View Outlets</li>
+        <li class="active">My Media Outlets</li>
+      </ol>
+    </div>
+  </div>
+</div><!-- end .page title-->
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">Outlets</h4>
+        <!--<div class="panel-actions">-->
+          <!--<a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>-->
+          <!--<a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>-->
+        <!--</div>-->
+      </div>
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table id="basic-datatables" class="table table-striped tablesorter">
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Offers</th>
+                <th>Subs</th>
+                <th>DMA</th>
+                <th>Created at</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @outlets.each do |outlet| -%>
+                <tr>
+                  <td><%= outlet.name %></td>
+                  <td><%= outlet.offers.count %></td>
+                  <td><%= number_with_delimiter outlet.subs %></td>
+                  <td><%= outlet.dma.name rescue "None" %></td>
+                  <td><%= outlet.created_at.strftime "%m/%d/%Y" %></td>
+                  <td>
+                    <%= link_to "show", outlet_path(outlet) %> |
+                    <%= link_to "edit", edit_outlet_path(outlet) %> |
+                    <%= link_to "delete", outlet, :confirm => "Are you sure?", :method => :delete %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

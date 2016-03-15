@@ -2,18 +2,18 @@ class OutletsController < ApplicationController
 	def index
 		@outlets = current_user.outlets
 	end #end index action
-	
+
 	def show
 		@outlet = Outlet.find(params[:id])
 		@user_id = @outlet.user_id
-		
+
 	end #end show action
-	
+
 	def new
 		@outlet = current_user.outlets.build
 
 	end #end new action
-	
+
 	def create
 		if !params[:cancel].blank?
 			redirect_to outlets_path
@@ -39,20 +39,20 @@ class OutletsController < ApplicationController
 							end
 						end #end for i
 					end #end if count
-					format.html { redirect_to @outlet, notice: notice }
+					format.html { redirect_to :controller => 'outlets', :action => 'index', notice: notice }
 				else
 					format.html { render :action => "new" }
 				end
 			end #end respond_to
 		end
-				
+
 	end #end create action
-	
+
 	def edit
 		@outlet = Outlet.find(params[:id])
 		@offer_id = params[:offer_id] || 0
 	end #end edit action
-	
+
 	def update
 		if !params[:cancel].blank?
 			redirect_to outlets_path
@@ -87,7 +87,7 @@ class OutletsController < ApplicationController
 		end
 
 	end #end update action
-	
+
 	def destroy
 		@outlet =Outlet.find(params[:id])
 		@outlet.destroy
