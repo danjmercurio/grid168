@@ -32,7 +32,8 @@
         </li>
         <%= controller_name == 'home' ? raw("<li class='active'>") : raw('<li>') %>
           <a href="#"><i class="fa fa-th-large"></i>
-            <span class="nav-label">Dashboard </span><span class="fa arrow"></span></a>
+            <span class="nav-label">Dashboard </span><span class="fa arrow"></span>
+          </a>
           <ul class="nav nav-second-level collapse">
             <li><a href="<%= url_for(root_url) %>">Dashboard </a></li>
           </ul>
@@ -40,22 +41,32 @@
         <% if current_user.admin? %>
             <%= controller_name == 'users' ? raw("<li class='active'>") : raw('<li>') %>
             <a href="#"><i class="fa fa-users"></i>
-              <span class="nav-label">Users</span><span class="fa arrow"></span></a>
+              <span class="nav-label">Users</span><span class="fa arrow"></span>
+            </a>
             <ul class="nav nav-second-level collapse">
               <li><a href="/users">User list</a></li>
             </ul>
             </li>
         <% end %>
         <%= controller_name == 'outlets' ? raw("<li class='active'>") : raw('<li>') %>
-          <a href="#"><i class="fa fa-users"></i>
-            <span class="nav-label">Media Outlets</span><span class="fa arrow"></span></a>
+          <a href="#"><i class="fa fa-television"></i>
+            <span class="nav-label">Media Outlets</span><span class="fa arrow"></span>
+          </a>
           <ul class="nav nav-second-level collapse">
             <li><a href="<%= url_for(outlets_url) %>">View Outlets</a></li>
             <li><a href="<%= url_for(new_outlet_url) %>">New Outlet</a></li>
           </ul>
         </li>
-      </ul>
-
+        <%= controller_name == 'programmers' ? raw("<li class='active'>") : raw('<li>') %>
+          <a href="#"><i class="fa fa-rss"></i>
+            <span class="nav-label">Programmers</span><span class="fa arrow"></span>
+          </a>
+          <ul class="nav nav-second-level collapse">
+            <li><a href="<%= url_for(programmers_url) %>">View Programmers</a></li>
+            <li><a href="<%= url_for(new_programmer_url) %>">New Programmer</a></li>
+          </ul>
+        </li>
+      </ul><!-- end of menu list -->
     </div>
   </div>
 </nav>

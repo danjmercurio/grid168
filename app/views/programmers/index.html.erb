@@ -1,22 +1,47 @@
-<h1>My Deals</h1>
-
-<table id="table_my_deals" class="tablesorter">
-	<thead>
-		<tr>
-			<th>Company name</th>
-			<th>Offer amount</th>
-			<th>Outlet</th>
-			<th>Type</th>
-			<th>Subscribers</th>
-			<th>Hours</th>
-			<th>DMA</th>
-			<th>Created</th>
-			<th>Updated</th>
-			<th>Action</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @offers.each do |offer| %>
+<%= javascript_include_tag 'tables' %>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="page-title">
+      <h1>My Programmers
+        <small></small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i></a></li>
+        <li>View Programmers</li>
+        <li class="active">My Programmers</li>
+      </ol>
+    </div>
+  </div>
+</div><!-- end .page title-->
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">Programmers</h4>
+        <!--<div class="panel-actions">-->
+          <!--<a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>-->
+          <!--<a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>-->
+        <!--</div>-->
+      </div>
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table id="basic-datatables" class="table table-striped tablesorter">
+            <thead>
+              <tr>
+                <th>Company name</th>
+								<th>Offer amount</th>
+								<th>Outlet</th>
+								<th>Type</th>
+								<th>Subscribers</th>
+								<th>Hours</th>
+								<th>DMA</th>
+								<th>Created</th>
+								<th>Updated</th>
+								<th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% @offers.each do |offer| %>
 			<% outlet = offer.outlet %>
 			<% offer.programmers.each do |programmer| %>
 				<tr>
@@ -55,9 +80,70 @@
 						<%= link_to "Show", [sub_channel, sub_channel_offer] %> |
 						<%= link_to "Delete", [sub_channel, sub_channel_offer], method: :delete, confirm: "Are you sure?" %>
 					</td>
-				</tr>	
+				</tr>
 			<% end %><!-- end programmer -->
 		<% end %><!-- end sub offer -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1>My Deals</h1>
+
+<table id="table_my_deals" class="tablesorter">
+	<thead>
+		<tr>
+
+		</tr>
+	</thead>
+	<tbody>
+
 	</tbody>
 </table>
 

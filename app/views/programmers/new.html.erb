@@ -1,5 +1,63 @@
-<h1>New programmer</h1>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="page-title">
+      <h1>New Programmer
+        <small></small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i></a></li>
+        <li>Programmers</li>
+        <li class="active">New Programmer</li>
+      </ol>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="panel panel-default margin-b-30">
+    <div class="panel-heading">
+      <h4 class="panel-title">Add a new Programmer</h4>
+    </div>
+    <div class="panel-body">
+      <%= form_for @programmer, :html => {:class => 'form-horizontal group-border stripped'} do |f| %>
+          <% if @programmer.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@programmer.errors.count, "error") %> prohibited this programmer from being saved:</h2>
+                <ul>
+                  <% @programmer.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                  <% end %>
+                </ul>
+              </div>
+          <% end %>
+          <div class="form-group">
+            <%= f.label :company_name, :class => 'col-lg-2 control-label' %>
+            <div class="col-lg-10"><%= f.text_field :name, :class => 'form-control' %></div>
+          </div>
+          <div class="form-group">
+            <%= f.label :first_name, :class => 'col-lg-2 control-label' %>
+            <div class="col-lg-10"><%= f.text_field :first_name, :class => 'form-control' %></div>
+          </div>
+          <div class="form-group">
+            <%= f.label :last_name, :class => 'col-lg-2 control-label' %>
+            <div class="col-lg-10"><%= f.text_field :last_name, :class => 'form-control' %></div>
+          </div>
+          <div class="form-group">
+            <%= f.label :email, :class => 'col-lg-2 control-label' %>
+            <div class="col-lg-10"><%= f.text_field :email, :class => 'form-control' %></div>
+          </div>
+          <div class="form-group">
+            <%= f.label :phone, :class => 'col-lg-2 control-label' %>
+            <div class="col-lg-10"><%= f.text_field :phone, :class => 'form-control' %></div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-4 col-sm-offset-2">
+            <%= button_tag(type: 'submit', class: "btn btn-primary", style: 'margin-top: 20px;') do %>
+              <i class="icon-ok icon-white"></i> Save
+            <% end %>
+            <a href="<%= url_for(root_url) %>"><p>Cancel</p></a>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', programmers_path %>
