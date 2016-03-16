@@ -9,11 +9,12 @@
 //= require jquery.tablesorter
 //= require app_assets
 //= require bootstrap
+//= require regLink
 
 $(document).ready(function() {
 
-	$('.delete_child').bind('ajax:success', function() {  
-	    $(this).closest('tr').fadeOut();  
+	$('.delete_child').bind('ajax:success', function() {
+	    $(this).closest('tr').fadeOut();
 	});
 
 	$('.delete_child_div').bind('ajax:success', function() {
@@ -29,7 +30,7 @@ $(document).ready(function() {
 	$('#yearly_rate').text(formatCurrency($('#yearly_rate').text()));
 
 	$('#hourly_rate').text(formatCurrency($('#hourly_rate').text()));
-	
+
 	// multiple select cell
 	$('table#form_table div')
 		.mousedown(function() {
@@ -53,12 +54,12 @@ $(document).ready(function() {
 				}
 			}
         });
-					
+
 		$(document)
 			.mouseup(function() {
 				isMouseDown = false;
 		});
-	
+
 		// for checkbox 24 hours offer
 		$('#all_week').click(function() {
 			if ($(this).is(':checked')) {
@@ -69,7 +70,7 @@ $(document).ready(function() {
 				$('table.table div input').val("0");
 			}
 		});
-	
+
 		// for calculate button offer
 		$('#calculate').click(function() {
 			var subs = removeComma($('#subs').text());
@@ -91,7 +92,7 @@ $(document).ready(function() {
 			if (parseFloat(dollar_amount) == 0.0) {
 				alert("Dollar amount must be inserted\nfor calculation");
 			} else {
-			
+
 				$('table.table div').each(function() {
 					if ($(this).hasClass('clicked_cell')) {
 						var arr = $(this).attr('id').split('_');
@@ -99,15 +100,15 @@ $(document).ready(function() {
 						weekly_hours += 0.5;
 					}
 				});
-						
+
 				// calculate value_per_subscribe
 				value_per_subscribe = (total_percent * 	dollar_amount / 1000);
-						
+
 				yearly_rate = (value_per_subscribe * subs).toFixed(2);
 				monthly_rate = (yearly_rate / 12).toFixed(2);
 				weekly_rate = (monthly_rate / 4).toFixed(2);
 				hourly_rate = (weekly_rate / weekly_hours).toFixed(2);
-				
+
 				// display to view
 				$('#weekly_hours').text(weekly_hours);
 				$('#monthly_hours').text(weekly_hours * 4);
@@ -115,9 +116,9 @@ $(document).ready(function() {
 				$('#weekly_rate').text(formatCurrency(weekly_rate));
 				$('#monthly_rate').text(formatCurrency(monthly_rate));
 				$('#yearly_rate').text(formatCurrency(yearly_rate));
-				
+
 				$('#hourly_rate').text(formatCurrency(hourly_rate));
-				
+
 				// for hidden field
 				if ($('#offer_hourly_rate').val() == null) {
 					// on sub_channel_offer page
@@ -136,10 +137,10 @@ $(document).ready(function() {
 			}
 			return false;
 		});
-	
+
 		// for reset button offer
 		$('#reset').click(function() {
-				
+
 			// reset view calculation
 			$('#weekly_hours').text("0");
 			$('#monthly_hours').text("0");
@@ -156,18 +157,18 @@ $(document).ready(function() {
 			$('#offer_monthly_offer').val("0");
 			$('#offer_yearly_offer').val("0");
 			$('#offer_value_per_subscribe').val("0");
-			
+
 			// reset time table
 			$('table.table div').removeClass('clicked_cell');
 			$('table.table div input').val("0");
-			
+
 			return false;
 		});
-		
+
 		// $('#_outlet_id').change(function(){
 		// 	window.location.replace("http://"+window.location.hostname + ":" + window.location.port + "/outlets/" + 		this.value);
 		// });
-				
+
 		// table sorter
 		$('#list_users').tablesorter({
 			headers: {
@@ -176,7 +177,7 @@ $(document).ready(function() {
 				}
 			}
 		});
-				
+
 		$('table[id^="list_programmers"]').tablesorter({
 			headers: {
 				3: {
@@ -184,7 +185,7 @@ $(document).ready(function() {
 				}
 			}
         });
-		
+
 		$('table[id^="list_offers"]').tablesorter({
 			headers: {
 				3: {
@@ -192,7 +193,7 @@ $(document).ready(function() {
 				}
 			}
         });
-		
+
 		//programmer table sorter
 		$('#table_my_deals').tablesorter({
 			headers: {
@@ -201,7 +202,7 @@ $(document).ready(function() {
 				}
 			}
         });
-		
+
 		// table programmer show sorter
 		$('#table_programmer_show').tablesorter({
 			headers: {
@@ -210,7 +211,7 @@ $(document).ready(function() {
 				}
 			}
         });
-		
+
 		// table outlet sorter
 		$('#table_outlet').tablesorter({
 			headers: {
@@ -219,7 +220,7 @@ $(document).ready(function() {
 				}
 			}
         });
-		
+
 		// table outlet show sorter
 		$('#table_outlet_show').tablesorter({
 			headers: {
@@ -237,12 +238,12 @@ $(document).ready(function() {
 				}
 			}
         });
-		
+
 		// admin view
 		$('#all_deals_table').tablesorter({
 			headers: {
 				10: { sorter: false }
-			}, 
+			},
 			sortList: [[0, 0]]
         });
 
@@ -287,7 +288,7 @@ function removeComma(num) {
 // check number
 function isInteger(s){
 	var i;
-	for (i = 0; i < s.length; i++){   
+	for (i = 0; i < s.length; i++){
 		// Check that current character is number.
 		var c = s.charAt(i);
 		if (((c < "0") || (c > "9"))) return false;

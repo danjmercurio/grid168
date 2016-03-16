@@ -6,11 +6,11 @@
 development:
   adapter: mysql2
   encoding: utf8
-  reconnect: true
+  reconnect: false
   database: grid168
-  pool: 5
   username: root
   password: mapapp
+  pool: 5
   reconnect: false
   #socket: /tmp/mysql.sock
 

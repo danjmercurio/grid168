@@ -3,10 +3,9 @@
 <%= stylesheet_link_tag 'login_style' %>
 <%= javascript_include_tag 'jquery.backstretch.min' %>
 <%= javascript_include_tag 'scripts' %>
-<%= javascript_include_tag 'login' %>
 <% if flash[:alert] == 'Invalid email or password.' %>
     <script type="text/javascript">
-      appendRegisterLink();
+      $(document).ready(window.appendRegisterLink);
     </script>
 <% end %>
 <div class="top-content">
