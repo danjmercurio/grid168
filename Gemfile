@@ -8,8 +8,6 @@ ruby '2.3.0'
 #gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'rails', '~> 4.2.4'#, git: 'git://github.com/rails/rails.git', branch: '4-2-stable'
 
-gem 'pg'
-
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 gem 'protected_attributes'
 gem 'mysql2', :git => 'https://github.com/brianmario/mysql2.git'
@@ -30,6 +28,7 @@ end
 
 group :production do
   gem 'rails_12factor'
+  gem 'pg'
 end
 
 # Gems used only for assets and not required
