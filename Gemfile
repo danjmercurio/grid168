@@ -1,10 +1,14 @@
 source 'http://rubygems.org'
 
+ruby '2.3.0'
+
 #gem 'rails'
 
 # Bundle edge Rails instead:
 #gem 'rails', :git => 'git://github.com/rails/rails.git'
 gem 'rails', '~> 4.2.4'#, git: 'git://github.com/rails/rails.git', branch: '4-2-stable'
+
+gem 'pg'
 
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw]
 gem 'protected_attributes'
@@ -22,6 +26,10 @@ gem 'rails-jquery-autocomplete', :git => 'https://github.com/bigtunacan/rails-jq
 group :development do
 	gem 'annotate'
   gem 'pry-rails'
+end
+
+group :production do
+  gem 'rails_12factor'
 end
 
 # Gems used only for assets and not required
