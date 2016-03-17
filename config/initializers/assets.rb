@@ -12,5 +12,6 @@ jquery.flot.resize
 jquery.flot.pie
 pace.min
 waves.min
-custom
+custom.js
+tables.coffee
 )
