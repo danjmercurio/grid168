@@ -1,61 +1,45 @@
-<%= stylesheet_link_tag 'login_form-elements' %>
-<%= stylesheet_link_tag 'login_style' %>
-<%= javascript_include_tag 'jquery.backstretch.min' %>
-<%= javascript_include_tag 'scripts' %>
-<%= javascript_include_tag 'login' %>
-<div class="top-content">
-  <div class="inner-bg">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8 col-sm-offset-2 text">
-          <h1>Register a <strong>Grid168</strong> account</h1>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6 col-sm-offset-3 form-box">
-          <div class="form-top">
-            <div data-role="appendTo" class="form-top-left"><h3>Sign up</h3>
-              <p>Enter your information to register an account.</p></div>
-            <div class="form-top-right"><i class="fa fa-key"></i></div>
+<body class="account">
+  <div class="container">
+    <div class="row">
+      <div class="account-col text-center">
+        <h1>Grid168</h1>
+        <h3>Register a new account</h3>
+        <%= devise_error_messages! %>
+        <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :class => 'm-t', :role => 'form') do |f| %>
+          <div class="form-group"><%= f.label :first_name %><br/>
+            <%= f.text_field :first_name, class: 'form-username form-control' %>
           </div>
-          <div class="form-bottom">
-            <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name)) do |f| %>
-              <%= devise_error_messages! %>
 
-              <div class="form_group"><%= f.label :first_name %><br/>
-                <%= f.text_field :first_name, class: 'form-username form-control' %>
-              </div>
-
-              <div class="form_group"><%= f.label :last_name %><br/>
-                <%= f.text_field :last_name, class: 'form-control' %>
-              </div>
-
-              <div class="form_group"><%= f.label :title %><br/>
-                <%= f.text_field :title, class: 'form-control' %>
-              </div>
-
-              <div class="form_group"><%= f.label :phone_number %><br/>
-                <%= f.text_field :phone, class: 'form-control' %>
-              </div>
-
-              <div class="form_group"><%= f.label :email %><br />
-              <%= f.text_field :email, class: 'form-control' %></div>
-
-              <div class="form_group"><%= f.label :password %>
-              <%= f.password_field :password, class: 'form-control form-password' %></div>
-
-              <div class="form_group"><%= f.label :password_confirmation %>
-              <%= f.password_field :password_confirmation, class: 'form-control form-password' %></div>
-
-              <br />
-
-              <%= button_tag(type: 'submit', class: 'btn') do -%>
-                    Sign Up
-                <% end %>
-            <% end %>
+          <div class="form-group"><%= f.label :last_name %><br/>
+            <%= f.text_field :last_name, class: 'form-control' %>
           </div>
-        </div>
+
+          <div class="form-group"><%= f.label :title %><br/>
+            <%= f.text_field :title, class: 'form-control' %>
+          </div>
+
+          <div class="form-group"><%= f.label :phone_number %><br/>
+            <%= f.text_field :phone, class: 'form-control' %>
+          </div>
+
+          <div class="form-group"><%= f.label :email %><br />
+          <%= f.text_field :email, class: 'form-control' %></div>
+
+          <div class="form-group"><%= f.label :password %>
+          <%= f.password_field :password, class: 'form-control form-password' %></div>
+
+          <div class="form-group"><%= f.label :password_confirmation %>
+            <%= f.password_field :password_confirmation, class: 'form-control form-password' %>
+          </div>
+          <%= button_tag(type: 'submit', class: 'btn btn-primary btn-block ') do -%>
+            Login
+          <% end %>
+          <a href="#"><small>Forgot password?</small></a>
+          <p class=" text-center"><small>Already have an account?</small></p>
+          <a class="btn  btn-default btn-block" href="<%= url_for(new_user_session_url) %>">Log in to your existing account</a>
+          <p>Grid168 &copy; <%= Time.now.year %></p>
+        <% end %>
       </div>
     </div>
   </div>
-</div>
+</body>

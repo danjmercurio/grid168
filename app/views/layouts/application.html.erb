@@ -20,20 +20,20 @@
     <%= favicon_link_tag %>
 	  <%= csrf_meta_tags %>
 	</head>
-	<body>
-  <% if controller_name != 'errors' %>
-      <% if signed_in? %>
-          <%= render :partial => 'layouts/menu' %>
-          <div class="clearfix"></div>
-            <%= render :partial => 'layouts/submenu' %>
-              <div class="container page-wrapper">
-                <%= yield %>
-              </div>
-          <%= render :partial => 'layouts/footer' %>
-      <% else %>
-          <%= yield %>
-      <% end %>
-      <% flash.each do |key, value| -%>
+  <% if signed_in? %>
+  	<body>
+      <%= render :partial => 'layouts/menu' %>
+      <div class="clearfix"></div>
+      <%= render :partial => 'layouts/submenu' %>
+      <div class="container page-wrapper">
+        <%= yield %>
+      </div>
+      <%= render :partial => 'layouts/footer' %>
+    </body>
+  <% else %>
+      <%= yield %>
+  <% end %>
+    <% flash.each do |key, value| -%>
           <div id="message">
             <div style="padding: 5px;">
               <div id="inner-message" class="alert alert-info">
@@ -47,13 +47,9 @@
             </div>
           </div>
       <% end %>
-  <% else %>
-      <%= yield %>
-  <% end %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag 'metisMenu.min' %>
     <%= javascript_include_tag 'pace.min' %>
     <%= javascript_include_tag 'waves.min' %>
     <%= javascript_include_tag 'custom' %>
-  </body>
 </html>
