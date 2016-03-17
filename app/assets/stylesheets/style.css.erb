@@ -6,19 +6,25 @@
 Reset / Basics
 
 ***********/
-html,body{
-    height: 100%;
+html {
+  position: relative;
+  min-height: 100%;
 }
 body{
     font-family: 'Roboto', sans-serif;
     font-size: 13px;
     line-height: 1.42857143;
-    color:#848c94;
-    background-color: #2f323b;
-    min-height: 100%;
+    color: #656565;
+    background-color: #fff;
     margin: 0px;
     padding: 0px;
     line-height: 24px;
+    margin-bottom: 60px;
+}
+.page-wrapper{
+    padding-top: 30px;
+    padding-bottom: 60px;
+    min-height: 100%;
 }
 body.bg-light{
     background-color: #fff !important;
@@ -29,13 +35,12 @@ body.bg-light #wrapper{
 a{
     transition: all 0.3s ease-in-out;
     text-decoration: none;
-    color:#DF3D82;
+    color:#0e96ec;
 }
 a:hover,a:focus, button, button:focus{
     background-color: transparent;
     outline: 0 !important;
-    text-decoration: none; 
-    color:#fff;
+    text-decoration: none;
 }
 h1,
 h2,
@@ -130,7 +135,8 @@ h6 {
     #wrapper {
         margin: 0 0px 0 220px;
         padding: 50px 0;
-        background: #2f323b;
+        background: #eee;
+        border-left: 1px solid #e4e5e7;
         transition: all 0.4s ease 0s;
         position: relative;
         min-height: 100%;
@@ -139,42 +145,38 @@ h6 {
     .content-wrapper {
         padding: 25px 40px 40px 40px;
     }
-    .content-wrapper.container{
-        width: 100%;
-    }
 /**page title**/
 .page-title {
-    padding-bottom: 30px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #f5f5f5;
     text-transform: capitalize;
+    margin-bottom: 40px;
 }
 .page-title .breadcrumb{
     padding: 0;
     margin: 0;
     background-color: transparent;
 }
-
-/****tiles*********/
-.tile{
-    box-shadow: 2px 1px rgba(0,0,0,0.2);
-    background-color: #DF3D82;
+.page-title h1{
+    text-transform: uppercase;
+    font-size: 20px;
 }
+/****tiles*********/
 .tile .tile-title{
     color:#fff;
     text-transform: capitalize;
-    background-color:rgba(0,0,0,0.1);
-    
+    background-color: rgba(255,255,255,0.1);
     padding: 3px 15px;
 }
 .tile-body{
     padding: 15px;
-     background-color: #DF3D82;
 }
 .tile-body i{
     font-size: 35px;
-    color: #fff;
+    color:#fff;
 }
 .tile-body h4{
-    color: #fff;
+    color:#fff;
     text-transform: uppercase;
     font-size: 35px;
     margin: 0px;
@@ -182,7 +184,7 @@ h6 {
 .tile-footer{
     padding: 4px 15px;
     color:#fff;
-    background-color: rgba(0,0,0,0.1);
+    background-color: rgba(255,255,255,0.1);
 }
 .tile-footer a{
     color:#fff;
@@ -211,19 +213,17 @@ h6 {
     position: relative;
 }
 .panel-default>.panel-heading {
-       color: #848c94;
-    background-color:#24262d;
-    border-color: transparent;
+    color: #333;
+    background-color: #eee;
+    border-color: #f5f5f5;
+}
+.panel-default>.panel-body{
+ background-color: #f5f5f5;
 }
 .panel-actions {
     right: 15px;
     position: absolute;
     top: 8px;
-}
-.panel{
-    background: transparent;
-    box-shadow: none;
-    -webkit-box-shadow: none;
 }
 .panel-actions a{
     color:#999;
@@ -263,8 +263,8 @@ h6 {
     display: block;
     padding: 10px 15px;
     margin-bottom: -1px;
-    background-color: transparent;
-    border: 1px solid rgba(255,255,255,0.1);
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
     border-radius: 0px;
     border-left-width: 0;
     border-right-width: 0px;
@@ -409,12 +409,12 @@ h6 {
     border: 0px;
     border-radius: 0;
     -webkit-border-radius: 0;
-    background-color: #DF3D82;
+    background-color: #0e96ec;
 }
 
 /****login register accounts***/
 .account{
-    background:  #2f323b;
+    background: #f7f7f7;
     padding-top: 150px;
 }
 .account-col{
@@ -423,7 +423,7 @@ h6 {
     text-align: center;
 }
 .account-col h1{
-    color:#aeaeae;
+    color:#000;
     font-weight: 800;
     text-transform: uppercase;
     text-shadow: 1px 1px rgba(0,0,0,0.1);
@@ -441,19 +441,21 @@ h6 {
     border-radius: 0px;
     box-shadow: none;
     -webkit-box-shadow: none;
+    background-color: rgba(255,255,255,0.6);
+    border: 1px solid #ddd;
 }
 .account-col .btn-primary{
     border: 0px;
     border-radius: 0;
     -webkit-border-radius: 0;
-    background-color: #DF3D82;
+    background-color: #0e96ec;
     margin-bottom: 20px;
 }
 .account-col a, .account-col p{
-    color: #848c94;
+    color:#333;
 }
 .account-col a:hover{
-    color:#DF3D82;
+    color:#0e96ec;
 }
 .account-col .btn-default{
     border:0px;
@@ -461,7 +463,7 @@ h6 {
     -webkit-border-radius: 0;
     background-color:transparent;
     margin-bottom: 20px;
-    color:#DF3D82;
+    color:#0e96ec;
 }
 .account-col .btn-default:hover{
     color:#999;
@@ -486,12 +488,12 @@ div.dataTables_filter label {
     float: right;
 }
 div.dataTables_filter label input{
-    border: 1px solid #ddd; 
+    border: 1px solid #ddd;
     padding: 0px 15px;
 }
 div.dataTables_filter label input:focus{
     outline: 0 !important;
-    border-color: #DF3D82;
+    border-color: #0e96ec;
 }
 div.dataTables_filter input {
     width: 16em;
@@ -542,11 +544,11 @@ table.dataTable th:active {
     outline: none;
 }
 .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover{
-    background-color: #DF3D82;
-    border-color: #DF3D82;
+    background-color: #0e96ec;
+    border-color: #0e96ec;
 }
 .pagination>li>a, .pagination>li>span{
-    color:#DF3D82;
+    color:#0e96ec;
 }
 /************
 
@@ -580,7 +582,7 @@ body.error{
 }
 .show-grid span {
     display: block;
-    background: #222;
+    background: #ddd;
     text-align: center;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
@@ -606,7 +608,7 @@ ul.stylish-lists {
 }
 .fontawesome-icon-list .fa-hover a {
     display: block;
-    color:  #848c94;
+    color: #222222;
     line-height: 32px;
     height: 32px;
     padding-left: 10px;
@@ -622,16 +624,16 @@ ul.stylish-lists {
 }
 .wysihtml5-toolbar .btn-default.active,.wysihtml5-toolbar .btn-default:active,.wysihtml5-toolbar .open>.dropdown-toggle.btn-default {
     color: #fff;
-    background-color:  #DF3D82;
-    border-color:  #DF3D82;
+    background-color:  #0e96ec;
+    border-color:  #0e96ec;
 }
 ul.wysihtml5-toolbar a.btn.wysihtml5-command-active {
     background-image: none;
     -webkit-box-shadow:none;
     -moz-box-shadow: none;
     box-shadow: none;
-   background-color:  #DF3D82;
-    border-color:  #DF3D82;
+   background-color:  #0e96ec;
+    border-color:  #0e96ec;
     outline: 0;
 }
 
@@ -643,7 +645,6 @@ ul.wysihtml5-toolbar a.btn.wysihtml5-command-active {
     border-radius: 4px;
     -webkit-border-radius: 4px;
 }
-
 .btn-primary,.btn-info,.btn-success,.btn-danger,.btn-warning{
     border: 0px;
     -webkit-border-radius: 4px;
@@ -653,18 +654,8 @@ ul.wysihtml5-toolbar a.btn.wysihtml5-command-active {
       -webkit-border-radius: 4px;
     border-radius:4px;
 }
-.form-control,.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control{
-    border-radius: 0px;
-    box-shadow: none;
-    border: 1px solid rgba(255,255,255,0.1);
-    color:#fff;
-    background-color: transparent;
-}
 .btn-primary{
-    background-color: #DF3D82;
-}
-.btn-primary:hover{
-    background-color: #444;
+    background-color: #0e96ec;
 }
 .btn-3d{
         border-bottom: 3px solid rgba(0,0,0,.15);
@@ -682,25 +673,21 @@ ul.wysihtml5-toolbar a.btn.wysihtml5-command-active {
 .btn-circle.btn-lg{
   width: 80px;
     height: 80px;
-    line-height: 80px;  
+    line-height: 80px;
     font-size: 40px;
 }
 .btn-circle.btn-xs{
   width: 40px;
     height: 40px;
-    line-height: 40px;  
+    line-height: 40px;
     font-size: 20px;
 }
 .hr-line-dashed {
-    border-top: 1px dashed #848c94;
+    border-top: 1px dashed #e7eaec;
     color: #ffffff;
-    background-color: #848c94;
+    background-color: #ffffff;
     height: 1px;
     margin: 20px 0;
-}
-.input-group-addon{
-    background-color: #848c94;
-    border-color: #848c94;
 }
 .m-b {
     margin-bottom: 15px;
@@ -720,10 +707,10 @@ ul.wysihtml5-toolbar a.btn.wysihtml5-command-active {
     text-align: center;
     position: relative;
     margin-bottom: 10px;
-    
+
 }
 .mail-btn li:hover{
-    background-color:#DF3D82;
+    background-color:#0e96ec;
     color:#fff;
 }
 .mail-btn li i{
@@ -757,10 +744,10 @@ Pricing tables
     -webkit-transition: all 0.3s;
     text-align: center;
     padding-bottom: 20px;
-    border: 1px solid rgba(255,255,255,0.1);
+    border: 1px solid #ddd;
 }
 .price-box.popular h3{
-    background-color: #DF3D82;
+    background-color: #0e96ec;
     color:#fff;
 }
 .price-box:hover{
@@ -768,8 +755,8 @@ Pricing tables
     -webit-box-shadow: none;
 }
 .price-box h3{
-    color:#fff;
-    background-color: transparent;
+    color:#000;
+    background-color: #f5f5f5;
     text-transform: uppercase;
     padding: 20px;
     margin-bottom: 0px;
@@ -778,7 +765,7 @@ Pricing tables
 .price-box h4{
     font-size: 40px;
     font-weight: 700;
-    background-color:#222;
+    background-color: #fff;
     padding: 10px;
 }
 .price-box h4 sup, .price-box h4 sub{
@@ -798,28 +785,28 @@ Pricing tables
 .price-box h4 span{
     display: block;
     font-size: 13px;
-    color:#DF3D82;
+    color:#0e96ec;
     font-weight: 600;
     margin-top: 5px;
 }
 .price-box ul{
     text-align: left;
-    
+
 }
 .price-box ul li{
     padding: 8px 25px;
     font-weight: 400;
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid #eee;
 }
 .price-box ul li i{
-    color:#DF3D82;
+    color:#0e96ec;
     margin-right: 10px;
 }
 .price-box p{
     padding: 20px 25px;
     font-size: 12px;
     line-height: 18px;
-    
+
 }
 
 /**dark price**/
@@ -831,7 +818,7 @@ Pricing tables
     background-color: #344154;
 }
 .price-box.dark.popular h3{
-    background-color: #DF3D82;
+    background-color: #0e96ec;
 }
 .price-box.dark ul li{
     border-bottom-color:rgba(255,255,255,0.1);
@@ -842,7 +829,7 @@ Pricing tables
 }
 .contact-details h3{
     font-weight: 600;
-    color: #848c94;
+    color:#000;
 }
 .socials li{
     padding: 0px;
@@ -852,7 +839,7 @@ Pricing tables
     height: 32px;
     line-height: 32px;
     text-align: center;
-    background-color: #222;
+    background-color: #999;
     border-radius: 2px;
     -webkit-border-radius: 2px;
     color:#fff;
@@ -861,7 +848,7 @@ Pricing tables
 }
 .socials li a:hover{
     color:#fff;
-    background-color: #DF3D82;
+    background-color: #0e96ec;
 }
 .jqstooltip{
     box-sizing: content-box;
@@ -882,69 +869,29 @@ Pricing tables
 .form-control{
     box-shadow: none;
     -webkit-box-shadow: none;
-    
+
 }
 /*************bootstrap wizard form css****/
 .bwizard-steps li a{
     display: block;
     padding: 8px 20px;
-    background-color: #222;
-    color:#fff;
+    background-color: #f5f5f5;
+    color:#999;
 }
 .bwizard-steps li.completed a{
     background-color: #333;
     color:#fff;
 }
 .bwizard-steps li.active a{
-    background-color: #DF3D82;
+    background-color: #777;
     color:#fff;
-}
-.bwizard-steps li.completed a{
-    background-color: #DF3D82;
-    color:#fff;
-}
-.pager li>a, .pager li>span,.pager .disabled>a, .pager .disabled>a:focus, .pager .disabled>a:hover, .pager .disabled>span {
-    display: inline-block;
-    padding: 5px 14px;
-    background-color: #333;
-    border: 1px solid #444;
-    border-radius: 15px;
-}
-.pager li>a:hover, .pager li>span:hover,.pager li>a:focus, .pager li>span:focus{
-    background-color:  #df3d82;
 }
 .bwizard .control-label{
     font-size: 12px;
 }
-.table-striped>tbody>tr:nth-of-type(odd) {
-    background-color: #222;
-}
-.popover-title{
-        background-color: #111;
-    border-bottom: 1px solid #111;
-}
-.popover{
-    background: #222;
-}
-.popover.top>.arrow:after{
-    border-top-color: #333;
-}
-.pagination>li>a, .pagination>li>span {
-    background-color: transparent;
-    border: 1px solid rgba(255,255,255,0.1);
-}
-.fc-unthemed .fc-today {
-    background: #df3d82;
-    color: #fff;
-}
-.pagination>.disabled>a, .pagination>.disabled>a:focus, .pagination>.disabled>a:hover, .pagination>.disabled>span, .pagination>.disabled>span:focus, .pagination>.disabled>span:hover {
-    
-    background-color: #222;
-    border-color: #555;
-}
 .bwizard .has-error .form-control{
     box-shadow: none;
-    -webkit-box-shadow: none;  
+    -webkit-box-shadow: none;
 }
 .bwizard .help-block{
     text-align: left;
@@ -958,7 +905,7 @@ Pricing tables
     -webkit-border-radius: 30px;
 }
 .bwizard .progress-bar{
-    background-color: #DF3D82;
+    background-color: #0e96ec;
 }
 
 .blog-post{
@@ -987,29 +934,26 @@ Pricing tables
     margin-right: 0px;
 }
 .post-header{
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    border-bottom: 1px solid #ddd;
     padding-bottom: 20px;
     margin-bottom: 20px;
 }
 .post-header h2{
-    color:#aeaeae;
+    color:#000;
     font-weight: 400;
     font-size: 30px;
 }
 .blog-single-post .panel .panel-heading{
     font-size: 25px;
-    color:#aeaeae;
+    color:#000;
 }
 .sidebar-widget{
     padding-bottom: 30px;
 }
 .sidebar-widget h4{
-    color:#aeaeae;
+    color:#000;
     text-transform: uppercase;
     font-weight: 700;
-}
-hr{
-    border-top-color:  rgba(255,255,255,0.1);
 }
 .tag-list a{
     display: inline-block;
@@ -1024,8 +968,8 @@ hr{
     -webkit-border-radius: 2px;
 }
 .tag-list a:hover{
-    color:#DF3D82;
-    border-color: #DF3D82;
+    color:#0e96ec;
+    border-color: #0e96ec;
 }
 .tabs-container .tabs-left > .nav-tabs {
     float: left;
@@ -1035,11 +979,11 @@ hr{
     float: none;
 }
 .tabs-container .tabs-left > .nav-tabs .active > a{
-        border-color: #DF3D82 transparent #DF3D82 #DF3D82;
+        border-color: #e7eaec transparent #e7eaec #e7eaec;
 }
 .tabs-container .tabs-left .tab-content{
     overflow: hidden;
-    background-color:transparent;
+    background-color:#fff
 }
 
 .tabs-container .tabs-right > .nav-tabs {
@@ -1049,37 +993,20 @@ hr{
 .tabs-container .tabs-right > .nav-tabs > li{
     float: none;
 }
-.nav-tabs>li>a:hover {
-    border-color: #333 #333 #333;
-}
 .tabs-container .tabs-right > .nav-tabs .active > a{
-        border-color: #DF3D82 #DF3D82 #DF3D82 transparent;
+        border-color: #e7eaec #e7eaec #e7eaec transparent;
 }
 .tabs-container .tabs-right .tab-content{
     overflow: hidden;
-    background-color:transparent;
-}
-.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
-    color: #fff;
-    cursor: default;
-    background-color:  #DF3D82;
-    border: 1px solid rgba(255,255,255,0.1);
-    border-bottom-color: transparent;
-}
-.nav>li>a:focus, .nav>li>a:hover {
-    text-decoration: none;
-    background-color: transparent;
-}
-.nav-tabs {
-    border-bottom: 1px solid rgba(255,255,255,0.1);
+    background-color:#fff
 }
 .buttons-column{
     padding: 20px;
-    background-color: transparent;
+    background-color: #fff;
     margin-bottom: 40px;
 }
 .buttons-column h3{
-    color:#aeaeae;
+    color:#000;
     font-weight: 300;
     font-size: 20px;
     margin-bottom: 25px
@@ -1089,37 +1016,25 @@ hr{
     margin: 5px;
 }
 
-.btn-default{
-    background-color:  #848c94;
-    color:#fff;
-    border-color: #848c94;
-}
-.btn-default:hover,.btn-default:focus{
-    color:#fff;
-    background:  #DF3D82;
-    border-color:#DF3D82;
-}
-.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
-    border-color: #555;
-}
+
 /****mail view***/
 .mail-side-bar{
     padding: 15px;
-    background-color: #222;
+    background-color: #fff;
 }
 .mail-side-bar ul li a{
-    color: #848c94;
+    color:#333;
     font-size: 13px;
     font-weight: 500;
 }
 .mail-side-bar ul li a:hover{
-    color: #df3d82;
+    color:#000;
 }
 .mail-side-bar ul li.lables{
     text-transform: uppercase;
     font-weight: 400;
     padding-bottom: 10px;
-    color:#848c94;
+    color:#999;
 }
 .mail-side-bar ul.tags li.lables{
   display: block;
@@ -1130,29 +1045,25 @@ hr{
 .mail-side-bar ul.tags li a{
     padding: 2px 12px;
     font-size: 12px;
-    background-color: #222;
+    background-color: #f5f5f5;
     display: block;
     margin:3px;
-    border:1px solid #333;
-}
-.mail-side-bar ul.tags li a:hover{
-    color:#fff;
-    background-color:  #df3d82;
+    border:1px solid #ddd;
 }
 .mail-box-header{
-    background-color: #222;
+    background-color: #fff;
     padding: 15px;
       margin-bottom: 20px;
 }
 .mail-box{
     padding: 15px;
-    background-color: #222;
-  
+    background-color: #fff;
+
 }
 .file {
-    border: 1px solid #333;
+    border: 1px solid #e7eaec;
     padding: 0;
-    background-color: #222;
+    background-color: #ffffff;
     position: relative;
     margin-bottom: 20px;
     margin-right: 20px;
@@ -1171,8 +1082,8 @@ hr{
 }
 .file .file-name {
     padding: 10px;
-    background-color: #111;
-    border-top: 1px solid  #000;
+    background-color: #f8f8f8;
+    border-top: 1px solid #e7eaec;
 }
 .file-name small {
     color: #676a6c;
@@ -1192,7 +1103,7 @@ hr{
 @media(max-width:768px){
     .gallery-col a{
         width: 50%;
-    } 
+    }
 }
 
 
@@ -1204,18 +1115,13 @@ hr{
     font-size: 15px;
     border-radius: 0px;
     -webkit-border-radius: 0px;
-    background-color: #222;
-    color:#fff;
+    background-color: #fff;
+    color:#333;
     border:0px;
-    border-left: 2px solid #DF3D82;
+    border-left: 2px solid #0e96ec;
 }
 .fc-event:hover{
-    color:#fff;
-}
-.blog-post {
-    padding: 0px;
-    background-color: #222;
-    border-bottom: 2px solid rgba(255,255,255,0.1);
+    color:#333;
 }
 .note-codable{
     display: none;
@@ -1227,24 +1133,20 @@ hr{
     padding: 20px 0;
 }
 .note-editable:focus{
-    outline:0 !important; 
+    outline:0 !important;
 }
 .compose_form .form-control{
-    border: 1px solid rgba(255,255,255,0.1);
-    color:#fff;
+    border: 0px;
     -webkit-border-radius: 0px;
     border-radius: 0px;
     box-shadow: none;
     -webkit-box-shadow: none;
     min-height: 45px;
-    background-color: transparent;
 }
-.table-hover>tbody>tr:hover {
-    background-color: #222;
-}
+
 /***slider***/
 .slider-selection {
-    background-color: #DF3D82;
+    background-color: #0e96ec;
     background-image: none;
 }
 .slider-track {
@@ -1253,7 +1155,7 @@ hr{
 }
 .table-commerce{
     padding: 15px;
-    background-color: #222;
+    background-color: #fff;
 }
 .label-purple{
     background-color: #6a67fc;
@@ -1264,19 +1166,19 @@ hr{
 
 .order-view-box{
     padding: 15px;
-    background-color:transparent;
+    background-color: #fff;
     margin-bottom: 30px;
 }
 .order-view-box h3{
-    color: #848c94;
+    color:#000;
     font-weight: 700;
 }
 .profile-overview{
     padding: 15px;
-    background-color: transparent;
+    background-color: #fff;
 }
 .profile-overview h3{
-    color: #848c94;
+    color:#000;
     margin-top: 10px;
     font-size: 20px;
     font-weight: bold;
@@ -1296,20 +1198,16 @@ hr{
 }
 .profile-edit{
     padding: 15px;
-    background-color: transparent;
+    background-color: #fff;
 }
 .sale-state-box{
     padding: 15px;
-    background-color: #DF3D82;
+    background-color: #0e96ec;
     color:#fff;
     border-radius: 3px;
     -webkit-border-radius: 3px;
     margin-top: 15px;
-    box-shadow: 3px 4px 5px rgba(255,255,255,0.1);
-}
-.panel-footer{
-    background: transparent;
-    border-top-color: rgba(255,255,255,0.1);
+    box-shadow: 3px 4px 5px rgba(0,0,0,0.1);
 }
 .sale-state-box h3{
     font-size: 25px;
@@ -1318,18 +1216,18 @@ hr{
 }
 .profile-states{
     padding: 15px;
-    background-color: transparent;
+    background-color: #fff;
     margin-bottom: 30px;
 }
 .recent-activities{
     padding: 15px;
-    background-color:transparent;
+    background-color: #fff;
 }
 .recent-activities .media img{
     height: 40px;
 }
 .recent-activities .media .media-heading{
-    color: #df3d82;
+    color:#000;
     margin-bottom: 0px;
 }
 .recent-activities .media-body{
@@ -1340,9 +1238,18 @@ hr{
 }
 .user-col{
     padding: 15px;
-    background-color:#222;
+    background-color: #fff;
     margin-bottom: 30px;
 }
-.jvectormap-container{
-    background-color: transparent !important;
+.sweet-buttons button{
+    margin: 5px;
+}
+
+footer{
+      position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 20px 0;
+    background-color:  #344154;
+    color:#fff;
 }

@@ -13,7 +13,6 @@ gem 'protected_attributes'
 gem 'devise', :git => 'https://github.com/plataformatec/devise.git'
 gem 'devise-encryptable'
 gem 'therubyracer'
-gem 'bootstrap-sass', :git => 'https://github.com/twbs/bootstrap-sass.git'
 gem 'hirb'
 gem 'spring'
 
@@ -33,14 +32,15 @@ end
 
 # Gems used only for assets and not required
 # in production environments by default.
-group :assets do
-  gem 'sass-rails'#, :git => 'https://github.com/rails/sass-rails.git'
-  gem 'coffee-rails'#, :git => 'https://github.com/spastorino/coffee-rails.git'
-  gem 'uglifier'#, :git => 'https://github.com/lautis/uglifier.git'
-end
 
-gem 'jquery-rails', :git => 'https://github.com/rails/jquery-rails.git'
-gem 'jquery-ui-rails', :git => 'https://github.com/joliss/jquery-ui-rails.git'
+gem 'bootstrap-sass', '~> 3.3.6'
+gem 'font-awesome-sass'
+gem 'sass-rails', '>= 3.2'
+gem 'coffee-rails'#, :git => 'https://github.com/spastorino/coffee-rails.git'
+gem 'uglifier'#, :git => 'https://github.com/lautis/uglifier.git'
+
+gem 'jquery-rails'
+gem 'jquery-ui-rails'
 
 # This gem lends a helper to generate asset path compatible URLs in JavaScript
 gem 'js_assets', :git => 'https://github.com/kavkaz/js_assets.git'

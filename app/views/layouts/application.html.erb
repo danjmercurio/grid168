@@ -5,34 +5,17 @@
     <meta http-equiv="X-UI-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	  <title>Grid168</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,100,300,500">
-    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-
     <%= stylesheet_link_tag 'application' %>
-    <%= stylesheet_link_tag 'jquery-ui' %>
-    <%= stylesheet_link_tag 'style' %>
     <%= stylesheet_link_tag 'waves.min' %>
-    <%= stylesheet_link_tag 'menu-light' %>
+    <%= stylesheet_link_tag 'menu' %>
+    <%= stylesheet_link_tag 'style' %>
     <%= stylesheet_link_tag 'notis' %>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-
-
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
-
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_include_tag 'metisMenu.min' %>
-    <%= javascript_include_tag 'jquery-jvectormap-1.2.2.min' %>
-    <%= javascript_include_tag 'jquery.flot' %>
-    <%= javascript_include_tag 'pace.min' %>
-    <%= javascript_include_tag 'waves.min' %>
-    <%= javascript_include_tag 'custom' %>
-
     <!-- Favicon and touch icons -->
     <%= favicon_link_tag %>
 	  <%= csrf_meta_tags %>
@@ -41,14 +24,12 @@
   <% if controller_name != 'errors' %>
       <% if signed_in? %>
           <%= render :partial => 'layouts/menu' %>
-          <section class="page">
-            <%= render :partial => 'layouts/sidebar' %>
-            <div id="wrapper">
-              <div class="content-wrapper container">
+          <div class="clearfix"></div>
+            <%= render :partial => 'layouts/submenu' %>
+              <div class="container page-wrapper">
                 <%= yield %>
               </div>
-            </div>
-          </section>
+          <%= render :partial => 'layouts/footer' %>
       <% else %>
           <%= yield %>
       <% end %>
@@ -69,5 +50,10 @@
   <% else %>
       <%= yield %>
   <% end %>
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'metisMenu.min' %>
+    <%= javascript_include_tag 'pace.min' %>
+    <%= javascript_include_tag 'waves.min' %>
+    <%= javascript_include_tag 'custom' %>
   </body>
 </html>

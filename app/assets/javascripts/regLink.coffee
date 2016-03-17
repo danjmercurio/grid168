@@ -5,7 +5,6 @@ window.appendRegisterLink = ->
   anchor = document.createElement 'a'
   anchor.setAttribute('href', '/users/sign_up')
   anchor.innerHTML = 'register?'
-  $(anchor).css('color', '#DF3D82')
 
   paragraph = document.createElement 'p'
   paragraph.innerText = 'Login failed. Perhaps you need to '
