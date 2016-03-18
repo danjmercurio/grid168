@@ -26,7 +26,7 @@ class Outlet < ActiveRecord::Base
 	end
 
 
-	attr_accessible :name, :first_name, :last_name, :phone_number, :description, :subs, :dma_id, :user_id, :outlet_type_id, :time_zone
+	attr_accessible :name, :first_name, :last_name, :phone_number, :description, :subs, :dma_id, :user_id, :outlet_type_id, :time_zone, :programming, :over_air, :total_homes
 
 	validates :name, :first_name, :last_name, :phone_number, :dma_id, :subs, :outlet_type, :presence => true
 

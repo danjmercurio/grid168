@@ -47,6 +47,21 @@
           </div>
 
           <div class="form-group">
+            <%= f.label :programming, :class => 'col-lg-2 control-label' %><br/>
+            <div class="col-lg-10"><%= f.text_field :programming, :class => 'form-control' %></div>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :total_homes, :class => 'col-lg-2 control-label' %><br/>
+            <div class="col-lg-10"><%= f.text_field :total_homes, :class => 'form-control' %></div>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :over_air, :class => 'col-lg-2 control-label' %><br/>
+            <div class="col-lg-10"><%= f.text_field :over_air, :class => 'form-control' %></div>
+          </div>
+
+          <div class="form-group">
             <%= f.label :dma, "DMA", :class => 'col-lg-2 col-md-3 control-label' %>
             <div class="col-lg-10 col-md-9">
               <%= select("outlet", "dma_id", Dma.order(:name).collect {|d| [ d.name, d.id ] }, {:include_blank => 'None', :class => 'form-control'}) %>

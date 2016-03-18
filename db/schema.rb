@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318201202) do
+ActiveRecord::Schema.define(version: 20160318213534) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",              limit: 255
@@ -94,6 +94,9 @@ ActiveRecord::Schema.define(version: 20160318201202) do
     t.string   "phone_number",   limit: 255
     t.string   "time_zone",      limit: 255
     t.integer  "outlet_type_id", limit: 4
+    t.string   "programming",    limit: 255
+    t.integer  "over_air",       limit: 4
+    t.integer  "total_homes",    limit: 4
   end
 
   add_index "outlets", ["name"], name: "index_outlets_on_name", unique: true, using: :btree

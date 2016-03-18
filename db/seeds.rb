@@ -44,24 +44,27 @@ puts "Create outlet sample.."
 outlet1 = admin.outlets.create name: "WAST",
 										subs: 50000,
 										dma_id: 1,
-										outlet_type: 2,
+										outlet_type_id: 2,
 										first_name: "WAST",
 										last_name: "TV",
 										phone_number: "123455677"
 outlet2 = admin.outlets.create name: "WABC",
 										subs: 75000,
 										dma_id: 2,
-										outlet_type: 3,
+										outlet_type_id: 3,
 										first_name: "WABC",
 										last_name: "TV",
 										phone_number: "123455677"
 outlet3 = test.outlets.create name: "WACE",
 										subs: 100000,
 										dma_id: 3,
-										outlet_type: 1,
+										outlet_type_id: 1,
 										first_name: "WAST",
 										last_name: "TV",
 										phone_number: "123455677"
+outlet1.save
+outlet2.save
+outlet3.save
 
 puts "Create programmer sample.."
 programmer1 = admin.programmers.create name: "Gem Shopping",
