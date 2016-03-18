@@ -5,6 +5,14 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+puts "Creating Outlet Type controlled vocabulary"
+['Broadcast Network','Cable Network','Cable System',
+'Full Power TV Station', 'Interconnect', 'Low Power - Cable',
+'Sports Network', 'Subchannel Network', 'Telco'].each do |type|
+	OutletType.create(:name => type)
+end
+
+
 puts "Create Sub channel type data.."
 %w(DT1 DT2 DT3 DT4 DT5).each do |type|
 	SubChannelType.create! name: type

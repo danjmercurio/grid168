@@ -1,13 +1,13 @@
 module OutletsHelper
 
-	def outlet_types
-		[
-			["Broadcast", 1],
-			["Cable system", 2],
-			["Network", 3],
-			["Sub channel", 4]
-		]
-	end #end outlet_types
+	# def outlet_types
+	# 	[
+	# 		["Broadcast", 1],
+	# 		["Cable system", 2],
+	# 		["Network", 3],
+	# 		["Sub channel", 4]
+	# 	]
+	# end #end outlet_types
 
 	def get_type(index)
 		result = ""

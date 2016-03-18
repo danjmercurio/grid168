@@ -19,16 +19,18 @@
 class Outlet < ActiveRecord::Base
 	belongs_to :user
 	belongs_to :dma
+  belongs_to :outlet_type
 	with_options :dependent => :destroy do |o|
 		o.has_many :offers
 		o.has_many :sub_channels
 	end
 
-	attr_accessible :name, :first_name, :last_name, :phone_number, :description, :subs, :dma_id, :user_id, :outlet_type
+
+	attr_accessible :name, :first_name, :last_name, :phone_number, :description, :subs, :dma_id, :user_id, :outlet_type_id, :time_zone
 
 	validates :name, :first_name, :last_name, :phone_number, :dma_id, :subs, :outlet_type, :presence => true
 
-	validates :name, uniqueness: { case_sensitive: false, message: "This outlet name's already existed" }
+	validates :name, uniqueness: { case_sensitive: false, message: "This outlet name already exists" }
 
 	def count_offer
 		self.offers.count
@@ -72,7 +74,7 @@ class Outlet < ActiveRecord::Base
 		bid_offers_by_type = []
 		for type_number in 1..3 do
 			bid_offers_by_type << Outlet.count_bid_offers_by_type(type_number)
-		end 
+		end
 		bid_offers_by_type << SubChannelOffer.sum(:yearly_offer).to_f.round(2)
 	end
 

@@ -10,6 +10,7 @@ class OutletsController < ApplicationController
 	end #end show action
 
 	def new
+		@types = OutletType.all
 		@outlet = current_user.outlets.build
 
 	end #end new action
@@ -20,7 +21,10 @@ class OutletsController < ApplicationController
 		else
 			count = params[:count_sub_channel].to_i
 			params[:outlet][:subs] = remove_comma(params[:outlet][:subs]) unless params[:outlet][:subs].blank?
-			@outlet = current_user.outlets.build(params[:outlet])
+
+      @outlet = Outlet.new(params[:outlet])
+
+
 
 			respond_to do |format|
 				if @outlet.save
