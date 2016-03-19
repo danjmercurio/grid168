@@ -51,10 +51,12 @@
           </div>
           <div class="form-group">
             <div class="col-sm-4 col-sm-offset-2">
-            <%= button_tag(type: 'submit', class: "btn btn-primary", style: 'margin-top: 20px;') do %>
-              <i class="icon-ok icon-white"></i> Save
+            <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+              <i class="fa fa-save"></i> Save
             <% end %>
-            <a href="<%= url_for(root_url) %>"><p>Cancel</p></a>
+            <%= link_to programmers_path, :method => :get, :class => 'btn cancel' do %>
+              <i class="fa fa-remove"></i> Cancel
+            <% end %>
         </div>
       <% end %>
       </div>

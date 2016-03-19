@@ -48,7 +48,7 @@
 					<td><%= link_to programmer.name, programmer %></td>
 					<td><%= number_to_currency offer.dollar_amount %></td>
 					<td><%= link_to outlet.name, outlet %></td>
-					<td><%= get_type outlet.outlet_type %></td>
+					<td><%= outlet.outlet_type.name %></td>
 					<td><%= number_with_delimiter outlet.subs %></td>
 					<td><%= offer.total_hours %></td>
 					<td><%= outlet.dma.name rescue "None" %></td>
@@ -88,65 +88,6 @@
         </div>
       </div>
     </div>
+    <%= button_to('New Programmer', new_programmer_path, :method => :get, :class => 'btn btn-primary') %>
   </div>
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h1>My Deals</h1>
-
-<table id="table_my_deals" class="tablesorter">
-	<thead>
-		<tr>
-
-		</tr>
-	</thead>
-	<tbody>
-
-	</tbody>
-</table>
-
-<br />
-
-<%= link_to 'New Programmer', new_programmer_path %>
