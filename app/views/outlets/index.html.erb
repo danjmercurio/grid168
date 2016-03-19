@@ -46,9 +46,14 @@
                   <td><%= outlet.name %></td>
                   <td><%= outlet.offers.count %></td>
                   <td><%= number_with_delimiter outlet.subs %></td>
+                  <td><%= outlet.over_air %></td>
+                  <td><%= outlet.total_homes %></td>
                   <td><%= outlet.dma.name rescue "None" %></td>
+                  <td><%= outlet.outlet_type.name %></td>
                   <td><%= outlet.created_at.strftime "%m/%d/%Y" %></td>
+                  <td><%= outlet.user.email %></td>
                   <td>
+                    <%= link_to 'new offer', new_outlet_offer_path(outlet) %> |
                     <%= link_to "show", outlet_path(outlet) %> |
                     <%= link_to "edit", edit_outlet_path(outlet) %> |
                     <%= link_to "delete", outlet, :confirm => "Are you sure?", :method => :delete %>

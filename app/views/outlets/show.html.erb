@@ -1,31 +1,112 @@
-<div id="outlet_info">
-		
-	<span class="name"><%= @outlet.name %></span>
-	<span class="dma">DMA:<%= @outlet.dma.name rescue "None" %></span>
-	<span class="subs"><%= number_with_delimiter @outlet.subs %> subscribers</span>
-
-	<% if current_user.id == @user_id %>
-		| <%= link_to "Edit", edit_outlet_path(@outlet) %> |
-		<%= link_to 'Destroy', @outlet, :confirm => 'Are you sure?', :method => :delete %>
-	<% end %>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="page-title">
+      <h1><%= @outlet.name %>
+        <small></small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i></a></li>
+        <li>Media Outlets</li>
+        <li class="active">Show Media Outlet</li>
+      </ol>
+    </div>
+  </div>
 </div>
+<div class="row">
+	<div class="col-sm-6 col-md-3 margin-b-30">
+		<div class="tile red">
+                        <div class="tile-title clearfix">
+                            Total Subscribers
+                            <span class="pull-right"></span>
+                        </div><!--.tile-title-->
+                        <div class="tile-body clearfix">
+                            <i class="fa fa-cart-plus"></i>
+                            <h4 class="pull-right"><%= number_with_delimiter @outlet.subs %></h4>
+                        </div><!--.tile-body-->
+                        <div class="tile-footer">
+                           &nbsp;
+                        </div><!--.tile footer-->
+                    </div><!-- .tile-->
 
-<table id="table_outlet_show" class="tablesorter">
-	<thead>
-		<tr>
-			<th>Programmer</th>
-			<th>Dollar amount</th>
-			<th>Created at</th>
-			<th>Action</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @outlet.offers.each do |offer| %>
+	</div><!-- .col -->
+	<div class="col-sm-6 col-md-3 margin-b-30">
+                    <div class="tile green">
+                        <div class="tile-title clearfix">
+            Market
+            <span class="pull-right"></span>
+        </div><!--.tile-title-->
+        <div class="tile-body clearfix">
+            <i class="fa fa-credit-card"></i>
+            <h4 class="pull-right"><font style="font-size:small;"><%= @outlet.dma.name %></font></h4>
+        </div><!--.tile-body-->
+        <div class="tile-footer">
+            &nbsp;
+        </div><!--.tile footer-->
+    </div><!-- .tile-->
+</div><!--end .col-->
+
+<div class="col-sm-6 col-md-3 margin-b-30">
+    <div class="tile blue">
+        <div class="tile-title clearfix">
+            OTA Homes
+            <span class="pull-right"></span>
+        </div><!--.tile-title-->
+        <div class="tile-body clearfix">
+            <i class="fa fa-users"></i>
+            <h4 class="pull-right"><%= @outlet.over_air %></h4>
+        </div><!--.tile-body-->
+        <div class="tile-footer">
+            &nbsp;
+        </div><!--.tile footer-->
+    </div><!-- .tile-->
+</div><!--end .col-->
+<div class="col-sm-6 col-md-3 margin-b-30">
+                    <div class="tile purple">
+                        <div class="tile-title clearfix">
+                            Total homes
+                            <span class="pull-right"></span>
+                        </div><!--.tile-title-->
+                        <div class="tile-body clearfix">
+                            <i class="fa fa-cart-plus"></i>
+                            <h4 class="pull-right"><%= number_with_delimiter @outlet.total_homes %></h4>
+                        </div><!--.tile-body-->
+                        <div class="tile-footer">
+                        	&nbsp;
+                        </div><!--.tile footer-->
+                    </div><!-- .tile-->
+                </div><!--end .col-->
+
+
+
+</div>
+<div class="row">
+                        <div class="col-md-12">
+                            <div class="panel panel-default margin-b-30 ">
+                                <!-- Start .panel -->
+                                <div class="panel-heading">
+                                    <h4 class="panel-title"> Offers</h4>
+                                    <div class="panel-actions">
+                                        <a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
+                                        <a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
+                                    </div>
+                                </div>
+                                <div class="panel-body">
+                                    <table class="table table-striped tablesorter">
+                                        <thead>
+                                            <tr>
+                                                <th>Programmer</th>
+                                                <th>Dollar Amount</th>
+                                                <th>Created At</th>
+                                                <th>Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                        			<% @outlet.offers.each do |offer| %>
 			<% offer.programmers.each do |programmer| %>
 				<tr>
 					<td><%= programmer.name %></td>
 					<td><%= number_to_currency offer.dollar_amount %></td>
-					<td><%= display_date offer.created_at %></td>
+					<td><%= offer.created_at %></td>
 					<td>
 						<% if (current_user.id == offer.user_id) || current_user.admin? %>
 							<%= link_to "Edit", edit_outlet_offer_path(@outlet, offer) %> |
@@ -56,23 +137,23 @@
 			<% end %><!-- end sub offer -->
 		<% end %><!-- end if contain sub offer -->
 	</tbody>
-</table>
 
-<h1>Outlet info</h1>
-<div id='outlet_sub_channel'>
-	<div id='outlet'>
-		<div id='outlet_name'><%= @outlet.name %></div>
-		<div id='outlet_dma'><%= @outlet.dma.name rescue "None" %></div>
-		<div id='outlet_subs'><%=  number_with_delimiter @outlet.subs %></div>
-		<div id='outlet_action'>
-			<%= link_to "New offer", new_outlet_offer_path(@outlet) %>
-			<% if (current_user.id == @user_id) || current_user.admin? %>
-				| <%= link_to "Edit", edit_outlet_path(@outlet) %> |
-				<%= link_to "Destroy", @outlet, method: :delete, confirm: "Are you sure?" %>
-			<% end %>
-		</div>
-		<div class='clr'>&nbsp;</div>
-	</div>
+
+                </table>
+            </div>
+        </div><!-- End .panel -->
+
+    </div><!--end .col-->
+</div>
+
+
+<div id="actions">
+	<%= button_to "Edit", edit_outlet_path(@outlet), :class => 'btn btn-primary', :method => :get %>
+	<%= button_to 'Delete', @outlet, :confirm => 'Are you sure?', :method => :delete, :class => 'btn' %>
+	<%= button_to 'New Offer', new_outlet_offer_path(@outlet), :class => 'btn' %>
+</div>
+
+<!-- <div id='outlet_sub_channel'>
 	<div id='sub_channels'>
 		<% @outlet.sub_channels.each do |sub_channel| %>
 			<div class='sub_channel'>
@@ -92,3 +173,4 @@
 		<% end %>
 	</div>
 </div>
+ -->

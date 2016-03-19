@@ -10,3 +10,9 @@
 @import "jquery-ui";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+div#actions {
+  display:flex;
+}
+div#actions * {
+  margin-left: 3px;
+}
