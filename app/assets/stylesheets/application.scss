@@ -8,8 +8,12 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "jquery-ui";
+@import "jquery-tablesorter/theme.bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "select2";
+@import "select2-bootstrap";
+
 div#actions {
   display:flex;
 }

@@ -10,6 +10,13 @@ GIT
       roxml (>= 1.0)
 
 GIT
+  remote: https://github.com/argerim/select2-rails.git
+  revision: f154454b6876af605013910a00fa1cba0ac5334c
+  specs:
+    select2-rails (4.0.1.1)
+      thor (~> 0.14)
+
+GIT
   remote: https://github.com/bigtunacan/rails-jquery-autocomplete.git
   revision: 0aa654c189ec6c741cc9a2c59ee90dd19ccaf0d1
   specs:
@@ -251,6 +258,7 @@ DEPENDENCIES
   rails_12factor
   rubyzoho!
   sass-rails (>= 3.2)
+  select2-rails!
   spring
   turn
   uglifier

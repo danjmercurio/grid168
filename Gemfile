@@ -22,7 +22,8 @@ gem 'jquery-tablesorter', :git => 'https://github.com/themilkman/jquery-tablesor
 gem 'rails-jquery-autocomplete', :git => 'https://github.com/bigtunacan/rails-jquery-autocomplete.git'
 # This gem lends a helper to generate asset path compatible URLs in JavaScript files
 gem 'js_assets', :git => 'https://github.com/kavkaz/js_assets.git'
-
+# Fancy select tags
+gem 'select2-rails', :git => 'https://github.com/argerim/select2-rails.git'
 group :development do
   gem 'yaml_db'
   gem 'spring'

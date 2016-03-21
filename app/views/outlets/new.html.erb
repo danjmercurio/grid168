@@ -78,7 +78,7 @@
           <div class="form-group">
             <%= f.label :time_zone, :class => 'col-lg-2 col-md-3 control-label' %>
             <div class="col-lg-10 col-md-9">
-              <%= f.time_zone_select(:time_zone, nil) %>
+              <%= f.time_zone_select(:time_zone, ActiveSupport::TimeZone.us_zones, :default => '') %>
             </div>
           </div>
 
@@ -118,7 +118,7 @@
       <div class="form-group">
             <%= f.label :total_subscribers, :class => 'col-lg-2 col-md-3' %>
             <div class="col-lg-10 col-md-9">
-              <%= f.text_field :subs, :value => number_with_delimiter(@outlet.subs), :class => 'form-control' %>
+              <%= f.text_field :subs, :value => number_with_delimiter(@outlet.subs), :class => 'form-control', :style => 'margin-bottom: 15px;' %>
             </div>
           </div>
       <div class="form-group">
@@ -129,7 +129,7 @@
       </div>
       <%= hidden_field_tag "count_sub_channel", 0 %>
       <div class="form-group">
-        <div class="col-sm-4 col-sm-offset-2">
+        <div class="col-sm-4 col-sm-offset-2" style="margin-top: 15px;">
           <%= button_tag(type: 'submit', class: "btn btn-primary") do -%>
             <i class="icon-ok icon-white"></i> Save
           <% end %>

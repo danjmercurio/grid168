@@ -9,6 +9,13 @@
 //= require bootstrap-sprockets
 //= require jquery-tablesorter
 //= require tables
+//= require select2
+var hi;
+hi = function() {
+  $('select').select2();
+}
+$(document).ready(hi);
+
 
 // $(document).ready(function() {
 
