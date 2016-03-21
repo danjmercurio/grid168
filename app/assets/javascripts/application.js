@@ -10,11 +10,21 @@
 //= require jquery-tablesorter
 //= require tables
 //= require select2
-var hi;
-hi = function() {
+
+// Helper for Animate.css
+$.fn.extend({
+    animateCss: function (animationName) {
+        var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
+        $(this).addClass('animated ' + animationName).one(animationEnd, function() {
+            $(this).removeClass('animated ' + animationName);
+        });
+    }
+});
+var onDocumentReady = function() {
+  // Style all select tags with select2 CSS
   $('select').select2();
 }
-$(document).ready(hi);
+$(document).ready(onDocumentReady);
 
 
 // $(document).ready(function() {
