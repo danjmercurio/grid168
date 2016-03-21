@@ -7,552 +7,7 @@
     </database-info>
     <case-sensitivity plain-identifiers="exact" quoted-identifiers="exact"/>
     <database-model serializer="dbm" rdbms="MYSQL" format-version="2.4">
-      <schema id="1" name="grid168"/>
-      <table id="2" parent="1" name="admins"/>
-      <table id="3" parent="1" name="cities"/>
-      <table id="4" parent="1" name="dmas"/>
-      <table id="5" parent="1" name="notes"/>
-      <table id="6" parent="1" name="offers"/>
-      <table id="7" parent="1" name="offers_programmers"/>
-      <table id="8" parent="1" name="offervalues"/>
-      <table id="9" parent="1" name="outlets"/>
-      <table id="10" parent="1" name="programmers"/>
-      <table id="11" parent="1" name="programmers_sub_channel_offers"/>
-      <table id="12" parent="1" name="schema_migrations"/>
-      <table id="13" parent="1" name="states"/>
-      <table id="14" parent="1" name="sub_channel_offers"/>
-      <table id="15" parent="1" name="sub_channel_types"/>
-      <table id="16" parent="1" name="sub_channels"/>
-      <table id="17" parent="1" name="users"/>
-      <table id="18" parent="1" name="outlet_types"/>
-      <column id="19" parent="2" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="20" parent="2" name="email">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="21" parent="2" name="encrypted_password">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="22" parent="2" name="created_at">
-        <data-type>datetime</data-type>
-      </column>
-      <column id="23" parent="2" name="updated_at">
-        <data-type>datetime</data-type>
-      </column>
-      <key id="24" parent="2" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="25" parent="3" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="26" parent="3" name="city_name">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="27" parent="3" name="state_id">
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="28" parent="3" name="created_at">
-        <data-type>datetime</data-type>
-      </column>
-      <column id="29" parent="3" name="updated_at">
-        <data-type>datetime</data-type>
-      </column>
-      <key id="30" parent="3" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="31" parent="4" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="32" parent="4" name="name">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="33" parent="4" name="city_id">
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="34" parent="4" name="created_at">
-        <data-type>datetime</data-type>
-      </column>
-      <column id="35" parent="4" name="updated_at">
-        <data-type>datetime</data-type>
-      </column>
-      <key id="36" parent="4" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="37" parent="5" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="38" parent="5" name="content">
-        <data-type>text</data-type>
-      </column>
-      <column id="39" parent="5" name="offer_id">
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="40" parent="5" name="created_at">
-        <data-type>datetime</data-type>
-      </column>
-      <column id="41" parent="5" name="updated_at">
-        <data-type>datetime</data-type>
-      </column>
-      <key id="42" parent="5" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="43" parent="6" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="44" parent="6" name="outlet_id">
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="45" parent="6" name="yearly_offer">
-        <mandatory>1</mandatory>
-        <data-type>float</data-type>
-        <default-expression>&apos;0&apos;</default-expression>
-      </column>
-      <column id="46" parent="6" name="monthly_offer">
-        <mandatory>1</mandatory>
-        <data-type>float</data-type>
-        <default-expression>&apos;0&apos;</default-expression>
-      </column>
-      <column id="47" parent="6" name="weekly_offer">
-        <mandatory>1</mandatory>
-        <data-type>float</data-type>
-        <default-expression>&apos;0&apos;</default-expression>
-      </column>
-      <column id="48" parent="6" name="hourly_rate">
-        <mandatory>1</mandatory>
-        <data-type>float</data-type>
-        <default-expression>&apos;0&apos;</default-expression>
-      </column>
-      <column id="49" parent="6" name="total_hours">
-        <mandatory>1</mandatory>
-        <data-type>float</data-type>
-        <default-expression>&apos;0&apos;</default-expression>
-      </column>
-      <column id="50" parent="6" name="created_at">
-        <data-type>datetime</data-type>
-      </column>
-      <column id="51" parent="6" name="updated_at">
-        <data-type>datetime</data-type>
-      </column>
-      <column id="52" parent="6" name="dollar_amount">
-        <mandatory>1</mandatory>
-        <data-type>float</data-type>
-        <default-expression>&apos;0&apos;</default-expression>
-      </column>
-      <column id="53" parent="6" name="half_hour_clicked">
-        <data-type>text</data-type>
-      </column>
-      <column id="54" parent="6" name="user_id">
-        <data-type>int(11)</data-type>
-      </column>
-      <key id="55" parent="6" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="56" parent="7" name="programmer_id">
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="57" parent="7" name="offer_id">
-        <data-type>int(11)</data-type>
-      </column>
-      <index id="58" parent="7" name="index_offers_programmers_on_offer_id_and_programmer_id">
-        <columns>offer_id
-programmer_id</columns>
-        <desc-columns></desc-columns>
-        <unique>1</unique>
-      </index>
-      <key id="59" parent="7" name="index_offers_programmers_on_offer_id_and_programmer_id">
-        <columns>offer_id
-programmer_id</columns>
-        <underlying-index>index_offers_programmers_on_offer_id_and_programmer_id</underlying-index>
-      </key>
-      <column id="60" parent="8" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="61" parent="8" name="time">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="62" parent="8" name="monday">
-        <data-type>float</data-type>
-      </column>
-      <column id="63" parent="8" name="tuesday">
-        <data-type>float</data-type>
-      </column>
-      <column id="64" parent="8" name="wednesday">
-        <data-type>float</data-type>
-      </column>
-      <column id="65" parent="8" name="thursday">
-        <data-type>float</data-type>
-      </column>
-      <column id="66" parent="8" name="friday">
-        <data-type>float</data-type>
-      </column>
-      <column id="67" parent="8" name="saturday">
-        <data-type>float</data-type>
-      </column>
-      <column id="68" parent="8" name="sunday">
-        <data-type>float</data-type>
-      </column>
-      <column id="69" parent="8" name="created_at">
-        <data-type>datetime</data-type>
-      </column>
-      <column id="70" parent="8" name="updated_at">
-        <data-type>datetime</data-type>
-      </column>
-      <key id="71" parent="8" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="72" parent="9" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="73" parent="9" name="name">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="74" parent="9" name="description">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="75" parent="9" name="subs">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="76" parent="9" name="dma_id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="77" parent="9" name="user_id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="78" parent="9" name="created_at">
-        <data-type>datetime</data-type>
-      </column>
-      <column id="79" parent="9" name="updated_at">
-        <data-type>datetime</data-type>
-      </column>
-      <column id="80" parent="9" name="outlet_type">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-        <default-expression>&apos;0&apos;</default-expression>
-      </column>
-      <column id="81" parent="9" name="first_name">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="82" parent="9" name="last_name">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="83" parent="9" name="phone_number">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="84" parent="9" name="time_zone">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <index id="85" parent="9" name="index_outlets_on_name">
-        <columns>name</columns>
-        <desc-columns></desc-columns>
-        <unique>1</unique>
-      </index>
-      <key id="86" parent="9" name="index_outlets_on_name">
-        <columns>name</columns>
-        <underlying-index>index_outlets_on_name</underlying-index>
-      </key>
-      <key id="87" parent="9" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="88" parent="10" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="89" parent="10" name="name">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="90" parent="10" name="description">
-        <data-type>text</data-type>
-      </column>
-      <column id="91" parent="10" name="created_at">
-        <data-type>datetime</data-type>
-      </column>
-      <column id="92" parent="10" name="updated_at">
-        <data-type>datetime</data-type>
-      </column>
-      <column id="93" parent="10" name="user_id">
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="94" parent="10" name="first_name">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="95" parent="10" name="last_name">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="96" parent="10" name="email">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="97" parent="10" name="phone">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="98" parent="10" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="99" parent="11" name="programmer_id">
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="100" parent="11" name="sub_channel_offer_id">
-        <data-type>int(11)</data-type>
-      </column>
-      <index id="101" parent="11" name="index_programmers_sub_channel_offers">
-        <columns>programmer_id
-sub_channel_offer_id</columns>
-        <desc-columns></desc-columns>
-        <unique>1</unique>
-      </index>
-      <key id="102" parent="11" name="index_programmers_sub_channel_offers">
-        <columns>programmer_id
-sub_channel_offer_id</columns>
-        <underlying-index>index_programmers_sub_channel_offers</underlying-index>
-      </key>
-      <column id="103" parent="12" name="version">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-      </column>
-      <index id="104" parent="12" name="unique_schema_migrations">
-        <columns>version</columns>
-        <desc-columns></desc-columns>
-        <unique>1</unique>
-      </index>
-      <key id="105" parent="12" name="unique_schema_migrations">
-        <columns>version</columns>
-        <underlying-index>unique_schema_migrations</underlying-index>
-      </key>
-      <column id="106" parent="13" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="107" parent="13" name="name">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="108" parent="13" name="created_at">
-        <data-type>datetime</data-type>
-      </column>
-      <column id="109" parent="13" name="updated_at">
-        <data-type>datetime</data-type>
-      </column>
-      <key id="110" parent="13" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="111" parent="14" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="112" parent="14" name="yearly_offer">
-        <mandatory>1</mandatory>
-        <data-type>float</data-type>
-        <default-expression>&apos;0&apos;</default-expression>
-      </column>
-      <column id="113" parent="14" name="monthly_offer">
-        <mandatory>1</mandatory>
-        <data-type>float</data-type>
-        <default-expression>&apos;0&apos;</default-expression>
-      </column>
-      <column id="114" parent="14" name="weekly_offer">
-        <mandatory>1</mandatory>
-        <data-type>float</data-type>
-        <default-expression>&apos;0&apos;</default-expression>
-      </column>
-      <column id="115" parent="14" name="hourly_rate">
-        <mandatory>1</mandatory>
-        <data-type>float</data-type>
-        <default-expression>&apos;0&apos;</default-expression>
-      </column>
-      <column id="116" parent="14" name="total_hours">
-        <mandatory>1</mandatory>
-        <data-type>float</data-type>
-        <default-expression>&apos;0&apos;</default-expression>
-      </column>
-      <column id="117" parent="14" name="dollar_amount">
-        <mandatory>1</mandatory>
-        <data-type>float</data-type>
-        <default-expression>&apos;0&apos;</default-expression>
-      </column>
-      <column id="118" parent="14" name="half_hour_clicked">
-        <data-type>text</data-type>
-      </column>
-      <column id="119" parent="14" name="sub_channel_id">
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="120" parent="14" name="created_at">
-        <data-type>datetime</data-type>
-      </column>
-      <column id="121" parent="14" name="updated_at">
-        <data-type>datetime</data-type>
-      </column>
-      <column id="122" parent="14" name="user_id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <key id="123" parent="14" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="124" parent="15" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="125" parent="15" name="name">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="126" parent="15" name="created_at">
-        <data-type>datetime</data-type>
-      </column>
-      <column id="127" parent="15" name="updated_at">
-        <data-type>datetime</data-type>
-      </column>
-      <key id="128" parent="15" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="129" parent="16" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="130" parent="16" name="sub_channel_type_id">
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="131" parent="16" name="subs">
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="132" parent="16" name="outlet_id">
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="133" parent="16" name="created_at">
-        <data-type>datetime</data-type>
-      </column>
-      <column id="134" parent="16" name="updated_at">
-        <data-type>datetime</data-type>
-      </column>
-      <column id="135" parent="16" name="name">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <key id="136" parent="16" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="137" parent="17" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="138" parent="17" name="email">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-        <default-expression>&apos;&apos;</default-expression>
-      </column>
-      <column id="139" parent="17" name="encrypted_password">
-        <mandatory>1</mandatory>
-        <data-type>varchar(255)</data-type>
-        <default-expression>&apos;&apos;</default-expression>
-      </column>
-      <column id="140" parent="17" name="reset_password_token">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="141" parent="17" name="reset_password_sent_at">
-        <data-type>datetime</data-type>
-      </column>
-      <column id="142" parent="17" name="remember_created_at">
-        <data-type>datetime</data-type>
-      </column>
-      <column id="143" parent="17" name="sign_in_count">
-        <data-type>int(11)</data-type>
-        <default-expression>&apos;0&apos;</default-expression>
-      </column>
-      <column id="144" parent="17" name="current_sign_in_at">
-        <data-type>datetime</data-type>
-      </column>
-      <column id="145" parent="17" name="last_sign_in_at">
-        <data-type>datetime</data-type>
-      </column>
-      <column id="146" parent="17" name="current_sign_in_ip">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="147" parent="17" name="last_sign_in_ip">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="148" parent="17" name="created_at">
-        <data-type>datetime</data-type>
-      </column>
-      <column id="149" parent="17" name="updated_at">
-        <data-type>datetime</data-type>
-      </column>
-      <column id="150" parent="17" name="admin">
-        <data-type>tinyint(1)</data-type>
-        <default-expression>&apos;0&apos;</default-expression>
-      </column>
-      <column id="151" parent="17" name="phone">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="152" parent="17" name="title">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="153" parent="17" name="first_name">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="154" parent="17" name="last_name">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <index id="155" parent="17" name="index_users_on_email">
-        <columns>email</columns>
-        <desc-columns></desc-columns>
-        <unique>1</unique>
-      </index>
-      <index id="156" parent="17" name="index_users_on_reset_password_token">
-        <columns>reset_password_token</columns>
-        <desc-columns></desc-columns>
-        <unique>1</unique>
-      </index>
-      <key id="157" parent="17" name="index_users_on_email">
-        <columns>email</columns>
-        <underlying-index>index_users_on_email</underlying-index>
-      </key>
-      <key id="158" parent="17" name="index_users_on_reset_password_token">
-        <columns>reset_password_token</columns>
-        <underlying-index>index_users_on_reset_password_token</underlying-index>
-      </key>
-      <key id="159" parent="17" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
-      <column id="160" parent="18" name="id">
-        <mandatory>1</mandatory>
-        <data-type>int(11)</data-type>
-      </column>
-      <column id="161" parent="18" name="name">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <column id="162" parent="18" name="created_at">
-        <mandatory>1</mandatory>
-        <data-type>datetime</data-type>
-      </column>
-      <column id="163" parent="18" name="updated_at">
-        <mandatory>1</mandatory>
-        <data-type>datetime</data-type>
-      </column>
-      <key id="164" parent="18" name="PRIMARY">
-        <columns>id</columns>
-        <primary>1</primary>
-      </key>
+      <schema id="1" name="grid168_test"/>
     </database-model>
   </data-source>
   <data-source name="Rails grid168: development" uuid="aab207ed-9350-4c35-a79a-491e8394c173">
@@ -797,314 +252,321 @@ programmer_id</columns>
       <column id="79" parent="9" name="updated_at">
         <data-type>datetime</data-type>
       </column>
-      <column id="80" parent="9" name="outlet_type">
-        <mandatory>1</mandatory>
+      <column id="80" parent="9" name="first_name">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="81" parent="9" name="last_name">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="82" parent="9" name="phone_number">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="83" parent="9" name="time_zone">
+        <data-type>varchar(255)</data-type>
+      </column>
+      <column id="84" parent="9" name="outlet_type_id">
         <data-type>int(11)</data-type>
-        <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="81" parent="9" name="first_name">
+      <column id="85" parent="9" name="programming">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="82" parent="9" name="last_name">
-        <data-type>varchar(255)</data-type>
+      <column id="86" parent="9" name="over_air">
+        <data-type>int(11)</data-type>
       </column>
-      <column id="83" parent="9" name="phone_number">
-        <data-type>varchar(255)</data-type>
+      <column id="87" parent="9" name="total_homes">
+        <data-type>int(11)</data-type>
       </column>
-      <column id="84" parent="9" name="time_zone">
-        <data-type>varchar(255)</data-type>
-      </column>
-      <index id="85" parent="9" name="index_outlets_on_name">
+      <index id="88" parent="9" name="index_outlets_on_name">
         <columns>name</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="86" parent="9" name="index_outlets_on_name">
+      <key id="89" parent="9" name="index_outlets_on_name">
         <columns>name</columns>
         <underlying-index>index_outlets_on_name</underlying-index>
       </key>
-      <key id="87" parent="9" name="PRIMARY">
+      <key id="90" parent="9" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="88" parent="10" name="id">
+      <column id="91" parent="10" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="89" parent="10" name="name">
+      <column id="92" parent="10" name="name">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="90" parent="10" name="description">
+      <column id="93" parent="10" name="description">
         <data-type>text</data-type>
       </column>
-      <column id="91" parent="10" name="created_at">
+      <column id="94" parent="10" name="created_at">
         <data-type>datetime</data-type>
       </column>
-      <column id="92" parent="10" name="updated_at">
+      <column id="95" parent="10" name="updated_at">
         <data-type>datetime</data-type>
       </column>
-      <column id="93" parent="10" name="user_id">
+      <column id="96" parent="10" name="user_id">
         <data-type>int(11)</data-type>
       </column>
-      <column id="94" parent="10" name="first_name">
+      <column id="97" parent="10" name="first_name">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="95" parent="10" name="last_name">
+      <column id="98" parent="10" name="last_name">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="96" parent="10" name="email">
+      <column id="99" parent="10" name="email">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="97" parent="10" name="phone">
+      <column id="100" parent="10" name="phone">
         <data-type>varchar(255)</data-type>
       </column>
-      <key id="98" parent="10" name="PRIMARY">
+      <key id="101" parent="10" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="99" parent="11" name="programmer_id">
+      <column id="102" parent="11" name="programmer_id">
         <data-type>int(11)</data-type>
       </column>
-      <column id="100" parent="11" name="sub_channel_offer_id">
+      <column id="103" parent="11" name="sub_channel_offer_id">
         <data-type>int(11)</data-type>
       </column>
-      <index id="101" parent="11" name="index_programmers_sub_channel_offers">
+      <index id="104" parent="11" name="index_programmers_sub_channel_offers">
         <columns>programmer_id
 sub_channel_offer_id</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="102" parent="11" name="index_programmers_sub_channel_offers">
+      <key id="105" parent="11" name="index_programmers_sub_channel_offers">
         <columns>programmer_id
 sub_channel_offer_id</columns>
         <underlying-index>index_programmers_sub_channel_offers</underlying-index>
       </key>
-      <column id="103" parent="12" name="version">
+      <column id="106" parent="12" name="version">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
       </column>
-      <index id="104" parent="12" name="unique_schema_migrations">
+      <index id="107" parent="12" name="unique_schema_migrations">
         <columns>version</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="105" parent="12" name="unique_schema_migrations">
+      <key id="108" parent="12" name="unique_schema_migrations">
         <columns>version</columns>
         <underlying-index>unique_schema_migrations</underlying-index>
       </key>
-      <column id="106" parent="13" name="id">
+      <column id="109" parent="13" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="107" parent="13" name="name">
+      <column id="110" parent="13" name="name">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="108" parent="13" name="created_at">
+      <column id="111" parent="13" name="created_at">
         <data-type>datetime</data-type>
       </column>
-      <column id="109" parent="13" name="updated_at">
+      <column id="112" parent="13" name="updated_at">
         <data-type>datetime</data-type>
       </column>
-      <key id="110" parent="13" name="PRIMARY">
+      <key id="113" parent="13" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="111" parent="14" name="id">
+      <column id="114" parent="14" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="112" parent="14" name="yearly_offer">
+      <column id="115" parent="14" name="yearly_offer">
         <mandatory>1</mandatory>
         <data-type>float</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="113" parent="14" name="monthly_offer">
+      <column id="116" parent="14" name="monthly_offer">
         <mandatory>1</mandatory>
         <data-type>float</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="114" parent="14" name="weekly_offer">
+      <column id="117" parent="14" name="weekly_offer">
         <mandatory>1</mandatory>
         <data-type>float</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="115" parent="14" name="hourly_rate">
+      <column id="118" parent="14" name="hourly_rate">
         <mandatory>1</mandatory>
         <data-type>float</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="116" parent="14" name="total_hours">
+      <column id="119" parent="14" name="total_hours">
         <mandatory>1</mandatory>
         <data-type>float</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="117" parent="14" name="dollar_amount">
+      <column id="120" parent="14" name="dollar_amount">
         <mandatory>1</mandatory>
         <data-type>float</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="118" parent="14" name="half_hour_clicked">
+      <column id="121" parent="14" name="half_hour_clicked">
         <data-type>text</data-type>
       </column>
-      <column id="119" parent="14" name="sub_channel_id">
+      <column id="122" parent="14" name="sub_channel_id">
         <data-type>int(11)</data-type>
       </column>
-      <column id="120" parent="14" name="created_at">
+      <column id="123" parent="14" name="created_at">
         <data-type>datetime</data-type>
       </column>
-      <column id="121" parent="14" name="updated_at">
+      <column id="124" parent="14" name="updated_at">
         <data-type>datetime</data-type>
       </column>
-      <column id="122" parent="14" name="user_id">
+      <column id="125" parent="14" name="user_id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <key id="123" parent="14" name="PRIMARY">
+      <key id="126" parent="14" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="124" parent="15" name="id">
+      <column id="127" parent="15" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="125" parent="15" name="name">
+      <column id="128" parent="15" name="name">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="126" parent="15" name="created_at">
+      <column id="129" parent="15" name="created_at">
         <data-type>datetime</data-type>
       </column>
-      <column id="127" parent="15" name="updated_at">
+      <column id="130" parent="15" name="updated_at">
         <data-type>datetime</data-type>
       </column>
-      <key id="128" parent="15" name="PRIMARY">
+      <key id="131" parent="15" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="129" parent="16" name="id">
+      <column id="132" parent="16" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="130" parent="16" name="sub_channel_type_id">
+      <column id="133" parent="16" name="sub_channel_type_id">
         <data-type>int(11)</data-type>
       </column>
-      <column id="131" parent="16" name="subs">
+      <column id="134" parent="16" name="subs">
         <data-type>int(11)</data-type>
       </column>
-      <column id="132" parent="16" name="outlet_id">
+      <column id="135" parent="16" name="outlet_id">
         <data-type>int(11)</data-type>
       </column>
-      <column id="133" parent="16" name="created_at">
+      <column id="136" parent="16" name="created_at">
         <data-type>datetime</data-type>
       </column>
-      <column id="134" parent="16" name="updated_at">
+      <column id="137" parent="16" name="updated_at">
         <data-type>datetime</data-type>
       </column>
-      <column id="135" parent="16" name="name">
+      <column id="138" parent="16" name="name">
         <data-type>varchar(255)</data-type>
       </column>
-      <key id="136" parent="16" name="PRIMARY">
+      <key id="139" parent="16" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="137" parent="17" name="id">
+      <column id="140" parent="17" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="138" parent="17" name="email">
+      <column id="141" parent="17" name="email">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
         <default-expression>&apos;&apos;</default-expression>
       </column>
-      <column id="139" parent="17" name="encrypted_password">
+      <column id="142" parent="17" name="encrypted_password">
         <mandatory>1</mandatory>
         <data-type>varchar(255)</data-type>
         <default-expression>&apos;&apos;</default-expression>
       </column>
-      <column id="140" parent="17" name="reset_password_token">
+      <column id="143" parent="17" name="reset_password_token">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="141" parent="17" name="reset_password_sent_at">
+      <column id="144" parent="17" name="reset_password_sent_at">
         <data-type>datetime</data-type>
       </column>
-      <column id="142" parent="17" name="remember_created_at">
+      <column id="145" parent="17" name="remember_created_at">
         <data-type>datetime</data-type>
       </column>
-      <column id="143" parent="17" name="sign_in_count">
+      <column id="146" parent="17" name="sign_in_count">
         <data-type>int(11)</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="144" parent="17" name="current_sign_in_at">
+      <column id="147" parent="17" name="current_sign_in_at">
         <data-type>datetime</data-type>
       </column>
-      <column id="145" parent="17" name="last_sign_in_at">
+      <column id="148" parent="17" name="last_sign_in_at">
         <data-type>datetime</data-type>
       </column>
-      <column id="146" parent="17" name="current_sign_in_ip">
+      <column id="149" parent="17" name="current_sign_in_ip">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="147" parent="17" name="last_sign_in_ip">
+      <column id="150" parent="17" name="last_sign_in_ip">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="148" parent="17" name="created_at">
+      <column id="151" parent="17" name="created_at">
         <data-type>datetime</data-type>
       </column>
-      <column id="149" parent="17" name="updated_at">
+      <column id="152" parent="17" name="updated_at">
         <data-type>datetime</data-type>
       </column>
-      <column id="150" parent="17" name="admin">
+      <column id="153" parent="17" name="admin">
         <data-type>tinyint(1)</data-type>
         <default-expression>&apos;0&apos;</default-expression>
       </column>
-      <column id="151" parent="17" name="phone">
+      <column id="154" parent="17" name="phone">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="152" parent="17" name="title">
+      <column id="155" parent="17" name="title">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="153" parent="17" name="first_name">
+      <column id="156" parent="17" name="first_name">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="154" parent="17" name="last_name">
+      <column id="157" parent="17" name="last_name">
         <data-type>varchar(255)</data-type>
       </column>
-      <index id="155" parent="17" name="index_users_on_email">
+      <index id="158" parent="17" name="index_users_on_email">
         <columns>email</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <index id="156" parent="17" name="index_users_on_reset_password_token">
+      <index id="159" parent="17" name="index_users_on_reset_password_token">
         <columns>reset_password_token</columns>
         <desc-columns></desc-columns>
         <unique>1</unique>
       </index>
-      <key id="157" parent="17" name="index_users_on_email">
+      <key id="160" parent="17" name="index_users_on_email">
         <columns>email</columns>
         <underlying-index>index_users_on_email</underlying-index>
       </key>
-      <key id="158" parent="17" name="index_users_on_reset_password_token">
+      <key id="161" parent="17" name="index_users_on_reset_password_token">
         <columns>reset_password_token</columns>
         <underlying-index>index_users_on_reset_password_token</underlying-index>
       </key>
-      <key id="159" parent="17" name="PRIMARY">
+      <key id="162" parent="17" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>
-      <column id="160" parent="18" name="id">
+      <column id="163" parent="18" name="id">
         <mandatory>1</mandatory>
         <data-type>int(11)</data-type>
       </column>
-      <column id="161" parent="18" name="name">
+      <column id="164" parent="18" name="name">
         <data-type>varchar(255)</data-type>
       </column>
-      <column id="162" parent="18" name="created_at">
+      <column id="165" parent="18" name="created_at">
         <mandatory>1</mandatory>
         <data-type>datetime</data-type>
       </column>
-      <column id="163" parent="18" name="updated_at">
+      <column id="166" parent="18" name="updated_at">
         <mandatory>1</mandatory>
         <data-type>datetime</data-type>
       </column>
-      <key id="164" parent="18" name="PRIMARY">
+      <key id="167" parent="18" name="PRIMARY">
         <columns>id</columns>
         <primary>1</primary>
       </key>

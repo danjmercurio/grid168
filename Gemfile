@@ -36,6 +36,8 @@ group :production do
   gem 'pg'
 end
 
+gem 'rubyzoho', :git => 'https://github.com/amalc/rubyzoho'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.0.0'
 
