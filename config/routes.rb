@@ -1,11 +1,5 @@
 Grid168::Application.routes.draw do
 
-	get 'home/autocomplete_outlet_name'
-
-	get 'my_deals' => 'programmers#index'
-
-	get 'home/all_deals'
-
 	resources :outlets do
 		resources :offers
 	end
@@ -20,12 +14,11 @@ Grid168::Application.routes.draw do
 
 	resources :programmers
 
-	# fix can't log out
 	devise_for :users
 
   resources :users
 
-	root :to => "home#index"
+	root :to => "offers#index"
 
 
 	# The priority is based upon order of creation:
@@ -85,7 +78,7 @@ Grid168::Application.routes.draw do
 	# Note: This route will make all actions in every controller accessible via GET requests.
 	# match ':controller(/:action(/:id(.:format)))'
 
-  # Exceptions
+  # HTTP Errors
   %w( 404 422 500 ).each do |code|
     get code, :to => "errors#show", :code => code
   end

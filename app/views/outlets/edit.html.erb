@@ -128,15 +128,16 @@
             </div>
       </div>
       <%= hidden_field_tag "count_sub_channel", 0 %>
-      <br />
       <div class="form-group">
-        <div class="col-sm-4 col-sm-offset-2">
-          <%= button_tag(type: 'submit', class: "btn btn-primary", style: 'margin-top: 20px;') do %>
+            <div class="col-sm-4 col-sm-offset-2" style="margin-top: 15px;">
+          <%= button_tag(type: 'submit', class: "btn btn-primary") do -%>
             <i class="icon-ok icon-white"></i> Save
           <% end %>
-          <a href="<%= url_for(root_url) %>"><p>Cancel</p></a>
+          <%= link_to users_path, :class => 'btn cancel' do -%>
+            <i class="fa fa-remove"></i> Cancel
+          <% end %>
         </div>
-      </div>
+          </div>
       <% end %>
     </div>
   </div>
