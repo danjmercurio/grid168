@@ -1,4 +1,82 @@
-<% @offers.each do |offer| -%>
-  <p>Email: <%= offer.user.email %></p>
-  <p>Dollar amount: <%= offer.dollar_amount %></p>
-<% end %>
+<div class="row">
+  <div class="col-sm-12">
+    <div class="page-title">
+      <h1>All Potentials</h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i></a></li>
+        <li class="active">All Potentials</li>
+      </ol>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h4 class="panel-title">Outlets</h4>
+        <!--<div class="panel-actions">-->
+          <!--<a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>-->
+          <!--<a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>-->
+        <!--</div>-->
+      </div>
+      <div class="panel-body">
+        <div class="table-responsive">
+          <table id="basic-datatables" class="table table-striped tablesorter">
+            <thead>
+              <tr>
+                <th>Company Name</th>
+                <th>Offer Amount</th>
+                <th>Outlet</th>
+                <th>Type</th>
+                <th>Subscribers</th>
+                <th>Hours</th>
+                <th>DMA</th>
+                <th>Created</th>
+                <th>Updated</th>
+                <th>User</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                  <td>WAST</td>
+                  <td>1</td>
+                  <td>50,000</td>
+                  <td></td>
+                  <td></td>
+                  <td>&#39;New York&#39;</td>
+                  <td>Cable Network</td>
+                  <td>03/22/2016</td>
+                  <td>admin@gmail.com</td>
+                  <td>
+                    <a href="/outlets/1/offers/new">new offer</a> |
+                    <a href="/outlets/1">show</a> |
+                    <a href="/outlets/1/edit">edit</a> |
+                    <a confirm="Are you sure?" rel="nofollow" data-method="delete" href="/outlets/1">delete</a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>WABC</td>
+                  <td>1</td>
+                  <td>75,000</td>
+                  <td></td>
+                  <td></td>
+                  <td>&#39;Los Angeles&#39; </td>
+                  <td>Cable System</td>
+                  <td>03/22/2016</td>
+                  <td>admin@gmail.com</td>
+                  <td>
+                    <a href="/outlets/2/offers/new">new offer</a> |
+                    <a href="/outlets/2">show</a> |
+                    <a href="/outlets/2/edit">edit</a> |
+                    <a confirm="Are you sure?" rel="nofollow" data-method="delete" href="/outlets/2">delete</a>
+                  </td>
+                </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <form class="button_to" method="get" action="/outlets/new"><input class="btn btn-primary" type="submit" value="New Media Outlet" /></form>
+  </div>
+</div>
