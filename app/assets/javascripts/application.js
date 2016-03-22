@@ -11,21 +11,36 @@
 //= require tables
 //= require select2
 
-// Helper for Animate.css
+// jQuery helper for Animate.css
 $.fn.extend({
-    animateCss: function (animationName) {
+    animateCSS: function (animationName) {
         var animationEnd = 'webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend';
         $(this).addClass('animated ' + animationName).one(animationEnd, function() {
             $(this).removeClass('animated ' + animationName);
         });
     }
 });
+
+// Selector for flash message DOM element
+var flash = $('.flash');
 var onDocumentReady = function() {
   // Style all select tags with select2 CSS
   $('select').select2();
-}
-$(document).ready(onDocumentReady);
 
+  // If a flash message was rendered, perform its exit animation
+  if (flash.length > 0) {
+    // If there was a flash, define this but don't call it (yet)
+    var bounceOut = function() {
+      flash.fadeOut(1000);
+    }
+    // Bounce in from left
+    flash.animateCSS('bounceInLeft');
+    flash.show();
+    var flashTimeOut = window.setTimeout(bounceOut, 1500);
+  }
+}
+
+$(document).ready(onDocumentReady);
 
 // $(document).ready(function() {
 

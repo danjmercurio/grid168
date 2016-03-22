@@ -1,4 +1,5 @@
 class OffersController < ApplicationController
+	before_action :authenticate_user!
 
 	def new
 		@outlet = Outlet.find(params[:outlet_id])

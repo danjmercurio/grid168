@@ -1,9 +1,4 @@
 class HomeController < ApplicationController
-	autocomplete :outlet, :name
-
-  before_filter :authenticate_user!
-
-
   # def index
   # 	if params[:outlet_id].blank?
   # 		if params[:name].blank?
@@ -35,5 +30,5 @@ class HomeController < ApplicationController
 	# def get_autocomplete_items(parameters)
 	# 	super(parameters).where(:user_id => current_user.id)
 	# end
-		
+
 end

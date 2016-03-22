@@ -14,9 +14,11 @@
 @import "select2";
 @import "select2-bootstrap";
 @import "animate.min";
-
+.flash {
+  display: none;
+}
 div#actions {
-  display:flex;
+  display: flex;
 }
 div#actions * {
   margin-left: 3px;
@@ -24,7 +26,12 @@ div#actions * {
 .cancel {
   border: 1px solid;
 }
-
 thead {
   cursor: context-menu;
+}
+.alert-text {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
 }
