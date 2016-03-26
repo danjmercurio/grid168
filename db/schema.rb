@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160318213534) do
+ActiveRecord::Schema.define(version: 20160326022035) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",              limit: 255
@@ -101,16 +101,24 @@ ActiveRecord::Schema.define(version: 20160318213534) do
 
   add_index "outlets", ["name"], name: "index_outlets_on_name", unique: true, using: :btree
 
+  create_table "programmer_types", force: :cascade do |t|
+    t.string "name", limit: 255
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "programmers", force: :cascade do |t|
-    t.string   "name",        limit: 255
-    t.text     "description", limit: 65535
+    t.string "name", limit: 255
+    t.text "description", limit: 65535
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id",     limit: 4
-    t.string   "first_name",  limit: 255
-    t.string   "last_name",   limit: 255
-    t.string   "email",       limit: 255
-    t.string   "phone",       limit: 255
+    t.integer "user_id", limit: 4
+    t.string "first_name", limit: 255
+    t.string "last_name", limit: 255
+    t.string "email", limit: 255
+    t.string "phone", limit: 255
+    t.text "desc", limit: 65535
+    t.integer "programmer_type_id", limit: 4
   end
 
   create_table "programmers_sub_channel_offers", id: false, force: :cascade do |t|

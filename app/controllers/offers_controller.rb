@@ -20,8 +20,8 @@ class OffersController < ApplicationController
 	end #end show action
 
 	def edit
-		@outlet = Outlet.find(params[:outlet_id])
 		@offer = Offer.find(params[:id])
+		@outlet = Outlet.find(@offer.outlet.id)
 		@values = Offervalue.all
 		@programmers = @offer.user.programmers
 		@url = params[:url]

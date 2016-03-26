@@ -11,6 +11,10 @@ puts "Creating Outlet Type controlled vocabulary"
 'Sports Network', 'Subchannel Network', 'Telco'].each do |type|
 	OutletType.create(:name => type)
 end
+puts 'Creating Programmer Types controlled vocabulary'
+['DRTV', 'General', 'Home Shopping', 'Paid Religion', 'Programmer'].each do |type|
+	ProgrammerType.create(:name => type)
+end
 
 
 puts "Create Sub channel type data.."

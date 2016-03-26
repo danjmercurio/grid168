@@ -40,9 +40,9 @@
               </tr>
             </thead>
             <tbody>
-              <% @offers.each do |offer| %>
-			<% outlet = offer.outlet %>
-			<% offer.programmers.each do |programmer| %>
+            <% @offers.each do |offer| %>
+                <% outlet = offer.outlet %>
+                <% offer.programmers.each do |programmer| %>
 				<tr>
 					<td><%= link_to programmer.name, programmer %></td>
 					<td><%= number_to_currency offer.dollar_amount %></td>
@@ -54,8 +54,15 @@
 					<td><%= display_date offer.created_at %></td>
 					<td><%= display_date offer.updated_at %></td>
 					<td>
-						<%= link_to "Show", [outlet, offer] %> |
-						<%= link_to "Delete", [outlet, offer], method: :delete, confirm: "Are you sure?" %>
+            <div class="btn-group">
+              <button type="button" class="btn btn-primary droptown-toggle" data-toggle="dropdown">
+                Actions&nbsp;<span class="caret"></span></button>
+              <ul class="dropdown-menu">
+                <li><a href="<%= url_for programmer_path(programmer.id) %>">Display</a></li>
+                <li><a href="<%= url_for edit_programmer_path(programmer.id) %>">Edit</a></li>
+                <li><%= link_to 'Delete', programmer_path(programmer.id), :method => :delete %></li>
+              </ul>
+            </div>
 					</td>
 				</tr>
 			<% end %><!-- end programmer -->

@@ -18,48 +18,8 @@
       <h4 class="panel-title">Add a new Programmer</h4>
     </div>
     <div class="panel-body">
-      <%= form_for @programmer, :html => {:class => 'form-horizontal group-border stripped'} do |f| %>
-          <% if @programmer.errors.any? %>
-              <div id="error_explanation">
-                <h2><%= pluralize(@programmer.errors.count, "error") %> prohibited this programmer from being saved:</h2>
-                <ul>
-                  <% @programmer.errors.full_messages.each do |msg| %>
-                      <li><%= msg %></li>
-                  <% end %>
-                </ul>
-              </div>
-          <% end %>
-          <div class="form-group">
-            <%= f.label :company_name, :class => 'col-lg-2 control-label' %>
-            <div class="col-lg-10"><%= f.text_field :name, :class => 'form-control' %></div>
-          </div>
-          <div class="form-group">
-            <%= f.label :first_name, :class => 'col-lg-2 control-label' %>
-            <div class="col-lg-10"><%= f.text_field :first_name, :class => 'form-control' %></div>
-          </div>
-          <div class="form-group">
-            <%= f.label :last_name, :class => 'col-lg-2 control-label' %>
-            <div class="col-lg-10"><%= f.text_field :last_name, :class => 'form-control' %></div>
-          </div>
-          <div class="form-group">
-            <%= f.label :email, :class => 'col-lg-2 control-label' %>
-            <div class="col-lg-10"><%= f.text_field :email, :class => 'form-control' %></div>
-          </div>
-          <div class="form-group">
-            <%= f.label :phone, :class => 'col-lg-2 control-label' %>
-            <div class="col-lg-10"><%= f.text_field :phone, :class => 'form-control' %></div>
-          </div>
-          <div class="form-group">
-            <div class="col-sm-4 col-sm-offset-2">
-            <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
-              <i class="fa fa-save"></i> Save
-            <% end %>
-            <%= link_to programmers_path, :method => :get, :class => 'btn cancel' do %>
-              <i class="fa fa-remove"></i> Cancel
-            <% end %>
-        </div>
-      <% end %>
+      <%= render :partial => 'programmers/form' %>
       </div>
     </div>
   </div>
-
+</div>

@@ -18,12 +18,9 @@ class Programmer < ActiveRecord::Base
 	belongs_to :user
 	has_and_belongs_to_many :offers
 	has_and_belongs_to_many :sub_channel_offers
-	
-	validates :first_name, presence: true
-	validates :last_name, presence: true
-	validates :name, presence: true
-	validates :email, presence: true
-	validates :phone, presence: true
+	belongs_to :programmer_type
 
-	attr_accessible :first_name, :last_name, :description, :name, :email, :phone
+	validates :name, presence: true
+
+	attr_accessible :first_name, :last_name, :description, :name, :email, :phone, :desc, :programmer_type_id
 end

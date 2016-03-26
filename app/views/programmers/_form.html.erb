@@ -1,49 +1,53 @@
-<%= form_for(@programmer) do |f| %>
-  <% if @programmer.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@programmer.errors.count, "error") %> prohibited this programmer from being saved:</h2>
-
-      <ul>
-        <% @programmer.errors.full_messages.each do |msg| %>
-          <li><%= msg %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :company_name %><br />
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :first_name, :required => true %><br />
-    <%= f.text_field :first_name %>
-  </div>
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </div>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.text_field :email %>
-  </div>
-  <div class="field">
-    <%= f.label :phone_number %><br />
-    <%= f.text_field :phone %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br />
-    <%= f.text_area :description %>
-  </div>
-
-  <% if @back_url %>
-    <%= hidden_field_tag 'back_url', @back_url %>
-  <% end %>
-
-  <div class="actions">
-    <%= f.submit %>
-    <% if params[:action].eql?('edit') || params[:action].eql?('update') %>
-      | <%= link_to "Delete", @programmer, method: :delete, confirm: "Are you sure?" %>
+<%= form_for @programmer, :html => {:class => 'form-horizontal group-border stripped'} do |f| %>
+    <% if @programmer.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@programmer.errors.count, "error") %> prohibited this programmer from being saved:</h2>
+          <ul>
+            <% @programmer.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
     <% end %>
-  </div>
-<% end %>
+    <div class="form-group">
+      <%= f.label :company_name, :class => 'col-lg-2 control-label' %>
+      <div class="col-lg-10"><%= f.text_field :name, :class => 'form-control' %></div>
+    </div>
+    <div class="form-group">
+      <%= f.label :first_name, :class => 'col-lg-2 control-label' %>
+      <div class="col-lg-10"><%= f.text_field :first_name, :class => 'form-control' %></div>
+    </div>
+    <div class="form-group">
+      <%= f.label :last_name, :class => 'col-lg-2 control-label' %>
+      <div class="col-lg-10"><%= f.text_field :last_name, :class => 'form-control' %></div>
+    </div>
+    <div class="form-group">
+      <%= f.label :email, :class => 'col-lg-2 control-label' %>
+      <div class="col-lg-10"><%= f.text_field :email, :class => 'form-control' %></div>
+    </div>
+    <div class="form-group">
+      <%= f.label :phone, :class => 'col-lg-2 control-label' %>
+      <div class="col-lg-10"><%= f.text_field :phone, :class => 'form-control' %></div>
+    </div>
+    <div class="form-group">
+      <%= f.label :desc, 'Description', :class => 'col-lg-2 control-label' %>
+      <div class="col-lg-10"><%= f.text_area :desc, :class => 'form-control' %></div>
+    </div>
+    <div class="form-group">
+      <%= f.label :type, :class => 'col-lg-2 col-md-3 control-label' %>
+      <div class="col-lg-10 col-md-9">
+        <%= select('programmer', 'programmer_type_id', ProgrammerType.order(:name).collect { |d| [d.name, d.id] }) %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-4 col-sm-offset-2">
+        <%= button_tag(type: 'submit', class: 'btn btn-primary') do %>
+            <i class="fa fa-save"></i> Save
+        <% end %>
+        <%= link_to programmers_path, :method => :get, :class => 'btn cancel' do %>
+            <i class="fa fa-remove"></i> Cancel
+        <% end %>
+      </div>
+    <% end %>
+</div>
