@@ -1,11 +1,18 @@
 <div class="row">
   <div class="col-sm-12">
     <div class="page-title">
-      <h1>All Potentials</h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-home"></i></a></li>
-        <li class="active">All Potentials</li>
-      </ol>
+      <% if current_user.admin? %>
+        <h1>All Potentials</h1>
+        <ol class="breadcrumb">
+          <li><a href="#"><i class="fa fa-home"></i></a></li>
+          <li class="active">All Potentials</li>
+        </ol>
+      <% else %>
+        <h1>My Potentials</h1>
+        <ol class="breadcrumb">
+          <li><a href='#'><i class="fa fa-home"></i></a></li>
+          <li class="active">My Potentials</li>
+      <% end %>
     </div>
   </div>
 </div>
@@ -13,7 +20,7 @@
   <div class="col-md-12">
     <div class="panel panel-default">
       <div class="panel-heading">
-        <h4 class="panel-title">Outlets</h4>
+        <h4 class="panel-title">Offers</h4>
         <!--<div class="panel-actions">-->
           <!--<a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>-->
           <!--<a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>-->
@@ -40,7 +47,11 @@
             <tbody>
               <% @offers.each do |offer| %>
                 <tr>
-                  <td>Programmer</td>
+                  <td>
+                      <% offer.programmers.each do |p| %>
+                      <%= p.name %>
+                    <% end %>
+                  </td>
                   <td><%= number_to_currency offer.dollar_amount %></td>
                   <td><%= offer.outlet.name %></td>
                   <td><%= offer.outlet.outlet_type.name %></td>
@@ -55,9 +66,10 @@
                       <button type="button" class="btn btn-primary droptown-toggle" data-toggle="dropdown">
                         Actions&nbsp;<span class="caret"></span></button>
                       <ul class="dropdown-menu">
-                        <li><a href="<%= url_for edit_offer_path(offer.id) %>">Display</a></li>
-                        <li><a href>Edit</a></li>
-                        <li><a href>Delete</a></li>
+                        <li><a href="<%= url_for offer_path(offer.id) %>">Display</a></li>
+                        <li><a href="<%= url_for edit_offer_path(offer.id) %>">Edit</a></li>
+                        <li><%= link_to 'Delete', offer_path(offer.id), :method => :delete %></li>
+
                       </ul>
                     </div>
                   </td>

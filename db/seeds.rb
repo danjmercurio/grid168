@@ -75,19 +75,22 @@ programmer1 = admin.programmers.create name: "Gem Shopping",
 																						first_name: "gem",
 																						last_name: "shopping",
 																						email: "gem@gmail.com",
-																						phone: "12341234"
+																						phone: "12341234",
+																						programmer_type: 1
 
 programmer2 = admin.programmers.create name: "Grace to you",
 																						first_name: "grace",
 																						last_name: "show",
 																						email: "grace@gmail.com",
-																						phone: "12341234"
+																						phone: "12341234",
+																						programmer_type: 1
 
 programmer3 = test.programmers.create name: "Disney channel",
 																					first_name: "disney",
 																					last_name: "show",
 																					email: "disney@gmail.com",
-																					phone: "12341234"
+																					phone: "12341234",
+																					programmer_type: 1
 
 puts "Create offer sample.."
 offer1 = outlet1.offers.create yearly_offer: 1,
@@ -145,4 +148,4 @@ sub_offer1.programmer_ids = [3]
 sub_offer1.save
 
 puts "Create CSV sample.."
-Rake::Task['database_values:insert'].invoke
+#Rake::Task['database_values:insert'].invoke

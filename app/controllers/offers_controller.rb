@@ -6,15 +6,21 @@ class OffersController < ApplicationController
 		@offer = @outlet.offers.build
 		@values = Offervalue.all
 		@programmers = current_user.programmers
-	end #end new action
+	end
 
 	def index
-		@offers = Offer.all
+		if current_user.admin?
+			@offers = Offer.all
+		else
+			@offers = current_user.offers
+		end
+
 	end
 
 	def show
-		@outlet = Outlet.find(params[:outlet_id])
 		@offer = Offer.find(params[:id])
+				@outlet = @offer.outlet
+
 		@values = Offervalue.all
 		@programmers = @offer.programmers
 	end #end show action
@@ -55,16 +61,15 @@ class OffersController < ApplicationController
 		@offer.half_hour_clicked = process_cell_clicked params[:cell]
 
 		respond_to do |format|
-		    if @offer.save
-	        	# format.html { redirect_to programmer_path(:id => @offer.programmer_id), :notice => 'Offer was successfully created.' }
-	      		format.html { redirect_to @outlet, notice: "Offer was created successfully" }
-	      	else
-	        	@values = Offervalue.all
+	    if @offer.save
+      	# format.html { redirect_to programmer_path(:id => @offer.programmer_id), :notice => 'Offer was successfully created.' }
+    		format.html { redirect_to @outlet, notice: "Offer was created successfully" }
+    	else
+      	@values = Offervalue.all
 				@programmers = current_user.programmers
-	        	format.html { render :new }
-      	end
-    	end #end respond_to
-
+      	format.html { render :new }
+      end
+		end #end respond_to
 	end #end create action
 
 	def destroy

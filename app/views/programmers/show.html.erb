@@ -1,40 +1,48 @@
+<div class="row">
+  <div class="col-sm-12">
+    <div class="page-title">
+      <h1><%= @programmer.name %>
+        <small></small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-home"></i></a></li>
+        <li>Programmers</li>
+        <li class="active"><%= @programmer.name %></li>
+      </ol>
+    </div>
+  </div>
+</div>
+<div class="row">
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div class="panel panel-default margin-b-30 ">
+      <!-- Start .panel -->
+      <div class="panel-heading">
+        <h4 class="panel-title"> Programmer Details</h4>
+      </div>
+      <div class="panel-body">
+        <p><strong>Name </strong><%= @programmer.name %></p>
 
-<p>
-  <b>Name:</b>
-  <%= @programmer.name %>
-</p>
+        <p><strong>Type </strong><%= @programmer.programmer_type.name %></p>
+        <p><strong>First Name </strong><%= @programmer.first_name %></p>
+        <p><strong>Last Name </strong><%= @programmer.last_name %></p>
+        <p><strong>Updated At </strong><%= @programmer.updated_at %></p>
+        <p><strong>Created At </strong><%= @programmer.created_at %></p>
+        <p><strong>Email </strong><%= @programmer.email %></p>
+        <p><strong>Phone </strong><%= @programmer.phone %></p>
+        <div class="panel panel-info">
+          <div class="panel-heading">Description</div>
+          <div class="panel-body"><%= @programmer.description %></div>
+        </div>
+      </div><!--end .col-->
+</div>
 
-<p>
-  <b>Description:</b>
-  <%= @programmer.description %>
-</p>
-<table id="table_programmer_show" class="tablesorter">
-	<thead>
-		<tr>
-			<th>Company name</th>
-			<th>DMA</th>
-			<th>Subs</th>
-			<th>Dollar amount</th>
-			<th>Created at</th>
-			<th>Action</th>
-		</tr>
-	</thead>
-	<tbody>
-		<% @programmer.offers.each do |offer| %>
-			<tr>
-				<td><%= offer.outlet.name %></td>
-				<td><%= offer.outlet.dma.name rescue "None" %></td>
-				<td><%= number_with_delimiter offer.outlet.subs %></td>
-				<td><%= number_to_currency offer.dollar_amount %></td>
-				<td><%= offer.created_at.strftime "%m/%d/%Y" %></td>
-				<td>
-					<%= link_to 'Edit', edit_outlet_offer_path(offer.outlet, offer) %> |
-		  		<%= link_to 'Destroy', outlet_offer_path(offer.outlet, offer), :confirm => 'Are you sure?', :method => :delete %>
-				</td>
-			</tr>
-		<% end %>
-	</tbody>
-</table>
 
-<%= link_to 'Edit', edit_programmer_path(@programmer) %> |
-<%= link_to 'Back', :back %>
+<div id="actions">
+  <%= button_to 'Edit', edit_programmer_path(@programmer), :class => 'btn btn-primary', :method => :get %>
+  <%= button_to 'Delete', @programmer, :confirm => 'Are you sure?', :method => :delete, :class => 'btn' %>
+  <%= button_to 'New Programmer', new_programmer_path(@programmer), :class => 'btn' %>
+</div>
+</div>
+  </div>

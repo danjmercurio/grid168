@@ -22,5 +22,5 @@ class Programmer < ActiveRecord::Base
 
 	validates :name, presence: true
 
-	attr_accessible :first_name, :last_name, :description, :name, :email, :phone, :desc, :programmer_type_id
+	attr_accessible :first_name, :last_name, :description, :name, :email, :phone, :programmer_type_id
 end

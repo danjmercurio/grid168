@@ -10,8 +10,14 @@
                 </div>
                 <div id="navbar-main" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li class="active"><li><a href="<%= url_for(offers_url) %>">All Potentials </a></li></li>
-                        <li class="dropdown">
+                        <% if current_user.admin? -%>
+                            <%= controller_name == 'offers' ? raw("<li class='active'>") : raw("<li>") %>
+                            <a href="<%= url_for(offers_url) %>">All Potentials </a></li>
+                        <% else %>
+                            <li><a href="<%= url_for(offers_url) %>">My Potentials</a></li>
+                        <% end %>
+
+                        <%= controller_name == 'outlets' ? raw("<li class='dropdown active'>") : raw("<li class='dropdown'>") %>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Media Outlets<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="<%= url_for(outlets_url) %>">All Media Outlets</a></li>
@@ -19,19 +25,21 @@
                             </ul>
                         </li>
 
-                        <li class="dropdown">
+                        <%= controller_name == 'programmers' ? raw("<li class='dropdown active'>") : raw("<li class='dropdown'>") %>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Programmers <span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="<%= url_for(programmers_url) %>">View Programmers</a></li>
                                 <li><a href="<%= url_for(new_programmer_url) %>">New Programmer</a></li>
                             </ul>
                         </li>
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Users <span class="caret"></span></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="<%= url_for(users_url) %>">Manage Users</a></li>
-                            </ul>
-                        </li>
+                        <% if current_user.admin? %>
+                            <%= controller_name == 'users' ? raw("<li class='dropdown active'>") : raw("<li class='dropdown'>") %>
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Users <span class="caret"></span></a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="<%= url_for(users_url) %>">Manage Users</a></li>
+                                </ul>
+                            </li>
+                        <% end %>
                     </ul>
                     <ul class="nav navbar-nav navbar-right">
 

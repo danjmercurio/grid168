@@ -36,7 +36,7 @@
                 <th>Media Type</th>
                 <th>Created At</th>
                 <th>User Name</th>
-                <th>Actions</th>
+                <th>&nbsp;</th>
               </tr>
             </thead>
             <tbody>
@@ -52,10 +52,15 @@
                   <td><%= outlet.created_at.strftime "%m/%d/%Y" %></td>
                   <td><%= outlet.user.email %></td>
                   <td>
-                    <%= link_to 'new offer', new_outlet_offer_path(outlet) %> |
-                    <%= link_to "show", outlet_path(outlet) %> |
-                    <%= link_to "edit", edit_outlet_path(outlet) %> |
-                    <%= link_to "delete", outlet, :confirm => "Are you sure?", :method => :delete %>
+                    <div class="btn-group">
+                      <button type="button" class="btn btn-primary droptown-toggle" data-toggle="dropdown">
+                        Actions&nbsp;<span class="caret"></span></button>
+                      <ul class="dropdown-menu">
+                        <li><%= link_to 'New Offer', new_outlet_offer_path(outlet) %></li>
+                        <li><%= link_to 'Show', outlet_path(outlet) %></li>
+                        <li><%= link_to 'Edit', edit_outlet_path(outlet) %></li>
+                      </ul>
+                    </div>
                   </td>
                 </tr>
               <% end %>
