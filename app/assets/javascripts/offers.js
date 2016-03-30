@@ -6,8 +6,28 @@ $(document).ready(function () {
     var flipSelected = function (cell) {
         $(cell).hasClass('clicked') ? $(cell).removeClass('clicked') : $(cell).addClass('clicked');
     };
+    // Do all our calculations here
+    var calculateRates = function () {
+        var hourlyRate = parseFloat($('#offer_dollar_amount').val());
+        var selected = $('.clicked');
+        var numSelected = selected.length;
+        var weeklyHours = numSelected / 2;
+        $('#offer_total_hours').val(weeklyHours);
+        $('#weekly_hours').text(weeklyHours);
+        var weeklyOffer = weeklyHours * hourlyRate;
+        $('#offer_weekly_offer').val(weeklyOffer.toString());
+        var monthlyHours = weeklyHours * 4;
+        $('#monthly_hours').text(monthlyHours);
+        var monthlyOffer = monthlyHours * hourlyRate;
+        $('#offer_monthly_offer').val(monthlyOffer.toString());
+        var yearlyHours = monthlyHours * 12;
+        $('#yearly_hours').text(yearlyHours);
+        var yearlyOffer = yearlyHours * hourlyRate;
+        $('#offer_yearly_offer').val(yearlyOffer.toString());
+    };
     // Handle selecting and un-selecting
-    $(window).mousedown(function () {
+    $('.gridContainer').mousedown(function (e) {
+        e.preventDefault();
         $('.cell').mouseenter(function () {
             var day = $(this).data('day');
             var time = $(this).data('time');
@@ -19,12 +39,14 @@ $(document).ready(function () {
     $(window).mouseup(function () {
         $('.cell').off('mouseenter');
     });
-    $('.cell').click(function () {
+    $('.cell').mousedown(function () {
         flipSelected(this);
     });
     // On page load, get selected cells from hidden element
     var cellHolder = $('#offer_time_cells');
     var selectedCells = cellHolder.val();
+    // Remove trailing comma
+    selectedCells = selectedCells.substr(0, selectedCells.length - 1);
     $.each(selectedCells.split(','), function (index, s) {
         var day = s.split("-")[0];
         var time = s.substr(2);
@@ -33,6 +55,8 @@ $(document).ready(function () {
         var cell = $(selector);
         flipSelected(cell);
     });
+    // Populate the rate fields
+    calculateRates();
     // The 'Invert Selection' button
     $('#invert').click(function () {
         $('.cell').each(function () {
@@ -47,8 +71,29 @@ $(document).ready(function () {
             }
         });
     });
+    // The 'Calculate' button
+    $('#calculate').click(function () {
+        calculateRates();
+    });
+
+    // The 'reset' button
+    $('#reset').click(function () {
+        $('.offerInput').each(function () {
+            $(this).val('');
+        });
+        $('span.hours').each(function () {
+            $(this).text('');
+        });
+        $('.cell').each(function () {
+            if ($(this).hasClass('clicked')) {
+                $(this).removeClass('clicked');
+            }
+        });
+    });
     // On form submit
     $("input[type='submit']").click(function () {
+        // Make sure all our calculations are done
+        calculateRates();
         // Select our hidden field to store selected cells
         var cellHolder = $('#offer_time_cells');
         // First, clear the value of cellHolder
@@ -65,4 +110,5 @@ $(document).ready(function () {
         });
         console.log(cellHolder.val());
     });
+
 });

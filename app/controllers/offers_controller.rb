@@ -51,9 +51,8 @@ class OffersController < ApplicationController
 		respond_to do |format|
 	    if @offer.save
       	# format.html { redirect_to programmer_path(:id => @offer.programmer_id), :notice => 'Offer was successfully created.' }
-        format.html { redirect_to outlet_offer_path, notice: "Offer was created successfully" }
+				format.html { redirect_to offers_path, notice: "Offer was created successfully" }
     	else
-      	@values = Offervalue.all
 				@programmers = current_user.programmers
       	format.html { render :new }
       end

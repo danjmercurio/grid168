@@ -1,16 +1,7 @@
 <%= stylesheet_link_tag 'offers' %>
 <%= form_for @offer, :class => 'form-inline' do |f| -%>
-    <% if @offer.errors.any? %>
-        <div id="error_explanation">
-          <h2><%= pluralize(@offer.errors.count, "error") %> prohibited this offer from being saved:</h2>
-          <ul>
-            <% @offer.errors.full_messages.each do |msg| %>
-                <li><%= msg %></li>
-            <% end %>
-          </ul>
-        </div>
-    <% end %>
     <%= f.hidden_field :time_cells, :value => @offer.time_cells %>
+    <%= f.hidden_field :total_hours %>
     <%= f.hidden_field :outlet_id, :value => @outlet.id %>
     <div class="row">
       <div class="col-md-6">
@@ -32,7 +23,7 @@
           <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
           <div class="input-group">
             <div class="input-group-addon">$</div>
-            <%= f.text_field :dollar_amount, :class => 'form-control', :placeholder => @offer.dollar_amount, :style => 'width: 30%;' %>
+            <%= f.text_field :dollar_amount, :class => 'form-control', :placeholder => @offer.dollar_amount, :style => 'width: 30%;', :value => '' %>
           </div>
         </div>
       </div>
@@ -60,7 +51,7 @@
         <div class="rate_info">
           <h1>Rate</h1>
           <span>Hourly Rate: <%= number_to_currency @offer.hourly_rate %></span>
-          <span>Total Hours: <%= @offer.total_hours %></span>
+          <span class="pull-right">Total Hours: <%= @offer.total_hours %></span>
           <table class="table table-condensed">
             <thead>
             <tr>
@@ -72,21 +63,38 @@
             <tbody>
             <tr>
               <td>Weekly</td>
-              <td><%= number_to_currency @offer.weekly_offer %></td>
+              <td><span class="hours" id="weekly_hours"></span></td>
+              <td>
+                <div class="input-group col-xs-6">
+                  <div class="input-group-addon">$</div>
+                  <%= f.text_field :weekly_offer, :class => 'form-control offerInput' %>
+                </div>
             </tr>
             <tr>
               <td>Monthy</td>
-              <td><%= number_to_currency @offer.monthly_offer %></td>
+              <td><span class="hours" id="monthly_hours"></span></td>
+              <td>
+                <div class="input-group col-xs-6">
+                  <div class="input-group-addon">$</div>
+                  <%= f.text_field :monthly_offer, :class => 'form-control offerInput' %>
+                </div>
+              </td>
             </tr>
             <tr>
               <td>Yearly</td>
-              <td><%= number_to_currency @offer.yearly_offer %></td>
+              <td><span class="hours" id="yearly_hours"></span></td>
+              <td>
+                <div class="input-group col-xs-6">
+                  <div class="input-group-addon">$</div>
+                  <%= f.text_field :yearly_offer, :class => 'form-control offerInput' %>
+                </div>
+              </td>
             </tr>
             </tbody>
           </table>
           <div>
-            <button class="btn btn-primary">Calculate</button>
-            <button class="btn btn-default">Reset</button>
+            <button type="button" id="calculate" class="btn btn-primary">Calculate</button>
+            <button type="button" id="reset" class="btn btn-default">Reset</button>
           </div>
         </div>
         <br/>
@@ -102,7 +110,11 @@
         <br/>
         <div>
           <h1>Notes</h1>
-          <%= f.text_area :offer_note, :class => 'form-control offer_note' %>
+          <p>Add a note to the Gross Rate Worksheet</p>
+          <%= f.text_area :grNotes, :class => 'form-control offer_note' %>
+          <br/>
+          <p>Add a note after Dayparts</p>
+          <%= f.text_area :dpNotes, :class => 'form-control offer_note' %>
         </div>
         <br/>
         <div>

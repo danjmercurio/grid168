@@ -25,14 +25,20 @@
 
 ::-moz-selection {
     background-color: Transparent;
-    color: #000;
+    color: white;
 }
 
 ::selection {
     background-color: Transparent;
-    color: #000;
+    color: white;
+    opacity: 1;
 }
 
 .offer_note {
     width: 100%;
+}
+
+.offerInput {
+    width: 75%;
+    text-align: right;
 }
