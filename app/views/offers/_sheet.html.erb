@@ -1,3 +1,5 @@
+<%= stylesheet_link_tag 'offers' %>
+<%= hidden_field_tag 'offer_time_cells', raw(@offer.time_cells) %>
 <h1>Grid168 Programming Financial Worksheet</h1>
 <h2>Bid prepared by: <%= image_tag("across.png") %></h3>
 <hr />
@@ -9,3 +11,21 @@
 <h4><strong>Total Homes: <%= @outlet.total_homes %></strong></h4>
 <p>Time Zone: <%= @outlet.time_zone %></p>
 <p>Available Date: <%= @offer.available_date %>
+<h2>Proposed Programming Schedule</h2>
+<div class="col-md-8 hours_div">
+        <div class="gridContainer">
+          <div class="gridContainerHeader" style="display:flex;">
+            <% [['Monday', 0], ['Tuesday', 1], ['Wednesday', 2], ['Thursday', 3], ['Friday', 4], ['Saturday', 5], ['Sunday', 6]].each do |day, num| -%>
+                <div class="day">
+                  <div class="dayLabel"><%= day %></div>
+                  <% start = Time.new(0) %>
+                  <% fin = start + (60 * 60 * 24) %>
+                  <% while start < fin do -%>
+                      <div class="cell" data-selected="false" data-day="<%= num %>" data-time="<%= start.strftime('%H:%M') %>"><%= start.strftime('%H:%M') %></div>
+                      <% start += 30.minutes %>
+                  <% end %>
+                </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
