@@ -14,4 +14,6 @@ pace.min
 waves.min
 custom.js
 tables.coffee
+offers.css
+offers.coffee
 )

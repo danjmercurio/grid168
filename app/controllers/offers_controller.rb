@@ -29,28 +29,25 @@ class OffersController < ApplicationController
 		@offer = Offer.find(params[:id])
 		@outlet = Outlet.find(@offer.outlet.id)
 		@values = Offervalue.all
-		@programmers = @offer.user.programmers
+    current_user.admin? ? @programmers = Programmer.all : @programmers = @offer.user.programmers
 		@url = params[:url]
+    @notes = @offer.notes
 	end #end edit action
 
 	def update
-		@outlet = Outlet.find(params[:outlet_id])
 		@offer = Offer.find(params[:id])
+    @outlet = Outlet.find(@offer.outlet.id)
+    respond_to do |format|
+      format.html {
+        if @offer.update_attributes(params[:offer])
+          redirect_to :back, :notice => 'Offer updated successfully'
+        else
+          redirect_to :back
+        end
+      }
+    end
+  end
 
-		@offer.half_hour_clicked = process_cell_clicked params[:cell]
-
-
-	    respond_to do |format|
-	    	if @offer.update_attributes(params[:offer])
-	        	path = params[:url].eql?("homepage") ? root_path : @outlet
-	        	format.html { redirect_to path, notice: "Offer was successfully updated" }
-	    	else
-	      		@values = Offervalue.all
-				@programmers = @offer.user.programmers
-	        	format.html { render :edit }
-	    	end
-	    end
-	end	 #end update action
 
 	def create
 
@@ -105,6 +102,10 @@ class OffersController < ApplicationController
 			end #end if clicked cell
 		end #end cell_arr iterator
 		str = str.chomp(';')
-	end #end process_cell_clicked method
+  end
+
+  #end process_cell_clicked method
+
+  private
 
 end

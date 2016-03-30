@@ -1,19 +1,17 @@
-<div class="outlet_info">
-	<div class="outlet_field">
-		<%= @outlet.name %>
+<div class="row">
+  <div class="col-md-6">
+    <h1><%= @outlet.name %></h1>
 	</div>
-	<div class="outlet_field">
-		DMA: <%= @outlet.dma.name rescue "None" %>
+  <div class="col-md-6">
+    <h3><strong>DMA:</strong> <%= @outlet.dma.name rescue "None" %></h3>
+    <h3><strong>Subs:</strong> <%= number_with_delimiter @outlet.subs %></h3>
+    <h3><strong>Dollar amount:</strong> <%= number_to_currency @offer.dollar_amount %></h3>
 	</div>
-	<div class="outlet_field">
-    Subs: <span id="subs"><%= number_with_delimiter @outlet.subs %></span>
-	</div>
-</div> <!-- end div outlet_info -->
+</div> <!-- end row -->
 
-<div>Dollar amount: <%= number_to_currency @offer.dollar_amount %></div>
 
-<div class="hour_info">
-	<div class="hours_div">
+<div class="row">
+  <div class="col-md-8 hours_div">
 		<table class="table">
 			<tr>
 				<th>Monday</th>
@@ -43,30 +41,29 @@
 			<% end %>
 		</table>
 	</div>
-</div>
-
-<div class="rate_info">
-	<h1>Rate</h1>
-	Hours: <%= @offer.total_hours %><br/>
-	Hour rate: <%= number_to_currency @offer.hourly_rate %><br/>
-	Weekly rate: <%= number_to_currency @offer.weekly_offer %><br/>
-	Monthly rate: <%= number_to_currency @offer.monthly_offer %><br/>
-	Yearly rate: <%= number_to_currency @offer.yearly_offer %><br/>
-	<h1>Programmers</h1>
-	<% if @programmers.empty? %>
-		This offer isn't belongs to any programmers
-	<% else %>
-		<ul>
-			<% @programmers.each do |programmer| %>
-				<li>
-					<%= programmer.name %><br/>
-					email: <%= programmer.email %><br/>
-					phone: <%= number_to_phone programmer.phone %>
-				</li>
+  <div class="col-md-2">
+    <div class="rate_info">
+      <h1>Rate</h1>
+      Hours: <%= @offer.total_hours %><br/>
+      Hour rate: <%= number_to_currency @offer.hourly_rate %><br/>
+      Weekly rate: <%= number_to_currency @offer.weekly_offer %><br/>
+      Monthly rate: <%= number_to_currency @offer.monthly_offer %><br/>
+      Yearly rate: <%= number_to_currency @offer.yearly_offer %><br/>
+      <h1>Programmers</h1>
+      <% if @programmers.empty? %>
+          This offer isn't belongs to any programmers
+      <% else %>
+          <ul>
+            <% @programmers.each do |programmer| %>
+                <li>
+                  <%= programmer.name %><br/>
+                  email: <%= programmer.email %><br/>
+                  phone: <%= number_to_phone programmer.phone %>
+                </li>
+            <% end %>
+          </ul>
 			<% end %>
-		</ul>
-	<% end %>
-	<%= link_to "Back", :back %>
+      <%= link_to "Back", :back %>
+    </div>
+  </div>
 </div>
-
-<div class="clr">&nbsp;</div>

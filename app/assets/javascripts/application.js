@@ -10,6 +10,7 @@
 //= require jquery-tablesorter
 //= require tables
 //= require select2
+//= require offers
 
 // jQuery helper for Animate.css
 $.fn.extend({
@@ -32,13 +33,13 @@ var onDocumentReady = function() {
     // If there was a flash, define this but don't call it (yet)
     var bounceOut = function() {
       flash.fadeOut(1000);
-    }
+    };
     // Bounce in from left
     flash.animateCSS('bounceInLeft');
     flash.show();
     var flashTimeOut = window.setTimeout(bounceOut, 1500);
   }
-}
+};
 
 $(document).ready(onDocumentReady);
 

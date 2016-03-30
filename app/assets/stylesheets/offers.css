@@ -1,0 +1,33 @@
+.day {
+    border: 1px solid;
+    width: 100%;
+    margin: 3px;
+}
+
+.cell {
+    margin: 3px;
+    border: 1px solid;
+}
+
+.gridContainer * {
+    text-align: center;
+}
+
+.clicked {
+    background-color: green;
+    color: white;
+}
+
+.dayLabel {
+    font-weight: bold;
+}
+
+::-moz-selection {
+    background-color: Transparent;
+    color: #000;
+}
+
+::selection {
+    background-color: Transparent;
+    color: #000;
+}
