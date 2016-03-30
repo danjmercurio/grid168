@@ -1,0 +1,11 @@
+<h1>Grid168 Programming Financial Worksheet</h1>
+<h2>Bid prepared by: <%= image_tag("across") %></h3>
+<hr />
+<h3><strong>Media Outlet:</strong> <%= @offer.outlet.name %></h3>
+<h3><strong>Market:</strong> <%= @offer.outlet.dma.name %></h3>
+<p>Media Type: <%= @outlet.outlet_type.name %></p>
+<p>MVPD Subs: <%= @outlet.subs %></p>
+<p>Over the air subs: <%= @outlet.over_air %></p>
+<h4><strong>Total Homes: <%= @outlet.total_homes %></strong></h4>
+<p>Time Zone: <%= @outlet.time_zone %></p>
+<p>Available Date: <%= @offer.available_date %>

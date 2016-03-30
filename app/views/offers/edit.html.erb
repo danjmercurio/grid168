@@ -62,7 +62,7 @@
             <tbody>
             <tr>
               <td>Weekly</td>
-              <td><span class="hours" id="weekly_hours"></span></td>
+              <td><span class="hours" id="weekly_hours"></span><%= f.hidden_field :weekly_hours %></td>
               <td>
                 <div class="input-group col-xs-6">
                   <div class="input-group-addon">$</div>
@@ -71,7 +71,7 @@
             </tr>
             <tr>
               <td>Monthy</td>
-              <td><span class="hours" id="monthly_hours"></span></td>
+              <td><span class="hours" id="monthly_hours"></span><%= f.hidden_field :monthly_hours, :value => @offer.monthly_hours %></td>
               <td>
                 <div class="input-group col-xs-6">
                   <div class="input-group-addon">$</div>
@@ -81,7 +81,7 @@
             </tr>
             <tr>
               <td>Yearly</td>
-              <td><span class="hours" id="yearly_hours"></span></td>
+              <td><span class="hours" id="yearly_hours"></span><%= f.hidden_field :yearly_hours, :value => @offer.yearly_hours %></td>
               <td>
                 <div class="input-group col-xs-6">
                   <div class="input-group-addon">$</div>

@@ -14,14 +14,17 @@ $(document).ready(function () {
         var weeklyHours = numSelected / 2;
         $('#offer_total_hours').val(weeklyHours);
         $('#weekly_hours').text(weeklyHours);
+        $('#offer_weekly_hours').val(weeklyHours.toString());
         var weeklyOffer = weeklyHours * hourlyRate;
         $('#offer_weekly_offer').val(weeklyOffer.toString());
         var monthlyHours = weeklyHours * 4;
         $('#monthly_hours').text(monthlyHours);
+        $('#offer_monthly_hours').val(monthlyHours.toString());
         var monthlyOffer = monthlyHours * hourlyRate;
         $('#offer_monthly_offer').val(monthlyOffer.toString());
         var yearlyHours = monthlyHours * 12;
         $('#yearly_hours').text(yearlyHours);
+        $('#offer_yearly_hours').val(yearlyHours.toString());
         var yearlyOffer = yearlyHours * hourlyRate;
         $('#offer_yearly_offer').val(yearlyOffer.toString());
     };

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160330201651) do
+ActiveRecord::Schema.define(version: 20160330220420) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email",              limit: 255
@@ -42,20 +42,23 @@ ActiveRecord::Schema.define(version: 20160330201651) do
   end
 
   create_table "offers", force: :cascade do |t|
-    t.integer "outlet_id", limit: 4
-    t.float "yearly_offer", limit: 24, default: 0.0, null: false
-    t.float "monthly_offer", limit: 24, default: 0.0, null: false
-    t.float "weekly_offer", limit: 24, default: 0.0, null: false
-    t.float "hourly_rate", limit: 24, default: 0.0, null: false
-    t.float "total_hours", limit: 24, default: 0.0, null: false
+    t.integer  "outlet_id",      limit: 4
+    t.float    "yearly_offer",   limit: 24,    default: 0.0, null: false
+    t.float    "monthly_offer",  limit: 24,    default: 0.0, null: false
+    t.float    "weekly_offer",   limit: 24,    default: 0.0, null: false
+    t.float    "hourly_rate",    limit: 24,    default: 0.0, null: false
+    t.float    "total_hours",    limit: 24,    default: 0.0, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.float "dollar_amount", limit: 24, default: 0.0, null: false
-    t.integer "user_id", limit: 4
-    t.string "available_date", limit: 255
-    t.text "time_cells", limit: 65535
-    t.text "grNotes", limit: 65535
-    t.text "dpNotes", limit: 65535
+    t.float    "dollar_amount",  limit: 24,    default: 0.0, null: false
+    t.integer  "user_id",        limit: 4
+    t.string   "available_date", limit: 255
+    t.text     "time_cells",     limit: 65535
+    t.text     "grNotes",        limit: 65535
+    t.text     "dpNotes",        limit: 65535
+    t.float    "weekly_hours",   limit: 24
+    t.float    "monthly_hours",  limit: 24
+    t.float    "yearly_hours",   limit: 24
   end
 
   create_table "offers_programmers", id: false, force: :cascade do |t|
