@@ -91,11 +91,16 @@
         <br/>
         <div>
           <h1>Notes</h1>
-          <%= f.text_field :available_date %>
+          <%= f.text_area :offer_note, :class => 'form-control offer_note' %>
         </div>
         <br/>
         <div>
-          <%= f.submit %>
+          <p>Available Date</p>
+          <%= f.text_field :available_date, :class => 'form-control dp' %>
+        </div>
+        <br/>
+        <div>
+          <%= f.submit 'Save Offer', :class => 'btn btn-success btn-lg' %>
         </div>
       </div>
     </div>

@@ -1,0 +1,12 @@
+<% flash.each do |key, value| -%>
+    <div id="message" class="flash">
+      <div class="flash flash-padding">
+        <div id="inner-message" class="alert <%= key == 'alert' ? "alert-danger" : "alert-success" %> flash">
+          <button type="button" class="close flash" data-dismiss="alert">&times;</button>
+          <script type="text/javascript">
+            console.log("Notification => {:key => [<%= key %>], :message => [<%= value %>]}");
+          </script>
+          <div class="alert-text"><i class="fa fa-exclamation-circle"></i>&nbsp;<%= value.strip %></div>
+        </div>
+      </div>
+<% end %>

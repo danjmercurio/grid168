@@ -1,5 +1,7 @@
 var days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 $(document).ready(function () {
+    // Initialize jQuery datepicker
+    $('.dp').datepicker();
     // Generic function to invert a cell's select state
     var flipSelected = function (cell) {
         $(cell).hasClass('clicked') ? $(cell).removeClass('clicked') : $(cell).addClass('clicked');
@@ -16,6 +18,9 @@ $(document).ready(function () {
     });
     $(window).mouseup(function () {
         $('.cell').off('mouseenter');
+    });
+    $('.cell').click(function () {
+        flipSelected(this);
     });
     // On page load, get selected cells from hidden element
     var cellHolder = $('#offer_time_cells');

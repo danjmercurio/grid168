@@ -11,6 +11,7 @@
 
 .gridContainer * {
     text-align: center;
+    cursor: crosshair;
 }
 
 .clicked {
@@ -30,4 +31,8 @@
 ::selection {
     background-color: Transparent;
     color: #000;
+}
+
+.offer_note {
+    width: 100%;
 }

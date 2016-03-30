@@ -150,7 +150,7 @@
 <div id="actions">
 	<%= button_to "Edit", edit_outlet_path(@outlet), :class => 'btn btn-primary', :method => :get %>
 	<%= button_to 'Delete', @outlet, :confirm => 'Are you sure?', :method => :delete, :class => 'btn' %>
-	<%= button_to 'New Offer', new_outlet_offer_path(@outlet), :class => 'btn' %>
+  <%= button_to 'New Offer', new_outlet_offer_path(@outlet), :class => 'btn', :method => :get %>
 </div>
 
 <!-- <div id='outlet_sub_channel'>

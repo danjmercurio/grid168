@@ -6,11 +6,11 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-ui
 //= require bootstrap-sprockets
 //= require jquery-tablesorter
 //= require tables
 //= require select2
-//= require offers
 
 // jQuery helper for Animate.css
 $.fn.extend({

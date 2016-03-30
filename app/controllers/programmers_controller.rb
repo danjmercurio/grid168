@@ -1,7 +1,14 @@
 class ProgrammersController < ApplicationController
+	before_filter :authenticate_user!
+
 	# GET /programmers
 	# GET /programmers.json
 	def index
+		if current_user.admin?
+			@programmers = Programmer.all
+		else
+			@programmers = current_user.programmers
+		end
 		@offers = current_user.offers
 		@sub_channel_offers = current_user.sub_channel_offers
 

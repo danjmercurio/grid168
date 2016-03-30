@@ -4,7 +4,6 @@ class OffersController < ApplicationController
 	def new
 		@outlet = Outlet.find(params[:outlet_id])
 		@offer = @outlet.offers.build
-		@values = Offervalue.all
 		@programmers = current_user.programmers
 	end
 
@@ -14,21 +13,17 @@ class OffersController < ApplicationController
 		else
 			@offers = current_user.offers
 		end
-
 	end
 
 	def show
 		@offer = Offer.find(params[:id])
-				@outlet = @offer.outlet
-
-		@values = Offervalue.all
+    @outlet = @offer.outlet
 		@programmers = @offer.programmers
 	end #end show action
 
 	def edit
 		@offer = Offer.find(params[:id])
 		@outlet = Outlet.find(@offer.outlet.id)
-		@values = Offervalue.all
     current_user.admin? ? @programmers = Programmer.all : @programmers = @offer.user.programmers
 		@url = params[:url]
     @notes = @offer.notes
@@ -50,17 +45,13 @@ class OffersController < ApplicationController
 
 
 	def create
-
-		puts "\nCreate action, OffersController\n"
-		@outlet = Outlet.find(params[:outlet_id])
-		@offer = @outlet.offers.build(params[:offer].merge({:user_id => current_user.id}))
-
-		@offer.half_hour_clicked = process_cell_clicked params[:cell]
-
+    @offer = Offer.new(params[:offer])
+    @outlet = Outlet.find(params[:offer][:outlet_id])
+    @offer.user = current_user
 		respond_to do |format|
 	    if @offer.save
       	# format.html { redirect_to programmer_path(:id => @offer.programmer_id), :notice => 'Offer was successfully created.' }
-    		format.html { redirect_to @outlet, notice: "Offer was created successfully" }
+        format.html { redirect_to outlet_offer_path, notice: "Offer was created successfully" }
     	else
       	@values = Offervalue.all
 				@programmers = current_user.programmers

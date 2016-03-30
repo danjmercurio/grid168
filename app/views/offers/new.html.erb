@@ -1,15 +1,118 @@
-<div class="row">
-  <div class="col-sm-12">
-    <div class="page-title">
-      <h1>Create new Offer
-        <small></small>
-      </h1>
-      <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-home"></i></a></li>
-        <li>Offers</li>
-        <li class="active">New Offer</li>
-      </ol>
+<%= stylesheet_link_tag 'offers' %>
+<%= form_for @offer, :class => 'form-inline' do |f| -%>
+    <% if @offer.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@offer.errors.count, "error") %> prohibited this offer from being saved:</h2>
+          <ul>
+            <% @offer.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <%= f.hidden_field :time_cells, :value => @offer.time_cells %>
+    <%= f.hidden_field :outlet_id, :value => @outlet.id %>
+    <div class="row">
+      <div class="col-md-6">
+        <h1><%= @outlet.name %></h1>
+        <div>
+          <a href="#">
+            <button type="button" class="btn btn-primary" id="selectAll">Select All</button>
+          </a>
+          <a href="#">
+            <button type="button" class="btn btn-primary" id="invert">Invert Selection</button>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <h3><strong><%= f.label :dma, 'DMA:' %></strong> <%= @outlet.dma.name rescue "None" %></h3>
+          <h3><strong><%= f.label :subs, 'Subs:' %></strong> <%= number_with_delimiter @outlet.subs %></h3>
+
+          <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+          <div class="input-group">
+            <div class="input-group-addon">$</div>
+            <%= f.text_field :dollar_amount, :class => 'form-control', :placeholder => @offer.dollar_amount, :style => 'width: 30%;' %>
+          </div>
+        </div>
+      </div>
+    </div> <!-- end row -->
+
+    <div class="row">
+      <div class="col-md-8 hours_div">
+        <div class="gridContainer">
+          <div class="gridContainerHeader" style="display:flex;">
+            <% [['Monday', 0], ['Tuesday', 1], ['Wednesday', 2], ['Thursday', 3], ['Friday', 4], ['Saturday', 5], ['Sunday', 6]].each do |day, num| -%>
+                <div class="day">
+                  <div class="dayLabel"><%= day %></div>
+                  <% start = Time.new(0) %>
+                  <% fin = start + (60 * 60 * 24) %>
+                  <% while start < fin do -%>
+                      <div class="cell" data-selected="false" data-day="<%= num %>" data-time="<%= start.strftime('%H:%M') %>"><%= start.strftime('%H:%M') %></div>
+                      <% start += 30.minutes %>
+                  <% end %>
+                </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="rate_info">
+          <h1>Rate</h1>
+          <span>Hourly Rate: <%= number_to_currency @offer.hourly_rate %></span>
+          <span>Total Hours: <%= @offer.total_hours %></span>
+          <table class="table table-condensed">
+            <thead>
+            <tr>
+              <td>Offer</td>
+              <td>Hours</td>
+              <td>Rate</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>Weekly</td>
+              <td><%= number_to_currency @offer.weekly_offer %></td>
+            </tr>
+            <tr>
+              <td>Monthy</td>
+              <td><%= number_to_currency @offer.monthly_offer %></td>
+            </tr>
+            <tr>
+              <td>Yearly</td>
+              <td><%= number_to_currency @offer.yearly_offer %></td>
+            </tr>
+            </tbody>
+          </table>
+          <div>
+            <button class="btn btn-primary">Calculate</button>
+            <button class="btn btn-default">Reset</button>
+          </div>
+        </div>
+        <br/>
+        <div>
+          <h1>Programmers</h1>
+          <% if @programmers.empty? %>
+              You must create a programmer record to associate with this offer before you can save it.
+          <% else %>
+              <%= select('offer', 'programmer_ids', Programmer.order(:name).collect { |d| [d.name, d.id] }) %>
+          <% end %>
+          <div class="pull-right"><%= link_to 'Add a programmer', new_programmer_url, :class => 'btn btn-default' %></div>
+        </div>
+        <br/>
+        <div>
+          <h1>Notes</h1>
+          <%= f.text_area :offer_note, :class => 'form-control offer_note' %>
+        </div>
+        <br/>
+        <div>
+          <p>Available Date</p>
+          <%= f.text_field :available_date, :class => 'form-control dp' %>
+        </div>
+        <br/>
+        <div>
+          <%= f.submit 'Save Offer', :class => 'btn btn-success btn-lg' %>
+        </div>
+      </div>
     </div>
-  </div>
-</div><!-- end .page title-->
-<%= render 'form', :outlet => @outlet, :offer => @offer, :values => @values, :programmers => @programmers %>
+<% end %>

@@ -32,6 +32,9 @@
   <% end %>
     <%= render :partial => 'layouts/notis' %>
     <%= javascript_include_tag 'application' %>
+  <% if controller_name == 'offers' -%>
+      <%= javascript_include_tag 'offers' %>
+  <% end %>
     <%= javascript_include_tag 'metisMenu.min' %>
     <%= javascript_include_tag 'pace.min' %>
     <%= javascript_include_tag 'waves.min' %>
