@@ -29,7 +29,7 @@ group :development do
   gem 'spring'
   gem 'annotate'
   gem 'pry-rails'
-  gem 'mysql2', :git => 'https://github.com/brianmario/mysql2.git'
+  gem 'sqlite3'
 end
 
 group :production do
