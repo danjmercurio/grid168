@@ -3,14 +3,18 @@
 <h1>Grid168 Programming Financial Worksheet</h1>
 <h2>Bid prepared by: <%= image_tag("across.png") %></h3>
 <hr />
-<h3><strong>Media Outlet:</strong> <%= @offer.outlet.name %></h3>
-<h3><strong>Market:</strong> <%= @offer.outlet.dma.name %></h3>
-<p>Media Type: <%= @outlet.outlet_type.name %></p>
-<p>MVPD Subs: <%= @outlet.subs %></p>
-<p>Over the air subs: <%= @outlet.over_air %></p>
-<h4><strong>Total Homes: <%= @outlet.total_homes %></strong></h4>
-<p>Time Zone: <%= @outlet.time_zone %></p>
-<p>Available Date: <%= @offer.available_date %>
+<div class="col-md-6">
+  <h3><strong>Media Outlet:</strong> <%= @offer.outlet.name %></h3>
+  <h3><strong>Market:</strong> <%= @offer.outlet.dma.name %></h3>
+  <p><strong>Media Type:</strong> <%= @outlet.outlet_type.name %></p>
+</div>
+<div class="col-md-6">
+  <p><strong>MVPD Subscribers:</strong> <%= @outlet.subs %></p>
+  <p><strong>Over the Air Homes:</strong> <%= @outlet.over_air %></p>
+  <p><strong>Total Homes:</strong> <%= @outlet.total_homes %></p>
+  <p><strong>Time Zone:</strong> <%= @outlet.time_zone %></p>
+  <p><strong>Available Date:</strong> <%= @offer.available_date %></p>
+</div>
 <h2>Proposed Programming Schedule</h2>
 <div class="col-md-8 hours_div">
         <div class="gridContainer">

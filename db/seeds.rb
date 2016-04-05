@@ -100,7 +100,6 @@ offer1 = outlet1.offers.create yearly_offer: 1,
 										total_hours: 1,
 										dollar_amount: 1,
 										user_id: 1
-offer1.half_hour_clicked = "monday_00.00;tuesday_00.00"
 offer1.programmer_ids = [1, 2]
 offer1.save
 
@@ -111,7 +110,6 @@ offer2 = outlet3.offers.create yearly_offer: 2,
 										total_hours: 2,
 										dollar_amount: 2,
 										user_id: 2
-offer2.half_hour_clicked = "monday_00.00;tuesday_00.00"
 offer2.programmer_ids = [2]
 offer2.save
 
@@ -122,7 +120,6 @@ offer3 = outlet2.offers.create yearly_offer: 3,
 										total_hours: 3,
 										dollar_amount: 3,
 										user_id: 1
-offer3.half_hour_clicked = "monday_00.00;tuesday_00.00"
 offer3.programmer_ids = [1]
 offer3.save
 
@@ -143,9 +140,8 @@ sub_offer1 = sub_channel1.sub_channel_offers.create yearly_offer: 4,
 																				total_hours: 4,
 																				dollar_amount: 4,
 																				user_id: 2
-sub_offer1.half_hour_clicked = "monday_00.00;tuesday_00.00"
 sub_offer1.programmer_ids = [3]
 sub_offer1.save
 
 puts "Create CSV sample.."
-#Rake::Task['database_values:insert'].invoke
+Rake::Task['database_values:insert'].invoke

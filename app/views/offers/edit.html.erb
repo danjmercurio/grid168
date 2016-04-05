@@ -5,6 +5,16 @@
     <div class="row">
       <div class="col-md-6">
         <h1><%= @outlet.name %></h1>
+        <div class="form-group">
+          <%= fields_for @offer.outlet do |o| -%>
+            <%= o.label :subs, 'MVPD Subs' %>
+            <%= o.text_field :subs, :class => 'form-control' %>
+            <%= o.label :over_air, 'OTA Homes' %>
+            <%= o.text_field :over_air, :class => 'form-control' %>
+            <%= o.label :total_homes %>
+            <%= o.text_field :total_homes, :class => 'form-control' %>
+          <% end %> 
+        </div>
         <div>
           <a href="#">
             <button type="button" class="btn btn-primary" id="selectAll">Select All</button>

@@ -19,22 +19,25 @@
 	  <%= csrf_meta_tags %>
 	</head>
   <body>
-  <% if signed_in? %>
-      <%= render :partial => 'layouts/menu' %>
-      <div class="clearfix"></div>
-      <%= render :partial => 'layouts/submenu' %>
-      <div class="container page-wrapper">
-        <%= yield %>
-      </div>
-  <% else %>
-    <%= yield %>
-    <%= render :partial => 'layouts/footer' %>
-  <% end %>
-    <%= render :partial => 'layouts/notis' %>
-    <%= javascript_include_tag 'application' %>
-  <% if controller_name == 'offers' -%>
-      <%= javascript_include_tag 'offers' %>
-  <% end %>
+    <% if signed_in? %>
+        <%= render :partial => 'layouts/menu' %>
+        <div class="clearfix"></div>
+        <%= render :partial => 'layouts/submenu' %>
+        <div class="container page-wrapper">
+          <%= yield %>
+        </div>
+    <% else %>
+      <%= yield %>
+      <%= render :partial => 'layouts/footer' %>
+    <% end %>
+      <%= render :partial => 'layouts/notis' %>
+      <%= javascript_include_tag 'application' %>
+    <% if controller_name == 'offers' -%>
+        <%= javascript_include_tag 'offers' %>
+    <% end %>
+    <% if controller_name == 'outlets' && action_name == 'new' %>
+      <%= javascript_include_tag 'newOutlet' %>
+    <% end %>
     <%= javascript_include_tag 'metisMenu.min' %>
     <%= javascript_include_tag 'pace.min' %>
     <%= javascript_include_tag 'waves.min' %>

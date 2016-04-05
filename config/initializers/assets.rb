@@ -16,4 +16,5 @@ custom.js
 tables.coffee
 offers.css
 offers.coffee
+newOutlet.js
 )

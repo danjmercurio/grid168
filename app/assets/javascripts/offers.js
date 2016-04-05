@@ -8,7 +8,8 @@ $(document).ready(function () {
     };
     // Do all our calculations here
     var calculateRates = function () {
-        var hourlyRate = parseFloat($('#offer_dollar_amount').val());
+        // First, just gather information
+        var currencyFactor = parseFloat($('#offer_dollar_amount').val());
         var selected = $('.clicked');
         var numSelected = selected.length;
         var weeklyHours = numSelected / 2;
@@ -113,5 +114,4 @@ $(document).ready(function () {
         });
         console.log(cellHolder.val());
     });
-
 });

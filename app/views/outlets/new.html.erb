@@ -52,13 +52,18 @@
           </div>
 
           <div class="form-group">
-            <%= f.label :total_homes, :class => 'col-lg-2 control-label' %>
-            <div class="col-lg-10"><%= f.text_field :total_homes, :class => 'form-control' %></div>
+            <%= f.label :subs, 'MVPD Subscribers', :class => 'col-lg-2 control-label' %>
+            <div class="col-lg-10"><%= f.text_field :subs, :class => 'form-control' %></div>
           </div>
 
           <div class="form-group">
-            <%= f.label :over_air, :class => 'col-lg-2 control-label' %>
+            <%= f.label :over_air, 'Over the Air Homes', :class => 'col-lg-2 control-label' %>
             <div class="col-lg-10"><%= f.text_field :over_air, :class => 'form-control' %></div>
+          </div>
+
+          <div class="form-group">
+            <%= f.label :total_homes, 'Total Homes', :class => 'col-lg-2 control-label' %>
+            <div class="col-lg-10"><%= f.text_field :total_homes, :class => 'form-control' %></div>
           </div>
 
           <div class="form-group">
