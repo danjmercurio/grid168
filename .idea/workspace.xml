@@ -4,9 +4,7 @@
     <bookmark url="file://$PROJECT_DIR$/app/views/offers/_form.html.erb" line="14" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="253a1b92-4cff-4d17-8db2-60a8dec7fc3d" name="Default" comment="added some definitions in display table of offer show view&#10;added button to go to show view in offer edit view">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="253a1b92-4cff-4d17-8db2-60a8dec7fc3d" name="Default" comment="added some definitions in display table of offer show view&#10;added button to go to show view in offer edit view" />
     <ignored path="grid168.iws" />
     <ignored path=".idea/workspace.xml" />
     <ignored path="$PROJECT_DIR$/.bundle/" />
@@ -739,7 +737,7 @@
       <updated>1457472936944</updated>
       <workItem from="1459896711435" duration="20978000" />
       <workItem from="1459921084326" duration="9722000" />
-      <workItem from="1459980864730" duration="289000" />
+      <workItem from="1459980864730" duration="323000" />
     </task>
     <task id="LOCAL-00001" summary="On Rails 4">
       <created>1457475047264</created>
@@ -939,7 +937,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30989000" />
+    <option name="totallyTimeSpent" value="31023000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
