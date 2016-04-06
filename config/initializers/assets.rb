@@ -17,4 +17,6 @@ Rails.application.config.assets.precompile += %w(
   offers.coffee
   outletForm.js
   input-mask/jquery.inputmask.bundle.min.js
+  grid.js
+  sheet.js
 )

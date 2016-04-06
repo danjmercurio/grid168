@@ -1,6 +1,7 @@
 //$("[data-day='0']").each(function() {total = total + parseFloat($(this).data('audience'));});
 
 var days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+var calculateRates;
 $(document).ready(function () {
     // Initialize jQuery datepicker
     $('.dp').datepicker();
@@ -29,12 +30,9 @@ $(document).ready(function () {
     // Register event handlers
     mvpdSubs.blur(getCheckFill);
     otaSubs.blur(getCheckFill);
-    // Generic function to invert a cell's select state
-    var flipSelected = function (cell) {
-        $(cell).hasClass('clicked') ? $(cell).removeClass('clicked') : $(cell).addClass('clicked');
-    };
+
     // Do all our calculations here
-    var calculateRates = function () {
+    calculateRates = function () {
         // Check the input values at the top
         getCheckFill();
 
@@ -79,39 +77,24 @@ $(document).ready(function () {
         $('#yearly_hours').text(yearlyHours);
         $('#offer_yearly_hours').val(yearlyHours);
         $('#offer_yearly_offer').val(annualRate);
-    };
-    // Handle selecting and un-selecting
-    $('.gridContainer').mousedown(function (e) {
-        e.preventDefault();
-        $('.cell').mouseenter(function () {
+
+        // Insert selected cells into holder input
+        var cellHolder = $('#offer_time_cells');
+        cellHolder.val('');
+        $(selectedCells).each(function () {
             var day = $(this).data('day');
             var time = $(this).data('time');
-            console.log(day, time);
-            // Change the cell's state
-            flipSelected(this);
+            // Append something like this: "0-02:00" meaning Monday, 2:00-2:30 to the hidden field
+            cellHolder.val(function (i, val) {
+                return val + [day, time].join('-') + ',';
+            })
         });
-    });
-    $(window).mouseup(function () {
-        $('.cell').off('mouseenter');
-    });
-    $('.cell').mousedown(function () {
-        flipSelected(this);
-    });
-    // On page load, get selected cells from hidden element
-    var cellHolder = $('#offer_time_cells');
-    var selectedCells = cellHolder.val();
-    // Remove trailing comma
-    selectedCells = selectedCells.substr(0, selectedCells.length - 1);
-    $.each(selectedCells.split(','), function (index, s) {
-        var day = s.split("-")[0];
-        var time = s.substr(2);
-        console.log(day, time);
-        var selector = ".cell[data-day='" + day + "'][data-time='" + time + "']";
-        var cell = $(selector);
-        flipSelected(cell);
-    });
-    // Populate the rate fields
-    calculateRates();
+        console.log(cellHolder.val());
+    };
+
+
+    // // Populate the rate fields
+    // calculateRates();
     // The 'Invert Selection' button
     $('#invert').click(function () {
         $('.cell').each(function () {
@@ -145,24 +128,11 @@ $(document).ready(function () {
             }
         });
     });
-    // On form submit
+    // On form submit (show offer view has no input of type submit)
     $("input[type='submit']").click(function () {
         // Make sure all our calculations are done
+        // This function also updates the cell holder hidden input
         calculateRates();
-        // Select our hidden field to store selected cells
-        var cellHolder = $('#offer_time_cells');
-        // First, clear the value of cellHolder
-        cellHolder.val('');
-        // Get all selected cells
-        var selected = $('.clicked');
-        $(selected).each(function () {
-            var day = $(this).data('day');
-            var time = $(this).data('time');
-            // Append something like this: "0-02:00" meaning Monday, 2:00-2:30 to the hidden field
-            cellHolder.val(function (i, val) {
-                return val + [day, time].join('-') + ',';
-            })
-        });
-        console.log(cellHolder.val());
+
     });
 });
