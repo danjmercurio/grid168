@@ -38,7 +38,7 @@ class OffersController < ApplicationController
         if @offer.update_attributes(params[:offer])
           redirect_to :back, :notice => 'Offer updated successfully'
         else
-          redirect_to :back
+					redirect_to :back, flash[:alert] = @offer.errors
         end
       }
     end
@@ -50,13 +50,12 @@ class OffersController < ApplicationController
     @outlet = @offer.outlet
     @offer.user = current_user
 		respond_to do |format|
-      if @offer.save!
+			if @offer.save
       	# format.html { redirect_to programmer_path(:id => @offer.programmer_id), :notice => 'Offer was successfully created.' }
 				format.html { redirect_to offers_path, notice: "Offer was created successfully" }
-      else
-				@programmers = current_user.programmers
-      	format.html { render :new }
-      end
+			else
+				format.html { redirect_to :back, flash[:alert] = @offer.errors }
+			end
 		end #end respond_to
 	end #end create action
 

@@ -22,10 +22,11 @@ $.fn.extend({
     }
 });
 
-// Selector for flash message DOM element
-var flash = $('.flash');
 var onDocumentReady = function() {
-  // Style all select tags with select2 CSS
+// Selector for flash message DOM element
+    var flash = $('.flash');
+
+    // Style all select tags with select2 CSS
   $('select').select2();
 
   // If a flash message was rendered, perform its exit animation
