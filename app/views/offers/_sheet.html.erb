@@ -71,17 +71,17 @@
             <td><strong>Weekly Hours</strong></td>
             <td><input type="text" value="<%= @offer.weekly_hours %>"/></td>
             <td><strong>Monthly Hours</strong></td>
-            <td>idk</td>
+            <td><input type="text" value="<%= @offer.monthly_hours %>"/></td>
             <td><strong>Yearly Hours</strong></td>
-            <td>dfkldf</td>
+            <td><input type="text" value="<%= @offer.yearly_hours %>"/></td>
           </tr>
           <tr>
             <td><strong>Weekly Rate</strong></td>
             <td><input type="text" value="<%= number_to_currency @offer.weekly_offer %>"/></td>
             <td><strong>Monthly Rate</strong></td>
-            <td>dfdfd</td>
+            <td><input type="text" value="<%= number_to_currency @offer.monthly_offer %>"/></td>
             <td><strong>Yearly Rate</strong></td>
-            <td>dfdfdf</td>
+            <td><input type="text" value="<%= number_to_currency @offer.yearly_offer %>"/></td>
           </tr>
           </tbody>
         </table>
