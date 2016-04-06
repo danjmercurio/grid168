@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal">
-    <data-source name="Rails grid168: test" uuid="065c680e-40d6-4bd4-9640-11efd6b81acc">
-      <user-name>root</user-name>
-      <user-password>dfc7dfcbdfdadfcbdfdadfda</user-password>
+    <data-source name="Sqlite (Xerial) - development.sqlite3" uuid="187b2da1-e014-4dd9-8477-23a3a2b22445">
+      <secret-storage>master_key</secret-storage>
+      <auth-required>false</auth-required>
     </data-source>
-    <data-source name="Rails grid168: development" uuid="aab207ed-9350-4c35-a79a-491e8394c173">
-      <user-name>root</user-name>
-      <user-password>dfc7dfcbdfdadfcbdfdadfda</user-password>
-      <schema-pattern>grid168.*</schema-pattern>
-      <default-schemas>grid168.*</default-schemas>
+    <data-source name="Rails grid168: development" uuid="86e53994-c62f-4c46-90bb-ff76cbc93a92">
+      <auth-required>false</auth-required>
     </data-source>
   </component>
 </project>

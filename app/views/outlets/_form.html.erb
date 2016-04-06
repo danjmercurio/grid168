@@ -1,84 +1,86 @@
-<%= form_for(@outlet) do |f| %>
-	<% if @outlet.errors.any? %>
-		<div id="error_explanation">
-			<h2><%= pluralize(@outlet.errors.count, "error") %> prohibited this outlet from being saved:</h2>
+<% unless action_name == :index %>
+    <%= javascript_include_tag 'outletForm' %>
+    <%= javascript_include_tag 'input-mask/jquery.inputmask.bundle.min' %>
+<% end %>
+<%= form_for @outlet, :html => {:class => 'form-horizontal group-border stripped'} do |f| %>
+    <% if @outlet.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(@outlet.errors.count, "error") %> prohibited this outlet from being saved:</h2>
+          <ul>
+            <% @outlet.errors.full_messages.each do |msg| %>
+                <li><%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+    <% end %>
+    <div class="form-group">
+      <%= f.label :company_name, 'Name', :class => 'col-lg-2 control-label' %>
+      <div class="col-lg-10"><%= f.text_field :name, :class => 'form-control' %></div>
+    </div>
+    <div class="form-group">
+      <%= f.label :first_name, 'First Name', :class => 'col-lg-2 control-label' %>
+      <div class="col-lg-10"><%= f.text_field :first_name, :class => 'form-control' %></div>
+    </div>
+    <div class="form-group">
+      <%= f.label :last_name, 'Last Name', :class => 'col-lg-2 control-label' %>
+      <div class="col-lg-10"><%= f.text_field :last_name, :class => 'form-control' %></div>
+    </div>
+    <div class="form-group">
+      <%= f.label :phone_number, 'Phone', :class => 'col-lg-2 control-label' %>
+      <div class="col-lg-10"><%= f.text_field :phone_number, :class => 'form-control' %></div>
+    </div>
 
-			<ul>
-				<% @outlet.errors.full_messages.each do |msg| %>
-					<li><%= msg %></li>
-				<% end %>
-			</ul>
-		</div>
-	<% end %>
-	<div class="field">
-			<%= f.label :company_name %><br />
-			<%= f.text_field :name %>
-	</div>
-	<div class="field">
-		<%= f.label :first_name %><br/>
-		<%= f.text_field :first_name %>
-	</div>
-	<div class="field">
-		<%= f.label :last_name %><br/>
-		<%= f.text_field :last_name %>
-	</div>
-	<div class="field">
-		<%= f.label :phone_number %><br/>
-		<%= f.text_field :phone_number %>
-	</div>
+    <div class="form-group">
+      <%= f.label :programming, :class => 'col-lg-2 control-label' %>
+      <div class="col-lg-10"><%= f.text_field :programming, :class => 'form-control' %></div>
+    </div>
 
-	<div class="field">
-		<%= f.label :dma, "DMA" %>
-		<%= select("outlet", "dma_id", Dma.order(:name).collect {|d| [ d.name, d.id ] }, {:include_blank => 'None'}) %>
-	</div>
+    <div class="form-group">
+      <%= f.label :subs, 'MVPD Subscribers', :class => 'col-lg-2 control-label' %>
+      <div class="col-lg-10"><%= f.text_field :subs, :class => 'form-control' %></div>
+    </div>
 
-	<div class="field">
-		<%= f.label :type %>
-		<%= f.select :outlet_type, outlet_types[0...-1], {:include_blank => 'Undefined'} %>
-	</div>
+    <div class="form-group">
+      <%= f.label :over_air, 'Over the Air Homes', :class => 'col-lg-2 control-label' %>
+      <div class="col-lg-10"><%= f.text_field :over_air, :class => 'form-control' %></div>
+    </div>
 
-	<h2>Sub Channel</h2>
-	<div id="sub_channel_existed">
-		<% @outlet.sub_channels.each do |sub_channel| %>
-			<div class='sub_channel'>
-				<div class='col1'>
-					<label>Name</label>
-					<label><%= sub_channel.name %></label>
-				</div>
-				<div class='col2'>
-					<label>Type</label>
-					<label><%= sub_channel.sub_channel_type.name %></label>
-				</div>
-				<div class='col3'>
-					<label>Subscribers</label>
-					<label><%= number_with_delimiter sub_channel.subs %></label>
-				</div>
-				<div class='action' style='margin-top: 5px;'>
-					<%= link_to "Edit", edit_sub_channel_path(sub_channel) %>
-					<%= link_to "Remove", sub_channel, method: :delete, confirm: "Are you sure?", 
-									class: 'delete_child_div', remote: true %>
-				</div>
+    <div class="form-group">
+      <%= f.label :total_homes, 'Total Homes', :class => 'col-lg-2 control-label' %>
+      <div class="col-lg-10"><%= f.text_field :total_homes, :class => 'form-control' %></div>
+    </div>
 
-				<div class='clr'>&nbsp;</div>
-			</div>
-		<% end %>
-	</div>
-	<div class="field" id="sub_channel_container">
-		
-	</div>
+    <div class="form-group">
+      <%= f.label :dma, "DMA", :class => 'col-lg-2 col-md-3 control-label' %>
+      <div class="col-lg-10 col-md-9">
+        <%= select("outlet", "dma_id", Dma.order(:name).collect { |d| [d.name, d.id] }, {:include_blank => 'None', :class => 'form-control'}) %>
+      </div>
+    </div>
 
-	<div id='add_link' class='field'></div>
+    <div class="form-group">
+      <%= f.label :type, :class => 'col-lg-2 col-md-3 control-label' %>
+      <div class="col-lg-10 col-md-9">
+        <%= select("outlet", "outlet_type_id", OutletType.order(:name).collect { |d| [d.name, d.id] }) %>
+      </div>
+    </div>
 
-	<div class="field">
-		<%= f.label :total_subscribers %>
-		<%= f.text_field :subs, value: number_with_delimiter(@outlet.subs) %>
-	</div>
-	<div class="field">
-		<%= f.label :description %><br />
-		<%= f.text_area :description %>
-	</div>
-	<%= hidden_field_tag "count_sub_channel", 0 %>
-	<div class="actions">
-		<%= f.submit "Submit", :class => 'submit_outlet' %> <%= f.submit "Cancel", :name => 'cancel' %>
-	</div>
+    <div class="form-group">
+      <%= f.label :time_zone, :class => 'col-lg-2 col-md-3 control-label' %>
+      <div class="col-lg-10 col-md-9">
+        <%= f.time_zone_select(:time_zone, ActiveSupport::TimeZone.us_zones, :default => '') %>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-4 col-sm-offset-2" style="margin-top: 15px;">
+        <%= button_tag(type: 'submit', class: "btn btn-primary") do -%>
+            <i class="icon-ok icon-white"></i> Save
+        <% end %>
+        <%= link_to outlets_path, :class => 'btn cancel' do -%>
+            <i class="fa fa-remove"></i> Cancel
+        <% end %>
+      </div>
+    </div>
+
+    <%= f.hidden_field(:user_id, :value => current_user.id) %>
 <% end %>

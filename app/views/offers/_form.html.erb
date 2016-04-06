@@ -1,138 +1,136 @@
-<%= form_for [outlet, offer] do |f| %>
-	<% if offer.errors.any? %>
-		<div id="error_explanation">
-			<h2><%= pluralize(offer.errors.count, "error") %> prohibited this offer from being saved:</h2>
-			<ul>
-				<% offer.errors.full_messages.each do |msg| %>
-					<li><%= msg %></li>
-				<% end %>
-			</ul>
-		</div>
-	<% end %>
+<%= stylesheet_link_tag 'offers' %>
+<%= form_for @offer, :class => 'form-inline' do |f| -%>
+    <%= f.hidden_field :time_cells, :value => @offer.time_cells %>
+    <%= f.hidden_field :total_hours %>
+    <%= f.hidden_field :outlet_id, :value => @offer.outlet.id %>
+    <div class="row">
+      <div class="col-md-6">
+        <h1><%= @outlet.name %></h1>
+        <div class="form-group">
+          <%= fields_for @offer.outlet do |o| -%>
+              <%= o.label :subs, 'MVPD Subscribers' %>
+              <%= o.text_field :subs, :class => 'form-control' %>
+              <%= o.label :over_air, 'OTA Homes' %>
+              <%= o.text_field :over_air, :class => 'form-control' %>
+              <%= o.label :total_homes, 'Total Homes' %>
+              <%= o.text_field :total_homes, :class => 'form-control' %>
+          <% end %>
+        </div>
+        <div>
+          <a href="#">
+            <button type="button" class="btn btn-primary" id="selectAll">Select All</button>
+          </a>
+          <a href="#">
+            <button type="button" class="btn btn-primary" id="invert">Invert Selection</button>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="form-group">
+          <h3><strong><%= f.label :dma, 'DMA:' %></strong> <%= @outlet.dma.name rescue "None" %></h3>
+          <h3><strong><%= f.label :subs, 'Subs:' %></strong> <%= number_with_delimiter @outlet.subs %></h3>
 
-	<div class="outlet_info">
-		<div class="outlet_field">
-			<h1><%= outlet.name %></h1>
-		</div>
-		<div class="outlet_link">
-			<% if outlet.user_id == current_user.id %>
-				<%= link_to "edit", edit_outlet_path(outlet, :offer_id => offer.id) %> |
-				<%= link_to "new", new_outlet_path %>
-			<% end %>
-		</div>
-		<div class="outlet_field">
-			DMA: <%= outlet.dma.name rescue "None" %>
-		</div>
-		<div class="outlet_field">
-			Subs: <span id="subs"><%= number_with_delimiter outlet.subs %></span>
-		</div>
-	</div> <!-- end div outlet_info -->
+          <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+          <div class="input-group">
+            <div class="input-group-addon">$</div>
+            <%= f.text_field :dollar_amount, :class => 'form-control', :placeholder => @offer.dollar_amount, :style => 'width: 30%;' %>
+          </div>
+        </div>
+      </div>
+    </div> <!-- end row -->
 
-	<div>
-		Dollar amount *: $
-		<%= f.text_field :dollar_amount, :value => convert2Decimal(offer.dollar_amount.to_s) %>
-	</div>
-	<%= link_to "Show notes", offer_notes_path(offer) unless offer.new_record?%>
-	<div style="padding-left: 427px">
-		<%= check_box_tag 'all_week', 'yes' %> 24 hours
-	</div>
-	<div class="hours_div">
-		<table class="table" id="form_table">
-			<tr>
-				<th>Monday</th>
-				<th>Tuesday</th>
-				<th>Wednesday</th>
-				<th>Thursday</th>
-				<th>Friday</th>
-				<th>Saturday</th>
-				<th>Sunday</th>
-			</tr>
-			<% values.each do |v| %>
-				<tr>
-					<% day_arr.each do |day| %>
-						<td>
-							<% if contain_day_hour offer.half_hour_clicked, day, v.hour %>
-								<div id="hour_id_<%= day %>_<%= v.time %>_<%= v.send day %>" class="clicked_cell">
-									<%= display_hour v.time %>
-									<% hidden_name = convert_day_hour day, v.time %>
-									<%= hidden_field_tag "cell[#{hidden_name}]", "1" %>
-								</div>
-							<% else %>
-								<div id="hour_id_<%= day %>_<%= v.time %>_<%= v.send day %>">
-									<%= display_hour v.time %>
-									<% hidden_name = convert_day_hour day, v.time %>
-									<%= hidden_field_tag "cell[#{hidden_name}]", "0" %>
-								</div>
-							<% end %><!-- end if contain day hour condition -->
-						</td>
-					<% end %>
-				</tr>
-			<% end %>
-		</table>
-	</div>
-	<div class="details_div">
-		Average Hourly Rate: <span id='hourly_rate'><%= offer.hourly_rate %></span>
-		<%= f.hidden_field :hourly_rate, :value =>offer.hourly_rate.to_s %>
-		<div class="rate">
-			<table>
-				<tr>
-					<th>Offer</th>
-					<th>hours</th>
-					<th>rate</th>
-				</tr>
-				<tr>
-					<td>Weekly</td>
-					<td>
-							<span id="weekly_hours"><%= offer.total_hours %></span>
-							<%= f.hidden_field :total_hours, :value => offer.total_hours.to_s %>
-					</td>
-					<td>
-						<span id="weekly_rate">$<%= offer.weekly_offer %></span>
-						<%= f.hidden_field :weekly_offer, :value => offer.weekly_offer.to_s %>
-					</td>
-				</tr>
-
-				<tr>
-					<td>Monthly</td>
-					<td>
-						<span id="monthly_hours"><%= offer.total_hours * 4 %></span>
-					</td>
-					<td>
-						<span id="monthly_rate">$<%= offer.monthly_offer %></span>
-						<%= f.hidden_field :monthly_offer, :value => offer.monthly_offer.to_s %>
-					</td>
-				</tr>
-
-				<tr>
-					<td>Yearly</td>
-					<td>
-						<span id="yearly_hours"><%= offer.total_hours * 52 %></span>
-					</td>
-					<td>
-						<span id="yearly_rate">$<%= offer.yearly_offer %></span>
-						<%= f.hidden_field :yearly_offer, :value => offer.yearly_offer.to_s %>
-					</td>
-				</tr>
-			</table>
-
-
-			<div>
-				<%= link_to image_tag('calculate.png'), "#", :id => 'calculate' %>
-				<%= link_to image_tag('reset.png'), "#", :id => 'reset' %>
-			</div>
-			<hr/>
-
-		</div> <!-- end rate div -->
-		<%= collection_select(:offer, :programmer_ids, programmers, :id, :name,
-									{ :selected => offer.programmer_ids },
-									{ :multiple => true, :name => 'offer[programmer_ids][]' }) %><br/>
-		<%= link_to "Add Programmer", new_programmer_path(:back_url => request.url) %>
-		<br/>
-
-		<input type="hidden" name="url" value="<%= @url %>" />
-		<%= f.submit "", :style => !programmers.blank? ? "" : "display:none;" %>
-		<%= link_to(image_tag('submit.png'), :onclick => "displayError()", :style => !programmers.blank? ? "display:none;" : "") %>
-	</div> <!-- end details_div -->
+    <div class="row">
+      <div class="col-md-8 hours_div">
+        <div class="gridContainer">
+          <div class="gridContainerHeader" style="display:flex;">
+            <%= render :partial => 'offers/grid' %>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="rate_info">
+          <h1>Rate</h1>
+          <span>Hourly Rate: <%= number_to_currency @offer.hourly_rate %></span>
+          <span class="pull-right">Total Hours: <%= @offer.total_hours %></span>
+          <table class="table table-condensed">
+            <thead>
+            <tr>
+              <td>Offer</td>
+              <td>Hours</td>
+              <td>
+                <div class="pull-right">Rate</div>
+              </td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td>Weekly</td>
+              <td><span class="hours" id="weekly_hours"></span><%= f.hidden_field :weekly_hours %></td>
+              <td>
+                <div class="input-group col-xs-12">
+                  <div class="input-group-addon">$</div>
+                  <%= f.text_field :weekly_offer, :class => 'form-control offerInput' %>
+                </div>
+            </tr>
+            <tr>
+              <td>Monthy</td>
+              <td>
+                <span class="hours" id="monthly_hours"></span><%= f.hidden_field :monthly_hours, :value => @offer.monthly_hours %>
+              </td>
+              <td>
+                <div class="input-group col-xs-12">
+                  <div class="input-group-addon">$</div>
+                  <%= f.text_field :monthly_offer, :class => 'form-control offerInput' %>
+                </div>
+              </td>
+            </tr>
+            <tr>
+              <td>Yearly</td>
+              <td>
+                <span class="hours" id="yearly_hours"></span><%= f.hidden_field :yearly_hours, :value => @offer.yearly_hours %>
+              </td>
+              <td>
+                <div class="input-group col-xs-12">
+                  <div class="input-group-addon">$</div>
+                  <%= f.text_field :yearly_offer, :class => 'form-control offerInput' %>
+                </div>
+              </td>
+            </tr>
+            </tbody>
+          </table>
+          <div>
+            <button type="button" id="calculate" class="btn btn-primary">Calculate</button>
+            <button type="button" id="reset" class="btn btn-default">Reset</button>
+          </div>
+        </div>
+        <br/>
+        <div>
+          <h1>Programmers</h1>
+          <% if @programmers.empty? %>
+              You must create a programmer record to associate with this offer before you can save it.
+          <% else %>
+              <%= select('offer', 'programmer_ids', Programmer.order(:name).collect { |d| [d.name, d.id] }, {include_blank: true}) %>
+          <% end %>
+          <div class="pull-right"><%= link_to 'Add a programmer', new_programmer_url, :class => 'btn btn-default' %></div>
+        </div>
+        <br/>
+        <div>
+          <h1>Notes</h1>
+          <p>Add a note to the Gross Rate Worksheet</p>
+          <%= f.text_area :grNotes, :class => 'form-control offer_note' %>
+          <br/>
+          <p>Add a note after Dayparts</p>
+          <%= f.text_area :dpNotes, :class => 'form-control offer_note' %>
+        </div>
+        <br/>
+        <div>
+          <p>Available Date</p>
+          <%= f.text_field :available_date, :class => 'form-control dp' %>
+        </div>
+        <br/>
+        <div>
+          <%= f.submit 'Save Offer', :class => 'btn btn-success btn-lg' %>
+        </div>
+      </div>
+    </div>
 <% end %>
-
-<div class="clr">&nbsp;</div>

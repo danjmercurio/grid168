@@ -1,7 +1,18 @@
 <%= stylesheet_link_tag 'offers' %>
+<style type="text/css">
+  input {
+    background-color: transparent;
+    border: 0 solid;
+  }
+
+  input:focus {
+    outline: none;
+
+  }
+</style>
 <%= hidden_field_tag 'offer_time_cells', raw(@offer.time_cells) %>
-<h1>Grid168 Programming Financial Worksheet</h1>
-<h2>Bid prepared by: <%= image_tag("across.png") %></h3>
+<h1>Grid 168 Programming Financial Worksheet</h1>
+<h2>Bid prepared by: <%= image_tag("across.png") %></h2>
 <hr />
 <div class="col-md-6">
   <h3><strong>Media Outlet:</strong> <%= @offer.outlet.name %></h3>
@@ -9,11 +20,71 @@
   <p><strong>Media Type:</strong> <%= @outlet.outlet_type.name %></p>
 </div>
 <div class="col-md-6">
-  <p><strong>MVPD Subscribers:</strong> <%= @outlet.subs %></p>
-  <p><strong>Over the Air Homes:</strong> <%= @outlet.over_air %></p>
-  <p><strong>Total Homes:</strong> <%= @outlet.total_homes %></p>
+  <p><strong>MVPD Subscribers:</strong> <%= number_with_delimiter @outlet.subs %></p>
+  <p><strong>Over the Air Homes:</strong> <%= number_with_delimiter @outlet.over_air %></p>
+  <p><strong>Total Homes:</strong> <%= number_with_delimiter @outlet.total_homes %></p>
   <p><strong>Time Zone:</strong> <%= @outlet.time_zone %></p>
   <p><strong>Available Date:</strong> <%= @offer.available_date %></p>
+</div>
+<h2>Gross Rate Worksheet</h2>
+<div class="col-md-12">
+  <form id="displayForm">
+    <div class="panel panel-default margin-b-30 ">
+      <!-- Start .panel -->
+      <div class="panel-heading">
+        <h4 class="panel-title">&nbsp;</h4>
+        <div class="panel-actions">
+          <a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
+          <a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
+        </div>
+      </div>
+      <div class="panel-body">
+        <table class="table table-bordered">
+          <tbody>
+          <tr>
+            <td><strong>24/7 MVPD Sub Estimate</strong></td>
+            <td><input type="text" value="<%= number_to_currency @offer.dollar_amount %>"/></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td><strong>Half Hour Rate</strong></td>
+            <td>Jame</td>
+            <td><strong>Hour Rate</strong></td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+          </tr>
+          <tr>
+            <td><strong>MVPD Subscriber Rate</strong></td>
+            <td>Sarah</td>
+            <td><strong>MVPD-OTA Sub Rate</strong></td>
+            <td>@sarah</td>
+            <td><strong>Total Homes 24/7 Rate</strong></td>
+            <td>idk</td>
+          </tr>
+          <tr>
+            <td><strong>Weekly Hours</strong></td>
+            <td>idk</td>
+            <td><strong>Monthly Hours</strong></td>
+            <td>idk</td>
+            <td><strong>Yearly Hours</strong></td>
+            <td>dfkldf</td>
+          </tr>
+          <tr>
+            <td><strong>Weekly Rate</strong></td>
+            <td>fdfd</td>
+            <td><strong>Monthly Rate</strong></td>
+            <td>dfdfd</td>
+            <td><strong>Yearly Rate</strong></td>
+            <td>dfdfdf</td>
+          </tr>
+          </tbody>
+        </table>
+        <textarea class="form-control"></textarea>
+  </form>
 </div>
 <h2>Proposed Programming Schedule</h2>
 <div class="col-md-8 hours_div">

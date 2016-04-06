@@ -2,9 +2,10 @@ class OffersController < ApplicationController
 	before_action :authenticate_user!
 
 	def new
-		@outlet = Outlet.find(params[:outlet_id])
-		@offer = @outlet.offers.build
-		@programmers = current_user.programmers
+    @outlet = Outlet.where(:id => params[:outlet_id]).first
+    @offer = Offer.new
+    @offer.outlet = @outlet
+    current_user.admin? ? @programmers = Programmer.all : current_user.programmers
 	end
 
 	def index
@@ -46,13 +47,13 @@ class OffersController < ApplicationController
 
 	def create
     @offer = Offer.new(params[:offer])
-    @outlet = Outlet.find(params[:offer][:outlet_id])
+    @outlet = @offer.outlet
     @offer.user = current_user
 		respond_to do |format|
-	    if @offer.save
+      if @offer.save!
       	# format.html { redirect_to programmer_path(:id => @offer.programmer_id), :notice => 'Offer was successfully created.' }
 				format.html { redirect_to offers_path, notice: "Offer was created successfully" }
-    	else
+      else
 				@programmers = current_user.programmers
       	format.html { render :new }
       end

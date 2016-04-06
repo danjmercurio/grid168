@@ -1,33 +1,84 @@
+//$("[data-day='0']").each(function() {total = total + parseFloat($(this).data('audience'));});
+
 var days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
 $(document).ready(function () {
     // Initialize jQuery datepicker
     $('.dp').datepicker();
+
+    // After the ready event fires, watch for changes in mvpd subs
+    // and OTA subs, and if they are both filled, use those values to autofill total homes
+    var totalHomes = $('input#outlet_total_homes');
+    var mvpdSubs = $('input#outlet_subs');
+    var otaSubs = $('input#outlet_over_air');
+
+    // Our function to get the field values, check their contents, and finally do the autofill
+    var getCheckFill = function () {
+        if (!mvpdSubs.val()) {
+            mvpdSubs.val(0);
+        }
+        if (!otaSubs.val()) {
+            otaSubs.val(0);
+        }
+        if (!!mvpdSubs.val() && !!otaSubs.val()) {
+            totalHomes.val(function () {
+                return parseInt(mvpdSubs.val()) + parseInt(otaSubs.val())
+            });
+        }
+    };
+
+    // Register event handlers
+    mvpdSubs.blur(getCheckFill);
+    otaSubs.blur(getCheckFill);
     // Generic function to invert a cell's select state
     var flipSelected = function (cell) {
         $(cell).hasClass('clicked') ? $(cell).removeClass('clicked') : $(cell).addClass('clicked');
     };
     // Do all our calculations here
     var calculateRates = function () {
+        // Check the input values at the top
+        getCheckFill();
+
         // First, just gather information
         var currencyFactor = parseFloat($('#offer_dollar_amount').val());
-        var selected = $('.clicked');
-        var numSelected = selected.length;
-        var weeklyHours = numSelected / 2;
-        $('#offer_total_hours').val(weeklyHours);
-        $('#weekly_hours').text(weeklyHours);
-        $('#offer_weekly_hours').val(weeklyHours.toString());
-        var weeklyOffer = weeklyHours * hourlyRate;
-        $('#offer_weekly_offer').val(weeklyOffer.toString());
+        var mvpdSubscribers = parseInt($('input#outlet_subs').val() || 0);
+        var otaHomes = parseInt($('input#outlet_over_air').val() || 0);
+        var totalHomes = parseInt($('input#outlet_total_homes').val());
+
+        // Get all selected cells
+        var selectedCells = $('.clicked');
+
+        // Hours
+        var weeklyHours = selectedCells.length / 2;
         var monthlyHours = weeklyHours * 4;
-        $('#monthly_hours').text(monthlyHours);
-        $('#offer_monthly_hours').val(monthlyHours.toString());
-        var monthlyOffer = monthlyHours * hourlyRate;
-        $('#offer_monthly_offer').val(monthlyOffer.toString());
         var yearlyHours = monthlyHours * 12;
+
+        // Compute the weekly sub rate. This is the sum of the audience numbers of all selected cells, times the currency factor
+        var weeklySubRate = 0;
+        selectedCells.each(function () {
+            weeklySubRate += parseFloat($(this).data('audience'));
+        });
+        var monthlySubRate = weeklySubRate * 4;
+        var annualSubRate = weeklySubRate * 52;
+
+        // Compute rates from Sub rates
+        var weeklyRate = (annualSubRate * totalHomes) / 52;
+        var monthlyRate = (annualSubRate * totalHomes) / 12;
+        var annualRate = (annualSubRate * totalHomes);
+
+        // Set the proper values for display elements and hidden elements
+        $('#offer_total_hours').val(weeklyHours);
+
+        $('#weekly_hours').text(weeklyHours);
+        $('#offer_weekly_hours').val(weeklyHours);
+        $('#offer_weekly_offer').val(weeklyRate);
+
+        $('#monthly_hours').text(monthlyHours);
+        $('#offer_monthly_hours').val(monthlyHours);
+        $('#offer_monthly_offer').val(monthlyRate);
+
         $('#yearly_hours').text(yearlyHours);
-        $('#offer_yearly_hours').val(yearlyHours.toString());
-        var yearlyOffer = yearlyHours * hourlyRate;
-        $('#offer_yearly_offer').val(yearlyOffer.toString());
+        $('#offer_yearly_hours').val(yearlyHours);
+        $('#offer_yearly_offer').val(annualRate);
     };
     // Handle selecting and un-selecting
     $('.gridContainer').mousedown(function (e) {
@@ -77,7 +128,7 @@ $(document).ready(function () {
     });
     // The 'Calculate' button
     $('#calculate').click(function () {
-        calculateRates();
+        $('.clicked').length > 0 ? calculateRates() : alert('You must select at least one cell.');
     });
 
     // The 'reset' button
@@ -102,7 +153,7 @@ $(document).ready(function () {
         var cellHolder = $('#offer_time_cells');
         // First, clear the value of cellHolder
         cellHolder.val('');
-        // Get  all selected cells
+        // Get all selected cells
         var selected = $('.clicked');
         $(selected).each(function () {
             var day = $(this).data('day');

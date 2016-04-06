@@ -23,12 +23,13 @@
     font-weight: bold;
 }
 
-::-moz-selection {
+.gridContainer *::-moz-selection {
     background-color: Transparent;
     color: white;
+    opacity: 1;
 }
 
-::selection {
+.gridContainer *::selection {
     background-color: Transparent;
     color: white;
     opacity: 1;
