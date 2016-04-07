@@ -11,6 +11,7 @@
 //= require jquery-tablesorter
 //= require tables
 //= require select2
+//= require vanilla-masker.min
 // Given a string, return the string as a float with no commas or dollar signs
 String.prototype.stripAndParse = function () {
     return parseFloat(this.split(',').join('').split('$').join(''));
@@ -21,6 +22,7 @@ String.prototype.toCurrency = function () {
 String.prototype.addCommas = function () {
     return parseFloat(this).toLocaleString().toString();
 };
+// Input masks
 
 // jQuery helper for Animate.css
 $.fn.extend({

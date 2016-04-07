@@ -300,6 +300,7 @@
       <column name="programming" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
       <column name="over_air" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
       <column name="total_homes" sqlType="INTEGER" precision="0" scale="-1" nullable="true" jdbcType="4"/>
+      <column name="email" sqlType="VARCHAR" precision="0" scale="-1" nullable="true" jdbcType="12"/>
       <primary-key columns="id"/>
       <index name="index_outlets_on_name" unique="true" columns="name"/>
     </table>

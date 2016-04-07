@@ -33,11 +33,11 @@ $(document).ready(function () {
 
     // Add comma delimiters to rate input boxes
     var weeklyOffer = $("#offer_weekly_offer");
-    weeklyOffer.val(weeklyOffer.val().addCommas());
+    weeklyOffer.val(weeklyOffer.val());
     var monthlyOffer = $('#offer_monthly_offer');
-    monthlyOffer.val(monthlyOffer.val().addCommas());
+    monthlyOffer.val(monthlyOffer.val());
     var yearlyOffer = $("#offer_yearly_offer");
-    yearlyOffer.val(yearlyOffer.val().addCommas());
+    yearlyOffer.val(yearlyOffer.val());
 
 
 
@@ -80,15 +80,15 @@ $(document).ready(function () {
 
         $('#weekly_hours').text(weeklyHours);
         $('#offer_weekly_hours').val(weeklyHours);
-        $('#offer_weekly_offer').val(weeklyRate.toString().addCommas());
+        $('#offer_weekly_offer').val(weeklyRate.toString());
 
         $('#monthly_hours').text(monthlyHours);
         $('#offer_monthly_hours').val(monthlyHours);
-        $('#offer_monthly_offer').val(monthlyRate.toString().addCommas());
+        $('#offer_monthly_offer').val(monthlyRate.toString());
 
         $('#yearly_hours').text(yearlyHours);
         $('#offer_yearly_hours').val(yearlyHours);
-        $('#offer_yearly_offer').val(yearlyRate.toString().addCommas());
+        $('#offer_yearly_offer').val(yearlyRate.toString());
 
         var hourlyRate = yearlyRate / yearlyHours;
 
@@ -152,13 +152,6 @@ $(document).ready(function () {
         // This function also updates the cell holder hidden input
         calculateRates();
 
-        // Convert our values back to floats before they are saved in the database
-        var weeklyOffer = $("#offer_weekly_offer");
-        weeklyOffer.val(weeklyOffer.val().stripAndParse());
-        var monthlyOffer = $('#offer_monthly_offer');
-        monthlyOffer.val(monthlyOffer.val().stripAndParse());
-        var yearlyOffer = $("#offer_yearly_offer");
-        yearlyOffer.val(yearlyOffer.val().stripAndParse());
 
     });
 

@@ -1,6 +1,5 @@
 <% unless action_name == :index %>
-    <%= javascript_include_tag 'outletForm' %>
-    <%= javascript_include_tag 'input-mask/jquery.inputmask.bundle.min' %>
+    <%= javascript_include_tag 'outletForm', :defer => 'defer' %>
 <% end %>
 <%= form_for @outlet, :html => {:class => 'form-horizontal group-border stripped'} do |f| %>
     <% if @outlet.errors.any? %>

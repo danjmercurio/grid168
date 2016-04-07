@@ -165,6 +165,6 @@ $(function () {
 });
 
 
-//waves effects
-  Waves.attach('.button-wave', ['waves-button', 'waves-light']);
-            Waves.init();
+// //waves effects
+//   Waves.attach('.button-wave', ['waves-button', 'waves-light']);
+//             Waves.init();

@@ -13,7 +13,7 @@ var logAndFlip = function (cell) {
     // Change the cell's state
     flipSelected(cell);
 };
-window.cellsAreLoaded = function () {
+
     $(document).ready(function () {
 
         // On page load, get selected cells from hidden element
@@ -60,4 +60,3 @@ window.cellsAreLoaded = function () {
         // Finally, calculate all the rates and update inputs and spans with values
         // calculateRates();
     });
-};

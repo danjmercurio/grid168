@@ -1,5 +1,5 @@
 <%= stylesheet_link_tag 'offers' %>
-<%= javascript_include_tag 'grid' %>
+<%= javascript_include_tag 'grid', :defer => 'defer' %>
 <style type="text/css">
   input {
     background-color: transparent;
@@ -23,11 +23,11 @@
 </div>
 <div class="col-md-6">
   <h3><strong>MVPD Subscribers:</strong>
-    <input class="delimited" type="text" value="<%= number_with_delimiter @outlet.subs %>" id="mvpdSubscribers"/></h3>
+    <input class="delimited" type="text" value="<%= @outlet.subs %>" id="mvpdSubscribers"/></h3>
   <h3><strong>Over the Air Homes:</strong>
-    <input class="delimited" type="text" value="<%= number_with_delimiter @outlet.over_air %>" id="otaHomes"/></h3>
+    <input class="delimited" type="text" value="<%= @outlet.over_air %>" id="otaHomes"/></h3>
   <h3><strong>Total Homes:</strong>
-    <input class="delimited" type="text" value="<%= number_with_delimiter @outlet.total_homes %>" id="totalHomes"/></h3>
+    <input class="delimited" type="text" value="<%= @outlet.total_homes %>" id="totalHomes"/></h3>
   <h3><strong>Time Zone:</strong> <%= @outlet.time_zone %></h3>
   <h3><strong>Available Date:</strong> <%= @offer.available_date %></h3>
 </div>
@@ -189,4 +189,4 @@
     </div>
   </div>
 </div>
-<%= javascript_include_tag 'sheet' %>
+<%= javascript_include_tag 'sheet', :defer => 'defer' %>

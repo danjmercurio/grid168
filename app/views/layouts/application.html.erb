@@ -11,11 +11,7 @@
     <%= stylesheet_link_tag 'style' %>
     <%= stylesheet_link_tag 'notis' %>
 
-    <%= javascript_include_tag 'application' %>
-    <%= javascript_include_tag 'metisMenu.min' %>
-    <%= javascript_include_tag 'pace.min' %>
-    <%= javascript_include_tag 'waves.min' %>
-    <%= javascript_include_tag 'custom' %>
+
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
@@ -37,5 +33,12 @@
       <%= render :partial => 'layouts/footer' %>
     <% end %>
       <%= render :partial => 'layouts/notis' %>
+
+    <%= javascript_include_tag 'application' %>
+    <%= javascript_include_tag 'metisMenu.min', :defer => 'defer' %>
+    <%= javascript_include_tag 'pace.min', :defer => 'defer'%>
+    <%= javascript_include_tag 'waves.min.js', :defer => 'defer'  %>
+    <%= javascript_include_tag 'custom', :defer => 'defer'  %>
+    <%= javascript_include_tag 'inputMasks', :defer => 'defer' %>
   </body>
 </html>

@@ -5,8 +5,14 @@
 
 // Do initial calculations and populate fields with this function
 var recalculate = function () {
-    var mvpdSubscribers = $('#mvpdSubscribers').val().stripAndParse();
-    var otaHomes = $('#otaHomes').val().stripAndParse();
+    var mvpdSubscribersSelector = $('#mvpdSubscribers');
+    mvpdSubscribers =  mvpdSubscribersSelector.val().stripAndParse();
+    mvpdSubscribersSelector.val((mvpdSubscribers.toString().addCommas()));
+
+    var otaHomesSelector = $('#otaHomes');
+    var otaHomes = otaHomesSelector.val().stripAndParse();
+    otaHomesSelector.val(otaHomes.toString().addCommas());
+
     var totalHomes = mvpdSubscribers + otaHomes;
     $('#totalHomes').val(totalHomes.toString().addCommas());
 
@@ -28,9 +34,5 @@ var recalculate = function () {
 // Calculate on page load (this just happens once)
 $(document).ready(recalculate);
 
-//
-// $('input.delimited').blur(function() {
-//     $(this).val($(this).val().toString().addCommas());
-// });
 // Recalculate any time a form value changes
 $('form#displayForm').change(recalculate);

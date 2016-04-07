@@ -103,7 +103,7 @@ ActiveRecord::Schema.define(version: 20160407042245) do
     t.string   "programming"
     t.integer  "over_air"
     t.integer  "total_homes"
-    t.string "email"
+    t.string   "email"
   end
 
   add_index "outlets", ["name"], name: "index_outlets_on_name", unique: true

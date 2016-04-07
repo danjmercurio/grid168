@@ -19,4 +19,6 @@ Rails.application.config.assets.precompile += %w(
   input-mask/jquery.inputmask.bundle.min.js
   grid.js
   sheet.js
+  vanilla-masker.min.js
+  inputMasks.js
 )
