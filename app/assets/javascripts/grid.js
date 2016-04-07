@@ -56,5 +56,8 @@ window.cellsAreLoaded = function () {
         // $('.cell').mousedown(function () {
         //     flipSelected(this);
         // });
+
+        // Finally, calculate all the rates and update inputs and spans with values
+        // calculateRates();
     });
 };

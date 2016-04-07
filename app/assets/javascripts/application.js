@@ -11,6 +11,16 @@
 //= require jquery-tablesorter
 //= require tables
 //= require select2
+// Given a string, return the string as a float with no commas or dollar signs
+String.prototype.stripAndParse = function () {
+    return parseFloat(this.split(',').join('').split('$').join(''));
+};
+String.prototype.toCurrency = function () {
+    return '$' + this.toString();
+};
+String.prototype.addCommas = function () {
+    return parseFloat(this).toLocaleString().toString();
+};
 
 // jQuery helper for Animate.css
 $.fn.extend({

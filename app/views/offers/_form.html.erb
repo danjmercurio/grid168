@@ -22,9 +22,11 @@
           <a href="#">
             <button type="button" class="btn btn-primary" id="invert">Invert Selection</button>
           </a>
-          <a href="<%= url_for(offer_path(@offer.id)) %>">
-            <button type="button" class="btn btn-default">Go to Show View</button>
-          </a>
+          <% if action_name != 'new' -%>
+              <a href="<%= url_for(offer_path(@offer.id)) %>">
+                <button type="button" class="btn btn-default">Go to Show View</button>
+              </a>
+          <% end %>
         </div>
       </div>
       <div class="col-md-6">
@@ -52,7 +54,7 @@
       <div class="col-md-4">
         <div class="rate_info">
           <h1>Rate</h1>
-          <span>Hourly Rate: <%= number_to_currency @offer.hourly_rate %></span>
+          <span id="hourlyRate">Hourly Rate: <%= number_to_currency @offer.hourly_rate %></span>
           <span class="pull-right">Total Hours: <%= @offer.total_hours %></span>
           <table class="table table-condensed">
             <thead>
@@ -67,7 +69,9 @@
             <tbody>
             <tr>
               <td>Weekly</td>
-              <td><span class="hours" id="weekly_hours"></span><%= f.hidden_field :weekly_hours %></td>
+              <td>
+                <span class="hours" id="weekly_hours"></span><%= f.hidden_field :weekly_hours, :value => @offer.weekly_hours %>
+              </td>
               <td>
                 <div class="input-group col-xs-12">
                   <div class="input-group-addon">$</div>

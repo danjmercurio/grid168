@@ -22,7 +22,7 @@ $(document).ready(function () {
         }
         if (!!mvpdSubs.val() && !!otaSubs.val()) {
             totalHomes.val(function () {
-                return parseInt(mvpdSubs.val()) + parseInt(otaSubs.val())
+                return (parseInt(mvpdSubs.val()) + parseInt(otaSubs.val()));
             });
         }
     };
@@ -30,6 +30,16 @@ $(document).ready(function () {
     // Register event handlers
     mvpdSubs.blur(getCheckFill);
     otaSubs.blur(getCheckFill);
+
+    // Add comma delimiters to rate input boxes
+    var weeklyOffer = $("#offer_weekly_offer");
+    weeklyOffer.val(weeklyOffer.val().addCommas());
+    var monthlyOffer = $('#offer_monthly_offer');
+    monthlyOffer.val(monthlyOffer.val().addCommas());
+    var yearlyOffer = $("#offer_yearly_offer");
+    yearlyOffer.val(yearlyOffer.val().addCommas());
+
+
 
     // Do all our calculations here
     calculateRates = function () {
@@ -48,35 +58,43 @@ $(document).ready(function () {
         // Hours
         var weeklyHours = selectedCells.length / 2;
         var monthlyHours = weeklyHours * 4;
-        var yearlyHours = monthlyHours * 12;
+        var yearlyHours = weeklyHours * 52;
 
         // Compute the weekly sub rate. This is the sum of the audience numbers of all selected cells, times the currency factor
-        var weeklySubRate = 0;
+        var sumOfTimePeriods = 0;
         selectedCells.each(function () {
-            weeklySubRate += parseFloat($(this).data('audience'));
+            sumOfTimePeriods += parseFloat($(this).data('audience'));
         });
-        var monthlySubRate = weeklySubRate * 4;
-        var annualSubRate = weeklySubRate * 52;
+        weeklySubRate = (sumOfTimePeriods * currencyFactor) / 52;
+        var monthlySubRate = (sumOfTimePeriods * currencyFactor) / 12;
+        var annualSubRate = (sumOfTimePeriods * currencyFactor);
 
         // Compute rates from Sub rates
-        var weeklyRate = (annualSubRate * totalHomes) / 52;
+        var yearlyRate = (annualSubRate * totalHomes);
         var monthlyRate = (annualSubRate * totalHomes) / 12;
-        var annualRate = (annualSubRate * totalHomes);
+        var weeklyRate = (annualSubRate * totalHomes) / 52;
+
 
         // Set the proper values for display elements and hidden elements
         $('#offer_total_hours').val(weeklyHours);
 
         $('#weekly_hours').text(weeklyHours);
         $('#offer_weekly_hours').val(weeklyHours);
-        $('#offer_weekly_offer').val(weeklyRate);
+        $('#offer_weekly_offer').val(weeklyRate.toString().addCommas());
 
         $('#monthly_hours').text(monthlyHours);
         $('#offer_monthly_hours').val(monthlyHours);
-        $('#offer_monthly_offer').val(monthlyRate);
+        $('#offer_monthly_offer').val(monthlyRate.toString().addCommas());
 
         $('#yearly_hours').text(yearlyHours);
         $('#offer_yearly_hours').val(yearlyHours);
-        $('#offer_yearly_offer').val(annualRate);
+        $('#offer_yearly_offer').val(yearlyRate.toString().addCommas());
+
+        var hourlyRate = yearlyRate / yearlyHours;
+
+        $('#hourlyRate').text(function () {
+            return 'Hourly Rate: $' + hourlyRate.toString();
+        });
 
         // Insert selected cells into holder input
         var cellHolder = $('#offer_time_cells');
@@ -130,9 +148,19 @@ $(document).ready(function () {
     });
     // On form submit (show offer view has no input of type submit)
     $("input[type='submit']").click(function () {
-        // Make sure all our calculations are done
+        // Make sure all our calculations are done before we submit
         // This function also updates the cell holder hidden input
         calculateRates();
 
+        // Convert our values back to floats before they are saved in the database
+        var weeklyOffer = $("#offer_weekly_offer");
+        weeklyOffer.val(weeklyOffer.val().stripAndParse());
+        var monthlyOffer = $('#offer_monthly_offer');
+        monthlyOffer.val(monthlyOffer.val().stripAndParse());
+        var yearlyOffer = $("#offer_yearly_offer");
+        yearlyOffer.val(yearlyOffer.val().stripAndParse());
+
     });
+
+
 });
