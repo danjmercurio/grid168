@@ -25,13 +25,14 @@ gem 'js_assets', :git => 'https://github.com/kavkaz/js_assets.git'
 # Fancy select tags
 gem 'select2-rails', :git => 'https://github.com/argerim/select2-rails.git'
 group :development do
-  gem 'yaml_db'
   gem 'spring'
   gem 'annotate'
   gem 'pry-rails'
   gem 'sqlite3'
   gem 'meta_request'
 end
+
+gem 'yaml_db'
 
 group :production do
   gem 'rails_12factor'
