@@ -1,6 +1,6 @@
 class OutletsController < ApplicationController
 	def index
-		@outlets = current_user.outlets
+		current_user.admin? ? @outlets = Outlet.all : @outlets = current_user.outlets
 	end #end index action
 
 	def show
