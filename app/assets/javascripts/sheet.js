@@ -50,6 +50,8 @@ var recalculateDayParts = function () {
     var runningAudienceTotal = 0;
 
     var isBetween = function (time, min, max) {
+        if (time === min) return true;
+
         var p = function (element) {
             return parseFloat(element);
         };
@@ -66,19 +68,21 @@ var recalculateDayParts = function () {
         });
 
         if (decimal[1] >= decimal[2]) {
-            decimal[0] += 12;
+            decimal[0] += 24;
             decimal[2] += 24;
         }
 
         return ((decimal[0] >= decimal[1]) && (decimal[0] < decimal[2]));
     };
-
     var filterCells = function (min, max) {
         // only add to the total audience percentage if the time falls between min and max
         var totalAudience = 0;
         selectedCells.each(function () {
             var time = $(this).data('time');
             var audience = parseFloat($(this).data('audience')) * 100;
+            if (typeof(audience) === "undefined") {
+                throw new Error('Unable to load audience proportion value from cell');
+            }
             if (isBetween(time, min, max)) {
                 totalAudience += audience;
             }

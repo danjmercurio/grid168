@@ -1,0 +1,9 @@
+<%= stylesheet_link_tag 'application', media: "all" %>
+<%= stylesheet_link_tag 'offers', media: "all" %>
+<%= stylesheet_link_tag 'style', media: "all" %>
+<%= render :partial => 'offers/sheet' %>
+<%= javascript_include_tag 'application' %>
+  <% if controller_name == 'offers' -%>
+      <%= javascript_include_tag 'offers' %>
+  <% end %>
+    <%= javascript_include_tag 'custom' %>
