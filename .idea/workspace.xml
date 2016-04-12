@@ -5,10 +5,8 @@
     <bookmark url="file://$PROJECT_DIR$/app/assets/javascripts/offers.js" line="86" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="253a1b92-4cff-4d17-8db2-60a8dec7fc3d" name="Default" comment="added email field to media outlets model and view forms">
+    <list default="true" id="253a1b92-4cff-4d17-8db2-60a8dec7fc3d" name="Default" comment="added dayparts hour and audience calculations&#10;made visual changes to offer view">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/application.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/offers.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/offers.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/sheet.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/sheet.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/offers/_sheet.html.erb" afterPath="$PROJECT_DIR$/app/views/offers/_sheet.html.erb" />
     </list>
@@ -86,11 +84,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="_sheet.html.erb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_sheet.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/offers/_sheet.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="31" column="47" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
+            <state relative-caret-position="243">
+              <caret line="252" column="22" selection-start-line="252" selection-start-column="22" selection-end-line="252" selection-end-column="22" />
               <folding>
                 <element signature="n#style#0;n#div#3;n#form#0;n#!!top" expanded="true" />
               </folding>
@@ -98,11 +96,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="application.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="application.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="795">
-              <caret line="67" column="45" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
+            <state relative-caret-position="420">
+              <caret line="75" column="2" selection-start-line="75" selection-start-column="2" selection-end-line="75" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -121,8 +119,8 @@
       <file leaf-file-name="sheet.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/sheet.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="360">
-              <caret line="26" column="75" selection-start-line="26" selection-start-column="75" selection-end-line="26" selection-end-column="75" />
+            <state relative-caret-position="443">
+              <caret line="99" column="83" selection-start-line="99" selection-start-column="83" selection-end-line="99" selection-end-column="83" />
               <folding>
                 <element signature="e#0#36#0" expanded="false" />
               </folding>
@@ -220,10 +218,10 @@
         <option value="$PROJECT_DIR$/app/controllers/outlets_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/outlets/index.html.erb" />
         <option value="$PROJECT_DIR$/Gemfile" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/offers.js" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/sheet.js" />
         <option value="$PROJECT_DIR$/app/views/offers/_sheet.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/sheet.js" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/application.js" />
       </list>
     </option>
   </component>
@@ -737,7 +735,7 @@
       <workItem from="1459980864730" duration="8664000" />
       <workItem from="1459995723158" duration="7702000" />
       <workItem from="1460052813384" duration="10348000" />
-      <workItem from="1460407437463" duration="28020000" />
+      <workItem from="1460407437463" duration="30101000" />
     </task>
     <task id="LOCAL-00001" summary="On Rails 4">
       <created>1457475047264</created>
@@ -949,7 +947,14 @@
       <option name="project" value="LOCAL" />
       <updated>1460003134348</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="added dayparts hour and audience calculations&#10;made visual changes to offer view">
+      <created>1460436726876</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1460436726876</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -958,7 +963,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="85434000" />
+    <option name="totallyTimeSpent" value="87515000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -975,9 +980,9 @@
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21955128" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861635" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3416009" sideWeight="0.5176282" order="10" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3416009" sideWeight="0.51976496" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1741453" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32807216" sideWeight="0.4823718" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32807216" sideWeight="0.48023504" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861635" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30326945" sideWeight="0.46741453" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1007,7 +1012,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="Implemented main app template, login, logout, notifications" />
     <MESSAGE value="Devise gem updated to edge version&#10;Arranged render hierarchy properly" />
     <MESSAGE value="All top level application html partials added and in proper directory" />
     <MESSAGE value="User options edit form implemented" />
@@ -1032,7 +1036,8 @@
     <MESSAGE value="added dayparts table to show offer view" />
     <MESSAGE value="added recalculation to offer show view" />
     <MESSAGE value="added email field to media outlets model and view forms" />
-    <option name="LAST_COMMIT_MESSAGE" value="added email field to media outlets model and view forms" />
+    <MESSAGE value="added dayparts hour and audience calculations&#10;made visual changes to offer view" />
+    <option name="LAST_COMMIT_MESSAGE" value="added dayparts hour and audience calculations&#10;made visual changes to offer view" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1417,19 +1422,13 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
+    <entry file="file://$PROJECT_DIR$/app/views/offers/_sheet.html.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="795">
-          <caret line="67" column="45" selection-start-line="67" selection-start-column="45" selection-end-line="67" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/offers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1455">
-          <caret line="97" column="8" selection-start-line="97" selection-start-column="8" selection-end-line="97" selection-end-column="8" />
-          <folding />
+        <state relative-caret-position="243">
+          <caret line="252" column="22" selection-start-line="252" selection-start-column="22" selection-end-line="252" selection-end-column="22" />
+          <folding>
+            <element signature="n#style#0;n#div#3;n#form#0;n#!!top" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1443,21 +1442,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/sheet.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="360">
-          <caret line="26" column="75" selection-start-line="26" selection-start-column="75" selection-end-line="26" selection-end-column="75" />
+        <state relative-caret-position="443">
+          <caret line="99" column="83" selection-start-line="99" selection-start-column="83" selection-end-line="99" selection-end-column="83" />
           <folding>
             <element signature="e#0#36#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/offers/_sheet.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/offers.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="31" column="47" selection-start-line="31" selection-start-column="47" selection-end-line="31" selection-end-column="47" />
-          <folding>
-            <element signature="n#style#0;n#div#3;n#form#0;n#!!top" expanded="true" />
-          </folding>
+        <state relative-caret-position="1455">
+          <caret line="97" column="8" selection-start-line="97" selection-start-column="8" selection-end-line="97" selection-end-column="8" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="75" column="2" selection-start-line="75" selection-start-column="2" selection-end-line="75" selection-end-column="2" />
+          <folding />
         </state>
       </provider>
     </entry>
