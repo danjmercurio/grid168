@@ -26,11 +26,73 @@
     <input class="delimited" type="text" value="<%= @outlet.subs %>" id="mvpdSubscribers"/></h3>
   <h3><strong>Over the Air Homes:</strong>
     <input class="delimited" type="text" value="<%= @outlet.over_air %>" id="otaHomes"/></h3>
-  <h3><strong>Total Homes:</strong>
-    <input class="delimited" type="text" value="<%= @outlet.total_homes %>" id="totalHomes"/></h3>
   <h3><strong>Time Zone:</strong> <%= @outlet.time_zone %></h3>
   <h3><strong>Available Date:</strong> <%= @offer.available_date %></h3>
 </div>
+  <div class="col-md-12" style="margin-top: 10px;">
+    <div class="col-sm-6 col-md-3 margin-b-30">
+      <div class="tile red">
+        <div class="tile-title clearfix">
+          Total Homes
+          <span class="pull-right"></span>
+        </div><!--.tile-title-->
+        <div class="tile-body clearfix">
+          <i class="fa fa-home"></i>
+          <h4 class="pull-right" id="totalHomes"><%= @outlet.total_homes %></h4>
+        </div><!--.tile-body-->
+        <div class="tile-footer">
+          &nbsp;
+        </div><!--.tile footer-->
+      </div><!-- .tile-->
+
+    </div><!-- .col -->
+    <div class="col-sm-6 col-md-3 margin-b-30">
+      <div class="tile green">
+        <div class="tile-title clearfix">
+          Total Hours
+          <span class="pull-right"></span>
+        </div><!--.tile-title-->
+        <div class="tile-body clearfix">
+          <i class="fa fa-clock-o"></i>
+          <h4 class="pull-right" id="totalHoursHero">&nbsp;</h4>
+        </div><!--.tile-body-->
+        <div class="tile-footer">
+          &nbsp;
+        </div><!--.tile footer-->
+      </div><!-- .tile-->
+    </div><!--end .col-->
+
+    <div class="col-sm-6 col-md-3 margin-b-30">
+      <div class="tile blue">
+        <div class="tile-title clearfix">
+          Average Gross Hourly Rate
+          <span class="pull-right"></span>
+        </div><!--.tile-title-->
+        <div class="tile-body clearfix">
+          <i class="fa fa-usd"></i>
+          <h4 class="pull-right" id="grossHourlyRate">&nbsp;</h4>
+        </div><!--.tile-body-->
+        <div class="tile-footer">
+          &nbsp;
+        </div><!--.tile footer-->
+      </div><!-- .tile-->
+    </div><!--end .col-->
+    <div class="col-sm-6 col-md-3 margin-b-30">
+      <div class="tile purple">
+        <div class="tile-title clearfix">
+          Average Gross Monthly Rate
+          <span class="pull-right"></span>
+        </div><!--.tile-title-->
+        <div class="tile-body clearfix">
+          <i class="fa fa-calendar"></i>
+          <h4 class="pull-right" id="grossMonthlyRate"></h4>
+        </div><!--.tile-body-->
+        <div class="tile-footer">
+          &nbsp;
+        </div><!--.tile footer-->
+      </div><!-- .tile-->
+    </div><!--end .col-->
+  </div>
 <h2>Gross Rate Worksheet</h2>
 <div class="col-md-12">
     <div class="panel panel-default margin-b-30 ">
@@ -121,58 +183,70 @@
           <tr>
             <td><strong>Early Morning</strong></td>
             <td>6am to 10am</td>
+            <td id="morningAudience">&nbsp;</td>
             <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td id="morningHours">&nbsp;</td>
             <td>&nbsp;</td>
           </tr>
           <tr>
             <td><strong>Daytime</strong></td>
             <td>10am to 4:30pm</td>
+            <td id="daytimeAudience">&nbsp;</td>
             <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td id="daytimeHours">&nbsp;</td>
             <td>&nbsp;</td>
           </tr>
           <tr>
             <td><strong>Evening News</strong></td>
             <td>4:30pm to 7pm</td>
+            <td id="eveningNewsAudience">&nbsp;</td>
             <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td id="eveningNewsHours">&nbsp;</td>
             <td>&nbsp;</td>
           </tr>
           <tr>
             <td><strong>Local Prime Time</strong></td>
             <td>7pm to 8pm</td>
+            <td id="localPrimeTimeAudience">&nbsp;</td>
             <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td id="localPrimeTimeHours">&nbsp;</td>
             <td>&nbsp;</td>
           </tr>
           <tr>
             <td><strong>National Prime Time</strong></td>
             <td>8pm to 11pm</td>
+            <td id="nationalPrimeTimeAudience">&nbsp;</td>
             <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
+            <td id="nationalPrimeTimeHours">&nbsp;</td>
             <td>&nbsp;</td>
           </tr>
           <tr>
             <td><strong>Late News</strong></td>
             <td>11pm to 11:30pm</td>
+            <td id="lateNewsAudience"></td>
+            <td>&nbsp;</td>
+            <td id="lateNewsHours"></td>
           </tr>
           <tr>
             <td><strong>Late Night</strong></td>
             <td>11:30pm to 1am</td>
+            <td id="lateNightAudience"></td>
+            <td>&nbsp;</td>
+            <td id="lateNightHours"></td>
           </tr>
           <tr>
             <td><strong>Overnights</strong></td>
             <td>1am to 6am</td>
+            <td id="overnightsAudience"></td>
+            <td>&nbsp;</td>
+            <td id="overnightsHours"></td>
           </tr>
           <tr>
             <td><strong>Total Worksheet</strong></td>
+            <td>24 hours</td>
+            <td id="runningAudienceTotal"></td>
             <td>&nbsp;</td>
+            <td id="runningHoursTotal"></td>
           </tr>
           </tbody>
         </table>

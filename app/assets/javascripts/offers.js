@@ -95,7 +95,7 @@ $(document).ready(function () {
         $('#hourlyRate').text(function () {
             return 'Hourly Rate: $' + hourlyRate.toString();
         });
-
+        
         // Insert selected cells into holder input
         var cellHolder = $('#offer_time_cells');
         cellHolder.val('');
