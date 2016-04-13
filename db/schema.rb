@@ -68,19 +68,6 @@ ActiveRecord::Schema.define(version: 20160407042245) do
 
   add_index "offers_programmers", ["offer_id", "programmer_id"], name: "index_offers_programmers_on_offer_id_and_programmer_id", unique: true
 
-  create_table "offervalues", force: :cascade do |t|
-    t.string   "time"
-    t.float    "monday"
-    t.float    "tuesday"
-    t.float    "wednesday"
-    t.float    "thursday"
-    t.float    "friday"
-    t.float    "saturday"
-    t.float    "sunday"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "outlet_types", force: :cascade do |t|
     t.string   "name"
     t.datetime "created_at", null: false
@@ -138,35 +125,6 @@ ActiveRecord::Schema.define(version: 20160407042245) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-  end
-
-  create_table "sub_channel_offers", force: :cascade do |t|
-    t.float    "yearly_offer",      default: 0.0, null: false
-    t.float    "monthly_offer",     default: 0.0, null: false
-    t.float    "weekly_offer",      default: 0.0, null: false
-    t.float    "hourly_rate",       default: 0.0, null: false
-    t.float    "total_hours",       default: 0.0, null: false
-    t.float    "dollar_amount",     default: 0.0, null: false
-    t.text     "half_hour_clicked"
-    t.integer  "sub_channel_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "user_id"
-  end
-
-  create_table "sub_channel_types", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "sub_channels", force: :cascade do |t|
-    t.integer  "sub_channel_type_id"
-    t.integer  "subs"
-    t.integer  "outlet_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "name"
   end
 
   create_table "users", force: :cascade do |t|
