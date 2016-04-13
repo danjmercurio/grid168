@@ -22,10 +22,9 @@ class Outlet < ActiveRecord::Base
   belongs_to :outlet_type
 	with_options :dependent => :destroy do |o|
 		o.has_many :offers
-		o.has_many :sub_channels
 	end
 
-	attr_accessible :name, :first_name, :last_name, :phone_number, :description, :subs, :dma_id, :user_id, :outlet_type_id, :time_zone, :programming, :over_air, :total_homes
+	attr_accessible :name, :first_name, :last_name, :phone_number, :description, :subs, :dma_id, :user_id, :outlet_type_id, :time_zone, :programming, :over_air, :total_homes, :email
 
 	validates :name, :first_name, :last_name, :phone_number, :dma_id, :subs, :outlet_type, :presence => true
 

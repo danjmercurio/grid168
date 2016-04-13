@@ -58,38 +58,20 @@ class OutletsController < ApplicationController
 	end #end edit action
 
 	def update
-		if !params[:cancel].blank?
-			redirect_to outlets_path
-		else
-			count = params[:count_sub_channel].to_i
-			params[:outlet][:subs] = remove_comma(params[:outlet][:subs]) unless params[:outlet][:subs].blank?
-			@outlet = Outlet.find params[:id]
+		@outlet = Outlet.find(params[:id])
 
-			respond_to do |format|
-				if @outlet.update_attributes params[:outlet]
-					notice = "Outlet was successfully updated."
-					if count > 0
-						# save sub channel
-						if !params[:sub_channel].nil?
-							for i in 0...count do
-								if !params[:sub_channel]["name_#{i}"].blank?
-									name = params[:sub_channel]["name_#{i}"]
-									puts name
-									type = params[:sub_channel]["sub_channel_type_id_#{i}"].to_i
-									subs = (remove_comma(params[:sub_channel]["subs_#{i}"])).to_i
-									@outlet.sub_channels.create name: name, sub_channel_type_id: type, subs: subs
-									notice = "Outlet and its sub channel were successfully updated."
-								end
-							end #end for i
-						end #end check params[:sub_channel]
-					end #end if count
-					format.html { redirect_to @outlet, notice: notice }
-				else
-					format.html { render :action => "edit" }
-				end
-			end #end respond_to
-		end
+		# Strip comma delimiters from the following parameters
+		params[:outlet][:subs] = params[:outlet][:subs].gsub(",", '').to_i
+		params[:outlet][:over_air] = params[:outlet][:over_air].gsub(",", '').to_i
+		params[:outlet][:total_homes] = params[:outlet][:total_homes].gsub(",", '').to_i
 
+		respond_to do |format|
+      if @outlet.update(params[:outlet])
+        format.html { redirect_to @outlet, notice: 'User was successfully updated.' }
+      else
+        format.html { render :edit, error: @outlet.errors }
+      end
+    end
 	end #end update action
 
 	def destroy

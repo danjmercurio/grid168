@@ -8,20 +8,21 @@ $(document).ready(function () {
     var mvpdSubs = $('input#outlet_subs');
     var otaSubs = $('input#outlet_over_air');
 
-    // Our function to get the field values, check their contents, and finally do the autofill
-    var getCheckFill = function () {
-        // First, add comma delimiters to mvpd subs and ota subs if they are non-empty
+    mvpdSubs.val(mvpdSubs.val().stripAndParse().toString().addCommas());
+    otaSubs.val(otaSubs.val().stripAndParse().toString().addCommas());
+
+    var doAutoFill = function() {
         if (!!mvpdSubs.val()) mvpdSubs.val(mvpdSubs.val().stripAndParse().toString().addCommas());
         if (!!otaSubs.val()) otaSubs.val(otaSubs.val().stripAndParse().toString().addCommas());
 
-        if (!!mvpdSubs.val() && !!otaSubs.val()) {
-            var fillValue = mvpdSubs.val().stripAndParse() + otaSubs.val().stripAndParse();
-            totalHomes.val(fillValue.toString().addCommas());
+        if (!!mvpdSubs.val() && !! otaSubs.val()) {
+            // Auto-calculate the total homes field if these two fields are both non-empty
+            var totalHomesSum = mvpdSubs.val().stripAndParse() + otaSubs.val().stripAndParse();
+            totalHomes.val(totalHomesSum.toString().addCommas());
         }
     };
 
-    // Register event handlers
-    mvpdSubs.blur(getCheckFill);
-    otaSubs.blur(getCheckFill);
+    doAutoFill();
+    $('form').change(doAutoFill);
 
 });
