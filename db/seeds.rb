@@ -17,10 +17,6 @@ puts 'Creating Programmer Types controlled vocabulary'
 end
 
 
-puts "Create Sub channel type data.."
-%w(DT1 DT2 DT3 DT4 DT5).each do |type|
-	SubChannelType.create! name: type
-end
 
 puts "Create user admin and test.."
 admin = User.create email: "admin@gmail.com",
@@ -123,25 +119,6 @@ offer3 = outlet2.offers.create yearly_offer: 3,
 offer3.programmer_ids = [1]
 offer3.save
 
-puts "Create sub channel sample.."
-sub_channel1 = outlet3.sub_channels.create name: "RE",
-														subs: 10000,
-														sub_channel_type_id: 2
-
-outlet3.sub_channels.create name: "TD",
-														subs: 10000,
-														sub_channel_type_id: 3
-
-puts "Create sub offer for sub channel sample.."
-sub_offer1 = sub_channel1.sub_channel_offers.create yearly_offer: 4,
-																				monthly_offer: 4,
-																				weekly_offer: 4,
-																				hourly_rate: 4,
-																				total_hours: 4,
-																				dollar_amount: 4,
-																				user_id: 2
-sub_offer1.programmer_ids = [3]
-sub_offer1.save
-
 puts "Create CSV sample.."
+puts "Invoking rake task database_values:insert"
 Rake::Task['database_values:insert'].invoke
