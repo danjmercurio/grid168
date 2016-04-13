@@ -10,8 +10,13 @@ $(document).ready(function () {
 
     // Our function to get the field values, check their contents, and finally do the autofill
     var getCheckFill = function () {
+        // First, add comma delimiters to mvpd subs and ota subs if they are non-empty
+        if (!!mvpdSubs.val()) mvpdSubs.val(mvpdSubs.val().stripAndParse().toString().addCommas());
+        if (!!otaSubs.val()) otaSubs.val(otaSubs.val().stripAndParse().toString().addCommas());
+
         if (!!mvpdSubs.val() && !!otaSubs.val()) {
-            totalHomes.val(parseInt(mvpdSubs.val()) + parseInt(otaSubs.val()));
+            var fillValue = mvpdSubs.val().stripAndParse() + otaSubs.val().stripAndParse();
+            totalHomes.val(fillValue.toString().addCommas());
         }
     };
 
