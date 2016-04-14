@@ -59,6 +59,7 @@ var logAndFlip = function (cell) {
         });
 
         gridArea.mouseup(function () {
+            recalculate();
             cells.off('mouseenter');
         });
 
