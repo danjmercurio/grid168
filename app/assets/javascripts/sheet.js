@@ -126,7 +126,10 @@ var recalculateDayParts = function () {
     var calculateAudienceSum = function (cells) {
         var audience = 0;
         cells.each(function () {
-            audience += $(this).data('audience');
+            var temp = parseFloat($(this).data('audience')) * 100;
+            if (!temp || temp <= 0 || typeof(temp) != "number") throw new Error('Unable to load audience value from cell');
+            audience += temp;
+            runningAudienceTotal += temp;
         });
         return audience;
     };
@@ -136,6 +139,7 @@ var recalculateDayParts = function () {
         cells.each(function () {
             hours += 0.5;
         });
+        runningHoursTotal += hours;
         return hours;
     };
     //
@@ -300,6 +304,9 @@ var recalculateDayParts = function () {
         $('#' + dayPartName + 'WeeklyRate').text(dayPart.weeklyRate.toString().toNearestDollar());
 
     });
+
+    $('#runningAudienceTotal').text(runningAudienceTotal.toString().toPercentage());
+    $('#runningHoursTotal').text(runningHoursTotal);
 };
 
 // Calculate on page load (this just happens once)
