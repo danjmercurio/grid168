@@ -104,9 +104,16 @@
                             <%= number_to_currency offer.dollar_amount %></td>
                             <td><%= offer.created_at %></td>
                             <td>
-                            <%if (current_user.id == offer.user_id) || current_user.admin? %><%= link_to "Edit", edit_outlet_offer_path(@outlet, offer) %>|
-                            <%= link_to "Delete", [@outlet, offer], method: :delete, confirm: "Are you sure?" %>
-                            <%end %></td>
+                                <div class="btn-group">
+                                  <button type="button" class="btn btn-primary droptown-toggle" data-toggle="dropdown">
+                                    Actions&nbsp;<span class="caret"></span></button>
+                                  <ul class="dropdown-menu">
+                                    <li><%= link_to 'Show', offer_path(offer) %></li>
+                                    <li><%= link_to 'Edit', edit_outlet_offer_path(@outlet, offer) %></li>
+                                    <li><%= link_to "Delete", offer_path(offer), method: :delete, confirm: "Are you sure?" %></li>
+                                  </ul>
+                                </div>
+                                </td>
                         </tr><%end %><!-- end programmer -->
                         <%end %><!-- end offer of outlet -->
                     </tbody>

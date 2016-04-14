@@ -15,10 +15,11 @@ $(document).ready(function () {
         if (!!mvpdSubs.val()) mvpdSubs.val(mvpdSubs.val().stripAndParse().toString().addCommas());
         if (!!otaSubs.val()) otaSubs.val(otaSubs.val().stripAndParse().toString().addCommas());
 
-        if (!!mvpdSubs.val() && !! otaSubs.val()) {
+        if (!!mvpdSubs.val() && !!otaSubs.val() && !!totalHomes.val()) {
             // Auto-calculate the total homes field if these two fields are both non-empty
             var totalHomesSum = mvpdSubs.val().stripAndParse() + otaSubs.val().stripAndParse();
             totalHomes.val(totalHomesSum.toString().addCommas());
+            console.log(totalHomesSum);
         }
     };
 

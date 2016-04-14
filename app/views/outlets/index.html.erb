@@ -50,8 +50,8 @@
                   <td><%= outlet.name %></td>
                   <td><%= outlet.offers.count %></td>
                   <td><%= number_with_delimiter outlet.subs %></td>
-                  <td><%= outlet.over_air %></td>
-                  <td><%= outlet.total_homes %></td>
+                  <td><%= number_with_delimiter outlet.over_air %></td>
+                  <td><%= number_with_delimiter outlet.total_homes %></td>
                   <td><%= outlet.dma.name rescue "None" %></td>
                   <td><%= outlet.outlet_type.name %></td>
                   <td><%= outlet.created_at.strftime "%m/%d/%Y" %></td>

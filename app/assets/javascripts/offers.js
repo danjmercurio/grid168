@@ -12,25 +12,6 @@ $(document).ready(function () {
     var mvpdSubs = $('input#outlet_subs');
     var otaSubs = $('input#outlet_over_air');
 
-    // Our function to get the field values, check their contents, and finally do the autofill
-    var getCheckFill = function () {
-        if (!mvpdSubs.val()) {
-            mvpdSubs.val(0);
-        }
-        if (!otaSubs.val()) {
-            otaSubs.val(0);
-        }
-        if (!!mvpdSubs.val() && !!otaSubs.val()) {
-            totalHomes.val(function () {
-                return (parseInt(mvpdSubs.val()) + parseInt(otaSubs.val()));
-            });
-        }
-    };
-
-    // Register event handlers
-    mvpdSubs.blur(getCheckFill);
-    otaSubs.blur(getCheckFill);
-
     // Add comma delimiters to rate input boxes
     var weeklyOffer = $("#offer_weekly_offer");
     weeklyOffer.val(weeklyOffer.val());
@@ -39,18 +20,17 @@ $(document).ready(function () {
     var yearlyOffer = $("#offer_yearly_offer");
     yearlyOffer.val(yearlyOffer.val());
 
-
+    // Make weeklyRate global because it will be used in other contexts
+    var weeklyRate;
 
     // Do all our calculations here
     calculateRates = function () {
-        // Check the input values at the top
-        getCheckFill();
 
         // First, just gather information
-        var currencyFactor = parseFloat($('#offer_dollar_amount').val());
-        var mvpdSubscribers = parseInt($('input#outlet_subs').val() || 0);
-        var otaHomes = parseInt($('input#outlet_over_air').val() || 0);
-        var totalHomes = parseInt($('input#outlet_total_homes').val());
+        var currencyFactor = $('#offer_dollar_amount').val().stripAndParse();
+        var mvpdSubscribers = $('input#outlet_subs').val().stripAndParse();
+        var otaHomes = $('input#outlet_over_air').val().stripAndParse();
+        var totalHomes = $('input#outlet_total_homes').val().stripAndParse();
 
         // Get all selected cells
         var selectedCells = $('.clicked');
@@ -72,7 +52,7 @@ $(document).ready(function () {
         // Compute rates from Sub rates
         var yearlyRate = (annualSubRate * totalHomes);
         var monthlyRate = (annualSubRate * totalHomes) / 12;
-        var weeklyRate = (annualSubRate * totalHomes) / 52;
+        weeklyRate = (annualSubRate * totalHomes) / 52;
 
 
         // Set the proper values for display elements and hidden elements
@@ -80,21 +60,19 @@ $(document).ready(function () {
 
         $('#weekly_hours').text(weeklyHours);
         $('#offer_weekly_hours').val(weeklyHours);
-        $('#offer_weekly_offer').val(weeklyRate.toString());
+        $('#offer_weekly_offer').val(weeklyRate.toString().toNearestDollar());
 
         $('#monthly_hours').text(monthlyHours);
         $('#offer_monthly_hours').val(monthlyHours);
-        $('#offer_monthly_offer').val(monthlyRate.toString());
+        $('#offer_monthly_offer').val(monthlyRate.toString().toNearestDollar());
 
         $('#yearly_hours').text(yearlyHours);
         $('#offer_yearly_hours').val(yearlyHours);
-        $('#offer_yearly_offer').val(yearlyRate.toString());
+        $('#offer_yearly_offer').val(yearlyRate.toString().toNearestDollar());
 
         var hourlyRate = yearlyRate / yearlyHours;
 
-        $('#hourlyRate').text(function () {
-            return 'Hourly Rate: $' + hourlyRate.toString();
-        });
+        $('#hourlyRate').text("Hourly Rate: " + hourlyRate.toString().toNearestDollar());
         
         // Insert selected cells into holder input
         var cellHolder = $('#offer_time_cells');
@@ -154,6 +132,8 @@ $(document).ready(function () {
 
 
     });
+
+    $(document).ready(calculateRates);
 
 
 });

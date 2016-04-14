@@ -65,7 +65,7 @@ String.prototype.stripAndParse = function () {
 };
 String.prototype.toCurrency = function () {
     // return '$' + Math.round10(parseFloat(this), -2).toString();
-    return '$' + parseFloat(this).toFixed(2);
+    return '$' + this.stripAndParse().toFixed(2).toString().addCommas();
 };
 String.prototype.addCommas = function () {
     return parseFloat(this).toLocaleString().toString();
@@ -73,6 +73,9 @@ String.prototype.addCommas = function () {
 String.prototype.toPercentage = function () {
     return Math.round10(parseFloat(this), -2).toString() + '%';
 
+};
+String.prototype.toNearestDollar = function() {
+    return '$' + Math.round(this.stripAndParse()).toString().addCommas();
 };
 // Input masks
 

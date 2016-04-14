@@ -1,4 +1,7 @@
 class OutletsController < ApplicationController
+	before_action :sanitizeParameters, :only => [:create, :update]
+
+
 	def index
 		current_user.admin? ? @outlets = Outlet.all : @outlets = current_user.outlets
 	end #end index action
@@ -60,10 +63,10 @@ class OutletsController < ApplicationController
 	def update
 		@outlet = Outlet.find(params[:id])
 
-		# Strip comma delimiters from the following parameters
-		params[:outlet][:subs] = params[:outlet][:subs].gsub(",", '').to_i
-		params[:outlet][:over_air] = params[:outlet][:over_air].gsub(",", '').to_i
-		params[:outlet][:total_homes] = params[:outlet][:total_homes].gsub(",", '').to_i
+		# # Strip comma delimiters from the following parameters
+		# params[:outlet][:subs] = params[:outlet][:subs].gsub(",", '').to_i
+		# params[:outlet][:over_air] = params[:outlet][:over_air].gsub(",", '').to_i
+		# params[:outlet][:total_homes] = params[:outlet][:total_homes].gsub(",", '').to_i
 
 		respond_to do |format|
       if @outlet.update(params[:outlet])

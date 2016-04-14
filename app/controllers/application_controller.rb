@@ -26,4 +26,17 @@ class ApplicationController < ActionController::Base
   def admin_only
     redirect_to '/404' unless current_user.admin?
   end
+
+  def sanitizeParameters
+    params.each do |key, value|
+      if ["offer", "outlet"].include?(key)
+        key[value].each do |v|
+          puts "Dirty parameter: " + v
+          v = v.gsub(",", "").gsub("$", "") unless ["email", "grNotes", "dpNotes"].include?(i)
+          puts "Cleaned: " + v
+        end
+      end
+    end
+  end
+
 end

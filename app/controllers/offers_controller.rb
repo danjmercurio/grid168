@@ -46,17 +46,17 @@ class OffersController < ApplicationController
 
 
 	def create
-    @offer = Offer.new(params[:offer])
-    @outlet = @offer.outlet
-    @offer.user = current_user
-		respond_to do |format|
-			if @offer.save
-      	# format.html { redirect_to programmer_path(:id => @offer.programmer_id), :notice => 'Offer was successfully created.' }
-				format.html { redirect_to offers_path, notice: "Offer was created successfully" }
-			else
-				format.html { redirect_to :back, flash[:alert] = @offer.errors }
-			end
-		end #end respond_to
+	    @offer = Offer.new(params[:offer])
+	    @outlet = @offer.outlet
+	    @offer.user = current_user
+			respond_to do |format|
+				if @offer.save
+	      	# format.html { redirect_to programmer_path(:id => @offer.programmer_id), :notice => 'Offer was successfully created.' }
+					format.html { redirect_to offers_path, notice: "Offer was created successfully" }
+				else
+					format.html { redirect_to :back, flash[:alert] = @offer.errors }
+				end
+			end #end respond_to
 	end #end create action
 
 	def destroy
