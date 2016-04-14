@@ -43,3 +43,39 @@
     width: 75%;
     text-align: right;
 }
+
+.dayPartRow {
+
+}
+
+#earlyMorning {
+    background: rgba(255, 0, 0, 0.5019607843137255);
+}
+
+#daytime {
+    background-color: rgba(82, 255, 0, 0.5019607843137255)
+}
+
+#eveningNews {
+    background-color: rgba(0, 245, 255, 0.5019607843137255)
+}
+
+#localPrimeTime {
+    background-color: rgba(255, 0, 235, 0.4745098039215686)
+}
+
+#nationalPrimeTime {
+    background-color: rgba(255, 253, 0, 0.5372549019607843)
+}
+
+#lateNews {
+    background-color: rgba(255, 123, 0, 0.5019607843137255)
+}
+
+#lateNight {
+    background-color: rgba(0, 255, 166, 0.5019607843137255);
+}
+
+#overnights {
+    background-color: rgba(166, 69, 26, 0.4745098039215686);
+}
