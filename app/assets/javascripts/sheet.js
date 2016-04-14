@@ -295,7 +295,9 @@ var recalculateDayParts = function () {
         dayPart.audience = calculateAudienceSum(selected);
         dayPart.hours = calculateHoursSum(selected);
         dayPart.rate = dayPart.hours * hourRate;
-        dayPart.weeklyRate = dayPart.rate * dayPart.hours;
+        var weeklyRateTemp = dayPart.rate * dayPart.hours;
+        runningWeeklyRateTotal += weeklyRateTemp;
+        dayPart.weeklyRate = weeklyRateTemp;
 
         // Fill in the blanks
         $('#' + dayPartName + 'Audience').text(dayPart.audience.toString().toPercentage());
@@ -307,6 +309,7 @@ var recalculateDayParts = function () {
 
     $('#runningAudienceTotal').text(runningAudienceTotal.toString().toPercentage());
     $('#runningHoursTotal').text(runningHoursTotal);
+    $('#runningWeeklyRateTotal').text(runningWeeklyRateTotal.toString().toCurrency());
 };
 
 // Calculate on page load (this just happens once)
