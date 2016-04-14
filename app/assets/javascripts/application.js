@@ -68,7 +68,10 @@ String.prototype.toCurrency = function () {
     return '$' + this.stripAndParse().toFixed(2).toString().addCommas();
 };
 String.prototype.addCommas = function () {
-    return parseFloat(this).toLocaleString().toString();
+    function numberWithCommas(x) {
+        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+    }
+    return numberWithCommas(parseFloat(this)).toString();
 };
 String.prototype.toPercentage = function () {
     return Math.round10(parseFloat(this), -2).toString() + '%';
