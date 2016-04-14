@@ -5,8 +5,5 @@
       <secret-storage>master_key</secret-storage>
       <auth-required>false</auth-required>
     </data-source>
-    <data-source name="Rails grid168: development" uuid="86e53994-c62f-4c46-90bb-ff76cbc93a92">
-      <auth-required>false</auth-required>
-    </data-source>
   </component>
 </project>
