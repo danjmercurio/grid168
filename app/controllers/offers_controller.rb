@@ -1,5 +1,6 @@
 class OffersController < ApplicationController
 	before_action :authenticate_user!
+  before_action :sanitizeParameters, :only => [:create, :update]
 
 	def new
     @outlet = Outlet.where(:id => params[:outlet_id]).first

@@ -15,8 +15,6 @@
 }
 
 .clicked {
-    background-color: green;
-    color: white;
 }
 
 .dayLabel {
@@ -44,38 +42,40 @@
     text-align: right;
 }
 
+/* all the rows in the worksheet grid */
 .dayPartRow {
 
 }
 
-#earlyMorning {
-    background: rgba(255, 0, 0, 0.5019607843137255);
+/* worksheet grid rows and cells */
+.morning {
+    background-color: rgba(255, 0, 0, 0.5019607843137255);
 }
 
-#daytime {
+.daytime {
     background-color: rgba(82, 255, 0, 0.5019607843137255)
 }
 
-#eveningNews {
+.eveningNews {
     background-color: rgba(0, 245, 255, 0.5019607843137255)
 }
 
-#localPrimeTime {
+.localPrimeTime {
     background-color: rgba(255, 0, 235, 0.4745098039215686)
 }
 
-#nationalPrimeTime {
+.nationalPrimeTime {
     background-color: rgba(255, 253, 0, 0.5372549019607843)
 }
 
-#lateNews {
+.lateNews {
     background-color: rgba(255, 123, 0, 0.5019607843137255)
 }
 
-#lateNight {
+.lateNight {
     background-color: rgba(0, 255, 166, 0.5019607843137255);
 }
 
-#overnights {
+.overnights {
     background-color: rgba(166, 69, 26, 0.4745098039215686);
 }

@@ -30,10 +30,12 @@ class ApplicationController < ActionController::Base
   def sanitizeParameters
     params.each do |key, value|
       if ["offer", "outlet"].include?(key)
-        key[value].each do |v|
-          puts "Dirty parameter: " + v
-          v = v.gsub(",", "").gsub("$", "") unless ["email", "grNotes", "dpNotes"].include?(i)
-          puts "Cleaned: " + v
+        value.each do |k, v|
+          if %w(subs over_air total_homes weekly_offer monthly_offer yearly_offer).include?(k)
+            puts "Dirty parameter: {:#{k} => #{v}}"
+            params[key][k] = v.gsub(",", "").gsub("$", "")
+            puts "Cleaned: " + params[key][k]
+          end
         end
       end
     end

@@ -4,7 +4,16 @@
 // Javascript for the grid used on new offer, edit offer, and display offer pages
 // Generic function to invert a cell's select state
 var flipSelected = function (cell) {
-    $(cell).hasClass('clicked') ? $(cell).removeClass('clicked') : $(cell).addClass('clicked');
+    // If the cell is clicked, apply its special coloring based on its dayPart attribute, and vice versa if it is not
+    var cell = $(cell);
+    var dayPart = cell.data('daypart');
+    if (cell.hasClass('clicked')) {
+        cell.removeClass('clicked');
+        cell.removeClass(dayPart);
+    } else {
+        cell.addClass('clicked');
+        cell.addClass(dayPart);
+    }
 };
 var logAndFlip = function (cell) {
     var day = $(cell).data('day');
