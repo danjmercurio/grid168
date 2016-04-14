@@ -59,6 +59,7 @@ var recalculateDayParts = function () {
     var runningAudienceTotal = 0;
     var runningHoursTotal = 0;
     var runningWeeklyRateTotal = 0;
+    var runningAverageRateTotal = 0;
 
     // only add to the total audience percentage if the time falls between min and max
     var totalAudience = 0;
@@ -310,6 +311,8 @@ var recalculateDayParts = function () {
     $('#runningAudienceTotal').text(runningAudienceTotal.toString().toPercentage());
     $('#runningHoursTotal').text(runningHoursTotal);
     $('#runningWeeklyRateTotal').text(runningWeeklyRateTotal.toString().toCurrency());
+    var runningAverageRateTotal = $('#weeklyRate').val().stripAndParse() / runningHoursTotal;
+    $('#runningAverageRateTotal').text(runningAverageRateTotal.toString().toCurrency());
 };
 
 // Calculate on page load (this just happens once)
