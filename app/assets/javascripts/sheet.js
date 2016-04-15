@@ -17,7 +17,9 @@ var recalculate = function () {
     var totalHomes = mvpdSubscribers + otaHomes;
     $('#totalHomes').text(totalHomes.toString().addCommas());
 
+
     var yearlyRate = $('#yearlyRate').val().stripAndParse();
+    $(yearlyRate).val(0);
     var yearlyHours = $('#yearlyHours').val().stripAndParse();
 
     $('#totalHoursHero').text(yearlyHours / 52);
@@ -125,6 +127,7 @@ var recalculateDayParts = function () {
     };
 
     var calculateAudienceSum = function (cells) {
+        if (cells.length === 0) return 0;
         var audience = 0;
         cells.each(function () {
             var temp = parseFloat($(this).data('audience')) * 100;
@@ -136,6 +139,7 @@ var recalculateDayParts = function () {
     };
 
     var calculateHoursSum = function (cells) {
+        if (cells.length === 0) return 0;
         var hours = 0;
         cells.each(function () {
             hours += 0.5;
@@ -143,76 +147,6 @@ var recalculateDayParts = function () {
         runningHoursTotal += hours;
         return hours;
     };
-    //
-    //
-    // $('#morningAudience').text(filterCells("06:00", "10:00"));
-    // $('#daytimeAudience').text(filterCells("10:00", "16:30"));
-    // $('#eveningNewsAudience').text(filterCells("16:30", "19:00"));
-    // $('#localPrimeTimeAudience').text(filterCells("19:00", "20:00"));
-    // $('#nationalPrimeTimeAudience').text(filterCells("20:00", "23:00"));
-    // $('#lateNewsAudience').text(filterCells("23:00", "23:30"));
-    // $('#lateNightAudience').text(filterCells("23:30", "01:00"));
-    // $('#overnightsAudience').text(filterCells("1:00", "06:00"));
-    //
-    // $('#runningAudienceTotal').text((runningAudienceTotal.toString().toPercentage()));
-    //
-    //
-    //
-    // var morningHours = getTotalHours("06:00", "10:00");
-    // $('#morningHours').text(morningHours);
-    // var morningRate = morningHours * hourRate;
-    // $('#morningRate').text(morningRate.toString().toNearestDollar());
-    // var morningWeeklyRate = morningRate * morningHours;
-    // $('#morningWeeklyRate').text(morningWeeklyRate.toString().toNearestDollar());
-    //
-    // var daytimeHours = getTotalHours("10:00", "16:30");
-    // $('#daytimeHours').text(daytimeHours);
-    // var daytimeRate = daytimeHours * hourRate;
-    // $('#daytimeRate').text(daytimeRate.toString().toNearestDollar());
-    // var daytimeWeeklyRate = daytimeRate * daytimeHours;
-    // $('#daytimeWeeklyRate').text(daytimeWeeklyRate.toString().toNearestDollar());
-    //
-    // var eveningNewsHours = getTotalHours("16:30", "19:00");
-    // $('#eveningNewsHours').text(eveningNewsHours);
-    // var eveningNewsRate = eveningNewsHours * hourRate;
-    // $('#eveningNewsRate').text(eveningNewsRate.toString().toNearestDollar());
-    // var eveningNewsWeeklyRate = eveningNewsRate * eveningNewsHours;
-    // $('#eveningNewsWeeklyRate').text(eveningNewsWeeklyRate.toString().toNearestDollar());
-    //
-    // var localPrimeTimeHours = getTotalHours("19:00", "20:00");
-    // $('#localPrimeTimeHours').text(localPrimeTimeHours);
-    // var localPrimeTimeRate = localPrimeTimeHours * hourRate;
-    // $('#localPrimeTimeRate').text(localPrimeTimeRate.toString().toNearestDollar());
-    // var localPrimeTimeWeeklyRate = localPrimeTimeHours * localPrimeTimeRate;
-    // $('#localPrimeTimeWeeklyRate').text(localPrimeTimeWeeklyRate.toString().toNearestDollar());
-    //
-    // var nationalPrimeTimeHours = getTotalHours("20:00", "23:00");
-    // $('#nationalPrimeTimeHours').text(nationalPrimeTimeHours);
-    // var nationalPrimeTimeRate = nationalPrimeTimeHours * hourRate;
-    // $('#nationalPrimeTimeRate').text(nationalPrimeTimeRate.toString().toNearestDollar());
-    // var nationalPrimeTimeWeeklyRate = nationalPrimeTimeRate * nationalPrimeTimeHours;
-    // $('#nationalPrimeTimeWeeklyRate').text(nationalPrimeTimeWeeklyRate.toString().toNearestDollar());
-    //
-    // var lateNewsHours = getTotalHours("23:00", "23:30");
-    // $('#lateNewsHours').text(lateNewsHours);
-    // var lateNewsRate = lateNewsHours * hourRate;
-    // $('#lateNewsRate').text(lateNewsRate.toString().toNearestDollar());
-    // var lateNewsWeeklyRate = lateNewsRate * lateNewsHours;
-    // $('#lateNewsWeeklyRate').text(lateNewsWeeklyRate.toString().toNearestDollar());
-    //
-
-    //
-    // var overnightsHours = getTotalHours("01:00", "06:00");
-    // $('#overnightsHours').text(overnightsHours);
-    // var overnightsRate = overnightsHours * hourRate;
-    // $('#overnightsRate').text(overnightsRate.toString().toNearestDollar());
-    // var overnightsWeeklyRate = overnightsHours * overnightsRate;
-    // $('#overnightsWeeklyRate').text(overnightsWeeklyRate.toString().toNearestDollar());
-    //
-    // $('#runningHoursTotal').text(runningHoursTotal);
-    //
-    // var averageHourRate = $('#weeklyRate').val().stripAndParse() / runningHoursTotal;
-    // $('#weeklyRateTotal').text(averageHourRate.toString().toNearestDollar());
 
     var dayParts = {
         "morning": {
@@ -290,15 +224,14 @@ var recalculateDayParts = function () {
     jQuery.each(dayParts, function (dayPartName, dayPart) {
         // First just get all of the selected cells corresponding to the current daypart. This should never be empty.
         var selected = getSelectedDayPartCells(dayPartName);
-        if (selected.length == 0) throw new Error('Unable to find all Daypart cells. Did the document load completely?');
 
         // Do some calculations
         dayPart.audience = calculateAudienceSum(selected);
         dayPart.hours = calculateHoursSum(selected);
-        dayPart.rate = dayPart.hours * hourRate;
-        var weeklyRateTemp = dayPart.rate * dayPart.hours;
-        runningWeeklyRateTotal += weeklyRateTemp;
-        dayPart.weeklyRate = weeklyRateTemp;
+        dayPart.weeklyRate = dayPart.hours * hourRate;
+
+        dayPart.hours === 0 ? dayPart.rate = 0 : dayPart.rate = dayPart.weeklyRate / dayPart.hours;
+        runningWeeklyRateTotal += dayPart.weeklyRate;
 
         // Fill in the blanks
         $('#' + dayPartName + 'Audience').text(dayPart.audience.toString().toPercentage());
@@ -310,6 +243,11 @@ var recalculateDayParts = function () {
 
     $('#runningAudienceTotal').text(runningAudienceTotal.toString().toPercentage());
     $('#runningHoursTotal').text(runningHoursTotal);
+    $('#totalHoursHero').text(runningHoursTotal.toString());
+    $('#monthlyRate').val((runningWeeklyRateTotal * 4).toString().toCurrency());
+    $('#weeklyRate').val(runningWeeklyRateTotal.toString().toCurrency());
+    $('#yearlyRate').val((runningWeeklyRateTotal * 52).toString().toCurrency());
+    $('#grossMonthlyRate').text((runningWeeklyRateTotal * 4).toString().toCurrency().toNearestDollar());
     $('#runningWeeklyRateTotal').text(runningWeeklyRateTotal.toString().toCurrency());
     var runningAverageRateTotal = $('#weeklyRate').val().stripAndParse() / runningHoursTotal;
     $('#runningAverageRateTotal').text(runningAverageRateTotal.toString().toCurrency());

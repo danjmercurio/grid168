@@ -35,16 +35,21 @@ $(document).ready(function () {
         // Get all selected cells
         var selectedCells = $('.clicked');
 
-        // Hours
-        var weeklyHours = selectedCells.length / 2;
-        var monthlyHours = weeklyHours * 4;
-        var yearlyHours = weeklyHours * 52;
+        var hoursSelected = (selectedCells.length / 2);
+
+        var yearlyHours = hoursSelected * 52;
+        var monthlyHours = hoursSelected * 12;
+        var weeklyHours = hoursSelected;
+
+
 
         // Compute the weekly sub rate. This is the sum of the audience numbers of all selected cells, times the currency factor
         var sumOfTimePeriods = 0;
         selectedCells.each(function () {
             sumOfTimePeriods += parseFloat($(this).data('audience'));
         });
+
+
         weeklySubRate = (sumOfTimePeriods * currencyFactor) / 52;
         var monthlySubRate = (sumOfTimePeriods * currencyFactor) / 12;
         var annualSubRate = (sumOfTimePeriods * currencyFactor);
@@ -57,6 +62,8 @@ $(document).ready(function () {
 
         // Set the proper values for display elements and hidden elements
         $('#offer_total_hours').val(weeklyHours);
+
+        $('#totalHours').text("Total Hours: " + hoursSelected);
 
         $('#weekly_hours').text(weeklyHours);
         $('#offer_weekly_hours').val(weeklyHours);
