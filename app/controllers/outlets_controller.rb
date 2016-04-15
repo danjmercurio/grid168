@@ -70,7 +70,7 @@ class OutletsController < ApplicationController
 
 		respond_to do |format|
       if @outlet.update(params[:outlet])
-        format.html { redirect_to @outlet, notice: 'User was successfully updated.' }
+				format.html { redirect_to @outlet, notice: "Media Outlet #{@outlet.name} was successfully updated." }
       else
         format.html { render :edit, error: @outlet.errors }
       end

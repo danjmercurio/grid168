@@ -9,11 +9,11 @@
         <div class="form-group">
           <%= fields_for @offer.outlet do |o| -%>
               <%= o.label :subs, 'MVPD Subscribers' %>
-              <%= o.text_field :subs, :class => 'form-control' %>
+              <%= o.text_field :subs, :class => 'form-control delimited' %>
               <%= o.label :over_air, 'OTA Homes' %>
-              <%= o.text_field :over_air, :class => 'form-control' %>
+              <%= o.text_field :over_air, :class => 'form-control delimited' %>
               <%= o.label :total_homes, 'Total Homes' %>
-              <%= o.text_field :total_homes, :class => 'form-control' %>
+              <%= o.text_field :total_homes, :class => 'form-control delimited' %>
           <% end %>
         </div>
         <div style="margin-bottom:15px;">

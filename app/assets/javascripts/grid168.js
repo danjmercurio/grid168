@@ -84,11 +84,7 @@ grid168 = (function () {
                     return '$' + this.stripAndParse().toFixed(2).toString().addCommas();
                 };
                 String.prototype.addCommas = function () {
-                    function numberWithCommas(x) {
-                        return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-                    }
-
-                    return numberWithCommas(parseFloat(this)).toString();
+                    return this.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
                 };
                 String.prototype.toPercentage = function () {
                     return Math.round10(parseFloat(this), -2).toString() + '%';
@@ -96,6 +92,9 @@ grid168 = (function () {
                 };
                 String.prototype.toNearestDollar = function () {
                     return '$' + Math.round(this.stripAndParse()).toString().addCommas();
+                };
+                Number.prototype.addCommas = function () {
+                    return this.toString().addCommas();
                 };
 
                 // jQuery helper for Animate.css
@@ -137,43 +136,20 @@ grid168 = (function () {
                         $(this).val(newVal);
                     });
                 });
-
-                // After the ready event fires, watch for changes in mvpd subs
-                // and OTA subs, and if they are both filled, use those values to autofill total homes
-                var totalHomes = $('input#outlet_total_homes');
-                var mvpdSubs = $('input#outlet_subs');
-                var otaSubs = $('input#outlet_over_air');
-
-                if (mvpdSubs.length && otaSubs.length) {
-                    mvpdSubs.val(mvpdSubs.val().stripAndParse().toString().addCommas());
-                    otaSubs.val(otaSubs.val().stripAndParse().toString().addCommas());
-
-                    var doAutoFill = function () {
-                        if (!!mvpdSubs.val()) mvpdSubs.val(mvpdSubs.val().stripAndParse().toString().addCommas());
-                        if (!!otaSubs.val()) otaSubs.val(otaSubs.val().stripAndParse().toString().addCommas());
-
-                        if (!!mvpdSubs.val() && !!otaSubs.val() && !!totalHomes.val()) {
-                            // Auto-calculate the total homes field if these two fields are both non-empty
-                            var totalHomesSum = mvpdSubs.val().stripAndParse() + otaSubs.val().stripAndParse();
-                            totalHomes.val(totalHomesSum.toString().addCommas());
-                            console.log(totalHomesSum);
-                        }
-                    };
-
-                    doAutoFill();
-                    $('form').change(doAutoFill);
-                }
             })();
 
             // Controller-specific functionality
             switch (this.controller) {
                 case 'offers':
-                    if (this.action == "new" || this.action == "edit") {
+                    if (this.action === 'new' || this.action === 'edit' || this.action === 'show') {
                         // Initialize the jQuery UI date picker
                         $('.dp').datepicker();
 
                         // Initialize the grid
                         this.grid.paint();
+
+                        // Do the calculations
+                        this.calc.doCalc();
 
                         // Keep a reference to the app object handy
                         var that = this;
@@ -219,6 +195,33 @@ grid168 = (function () {
                     }
                     break;
                 case 'outlets':
+                    if (this.action === 'new' || this.action === 'edit') {
+                        // After the ready event fires, watch for changes in mvpd subs
+                        // and OTA subs, and if they are both filled, use those values to autofill total homes
+                        var totalHomes = $('input#outlet_total_homes');
+                        var mvpdSubs = $('input#outlet_subs');
+                        var otaSubs = $('input#outlet_over_air');
+
+                        if (mvpdSubs.length && otaSubs.length) {
+                            mvpdSubs.val(mvpdSubs.val().stripAndParse().toString().addCommas());
+                            otaSubs.val(otaSubs.val().stripAndParse().toString().addCommas());
+
+                            var doAutoFill = function () {
+                                if (!!mvpdSubs.val()) mvpdSubs.val(mvpdSubs.val().stripAndParse().toString().addCommas());
+                                if (!!otaSubs.val()) otaSubs.val(otaSubs.val().stripAndParse().toString().addCommas());
+
+                                if (!!mvpdSubs.val() && !!otaSubs.val() && !!totalHomes.val()) {
+                                    // Auto-calculate the total homes field if these two fields are both non-empty
+                                    var totalHomesSum = mvpdSubs.val().stripAndParse() + otaSubs.val().stripAndParse();
+                                    totalHomes.val(totalHomesSum.toString().addCommas());
+                                    console.log(totalHomesSum);
+                                }
+                            };
+
+                            doAutoFill();
+                            $('form').change(doAutoFill);
+                        }
+                    }
                     break;
 
             }
@@ -242,7 +245,6 @@ grid168 = (function () {
                 $.each(this.cellData.split(','), function (index, s) {
                     var day = s.split("-")[0];
                     var time = s.substr(2);
-                    console.log(day, time);
                     var selector = ".cell[data-day='" + day + "'][data-time='" + time + "']";
                     // Flip state of all selected cells so the database value of cells is represented accurately on the page
                     var cell = $(selector)[0];
@@ -294,8 +296,102 @@ grid168 = (function () {
         calc: {
             doCalc: function () {
                 console.log('Caught signal to recalculate.');
+                var offer = this.values.offer;
+                offer.mvpdSubscribers = $('#outlet_subs').val().stripAndParse();
+                offer.otaHomes = $('#outlet_over_air').val().stripAndParse();
+                offer.totalHomes = offer.mvpdSubscribers + offer.otaHomes;
+
+                $('#outlet_total_homes').val(offer.totalHomes.addCommas());
+
+
             },
-            values: {}
+            values: {
+                offer: {
+                    "mvpdSubscribers": null,
+                    "otaHomes": null,
+                    "totalHomes": null,
+                    "247mvpdSubEstimate": null,
+                    "hourRate": null,
+                    "mvpdSubRate": null,
+                    "mvpdOtaSubRate": null,
+                    "weeklyHours": null,
+                    "monthlyHours": null,
+                    "yearlyHours": null,
+                    "weeklyRate": null,
+                    "monthlyRate": null,
+                    "yearlyRate": null
+                },
+                dayParts: {
+                    "morning": {
+                        start: "06:00",
+                        end: "10:00",
+                        color: "255, 0, 0, 0.5",
+                        audience: null,
+                        hours: null,
+                        rate: null,
+                        weeklyRate: null
+                    },
+                    "daytime": {
+                        start: "10:00",
+                        end: "16:30",
+                        color: "82, 255, 0, 0.5",
+                        audience: null,
+                        hours: null,
+                        rate: null,
+                        weeklyRate: null
+                    },
+                    "eveningNews": {
+                        start: "16:30",
+                        end: "19:00",
+                        color: "0, 245, 255, 0.5",
+                        audience: null,
+                        hours: null,
+                        rate: null,
+                        weeklyRate: null
+                    },
+                    "localPrimeTime": {
+                        start: "19:00",
+                        end: "20:00",
+                        color: "255, 0, 235, 0.5",
+                        audience: null,
+                        hours: null,
+                        rate: null,
+                        weeklyRate: null
+                    },
+                    "nationalPrimeTime": {
+                        start: "20:00",
+                        end: "23:00",
+                        audience: null,
+                        hours: null,
+                        rate: null,
+                        weeklyRate: null
+                    },
+                    "lateNews": {
+                        start: "23:00",
+                        end: "23:30",
+                        audience: null,
+                        hours: null,
+                        rate: null,
+                        weeklyRate: null
+                    },
+                    "lateNight": {
+                        start: "23:30",
+                        end: "01:00",
+                        audience: null,
+                        hours: null,
+                        rate: null,
+                        weeklyRate: null
+                    },
+                    "overnights": {
+                        start: "01:00",
+                        end: "06:00",
+                        audience: null,
+                        hours: null,
+                        rate: null,
+                        weeklyRate: null
+                    }
+                }
+            }
         }
     };
 

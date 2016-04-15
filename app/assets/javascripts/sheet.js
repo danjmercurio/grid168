@@ -148,77 +148,7 @@ var recalculateDayParts = function () {
         return hours;
     };
 
-    var dayParts = {
-        "morning": {
-            start: "06:00",
-            end: "10:00",
-            color: "255, 0, 0, 0.5",
-            audience: null,
-            hours: null,
-            rate: null,
-            weeklyRate: null
-        },
-        "daytime": {
-            start: "10:00",
-            end: "16:30",
-            color: "82, 255, 0, 0.5",
-            audience: null,
-            hours: null,
-            rate: null,
-            weeklyRate: null
-        },
-        "eveningNews": {
-            start: "16:30",
-            end: "19:00",
-            color: "0, 245, 255, 0.5",
-            audience: null,
-            hours: null,
-            rate: null,
-            weeklyRate: null
-        },
-        "localPrimeTime": {
-            start: "19:00",
-            end: "20:00",
-            color: "255, 0, 235, 0.5",
-            audience: null,
-            hours: null,
-            rate: null,
-            weeklyRate: null
-        },
-        "nationalPrimeTime": {
-            start: "20:00",
-            end: "23:00",
-            audience: null,
-            hours: null,
-            rate: null,
-            weeklyRate: null
-        },
-        "lateNews": {
-            start: "23:00",
-            end: "23:30",
-            audience: null,
-            hours: null,
-            rate: null,
-            weeklyRate: null
-        },
-        "lateNight": {
-            start: "23:30",
-            end: "01:00",
-            audience: null,
-            hours: null,
-            rate: null,
-            weeklyRate: null
-        },
-        "overnights": {
-            start: "01:00",
-            end: "06:00",
-            audience: null,
-            hours: null,
-            rate: null,
-            weeklyRate: null
-        }
-    };
-
+    
     var selectedCells = $('.clicked');
 
     jQuery.each(dayParts, function (dayPartName, dayPart) {
