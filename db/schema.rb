@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160415222229) do
+ActiveRecord::Schema.define(version: 20160415222729) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email"
@@ -62,6 +62,7 @@ ActiveRecord::Schema.define(version: 20160415222229) do
     t.integer "total_homes"
     t.decimal "halfHourRate"
     t.decimal "mvpdSubscriberRate"
+    t.decimal "mvpdOtaSubRate"
   end
 
   create_table "offers_programmers", id: false, force: :cascade do |t|
