@@ -10,8 +10,8 @@
 
   }
 </style>
-<form id="displayForm">
-  <%= hidden_field_tag 'offer_time_cells', raw(@offer.time_cells) %>
+<%= form_for @offer, :class => 'form-inline' do |f| -%>
+    <%= f.hidden_field 'offer_time_cells', raw(@offer.time_cells) %>
   <div class="text-center"><h1>Grid 168 Worksheet</h1></div>
   <h2>Bid prepared by: <%= image_tag("across.png") %></h2>
   <hr/>
@@ -21,11 +21,13 @@
     <h3><strong>Media Type:</strong> <%= @outlet.outlet_type.name %></h3>
   </div>
   <div class="col-md-6">
-    <h3><strong>MVPD Subscribers:</strong>
-      <input class="delimited" type="text" value="<%= @outlet.subs %>" id="mvpdSubscribers"/></h3>
+    <%= fields_for @offer.outlet do |o| -%>
+        <h3><strong>MVPD Subscribers:</strong>
+          <%= o.text_field :subs, :class => 'form-control delimited', :id => 'mvpdSubscribers' %>
+        </h3>
     <h3><strong>Over the Air Homes:</strong>
-      <input class="delimited" type="text" value="<%= @outlet.over_air %>" id="otaHomes"/></h3>
-    <h3><strong>Time Zone:</strong> <%= @outlet.time_zone %></h3>
+      <%= o.text_field :over_air, :class => 'form-control delimited', :id => 'otaHomes' %>
+      <h3><strong>Time Zone:</strong> <%= o.time_zone %></h3>
     <h3><strong>Available Date:</strong> <%= @offer.available_date %></h3>
   </div>
   <div class="col-md-12" style="margin-top: 10px; ">
@@ -37,7 +39,7 @@
         </div><!--.tile-title-->
         <div class="tile-body clearfix">
           <i class="fa fa-home"></i>
-          <h4 class="pull-right" id="totalHomes"><%= @outlet.total_homes %></h4>
+          <h4 class="pull-right"><%= f.text_field :total_homes, :id => 'totalHomes' %></h4>
         </div><!--.tile-body-->
         <div class="tile-footer">
           &nbsp;
@@ -69,7 +71,7 @@
         </div><!--.tile-title-->
         <div class="tile-body clearfix">
           <i class="fa fa-usd"></i>
-          <h4 class="pull-right" id="grossHourlyRate">&nbsp;</h4>
+          <h4 class="pull-right"><%= f.text_field :hourlyRate, :id => 'hourlyRate' %></h4>
         </div><!--.tile-body-->
         <div class="tile-footer">
           &nbsp;
@@ -118,7 +120,7 @@
             <td><strong>Half Hour Rate</strong></td>
             <td><input type="text" id="halfHourRate"/></td>
             <td><strong>Hour Rate</strong></td>
-            <td><input type="text" id="hourRate"/></td>
+            <td><%= f.text_field :hourRate, :value => number_to_currency(@offer.hourly_rate), :id => 'hourlyRate' %></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
           </tr>
@@ -152,11 +154,9 @@
       </div>
     </div>
   </div>
-</form>
 </div>
 <h2>Dayparts</h2>
 <div class="col-md-12">
-  <form id="dayPartsForm">
     <div class="panel panel-default margin-b-30 ">
       <!-- Start .panel -->
       <div class="panel-heading">
@@ -256,7 +256,8 @@
         <textarea class="form-control"><%= @offer.dpNotes %></textarea>
       </div>
     </div>
-  </form>
+    <% end %>
+<% end %>
 </div>
 <h2>Proposed Programming Schedule</h2>
 <div class="col-md-12 hours_div">

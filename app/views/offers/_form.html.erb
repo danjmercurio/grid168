@@ -38,7 +38,7 @@
           <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
           <div class="input-group">
             <div class="input-group-addon">$</div>
-            <%= f.text_field :dollar_amount, :class => 'form-control', :placeholder => @offer.dollar_amount, :style => 'width: 30%;' %>
+            <%= f.text_field :dollar_amount, :class => 'form-control', :placeholder => @offer.dollar_amount, :style => 'width: 30%;', :id => '247mvpdSubEstimate' %>
           </div>
         </div>
       </div>
@@ -55,7 +55,7 @@
       <div class="col-md-4">
         <div class="rate_info">
           <h1>Rate</h1>
-          <span id="hourlyRate">Hourly Rate: <%= number_to_currency @offer.hourly_rate %></span>
+          <span>Hourly Rate: </span><%= f.text_field :hourlyRate, :value => number_to_currency(@offer.hourly_rate), :id => 'hourlyRate' %></span>
           <span id="totalHours" class="pull-right">Total Hours: <%= @offer.total_hours %></span>
           <table class="table table-condensed">
             <thead>
@@ -71,35 +71,35 @@
             <tr>
               <td>Weekly</td>
               <td>
-                <span class="hours" id="weekly_hours"></span><%= f.hidden_field :weekly_hours, :value => @offer.weekly_hours %>
+                <%= f.text_field :weekly_hours, :value => @offer.weekly_hours, :id => 'weeklyHours' %>
               </td>
               <td>
                 <div class="input-group col-xs-12">
                   <div class="input-group-addon">$</div>
-                  <%= f.text_field :weekly_offer, :class => 'form-control offerInput' %>
+                  <%= f.text_field :weekly_offer, :class => 'form-control offerInput', :id => 'weeklyRate' %>
                 </div>
             </tr>
             <tr>
               <td>Monthy</td>
               <td>
-                <span class="hours" id="monthly_hours"></span><%= f.hidden_field :monthly_hours, :value => @offer.monthly_hours %>
+                <%= f.text_field :monthly_hours, :value => @offer.monthly_hours, :id => 'monthlyHours' %>
               </td>
               <td>
                 <div class="input-group col-xs-12">
                   <div class="input-group-addon">$</div>
-                  <%= f.text_field :monthly_offer, :class => 'form-control offerInput' %>
+                  <%= f.text_field :monthly_offer, :class => 'form-control offerInput', :id => 'monthlyRate' %>
                 </div>
               </td>
             </tr>
             <tr>
               <td>Yearly</td>
               <td>
-                <span class="hours" id="yearly_hours"></span><%= f.hidden_field :yearly_hours, :value => @offer.yearly_hours %>
+                <%= f.text_field :yearly_hours, :value => @offer.yearly_hours, :id => 'yearlyHours' %>
               </td>
               <td>
                 <div class="input-group col-xs-12">
                   <div class="input-group-addon">$</div>
-                  <%= f.text_field :yearly_offer, :class => 'form-control offerInput' %>
+                  <%= f.text_field :yearly_offer, :class => 'form-control offerInput', :id => 'yearlyRate' %>
                 </div>
               </td>
             </tr>

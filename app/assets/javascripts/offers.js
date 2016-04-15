@@ -73,14 +73,7 @@ $(document).ready(function () {
         // Insert selected cells into holder input
         var cellHolder = $('#offer_time_cells');
         cellHolder.val('');
-        $(selectedCells).each(function () {
-            var day = $(this).data('day');
-            var time = $(this).data('time');
-            // Append something like this: "0-02:00" meaning Monday, 2:00-2:30 to the hidden field
-            cellHolder.val(function (i, val) {
-                return val + [day, time].join('-') + ',';
-            })
-        });
+        
         console.log(cellHolder.val());
     };
 

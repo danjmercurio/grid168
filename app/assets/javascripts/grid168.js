@@ -20,6 +20,7 @@ grid168 = (function () {
 
             // Get the current controller and action
             var body = $('body');
+
             this.controller = body.data('controller');
             this.action = body.data('action');
 
@@ -95,6 +96,9 @@ grid168 = (function () {
                 };
                 Number.prototype.addCommas = function () {
                     return this.toString().addCommas();
+                };
+                Number.prototype.toCurrency = function () {
+                    return '$' + this.toFixed(2).toString().addCommas();
                 };
 
                 // jQuery helper for Animate.css
@@ -228,8 +232,38 @@ grid168 = (function () {
         },
         grid: {
             cellData: "",
+            getCellHolder: function () {
+                var holder = $('#offer_time_cells');
+                if (holder.length === 1) {
+                    return holder;
+                } else {
+                    throw new Error('Cell holder element not found.');
+                }
+            },
+            updateHiddenField: function () {
+                // In order for the backend to know which cells are selected on the form submit event, we have to update the hidden field #offer_time_cells
+                var holder = this.getCellHolder();
+                var selectedCells = this.getSelectedCells();
+                var that = this;
+
+                // Clear the cell holder element and JS cell holder values
+                holder.val('');
+                this.cellData = '';
+                
+                $(selectedCells).each(function () {
+                    var day = $(this).data('day');
+                    var time = $(this).data('time');
+
+                    // Append something like this: "0-02:00" meaning Monday, 2:00-2:30 to the hidden field
+                    that.cellData += [day, time].join('-') + ',';
+                });
+                holder.val(this.cellData);
+            },
+            getCells: function () {
+                return $('.cell');
+            },
             paint: function () {
-                var cellHolder = $('#offer_time_cells');
+                var cellHolder = this.getCellHolder();
                 if (cellHolder.length !== 1 || cellHolder.val().length === 0) {
                     throw new Error('None or too many cell holder elements found. Make sure there is only one input#offer_time_cells on this page. Cannot continue.');
                 } else {
@@ -252,19 +286,29 @@ grid168 = (function () {
                     that.toggleCellState(cell);
                 });
 
+                this.registerEventHandlers();
+
+            },
+            registerEventHandlers: function () {
                 var gridArea = this.getGridContainer();
-                var cells = $('.cell');
-                cells.mousedown(this.onGridChange);
-                gridArea.mousedown(function (e) {
-                    e.preventDefault();
-                    this.grid.onGridChange();
-                    cells.mouseenter(this.onGridChange);
+                var cells = this.getCells();
+
+                var that = this;
+
+                var clickCallback = function (cell) {
+                    console.log(cell);
+                    that.toggleCellState(cell);
+
+                };
+
+                cells.each(function () {
+                    var cell = this;
+                    $(cell).click(function () {
+                        clickCallback(cell);
+                        that.onGridChange();
+                    });
                 });
 
-                gridArea.mouseup(function () {
-                    this.onGridChange();
-                    cells.off('mouseenter');
-                });
 
             },
             toggleCellState: function (cell) {
@@ -281,7 +325,12 @@ grid168 = (function () {
             },
             onGridChange: function () {
                 // What to do when the grid is clicked.
-                this.calc.doCalc();
+
+                // Update the calculations
+                app.calc.doCalc();
+
+                // Update the hidden element that holds cell data
+                this.updateHiddenField();
             },
             getGridContainer: function () {
                 var container = $('.gridContainer');
@@ -300,7 +349,6 @@ grid168 = (function () {
                 cells.each(function () {
                     hours += 0.5;
                 });
-                runningHoursTotal += hours;
                 return hours;
             },
             getAudienceSum: function (cells) {
@@ -322,11 +370,19 @@ grid168 = (function () {
 
                 offer['247mvpdSubEstimate'] = $('#247mvpdSubEstimate').val().stripAndParse();
 
+                var selectedCells = app.grid.getSelectedCells();
+                if (selectedCells.length < 1) throw new Error('No cells selected');
+
+
                 if (app.action === 'new' || app.action === 'edit') {
-                    var selectedCells = app.grid.getSelectedCells();
                     offer.weeklyHours = app.grid.getHoursSum(selectedCells);
                     offer.monthlyHours = offer.weeklyHours * 4;
                     offer.yearlyHours = offer.weeklyHours * 12;
+
+                    $('#weeklyHours').val(offer.weeklyHours);
+                    $('#monthlyHours').val(offer.monthlyHours);
+                    $('#yearlyHours').val(offer.yearlyHours);
+                    
                 }
                 if (app.action === 'show') {
                     // If we are on the show action of the offers controller, weeklyHours will already have been computed
@@ -335,9 +391,29 @@ grid168 = (function () {
                     offer.yearlyHours = $('#yearlyHours').val();
                 }
 
+                var audienceSum = app.grid.getAudienceSum(selectedCells);
+
+                var annualSubRate = audienceSum * offer['247mvpdSubEstimate'];
+                var weeklySubRate = annualSubRate / 52;
+                var monthlySubRate = annualSubRate / 12;
+
+                offer.yearlyRate = annualSubRate * offer.totalHomes;
+                offer.monthlyRate = offer.yearlyRate / 12;
+                offer.weeklyRate = offer.monthlyRate / 4;
+
+                offer.hourRate = offer.yearlyRate / offer.yearlyHours;
+
+
+
 
                 // Begin filling in values
                 $('#totalHomes').val(offer.totalHomes.addCommas());
+                $('#hourlyRate').val(function () {
+                    return offer.hourRate.toCurrency();
+                });
+                $('#weeklyRate').val(offer.weeklyRate.toCurrency());
+                $('#monthlyRate').val(offer.monthlyRate.toCurrency());
+                $('#yearlyRate').val(offer.yearlyRate.toCurrency());
                 //
 
 
