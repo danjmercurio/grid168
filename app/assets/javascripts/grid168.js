@@ -154,48 +154,6 @@ grid168 = (function () {
 
                         // Do the calculations
                         this.calc.doCalc();
-
-                        // Keep a reference to the app object handy
-                        var that = this;
-
-                        // Set event handlers on buttons
-                        $('#invert').click(function () {
-                            $('.cell').each(function () {
-                                that.grid.toggleCellState(this);
-                            });
-                        });
-
-                        // The 'Select All' button
-                        $('#selectAll').click(function () {
-                            $('.cell').each(function () {
-                                if (!$(this).hasClass('clicked')) {
-                                    that.grid.toggleCellState(this);
-                                }
-                            });
-                        });
-                        // The 'Calculate' button
-                        $('#calculate').click(function () {
-                            $('.clicked').length > 0 ? that.calc.doCalc() : alert('You must select at least one cell.');
-                        });
-
-                        // The 'reset' button
-                        $('#reset').click(function () {
-                            $('.offerInput').each(function () {
-                                $(this).val('');
-                            });
-                            $('span.hours').each(function () {
-                                $(this).text('');
-                            });
-                            $('.cell').each(function () {
-                                if ($(this).hasClass('clicked')) {
-                                    $(this).removeClass('clicked');
-                                }
-                            });
-                        });
-                        // On form submit (show offer view has no input of type submit)
-                        $("input[type='submit']").click(function () {
-                            // Make sure all our calculations are done before we submit
-                        });
                     }
                     break;
                 case 'outlets':
@@ -264,7 +222,7 @@ grid168 = (function () {
             },
             paint: function () {
                 var cellHolder = this.getCellHolder();
-                if (cellHolder.length !== 1 || cellHolder.val().length === 0) {
+                if (cellHolder.length !== 1) {
                     throw new Error('None or too many cell holder elements found. Make sure there is only one input#offer_time_cells on this page. Cannot continue.');
                 } else {
                     console.log('Found cell data. Loading...');
@@ -301,6 +259,8 @@ grid168 = (function () {
 
                 };
 
+                // TODO: event handler on grid mouseup, etc
+
                 cells.each(function () {
                     var cell = this;
                     $(cell).click(function () {
@@ -308,6 +268,53 @@ grid168 = (function () {
                         that.onGridChange();
                     });
                 });
+
+                // Only the new and edit views have these buttons
+                if (app.action === 'edit' || app.action === 'new') {
+                    // Set event handlers on buttons
+                    $('#invert').click(function () {
+                        that.getCells().each(function () {
+                            that.toggleCellState(this);
+
+                        });
+                        that.updateHiddenField();
+                        app.calc.doCalc();
+                    });
+
+                    // The 'Select All' button
+                    $('#selectAll').click(function () {
+                        that.getCells().each(function () {
+                            if (!$(this).hasClass('clicked')) {
+                                that.toggleCellState(this);
+                            }
+                        });
+                        that.updateHiddenField();
+                        app.calc.doCalc();
+                    });
+                    // The 'Calculate' button
+                    $('#calculate').click(function () {
+                        that.getSelectedCells().length > 0 ? app.calc.doCalc() : alert('You must select at least one cell.');
+                    });
+
+                    // The 'reset' button
+                    $('#reset').click(function () {
+                        $('input').each(function () {
+                            $(this).val('');
+                        });
+
+                        that.getCells().each(function () {
+                            if ($(this).hasClass('clicked')) {
+                                $(this).removeClass('clicked');
+                            }
+                        });
+                        app.calc.doCalc();
+                    });
+                    // On form submit (show offer view has no input of type submit)
+                    $("input[type='submit']").click(function () {
+                        // Make sure all our calculations are done before we submit
+                        app.calc.doCalc();
+                    });
+                }
 
 
             },
@@ -414,6 +421,10 @@ grid168 = (function () {
                 $('#weeklyRate').val(offer.weeklyRate.toCurrency());
                 $('#monthlyRate').val(offer.monthlyRate.toCurrency());
                 $('#yearlyRate').val(offer.yearlyRate.toCurrency());
+                $('#totalHours').val(offer.weeklyHours);
+                if (this.action == 'show') {
+                    $('#totalHoursHero').text(offer.weeklyHours);
+                }
                 //
 
 

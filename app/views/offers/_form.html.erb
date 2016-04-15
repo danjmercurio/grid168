@@ -55,8 +55,8 @@
       <div class="col-md-4">
         <div class="rate_info">
           <h1>Rate</h1>
-          <span>Hourly Rate: </span><%= f.text_field :hourlyRate, :value => number_to_currency(@offer.hourly_rate), :id => 'hourlyRate' %></span>
-          <span id="totalHours" class="pull-right">Total Hours: <%= @offer.total_hours %></span>
+          <span>Hourly Rate: <%= f.text_field :hourlyRate, :value => number_to_currency(@offer.hourly_rate), :id => 'hourlyRate' %></span>
+          <span class="pull-right">Total Hours: <%= f.text_field :total_hours, :value => @offer.total_hours, :id => 'totalHours' %></span>
           <table class="table table-condensed">
             <thead>
             <tr>
