@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160407042245) do
+ActiveRecord::Schema.define(version: 20160415221828) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email"
@@ -59,6 +59,7 @@ ActiveRecord::Schema.define(version: 20160407042245) do
     t.float    "weekly_hours"
     t.float    "monthly_hours"
     t.float    "yearly_hours"
+    t.integer "total_homes"
   end
 
   create_table "offers_programmers", id: false, force: :cascade do |t|

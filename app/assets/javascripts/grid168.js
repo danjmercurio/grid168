@@ -380,23 +380,9 @@ grid168 = (function () {
                 var selectedCells = app.grid.getSelectedCells();
                 if (selectedCells.length < 1) throw new Error('No cells selected');
 
-
-                if (app.action === 'new' || app.action === 'edit') {
-                    offer.weeklyHours = app.grid.getHoursSum(selectedCells);
-                    offer.monthlyHours = offer.weeklyHours * 4;
-                    offer.yearlyHours = offer.weeklyHours * 12;
-
-                    $('#weeklyHours').val(offer.weeklyHours);
-                    $('#monthlyHours').val(offer.monthlyHours);
-                    $('#yearlyHours').val(offer.yearlyHours);
-                    
-                }
-                if (app.action === 'show') {
-                    // If we are on the show action of the offers controller, weeklyHours will already have been computed
-                    offer.weeklyHours = $('#weeklyHours').val();
-                    offer.monthlyHours = $('#monthlyHours').val();
-                    offer.yearlyHours = $('#yearlyHours').val();
-                }
+                offer.weeklyHours = app.grid.getHoursSum(selectedCells);
+                offer.monthlyHours = offer.weeklyHours * 4;
+                offer.yearlyHours = offer.weeklyHours * 12;
 
                 var audienceSum = app.grid.getAudienceSum(selectedCells);
 
@@ -409,10 +395,15 @@ grid168 = (function () {
                 offer.weeklyRate = offer.monthlyRate / 4;
 
                 offer.hourRate = offer.yearlyRate / offer.yearlyHours;
+                offer.halfHourRate = offer.hourRate / 2;
 
+                offer.mvpdSubRate = offer.yearlyRate / offer.mvpdSubscribers;
+                offer.mvpdOtaSubRate = offer.yearlyRate / offer.totalHomes;
+                this.updateValues(this.values);
 
-
-
+            },
+            updateValues: function (values) {
+                var offer = values.offer;
                 // Begin filling in values
                 $('#totalHomes').val(offer.totalHomes.addCommas());
                 $('#hourlyRate').val(function () {
@@ -425,7 +416,17 @@ grid168 = (function () {
                 if (this.action == 'show') {
                     $('#totalHoursHero').text(offer.weeklyHours);
                 }
-                //
+
+                $('#weeklyHours').val(offer.weeklyHours);
+                $('#monthlyHours').val(offer.monthlyHours);
+                $('#yearlyHours').val(offer.yearlyHours);
+
+                $('#halfHourRate').val(offer.halfHourRate.toCurrency());
+
+                $('#mvpdSubscriberRate').val(offer.mvpdSubRate);
+                $('#mvpdOTASubRate').val(offer.mvpdOtaSubRate);
+
+                $('#247mvpdSubEstimate').val(offer['247mvpdSubEstimate']);
 
 
             },

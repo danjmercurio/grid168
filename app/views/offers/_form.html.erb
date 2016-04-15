@@ -2,6 +2,8 @@
     <%= f.hidden_field :time_cells, :value => @offer.time_cells %>
     <%= f.hidden_field :total_hours %>
     <%= f.hidden_field :outlet_id, :value => @offer.outlet.id %>
+    <%= f.hidden_field :mvpdSubscriberRate, :id => 'mvpdSubscriberRate' %>
+    <%= f.hidden_field :mvpdOTASubRate, :id => 'mvpdOTASubRate' %>
     <div class="row">
       <div class="col-md-6">
         <h1><%= @outlet.name %></h1>
