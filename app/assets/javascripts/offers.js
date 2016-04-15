@@ -8,17 +8,6 @@ $(document).ready(function () {
 
     // After the ready event fires, watch for changes in mvpd subs
     // and OTA subs, and if they are both filled, use those values to autofill total homes
-    var totalHomes = $('input#outlet_total_homes');
-    var mvpdSubs = $('input#outlet_subs');
-    var otaSubs = $('input#outlet_over_air');
-
-    // Add comma delimiters to rate input boxes
-    var weeklyOffer = $("#offer_weekly_offer");
-    weeklyOffer.val(weeklyOffer.val());
-    var monthlyOffer = $('#offer_monthly_offer');
-    monthlyOffer.val(monthlyOffer.val());
-    var yearlyOffer = $("#offer_yearly_offer");
-    yearlyOffer.val(yearlyOffer.val());
 
     // Make weeklyRate global because it will be used in other contexts
     var weeklyRate;
@@ -99,46 +88,7 @@ $(document).ready(function () {
     // // Populate the rate fields
     // calculateRates();
     // The 'Invert Selection' button
-    $('#invert').click(function () {
-        $('.cell').each(function () {
-            flipSelected(this);
-        });
-    });
-    // The 'Select All' button
-    $('#selectAll').click(function () {
-        $('.cell').each(function () {
-            if (!$(this).hasClass('clicked')) {
-                flipSelected(this);
-            }
-        });
-    });
-    // The 'Calculate' button
-    $('#calculate').click(function () {
-        $('.clicked').length > 0 ? calculateRates() : alert('You must select at least one cell.');
-    });
-
-    // The 'reset' button
-    $('#reset').click(function () {
-        $('.offerInput').each(function () {
-            $(this).val('');
-        });
-        $('span.hours').each(function () {
-            $(this).text('');
-        });
-        $('.cell').each(function () {
-            if ($(this).hasClass('clicked')) {
-                $(this).removeClass('clicked');
-            }
-        });
-    });
-    // On form submit (show offer view has no input of type submit)
-    $("input[type='submit']").click(function () {
-        // Make sure all our calculations are done before we submit
-        // This function also updates the cell holder hidden input
-        calculateRates();
-
-
-    });
+    
 
     $(document).ready(calculateRates);
 

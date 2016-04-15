@@ -1,6 +1,3 @@
-<% unless action_name == :index %>
-    <%= javascript_include_tag 'outletForm', :defer => 'defer' %>
-<% end %>
 <%= form_for @outlet, :html => {:class => 'form-horizontal group-border stripped'} do |f| %>
     <% if @outlet.errors.any? %>
         <div id="error_explanation">
@@ -41,17 +38,17 @@
 
     <div class="form-group">
       <%= f.label :subs, 'MVPD Subscribers', :class => 'col-lg-2 control-label' %>
-      <div class="col-lg-10"><%= f.text_field :subs, :class => 'form-control' %></div>
+      <div class="col-lg-10"><%= f.text_field :subs, :class => 'form-control delimited' %></div>
     </div>
 
     <div class="form-group">
       <%= f.label :over_air, 'Over the Air Homes', :class => 'col-lg-2 control-label' %>
-      <div class="col-lg-10"><%= f.text_field :over_air, :class => 'form-control' %></div>
+      <div class="col-lg-10"><%= f.text_field :over_air, :class => 'form-control delimited' %></div>
     </div>
 
     <div class="form-group">
       <%= f.label :total_homes, 'Total Homes', :class => 'col-lg-2 control-label' %>
-      <div class="col-lg-10"><%= f.text_field :total_homes, :class => 'form-control' %></div>
+      <div class="col-lg-10"><%= f.text_field :total_homes, :class => 'form-control delimited' %></div>
     </div>
 
     <div class="form-group">

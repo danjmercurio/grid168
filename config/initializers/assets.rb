@@ -21,4 +21,5 @@ Rails.application.config.assets.precompile += %w(
   sheet.js
   vanilla-masker.min.js
   inputMasks.js
+  grid168.js
 )
