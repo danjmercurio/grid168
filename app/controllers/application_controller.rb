@@ -31,7 +31,7 @@ class ApplicationController < ActionController::Base
     params.each do |key, value|
       if ["offer", "outlet"].include?(key)
         value.each do |k, v|
-          if %w(subs over_air total_homes weekly_offer monthly_offer yearly_offer).include?(k)
+          if %w(subs over_air total_homes weekly_offer monthly_offer yearly_offer hourly_rate).include?(k)
             puts "Dirty parameter: {:#{k} => #{v}}"
             params[key][k] = v.gsub(",", "").gsub("$", "")
             puts "Cleaned: " + params[key][k]

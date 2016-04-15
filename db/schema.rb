@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160415222729) do
+ActiveRecord::Schema.define(version: 20160415225133) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email"
@@ -59,7 +59,6 @@ ActiveRecord::Schema.define(version: 20160415222729) do
     t.float    "weekly_hours"
     t.float    "monthly_hours"
     t.float    "yearly_hours"
-    t.integer "total_homes"
     t.decimal "halfHourRate"
     t.decimal "mvpdSubscriberRate"
     t.decimal "mvpdOtaSubRate"

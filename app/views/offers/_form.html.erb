@@ -3,7 +3,8 @@
     <%= f.hidden_field :total_hours %>
     <%= f.hidden_field :outlet_id, :value => @offer.outlet.id %>
     <%= f.hidden_field :mvpdSubscriberRate, :id => 'mvpdSubscriberRate' %>
-    <%= f.hidden_field :mvpdOTASubRate, :id => 'mvpdOTASubRate' %>
+    <%= f.hidden_field :mvpdOtaSubRate, :id => 'mvpdOTASubRate' %>
+    <%= f.hidden_field :halfHourRate, :id => 'halfHourRate' %>
     <div class="row">
       <div class="col-md-6">
         <h1><%= @outlet.name %></h1>
@@ -57,7 +58,7 @@
       <div class="col-md-4">
         <div class="rate_info">
           <h1>Rate</h1>
-          <span>Hourly Rate: <%= f.text_field :hourlyRate, :value => number_to_currency(@offer.hourly_rate), :id => 'hourlyRate' %></span>
+          <span>Hourly Rate: <%= f.text_field :hourly_rate, :id => 'hourlyRate' %></span>
           <span class="pull-right">Total Hours: <%= f.text_field :total_hours, :value => @offer.total_hours, :id => 'totalHours' %></span>
           <table class="table table-condensed">
             <thead>

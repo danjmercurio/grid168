@@ -23,7 +23,7 @@ class Offer < ActiveRecord::Base
 	has_many :notes, :dependent => :destroy
 
 	attr_accessible :programmer_ids, :yearly_offer, :monthly_offer, :outlet_id, :weekly_hours, :monthly_hours, :yearly_hours,
-                  :weekly_offer, :hourly_rate, :total_hours, :dollar_amount, :user_id, :time_cells, :available_date, :grNotes, :dpNotes
+									:weekly_offer, :hourly_rate, :total_hours, :dollar_amount, :user_id, :time_cells, :available_date, :grNotes, :dpNotes, :mvpdSubscriberRate, :mvpdOtaSubRate
 
   validates :dollar_amount, :presence => true,
 								numericality: { greater_than: 0 }
