@@ -227,6 +227,7 @@ grid168 = (function () {
             }
         },
         grid: {
+            cellData: "",
             paint: function () {
                 var cellHolder = $('#offer_time_cells');
                 if (cellHolder.length !== 1 || cellHolder.val().length === 0) {
@@ -290,18 +291,54 @@ grid168 = (function () {
                     throw new Error('Duplicate or missing grid container DOM element.');
                 }
             },
-            cellData: ""
-
+            getSelectedCells: function () {
+                return $('.clicked');
+            },
+            getHoursSum: function (cells) {
+                if (cells.length === 0) return 0;
+                var hours = 0;
+                cells.each(function () {
+                    hours += 0.5;
+                });
+                runningHoursTotal += hours;
+                return hours;
+            },
+            getAudienceSum: function (cells) {
+                var sum = 0;
+                cells.each(function () {
+                    sum += parseFloat($(this).data('audience'));
+                });
+                return sum;
+            }
         },
         calc: {
             doCalc: function () {
                 console.log('Caught signal to recalculate.');
                 var offer = this.values.offer;
-                offer.mvpdSubscribers = $('#outlet_subs').val().stripAndParse();
-                offer.otaHomes = $('#outlet_over_air').val().stripAndParse();
+                offer.mvpdSubscribers = $('#mvpdSubscribers').val().stripAndParse();
+                offer.otaHomes = $('#otaHomes').val().stripAndParse();
                 offer.totalHomes = offer.mvpdSubscribers + offer.otaHomes;
 
-                $('#outlet_total_homes').val(offer.totalHomes.addCommas());
+
+                offer['247mvpdSubEstimate'] = $('#247mvpdSubEstimate').val().stripAndParse();
+
+                if (app.action === 'new' || app.action === 'edit') {
+                    var selectedCells = app.grid.getSelectedCells();
+                    offer.weeklyHours = app.grid.getHoursSum(selectedCells);
+                    offer.monthlyHours = offer.weeklyHours * 4;
+                    offer.yearlyHours = offer.weeklyHours * 12;
+                }
+                if (app.action === 'show') {
+                    // If we are on the show action of the offers controller, weeklyHours will already have been computed
+                    offer.weeklyHours = $('#weeklyHours').val();
+                    offer.monthlyHours = $('#monthlyHours').val();
+                    offer.yearlyHours = $('#yearlyHours').val();
+                }
+
+
+                // Begin filling in values
+                $('#totalHomes').val(offer.totalHomes.addCommas());
+                //
 
 
             },
