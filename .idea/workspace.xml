@@ -5,11 +5,9 @@
     <bookmark url="file://$PROJECT_DIR$/app/assets/javascripts/grid168.js" line="23" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="253a1b92-4cff-4d17-8db2-60a8dec7fc3d" name="Default" comment="removed total homes from offer model since it is in outlet model and outlet belongs to offer">
+    <list default="true" id="253a1b92-4cff-4d17-8db2-60a8dec7fc3d" name="Default" comment="daypart calculations working again">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/grid168.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/grid168.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/sheet.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/sheet.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/offers/_sheet.html.erb" afterPath="$PROJECT_DIR$/app/views/offers/_sheet.html.erb" />
     </list>
     <ignored path="grid168.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -55,110 +53,102 @@
     <favorites_list name="grid168" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.4070981">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="_sheet.html.erb" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/offers/_sheet.html.erb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1584">
-                  <caret line="88" column="57" selection-start-line="88" selection-start-column="57" selection-end-line="88" selection-end-column="57" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="Gemfile" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/Gemfile">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="558">
-                  <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/views/offers/_form.html.erb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="270">
-                  <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="20160415225133_remove_total_homes_from_offer.rb" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/db/migrate/20160415225133_remove_total_homes_from_offer.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="90">
-                  <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="sheet.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/assets/javascripts/sheet.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="252">
-                  <caret line="169" column="82" selection-start-line="169" selection-start-column="82" selection-end-line="169" selection-end-column="82" />
-                  <folding>
-                    <element signature="e#0#36#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="offers.js" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/assets/javascripts/offers.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1350">
-                  <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="offer.rb" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/models/offer.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="450">
-                  <caret line="25" column="173" selection-start-line="25" selection-start-column="173" selection-end-line="25" selection-end-column="173" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file leaf-file-name="application_controller.rb" pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="540">
-                  <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-                  <folding />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="grid168.js" pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/app/assets/javascripts/grid168.js">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="266">
-                  <caret line="498" column="71" selection-start-line="498" selection-start-column="71" selection-end-line="498" selection-end-column="71" />
-                  <folding>
-                    <element signature="e#0#37#0" expanded="false" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf>
+      <file leaf-file-name="grid168.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/grid168.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="445">
+              <caret line="378" column="14" selection-start-line="378" selection-start-column="14" selection-end-line="378" selection-end-column="14" />
+              <folding>
+                <element signature="e#0#37#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_sheet.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/offers/_sheet.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="479">
+              <caret line="110" column="14" selection-start-line="110" selection-start-column="14" selection-end-line="110" selection-end-column="14" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Gemfile" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Gemfile">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="83">
+              <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/offers/_form.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="83">
+              <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="20160415225133_remove_total_homes_from_offer.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/db/migrate/20160415225133_remove_total_homes_from_offer.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="83">
+              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="sheet.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/sheet.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="83">
+              <caret line="170" column="60" selection-start-line="170" selection-start-column="60" selection-end-line="170" selection-end-column="60" />
+              <folding>
+                <element signature="e#0#36#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="offers.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/offers.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="83">
+              <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="offer.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/models/offer.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="83">
+              <caret line="25" column="173" selection-start-line="25" selection-start-column="173" selection-end-line="25" selection-end-column="173" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="application_controller.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="83">
+              <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -324,7 +314,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grid168" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grid168" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="javascripts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -345,6 +357,7 @@
     <property name="SearchEverywhereHistoryKey" value="&#9;null&#9;null&#10;select&#9;ACTION&#9;SelectAllOccurrences" />
     <property name="com.intellij.database.dataSource.DataSourceTemplate" value="Sqlite (Xerial)" />
     <property name="RailsGeneratorsPopup.hiddenIncluded" value="false" />
+    <property name="full.screen.before.presentation.mode" value="false" />
   </component>
   <component name="RunManager" selected="Rails.Development: grid168">
     <configuration default="false" name="routes: grid168" type="RakeRunConfigurationType" factoryName="Rake" temporary="true">
@@ -705,7 +718,7 @@
       <workItem from="1460662833647" duration="21216000" />
       <workItem from="1460690093988" duration="8387000" />
       <workItem from="1460701741320" duration="19317000" />
-      <workItem from="1460770506608" duration="4506000" />
+      <workItem from="1460770506608" duration="5108000" />
     </task>
     <task id="LOCAL-00001" summary="On Rails 4">
       <created>1457475047264</created>
@@ -1036,7 +1049,14 @@
       <option name="project" value="LOCAL" />
       <updated>1460760770966</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="daypart calculations working again">
+      <created>1460775026672</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1460775026672</updated>
+    </task>
+    <option name="localTasksCounter" value="49" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1045,7 +1065,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="151739000" />
+    <option name="totallyTimeSpent" value="152341000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1060,7 +1080,7 @@
     <frame x="-4" y="0" width="1928" height="1057" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1890625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.18903089" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776618" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.302714" sideWeight="0.53887117" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.03940362" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1070,7 +1090,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2651357" sideWeight="0.49166667" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27420998" sideWeight="0.6904906" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27420998" sideWeight="0.6904906" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861635" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1080,7 +1100,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861635" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776618" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861635" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1088,16 +1108,16 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.302714" sideWeight="0.53887117" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861635" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.302714" sideWeight="0.46112886" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.26577044" sideWeight="0.49166667" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.07348243" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.302714" sideWeight="0.46112886" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2651357" sideWeight="0.49166667" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1890625" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.03940362" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32721713" sideWeight="0.47803348" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.05427975" sideWeight="0.47803348" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24947146" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.5309618" sideWeight="0.6904906" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27420998" sideWeight="0.6904906" order="3" side_tool="false" content_ui="tabs" />
     </layout-to-restore>
   </component>
   <component name="Vcs.Log.UiProperties">
@@ -1114,7 +1134,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="added notes migration" />
     <MESSAGE value="fuck you" />
     <MESSAGE value="fixed flash messages for offers validations" />
     <MESSAGE value="fixed edit offer view/loading of cells" />
@@ -1139,7 +1158,8 @@
     <MESSAGE value="added mvpd subscriber rate to offer model" />
     <MESSAGE value="added mvpdOtaSubRate field to offer model" />
     <MESSAGE value="removed total homes from offer model since it is in outlet model and outlet belongs to offer" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed total homes from offer model since it is in outlet model and outlet belongs to offer" />
+    <MESSAGE value="daypart calculations working again" />
+    <option name="LAST_COMMIT_MESSAGE" value="daypart calculations working again" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1154,13 +1174,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/db/migrate/20160330075657_change_notes_name.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="3" column="42" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/programmers/edit.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1248,6 +1261,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
           <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1306,6 +1320,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1313,6 +1328,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="36" column="0" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1406,14 +1422,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/offers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1350">
-          <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/stylesheets/application.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -1428,18 +1436,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Gemfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="558">
-          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20160415222052_add_half_hour_rate_to_offer.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1447,6 +1448,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1454,6 +1456,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
           <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1461,37 +1464,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/offer.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="25" column="173" selection-start-line="25" selection-start-column="173" selection-end-line="25" selection-end-column="173" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/offers/_form.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db/migrate/20160415225133_remove_total_homes_from_offer.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1503,28 +1475,1547 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/offers/_sheet.html.erb">
+    <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1584">
-          <caret line="88" column="57" selection-start-line="88" selection-start-column="57" selection-end-line="88" selection-end-column="57" />
+        <state relative-caret-position="83">
+          <caret line="30" column="31" selection-start-line="30" selection-start-column="31" selection-end-line="30" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/offer.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="25" column="173" selection-start-line="25" selection-start-column="173" selection-end-line="25" selection-end-column="173" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/offers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="75" column="8" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="8" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/sheet.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="169" column="82" selection-start-line="169" selection-start-column="82" selection-end-line="169" selection-end-column="82" />
+        <state relative-caret-position="83">
+          <caret line="170" column="60" selection-start-line="170" selection-start-column="60" selection-end-line="170" selection-end-column="60" />
           <folding>
             <element signature="e#0#36#0" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/db/migrate/20160415225133_remove_total_homes_from_offer.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="5" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/offers/_form.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="15" column="50" selection-start-line="15" selection-start-column="50" selection-end-line="15" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Gemfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="83">
+          <caret line="31" column="20" selection-start-line="31" selection-start-column="20" selection-end-line="31" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="uml://GemDependency/#grid168">
+      <provider selected="true" editor-type-id="UmlEditorProvider">
+        <state>
+          <ID>GemDependency</ID>
+          <OriginalElement>#grid168</OriginalElement>
+          <nodes>
+            <node x="7133.408303619354" y="2536.0">ansi</node>
+            <node x="9162.917353681914" y="2536.0">warden</node>
+            <node x="8949.917353681914" y="2536.0">responders</node>
+            <node x="4191.334155849936" y="1662.0">activejob</node>
+            <node x="5807.987571912037" y="2536.0">sass</node>
+            <node x="240.6359458957786" y="2788.0">devise-encryptable</node>
+            <node x="5176.742353681914" y="4100.0">#grid168</node>
+            <node x="9950.472966564965" y="122.0">tzinfo</node>
+            <node x="2701.0735475217934" y="1662.0">mail</node>
+            <node x="4169.683245377148" y="2054.0">execjs</node>
+            <node x="8363.463733182025" y="2054.0">railties</node>
+            <node x="4339.328570580399" y="2788.0">bootstrap-sass</node>
+            <node x="2758.6568808551274" y="2788.0">rails_serve_static_assets</node>
+            <node x="9661.835849616873" y="2536.0">bcrypt</node>
+            <node x="4249.280356464883" y="2536.0">autoprefixer-rails</node>
+            <node x="6218.877815814476" y="2536.0">annotate</node>
+            <node x="7268.417958090899" y="776.0">rails-deprecated_sanitizer</node>
+            <node x="1419.9835068713865" y="294.0">nokogiri</node>
+            <node x="8130.650687015246" y="2536.0">jquery-rails</node>
+            <node x="2425.293059716915" y="1340.0">mime-types</node>
+            <node x="5954.74265321285" y="1662.0">sprockets</node>
+            <node x="4683.625173538056" y="928.0">rails-html-sanitizer</node>
+            <node x="7690.408303619354" y="2536.0">rack-contrib</node>
+            <node x="775.6461084974053" y="2536.0">pry</node>
+            <node x="4825.109058385278" y="2788.0">rails-jquery-autocomplete</node>
+            <node x="467.86102315492735" y="2054.0">slop</node>
+            <node x="4080.457693863257" y="2536.0">uglifier</node>
+            <node x="6419.730962059622" y="1662.0">actionpack</node>
+            <node x="7011.658303619354" y="2054.0">git-version-bump</node>
+            <node x="1948.892246708785" y="2788.0">rubyzoho</node>
+            <node x="5362.722836139681" y="2788.0">js_assets</node>
+            <node x="422.60929008085986" y="122.0">minitest</node>
+            <node x="1548.2817548622443" y="2054.0">multipart-post</node>
+            <node x="6814.295847003163" y="1662.0">rake</node>
+            <node x="7304.063829376251" y="2788.0">coffee-rails</node>
+            <node x="9263.18402034858" y="2788.0">devise</node>
+            <node x="1641.0719215055333" y="2536.0">httmultiparty</node>
+            <node x="3284.58371012342" y="1662.0">activemodel</node>
+            <node x="6083.294520433161" y="2536.0">tilt</node>
+            <node x="5160.533474266482" y="2054.0">activerecord</node>
+            <node x="918.6979377656962" y="2054.0">coderay</node>
+            <node x="3665.800454049235" y="1340.0">concurrent-ruby</node>
+            <node x="7922.1503387533885" y="928.0">rack</node>
+            <node x="2116.896486473242" y="928.0">mime-types-data</node>
+            <node x="3016.0982182768785" y="1340.0">globalid</node>
+            <node x="2223.6995637819555" y="1662.0">multi_xml</node>
+            <node x="4594.515562450319" y="2054.0">actionmailer</node>
+            <node x="2538.886555651875" y="2788.0">sqlite3</node>
+            <node x="9822.429345551831" y="2054.0">select2-rails</node>
+            <node x="4244.813830646684" y="928.0">erubis</node>
+            <node x="9464.743814482837" y="1662.0">thor</node>
+            <node x="1031.3747670339885" y="776.0">loofah</node>
+            <node x="2006.6922467087852" y="2054.0">httparty</node>
+            <node x="7800.5670054200555" y="1340.0">rack-test</node>
+            <node x="1632.0667737244735" y="776.0">roxml</node>
+            <node x="10098.472966564965" y="122.0">i18n</node>
+            <node x="8654.917353681914" y="2536.0">jquery-tablesorter</node>
+            <node x="623.3127751640714" y="2054.0">method_source</node>
+            <node x="9427.835849616873" y="2536.0">orm_adapter</node>
+            <node x="7173.063829376251" y="2788.0">turn</node>
+            <node x="6443.627815814476" y="2054.0">sprockets-rails</node>
+            <node x="6410.904238578703" y="2788.0">sass-rails</node>
+            <node x="8239.744182950206" y="2788.0">spring</node>
+            <node x="5139.064502806347" y="294.0">activesupport</node>
+            <node x="7516.063829376251" y="2536.0">callsite</node>
+            <node x="674.7294418307383" y="2788.0">pry-rails</node>
+            <node x="5845.534319879517" y="2788.0">font-awesome-sass</node>
+            <node x="1324.0719215055324" y="2788.0">rails_stdout_logging</node>
+            <node x="7721.143436422321" y="2788.0">meta_request</node>
+            <node x="5134.564502806347" y="0.0">thread_safe</node>
+            <node x="1097.8849296356148" y="2054.0">mimemagic</node>
+            <node x="5549.722836139681" y="2788.0">yaml_db</node>
+            <node x="7591.63645937297" y="2054.0">coffee-script-source</node>
+            <node x="8406.917353681914" y="2536.0">jquery-ui-rails</node>
+            <node x="5602.790384835586" y="1662.0">arel</node>
+            <node x="5085.283474266482" y="2536.0">rails</node>
+            <node x="6782.658303619354" y="2536.0">coffee-script</node>
+            <node x="4742.944572348617" y="1340.0">actionview</node>
+            <node x="185.60929008085986" y="122.0">mini_portile2</node>
+            <node x="4080.8138306466844" y="928.0">builder</node>
+            <node x="6360.516704703365" y="928.0">rails-dom-testing</node>
+            <node x="3997.6832453771476" y="2054.0">bundler</node>
+            <node x="3513.177206058379" y="2054.0">protected_attributes</node>
+          </nodes>
+          <notes />
+          <edges>
+            <edge source="#grid168" target="actionmailer">
+              <point x="-5.044715447154886" y="-26.0" />
+              <point x="5244.697638234759" y="2940.0" />
+              <point x="4647.359058385278" y="2940.0" />
+              <point x="4647.359058385278" y="2516.0" />
+              <point x="4681.598895783652" y="2516.0" />
+              <point x="-17.41666666666697" y="26.0" />
+            </edge>
+            <edge source="autoprefixer-rails" target="execjs">
+              <point x="-88.33333333333303" y="-26.0" />
+              <point x="4293.44702313155" y="2516.0" />
+              <point x="4243.891578710481" y="2516.0" />
+              <point x="5.70833333333303" y="26.0" />
+            </edge>
+            <edge source="actionmailer" target="rails-dom-testing">
+              <point x="-13.933333333333394" y="-26.0" />
+              <point x="4685.082229116985" y="1914.0" />
+              <point x="4401.313830646684" y="1914.0" />
+              <point x="4401.313830646684" y="1150.0" />
+              <point x="6369.283371370031" y="1150.0" />
+              <point x="-122.73333333333358" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="mime-types">
+              <point x="-34.71951219512175" y="-26.0" />
+              <point x="5215.0228414867925" y="3440.0" />
+              <point x="2528.386555651875" y="3440.0" />
+              <point x="2528.386555651875" y="1642.0" />
+              <point x="2550.570837494693" y="1642.0" />
+              <point x="22.77777777777783" y="26.0" />
+            </edge>
+            <edge source="actionview" target="rails-dom-testing">
+              <point x="76.0" y="-26.0" />
+              <point x="4913.944572348617" y="1180.0" />
+              <point x="6421.883371370031" y="1180.0" />
+              <point x="-70.13333333333321" y="26.0" />
+            </edge>
+            <edge source="nokogiri" target="mini_portile2">
+              <point x="52.66666666666674" y="-26.0" />
+              <point x="1551.6501735380534" y="224.0" />
+              <point x="384.52595674752683" y="224.0" />
+              <point x="90.41666666666663" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="coffee-script-source">
+              <point x="38.28048780487825" y="-26.0" />
+              <point x="5288.0228414867925" y="3500.0" />
+              <point x="7955.643436422321" y="3500.0" />
+              <point x="7955.643436422321" y="2266.0" />
+              <point x="7763.719792706303" y="2266.0" />
+              <point x="24.58333333333303" y="26.0" />
+            </edge>
+            <edge source="rails" target="actionmailer">
+              <point x="-35.149999999999636" y="-26.0" />
+              <point x="5105.633474266482" y="2436.0" />
+              <point x="4786.098895783652" y="2436.0" />
+              <point x="87.08333333333303" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="thor">
+              <point x="57.27235772357744" y="-26.0" />
+              <point x="5307.014711405492" y="3820.0" />
+              <point x="9416.742353681915" y="3820.0" />
+              <point x="9416.742353681915" y="2024.0" />
+              <point x="9524.327147816171" y="2024.0" />
+              <point x="4.58333333333394" y="26.0" />
+            </edge>
+            <edge source="actionview" target="activesupport">
+              <point x="38.0" y="-26.0" />
+              <point x="4875.944572348617" y="1130.0" />
+              <point x="4989.125173538056" y="1130.0" />
+              <point x="4989.125173538056" y="706.0" />
+              <point x="5222.346554088399" y="706.0" />
+              <point x="-28.717948717948275" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="sqlite3">
+              <point x="-34.12601626016294" y="-26.0" />
+              <point x="5215.616337421751" y="3430.0" />
+              <point x="2562.2198889852084" y="3430.0" />
+              <point x="-46.666666666666515" y="26.0" />
+            </edge>
+            <edge source="devise" target="responders">
+              <point x="-64.86666666666679" y="-26.0" />
+              <point x="9267.817353681912" y="2758.0" />
+              <point x="9062.500687015248" y="2758.0" />
+              <point x="16.08333333333394" y="26.0" />
+            </edge>
+            <edge source="bootstrap-sass" target="sass">
+              <point x="97.08333333333303" y="-26.0" />
+              <point x="4552.911903913732" y="2728.0" />
+              <point x="5831.320905245371" y="2728.0" />
+              <point x="-32.66666666666697" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="rails-jquery-autocomplete">
+              <point x="-2.077235772358108" y="-26.0" />
+              <point x="5247.665117909556" y="2890.0" />
+              <point x="5130.109058385278" y="2890.0" />
+              <point x="122.0" y="26.0" />
+            </edge>
+            <edge source="sass-rails" target="railties">
+              <point x="79.33333333333303" y="-26.0" />
+              <point x="6575.237571912037" y="2768.0" />
+              <point x="6642.154238578703" y="2768.0" />
+              <point x="6642.154238578703" y="2386.0" />
+              <point x="8389.313733182025" y="2386.0" />
+              <point x="-44.649999999999636" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="font-awesome-sass">
+              <point x="11.57317073170725" y="-26.0" />
+              <point x="5261.3155244136215" y="3050.0" />
+              <point x="5893.534319879517" y="3050.0" />
+              <point x="-96.0" y="26.0" />
+            </edge>
+            <edge source="rails" target="actionpack">
+              <point x="24.050000000000182" y="-26.0" />
+              <point x="5164.833474266481" y="2226.0" />
+              <point x="5381.033474266482" y="2226.0" />
+              <point x="5381.033474266482" y="1944.0" />
+              <point x="6464.064295392955" y="1944.0" />
+              <point x="-50.66666666666697" y="26.0" />
+            </edge>
+            <edge source="jquery-ui-rails" target="railties">
+              <point x="75.66666666666606" y="-26.0" />
+              <point x="8596.08402034858" y="2456.0" />
+              <point x="8450.413733182026" y="2456.0" />
+              <point x="16.450000000000728" y="26.0" />
+            </edge>
+            <edge source="actionpack" target="rack-test">
+              <point x="68.61111111111131" y="-26.0" />
+              <point x="6583.342073170733" y="1622.0" />
+              <point x="7814.4003387533885" y="1622.0" />
+              <point x="-69.16666666666697" y="26.0" />
+            </edge>
+            <edge source="annotate" target="rake">
+              <point x="13.83333333333303" y="-26.0" />
+              <point x="6315.711149147809" y="2266.0" />
+              <point x="6376.028697843715" y="2266.0" />
+              <point x="6376.028697843715" y="2004.0" />
+              <point x="6847.545847003163" y="2004.0" />
+              <point x="-23.75" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="sass">
+              <point x="9.792682926829002" y="-26.0" />
+              <point x="5259.535036608743" y="3020.0" />
+              <point x="5803.820905245371" y="3020.0" />
+              <point x="5803.820905245371" y="2748.0" />
+              <point x="5849.987571912037" y="2748.0" />
+              <point x="-14.0" y="26.0" />
+            </edge>
+            <edge source="railties" target="activesupport">
+              <point x="5.875" y="-26.0" />
+              <point x="8439.838733182025" y="406.0" />
+              <point x="5337.218348960194" y="406.0" />
+              <point x="86.15384615384664" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="ansi">
+              <point x="28.191056910569387" y="-26.0" />
+              <point x="5277.933410592484" y="3330.0" />
+              <point x="7162.563829376251" y="3330.0" />
+              <point x="7162.563829376251" y="2768.0" />
+              <point x="7179.241636952687" y="2768.0" />
+              <point x="-9.16666666666697" y="26.0" />
+            </edge>
+            <edge source="activejob" target="activesupport">
+              <point x="14.16666666666697" y="-26.0" />
+              <point x="4290.500822516603" y="1532.0" />
+              <point x="3262.4902141884613" y="1532.0" />
+              <point x="3262.4902141884613" y="666.0" />
+              <point x="5199.37219511404" y="666.0" />
+              <point x="-51.69230769230762" y="26.0" />
+            </edge>
+            <edge source="activesupport" target="minitest">
+              <point x="-65.33333333333303" y="-26.0" />
+              <point x="5185.731169473014" y="194.0" />
+              <point x="568.3592900808599" y="194.0" />
+              <point x="66.25" y="26.0" />
+            </edge>
+            <edge source="httparty" target="multi_xml">
+              <point x="52.666666666666515" y="-26.0" />
+              <point x="2138.3589133754517" y="2004.0" />
+              <point x="2298.6995637819555" y="2004.0" />
+              <point x="-15.0" y="26.0" />
+            </edge>
+            <edge source="rails-jquery-autocomplete" target="rails">
+              <point x="122.0" y="-26.0" />
+              <point x="5130.109058385278" y="2698.0" />
+              <point x="5108.408474266482" y="2698.0" />
+              <point x="-32.375" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="select2-rails">
+              <point x="64.98780487804834" y="-26.0" />
+              <point x="5314.730158559963" y="3950.0" />
+              <point x="9989.175203252034" y="3950.0" />
+              <point x="9989.175203252034" y="2516.0" />
+              <point x="9991.596012218499" y="2516.0" />
+              <point x="67.66666666666606" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="actionview">
+              <point x="-3.857723577235447" y="-26.0" />
+              <point x="5245.884630104679" y="2920.0" />
+              <point x="4814.609058385278" y="2920.0" />
+              <point x="4814.609058385278" y="1632.0" />
+              <point x="4830.027905681949" y="1632.0" />
+              <point x="-7.91666666666697" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="bcrypt">
+              <point x="60.83333333333303" y="-26.0" />
+              <point x="5310.575687015247" y="3880.0" />
+              <point x="9765.492353681911" y="3880.0" />
+              <point x="9765.492353681911" y="2768.0" />
+              <point x="9742.919182950205" y="2768.0" />
+              <point x="11.58333333333394" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="httparty">
+              <point x="-41.247967479675026" y="-26.0" />
+              <point x="5208.494386202239" y="3550.0" />
+              <point x="2211.4190759770772" y="3550.0" />
+              <point x="2211.4190759770772" y="2506.0" />
+              <point x="2125.192246708785" y="2506.0" />
+              <point x="39.5" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="mimemagic">
+              <point x="-51.9308943089427" y="-26.0" />
+              <point x="5197.8114593729715" y="3730.0" />
+              <point x="1182.8849296356148" y="3730.0" />
+              <point x="-17.0" y="26.0" />
+            </edge>
+            <edge source="roxml" target="activesupport">
+              <point x="10.916666666666742" y="-26.0" />
+              <point x="1708.48344039114" y="566.0" />
+              <point x="5141.936297678142" y="566.0" />
+              <point x="-109.12820512820508" y="26.0" />
+            </edge>
+            <edge source="actionview" target="builder">
+              <point x="-88.66666666666697" y="-26.0" />
+              <point x="4749.277905681949" y="1080.0" />
+              <point x="4184.813830646684" y="1080.0" />
+              <point x="32.0" y="26.0" />
+            </edge>
+            <edge source="pry" target="slop">
+              <point x="-22.666666666666742" y="-26.0" />
+              <point x="803.9794418307383" y="2466.0" />
+              <point x="567.7776898215943" y="2466.0" />
+              <point x="45.41666666666663" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="tzinfo">
+              <point x="69.73577235772336" y="-26.0" />
+              <point x="5319.478126039638" y="4030.0" />
+              <point x="10091.208661663542" y="4030.0" />
+              <point x="10091.208661663542" y="234.0" />
+              <point x="10046.472966564965" y="234.0" />
+              <point x="32.0" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="coderay">
+              <point x="-56.67886178861772" y="-26.0" />
+              <point x="5193.0634918932965" y="3810.0" />
+              <point x="1010.2812710990302" y="3810.0" />
+              <point x="13.083333333333485" y="26.0" />
+            </edge>
+            <edge source="actionview" target="erubis">
+              <point x="-50.66666666666697" y="-26.0" />
+              <point x="4787.277905681949" y="1050.0" />
+              <point x="4323.563830646684" y="1050.0" />
+              <point x="11.25" y="26.0" />
+            </edge>
+            <edge source="protected_attributes" target="activemodel">
+              <point x="0.0" y="-26.0" />
+              <point x="3663.677206058379" y="1994.0" />
+              <point x="3388.08371012342" y="1994.0" />
+              <point x="0.0" y="26.0" />
+            </edge>
+            <edge source="mail" target="mime-types">
+              <point x="0.0" y="-26.0" />
+              <point x="2757.5735475217934" y="1612.0" />
+              <point x="2596.1263930502487" y="1612.0" />
+              <point x="68.33333333333348" y="26.0" />
+            </edge>
+            <edge source="rails" target="actionview">
+              <point x="-5.550000000000182" y="-26.0" />
+              <point x="5135.233474266481" y="2356.0" />
+              <point x="5036.015400250159" y="2356.0" />
+              <point x="5036.015400250159" y="1622.0" />
+              <point x="4861.694572348617" y="1622.0" />
+              <point x="23.75" y="26.0" />
+            </edge>
+            <edge source="warden" target="rack">
+              <point x="50.0" y="-26.0" />
+              <point x="9287.917353681914" y="2516.0" />
+              <point x="9329.35902034858" y="2516.0" />
+              <point x="9329.35902034858" y="1140.0" />
+              <point x="8013.178116531166" y="1140.0" />
+              <point x="34.527777777777374" y="26.0" />
+            </edge>
+            <edge source="httmultiparty" target="httparty">
+              <point x="97.33333333333326" y="-26.0" />
+              <point x="1847.9052548388663" y="2516.0" />
+              <point x="2072.5255800421187" y="2516.0" />
+              <point x="-13.166666666666515" y="26.0" />
+            </edge>
+            <edge source="rails" target="sprockets-rails">
+              <point x="42.55000000000018" y="-26.0" />
+              <point x="5183.333474266481" y="2306.0" />
+              <point x="6508.350038036699" y="2306.0" />
+              <point x="-51.777777777777374" y="26.0" />
+            </edge>
+            <edge source="activejob" target="globalid">
+              <point x="-70.83333333333303" y="-26.0" />
+              <point x="4205.500822516603" y="1562.0" />
+              <point x="3105.931551610212" y="1562.0" />
+              <point x="12.833333333333485" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="js_assets">
+              <point x="2.077235772358108" y="-26.0" />
+              <point x="5251.819589454272" y="2890.0" />
+              <point x="5501.056169473013" y="2890.0" />
+              <point x="55.33333333333303" y="26.0" />
+            </edge>
+            <edge source="coffee-script" target="coffee-script-source">
+              <point x="86.66666666666697" y="-26.0" />
+              <point x="6973.324970286021" y="2326.0" />
+              <point x="7714.553126039637" y="2326.0" />
+              <point x="-24.58333333333303" y="26.0" />
+            </edge>
+            <edge source="activemodel" target="activesupport">
+              <point x="-17.25" y="-26.0" />
+              <point x="3370.83371012342" y="1602.0" />
+              <point x="2917.8588848472264" y="1602.0" />
+              <point x="2917.8588848472264" y="626.0" />
+              <point x="5176.39783613968" y="626.0" />
+              <point x="-74.66666666666697" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="method_source">
+              <point x="-62.61382113821128" y="-26.0" />
+              <point x="5187.128532543703" y="3910.0" />
+              <point x="572.1095231315512" y="3910.0" />
+              <point x="572.1095231315512" y="2506.0" />
+              <point x="684.0627751640714" y="2506.0" />
+              <point x="-60.75" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="activejob">
+              <point x="-17.508130081300806" y="-26.0" />
+              <point x="5232.234223600613" y="3150.0" />
+              <point x="3987.1832453771476" y="3150.0" />
+              <point x="3987.1832453771476" y="2034.0" />
+              <point x="4200.77860029438" y="2034.0" />
+              <point x="-75.55555555555566" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="rails-html-sanitizer">
+              <point x="-18.695121951219335" y="-26.0" />
+              <point x="5231.047231730695" y="3170.0" />
+              <point x="3976.3207792524872" y="3170.0" />
+              <point x="3976.3207792524872" y="1130.0" />
+              <point x="4730.958506871388" y="1130.0" />
+              <point x="-94.66666666666697" y="26.0" />
+            </edge>
+            <edge source="devise" target="orm_adapter">
+              <point x="37.066666666667516" y="-26.0" />
+              <point x="9369.750687015247" y="2738.0" />
+              <point x="9516.585849616873" y="2738.0" />
+              <point x="-17.75" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="rails">
+              <point x="-1.4837398373983888" y="-26.0" />
+              <point x="5248.258613844516" y="2880.0" />
+              <point x="5201.609058385278" y="2880.0" />
+              <point x="5201.609058385278" y="2688.0" />
+              <point x="5117.658474266482" y="2688.0" />
+              <point x="-23.125" y="26.0" />
+            </edge>
+            <edge source="rails-dom-testing" target="activesupport">
+              <point x="0.0" y="-26.0" />
+              <point x="6492.016704703365" y="898.0" />
+              <point x="6464.683371370032" y="898.0" />
+              <point x="6464.683371370032" y="516.0" />
+              <point x="5274.038861780707" y="516.0" />
+              <point x="22.974358974359347" y="26.0" />
+            </edge>
+            <edge source="rack-test" target="rack">
+              <point x="55.33333333333303" y="-26.0" />
+              <point x="7938.9003387533885" y="1310.0" />
+              <point x="7975.5114498645" y="1310.0" />
+              <point x="-3.138888888888687" y="26.0" />
+            </edge>
+            <edge source="loofah" target="nokogiri">
+              <point x="-44.33333333333326" y="-26.0" />
+              <point x="1053.541433700655" y="736.0" />
+              <point x="1466.0668402047195" y="736.0" />
+              <point x="-32.91666666666674" y="26.0" />
+            </edge>
+            <edge source="actionpack" target="rails-dom-testing">
+              <point x="-5.277777777777374" y="-26.0" />
+              <point x="17.533333333333758" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="rails_serve_static_assets">
+              <point x="-28.191056910569387" y="-26.0" />
+              <point x="5221.551296771345" y="3330.0" />
+              <point x="2933.1568808551274" y="3330.0" />
+              <point x="0.0" y="26.0" />
+            </edge>
+            <edge source="uglifier" target="execjs">
+              <point x="0.0" y="-26.0" />
+              <point x="4152.457693863257" y="2516.0" />
+              <point x="4186.808245377148" y="2516.0" />
+              <point x="-51.375" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="railties">
+              <point x="48.96341463414592" y="-26.0" />
+              <point x="5298.70576831606" y="3680.0" />
+              <point x="8644.417353681914" y="3680.0" />
+              <point x="8644.417353681914" y="2446.0" />
+              <point x="8455.113733182025" y="2446.0" />
+              <point x="21.149999999999636" y="26.0" />
+            </edge>
+            <edge source="turn" target="ansi">
+              <point x="-37.0" y="-26.0" />
+              <point x="7191.563829376251" y="2768.0" />
+              <point x="7197.574970286021" y="2768.0" />
+              <point x="9.16666666666697" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="activemodel">
+              <point x="-24.03658536585408" y="-26.0" />
+              <point x="5225.70576831606" y="3260.0" />
+              <point x="3370.2939499841946" y="3260.0" />
+              <point x="3370.2939499841946" y="2024.0" />
+              <point x="3346.6837101234196" y="2024.0" />
+              <point x="-41.40000000000009" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="rake">
+              <point x="22.25609756097583" y="-26.0" />
+              <point x="5271.99845124289" y="3230.0" />
+              <point x="6772.158303619354" y="3230.0" />
+              <point x="6772.158303619354" y="2034.0" />
+              <point x="6876.045847003163" y="2034.0" />
+              <point x="4.75" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="bootstrap-sass">
+              <point x="-8.605691056910473" y="-26.0" />
+              <point x="5241.136662625004" y="3000.0" />
+              <point x="4533.495237247066" y="3000.0" />
+              <point x="77.66666666666697" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="erubis">
+              <point x="-25.22357723577261" y="-26.0" />
+              <point x="5224.518776446142" y="3280.0" />
+              <point x="3274.08371012342" y="3280.0" />
+              <point x="3274.08371012342" y="1110.0" />
+              <point x="4301.063830646684" y="1110.0" />
+              <point x="-11.25" y="26.0" />
+            </edge>
+            <edge source="rails-deprecated_sanitizer" target="activesupport">
+              <point x="-122.0" y="-26.0" />
+              <point x="7329.417958090899" y="436.0" />
+              <point x="5319.987579729424" y="436.0" />
+              <point x="68.92307692307713" y="26.0" />
+            </edge>
+            <edge source="coffee-rails" target="coffee-script">
+              <point x="-47.75" y="-26.0" />
+              <point x="7351.813829376251" y="2738.0" />
+              <point x="6938.658303619354" y="2738.0" />
+              <point x="52.0" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="builder">
+              <point x="-32.34552845528469" y="-26.0" />
+              <point x="5217.3968252266295" y="3400.0" />
+              <point x="2689.386555651875" y="3400.0" />
+              <point x="2689.386555651875" y="1050.0" />
+              <point x="4120.813830646684" y="1050.0" />
+              <point x="-32.0" y="26.0" />
+            </edge>
+            <edge source="rack-contrib" target="git-version-bump">
+              <point x="-17.08333333333303" y="-26.0" />
+              <point x="7775.824970286021" y="2276.0" />
+              <point x="7256.408303619354" y="2276.0" />
+              <point x="111.25" y="26.0" />
+            </edge>
+            <edge source="rails-dom-testing" target="rails-deprecated_sanitizer">
+              <point x="87.66666666666697" y="-26.0" />
+              <point x="6579.683371370032" y="898.0" />
+              <point x="7359.917958090899" y="898.0" />
+              <point x="-91.5" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="mail">
+              <point x="-30.565040650406445" y="-26.0" />
+              <point x="5219.177313031508" y="3370.0" />
+              <point x="2719.0684662209815" y="3370.0" />
+              <point x="2719.0684662209815" y="2004.0" />
+              <point x="2710.49021418846" y="2004.0" />
+              <point x="-47.083333333333485" y="26.0" />
+            </edge>
+            <edge source="rails" target="activerecord">
+              <point x="20.350000000000364" y="-26.0" />
+              <point x="5161.133474266482" y="2216.0" />
+              <point x="5218.866807599814" y="2216.0" />
+              <point x="-46.66666666666697" y="26.0" />
+            </edge>
+            <edge source="globalid" target="activesupport">
+              <point x="0.0" y="-26.0" />
+              <point x="3093.0982182768785" y="1020.0" />
+              <point x="3072.9315516102115" y="1020.0" />
+              <point x="3072.9315516102115" y="646.0" />
+              <point x="5187.88501562686" y="646.0" />
+              <point x="-63.179487179487296" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="actionpack">
+              <point x="20.475609756097583" y="-26.0" />
+              <point x="5270.217963438012" y="3200.0" />
+              <point x="6698.721311749436" y="3200.0" />
+              <point x="6698.721311749436" y="1804.0" />
+              <point x="6552.730962059622" y="1804.0" />
+              <point x="38.0" y="26.0" />
+            </edge>
+            <edge source="rubyzoho" target="activemodel">
+              <point x="80.73333333333312" y="-26.0" />
+              <point x="2116.125580042118" y="2768.0" />
+              <point x="2197.192246708785" y="2768.0" />
+              <point x="2197.192246708785" y="2034.0" />
+              <point x="3319.08371012342" y="2034.0" />
+              <point x="-69.0" y="26.0" />
+            </edge>
+            <edge source="rails" target="activemodel">
+              <point x="-27.75" y="-26.0" />
+              <point x="5113.033474266482" y="2416.0" />
+              <point x="4965.073733583493" y="2416.0" />
+              <point x="4965.073733583493" y="1854.0" />
+              <point x="3429.4837101234198" y="1854.0" />
+              <point x="41.40000000000009" y="26.0" />
+            </edge>
+            <edge source="activemodel" target="builder">
+              <point x="86.25" y="-26.0" />
+              <point x="3474.33371012342" y="1572.0" />
+              <point x="3202.5982182768785" y="1572.0" />
+              <point x="3202.5982182768785" y="1080.0" />
+              <point x="4168.813830646684" y="1080.0" />
+              <point x="16.0" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="activerecord">
+              <point x="0.29674796747985965" y="-26.0" />
+              <point x="5250.039101649394" y="2216.0" />
+              <point x="5242.200140933148" y="2216.0" />
+              <point x="-23.33333333333303" y="26.0" />
+            </edge>
+            <edge source="rubyzoho" target="mime-types">
+              <point x="23.066666666666606" y="-26.0" />
+              <point x="2058.4589133754516" y="2678.0" />
+              <point x="1974.1922467087852" y="2678.0" />
+              <point x="1974.1922467087852" y="1612.0" />
+              <point x="2436.681948605804" y="1612.0" />
+              <point x="-91.11111111111131" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="uglifier">
+              <point x="-15.134146341463747" y="-26.0" />
+              <point x="5234.6082073404505" y="3110.0" />
+              <point x="4100.2091600112935" y="3110.0" />
+              <point x="4100.2091600112935" y="2768.0" />
+              <point x="4104.457693863257" y="2768.0" />
+              <point x="-48.0" y="26.0" />
+            </edge>
+            <edge source="activesupport" target="i18n">
+              <point x="84.0" y="-26.0" />
+              <point x="5335.064502806347" y="264.0" />
+              <point x="10126.972966564965" y="264.0" />
+              <point x="-28.5" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="thread_safe">
+              <point x="-72.10975609756133" y="-26.0" />
+              <point x="5177.632597584353" y="4070.0" />
+              <point x="0.5934959349588098" y="4070.0" />
+              <point x="0.5934959349588098" y="102.0" />
+              <point x="5167.731169473014" y="102.0" />
+              <point x="-66.33333333333303" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="globalid">
+              <point x="-31.158536585366164" y="-26.0" />
+              <point x="5218.583817096548" y="3380.0" />
+              <point x="2690.5735475217934" y="3380.0" />
+              <point x="2690.5735475217934" y="1642.0" />
+              <point x="3054.5982182768785" y="1642.0" />
+              <point x="-38.5" y="26.0" />
+            </edge>
+            <edge source="actionmailer" target="activejob">
+              <point x="-55.733333333333576" y="-26.0" />
+              <point x="4643.282229116985" y="1944.0" />
+              <point x="4257.445266961047" y="1944.0" />
+              <point x="-18.888888888888687" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="yaml_db">
+              <point x="3.264227642276637" y="-26.0" />
+              <point x="5253.006581324191" y="2910.0" />
+              <point x="5576.889502806347" y="2910.0" />
+              <point x="-54.33333333333303" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="rack-contrib">
+              <point x="34.71951219512175" y="-26.0" />
+              <point x="5284.461865877036" y="3440.0" />
+              <point x="7649.389333429652" y="3440.0" />
+              <point x="7649.389333429652" y="2748.0" />
+              <point x="7707.491636952687" y="2748.0" />
+              <point x="-85.41666666666697" y="26.0" />
+            </edge>
+            <edge source="actionpack" target="rack">
+              <point x="58.05555555555566" y="-26.0" />
+              <point x="6572.786517615177" y="1612.0" />
+              <point x="7790.0670054200555" y="1612.0" />
+              <point x="7790.0670054200555" y="1280.0" />
+              <point x="7956.678116531166" y="1280.0" />
+              <point x="-21.972222222222626" y="26.0" />
+            </edge>
+            <edge source="select2-rails" target="thor">
+              <point x="67.66666666666606" y="-26.0" />
+              <point x="9991.596012218499" y="2004.0" />
+              <point x="9570.160481149504" y="2004.0" />
+              <point x="50.41666666666606" y="26.0" />
+            </edge>
+            <edge source="rails" target="activesupport">
+              <point x="9.25" y="-26.0" />
+              <point x="5150.033474266482" y="2316.0" />
+              <point x="5140.489972899732" y="2316.0" />
+              <point x="5140.489972899732" y="746.0" />
+              <point x="5245.320913062757" y="746.0" />
+              <point x="-5.743589743589837" y="26.0" />
+            </edge>
+            <edge source="activerecord" target="activemodel">
+              <point x="-93.33333333333303" y="-26.0" />
+              <point x="5172.200140933148" y="1804.0" />
+              <point x="3457.08371012342" y="1804.0" />
+              <point x="69.0" y="26.0" />
+            </edge>
+            <edge source="sass-rails" target="sprockets-rails">
+              <point x="34.0" y="-26.0" />
+              <point x="6529.904238578703" y="2728.0" />
+              <point x="6560.127815814476" y="2728.0" />
+              <point x="0.0" y="26.0" />
+            </edge>
+            <edge source="activerecord" target="activesupport">
+              <point x="0.0" y="-26.0" />
+              <point x="5265.533474266482" y="1904.0" />
+              <point x="5262.156639566398" y="1904.0" />
+              <point x="5262.156639566398" y="756.0" />
+              <point x="5256.808092549937" y="756.0" />
+              <point x="5.743589743589837" y="26.0" />
+            </edge>
+            <edge source="meta_request" target="callsite">
+              <point x="-74.66666666666697" y="-26.0" />
+              <point x="7758.4767697556545" y="2728.0" />
+              <point x="7623.313829376251" y="2728.0" />
+              <point x="35.75" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="bundler">
+              <point x="-15.727642276422557" y="-26.0" />
+              <point x="5234.014711405492" y="3120.0" />
+              <point x="4036.276741312107" y="3120.0" />
+              <point x="4036.276741312107" y="2516.0" />
+              <point x="4061.0165787104806" y="2516.0" />
+              <point x="-12.666666666666515" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="rails-dom-testing">
+              <point x="40.0609756097565" y="-26.0" />
+              <point x="5289.803329291671" y="3530.0" />
+              <point x="8002.57345124289" y="3530.0" />
+              <point x="8002.57345124289" y="2004.0" />
+              <point x="7778.473509485097" y="2004.0" />
+              <point x="7778.473509485097" y="1210.0" />
+              <point x="6544.616704703365" y="1210.0" />
+              <point x="52.600000000000364" y="26.0" />
+            </edge>
+            <edge source="devise" target="warden">
+              <point x="-27.799999999999272" y="-26.0" />
+              <point x="9304.884020348582" y="2718.0" />
+              <point x="9275.417353681914" y="2718.0" />
+              <point x="37.5" y="26.0" />
+            </edge>
+            <edge source="mime-types" target="mime-types-data">
+              <point x="-68.33333333333348" y="-26.0" />
+              <point x="2459.4597263835817" y="1020.0" />
+              <point x="2272.0631531399085" y="1020.0" />
+              <point x="22.166666666666515" y="26.0" />
+            </edge>
+            <edge source="sass-rails" target="tilt">
+              <point x="-34.0" y="-26.0" />
+              <point x="6461.904238578703" y="2688.0" />
+              <point x="6153.044520433161" y="2688.0" />
+              <point x="23.25" y="26.0" />
+            </edge>
+            <edge source="devise" target="bcrypt">
+              <point x="64.86666666666679" y="-26.0" />
+              <point x="9397.550687015246" y="2768.0" />
+              <point x="9719.752516283537" y="2768.0" />
+              <point x="-11.58333333333394" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="concurrent-ruby">
+              <point x="-22.84959349593464" y="-26.0" />
+              <point x="5226.89276018598" y="3240.0" />
+              <point x="3502.08371012342" y="3240.0" />
+              <point x="3502.08371012342" y="1632.0" />
+              <point x="3686.9671207159017" y="1632.0" />
+              <point x="-105.83333333333348" y="26.0" />
+            </edge>
+            <edge source="pry" target="coderay">
+              <point x="45.33333333333337" y="-26.0" />
+              <point x="871.9794418307383" y="2516.0" />
+              <point x="984.1146044323627" y="2516.0" />
+              <point x="-13.083333333333371" y="26.0" />
+            </edge>
+            <edge source="pry-rails" target="pry">
+              <point x="0.0" y="-26.0" />
+              <point x="754.7294418307383" y="2768.0" />
+              <point x="801.1461084974053" y="2768.0" />
+              <point x="-25.5" y="26.0" />
+            </edge>
+            <edge source="js_assets" target="rails">
+              <point x="-69.16666666666697" y="-26.0" />
+              <point x="5376.556169473013" y="2658.0" />
+              <point x="5145.408474266482" y="2658.0" />
+              <point x="4.625" y="26.0" />
+            </edge>
+            <edge source="rails-dom-testing" target="nokogiri">
+              <point x="-58.44444444444434" y="-26.0" />
+              <point x="6433.57226025892" y="908.0" />
+              <point x="6442.683371370032" y="908.0" />
+              <point x="6442.683371370032" y="536.0" />
+              <point x="1571.400173538053" y="536.0" />
+              <point x="72.41666666666652" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="rails-deprecated_sanitizer">
+              <point x="67.3617886178863" y="-26.0" />
+              <point x="5317.1041422998005" y="3990.0" />
+              <point x="10037.709833356708" y="3990.0" />
+              <point x="10037.709833356708" y="888.0" />
+              <point x="7603.917958090899" y="888.0" />
+              <point x="152.5" y="26.0" />
+            </edge>
+            <edge source="actionview" target="rails-html-sanitizer">
+              <point x="-12.66666666666697" y="-26.0" />
+              <point x="4825.277905681949" y="1020.0" />
+              <point x="4794.069617982499" y="1020.0" />
+              <point x="-31.555555555555657" y="26.0" />
+            </edge>
+            <edge source="sprockets-rails" target="actionpack">
+              <point x="0.0" y="-26.0" />
+              <point x="6560.127815814476" y="1834.0" />
+              <point x="6514.730962059622" y="1834.0" />
+              <point x="0.0" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="sass-rails">
+              <point x="17.508130081300806" y="-26.0" />
+              <point x="5267.250483763215" y="3150.0" />
+              <point x="6552.570905245371" y="3150.0" />
+              <point x="56.66666666666697" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="pry-rails">
+              <point x="-61.42682926829275" y="-26.0" />
+              <point x="5188.3155244136215" y="3890.0" />
+              <point x="701.3961084974053" y="3890.0" />
+              <point x="-53.33333333333337" y="26.0" />
+            </edge>
+            <edge source="coffee-script" target="execjs">
+              <point x="-52.0" y="-26.0" />
+              <point x="6834.658303619354" y="2136.0" />
+              <point x="4289.558245377148" y="2136.0" />
+              <point x="51.375" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="orm_adapter">
+              <point x="59.05284552845569" y="-26.0" />
+              <point x="5308.79519921037" y="3850.0" />
+              <point x="9612.029878048783" y="3850.0" />
+              <point x="9612.029878048783" y="2728.0" />
+              <point x="9587.585849616873" y="2728.0" />
+              <point x="53.25" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="jquery-ui-rails">
+              <point x="47.18292682926858" y="-26.0" />
+              <point x="5296.925280511183" y="3650.0" />
+              <point x="8533.069715447156" y="3650.0" />
+              <point x="8533.069715447156" y="2768.0" />
+              <point x="8444.750687015248" y="2768.0" />
+              <point x="-75.66666666666606" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="sprockets">
+              <point x="8.605691056910473" y="-26.0" />
+              <point x="5258.348044738825" y="3000.0" />
+              <point x="5797.487571912037" y="3000.0" />
+              <point x="5797.487571912037" y="1904.0" />
+              <point x="6034.950986546184" y="1904.0" />
+              <point x="-7.29166666666697" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="activesupport">
+              <point x="-44.80894308943061" y="-26.0" />
+              <point x="5204.933410592484" y="3610.0" />
+              <point x="1876.665417440493" y="3610.0" />
+              <point x="1876.665417440493" y="1310.0" />
+              <point x="2106.396486473242" y="1310.0" />
+              <point x="2106.396486473242" y="596.0" />
+              <point x="5159.167066908912" y="596.0" />
+              <point x="-91.89743589743557" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="rails_stdout_logging">
+              <point x="-49.55691056910564" y="-26.0" />
+              <point x="5200.185443112809" y="3690.0" />
+              <point x="1373.4052548388654" y="3690.0" />
+              <point x="-98.66666666666674" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="rubyzoho">
+              <point x="-43.028455284553274" y="-26.0" />
+              <point x="5206.713898397361" y="3580.0" />
+              <point x="2035.392246708785" y="3580.0" />
+              <point x="0.0" y="26.0" />
+            </edge>
+            <edge source="rails" target="bundler">
+              <point x="-49.94999999999982" y="-26.0" />
+              <point x="5090.833474266481" y="2476.0" />
+              <point x="4111.683245377147" y="2476.0" />
+              <point x="37.999999999999545" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="minitest">
+              <point x="-68.54878048780483" y="-26.0" />
+              <point x="5181.193573194109" y="4010.0" />
+              <point x="228.35545809089945" y="4010.0" />
+              <point x="228.35545809089945" y="274.0" />
+              <point x="488.85929008085986" y="274.0" />
+              <point x="-13.25" y="26.0" />
+            </edge>
+            <edge source="devise" target="railties">
+              <point x="0.0" y="-26.0" />
+              <point x="9332.68402034858" y="2356.0" />
+              <point x="8497.413733182026" y="2356.0" />
+              <point x="63.45000000000073" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="devise-encryptable">
+              <point x="-66.17479674796778" y="-26.0" />
+              <point x="5183.567556933946" y="3970.0" />
+              <point x="288.6359458957786" y="3970.0" />
+              <point x="-96.0" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="i18n">
+              <point x="72.10975609756133" y="-26.0" />
+              <point x="5321.8521097794755" y="4070.0" />
+              <point x="10188.385490931832" y="4070.0" />
+              <point x="10188.385490931832" y="274.0" />
+              <point x="10202.972966564965" y="274.0" />
+              <point x="47.5" y="26.0" />
+            </edge>
+            <edge source="actionmailer" target="actionpack">
+              <point x="97.53333333333376" y="-26.0" />
+              <point x="4796.548895783652" y="1934.0" />
+              <point x="6451.3976287262885" y="1934.0" />
+              <point x="-63.33333333333303" y="26.0" />
+            </edge>
+            <edge source="pry" target="method_source">
+              <point x="11.333333333333371" y="-26.0" />
+              <point x="837.9794418307383" y="2486.0" />
+              <point x="846.0627751640714" y="2486.0" />
+              <point x="101.25" y="26.0" />
+            </edge>
+            <edge source="rubyzoho" target="multipart-post">
+              <point x="-23.066666666666606" y="-26.0" />
+              <point x="2012.3255800421184" y="2718.0" />
+              <point x="1930.1922467087852" y="2718.0" />
+              <point x="1930.1922467087852" y="2416.0" />
+              <point x="1765.5039770844664" y="2416.0" />
+              <point x="102.22222222222217" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="jquery-tablesorter">
+              <point x="50.74390243902417" y="-26.0" />
+              <point x="5300.486256120938" y="3710.0" />
+              <point x="8886.746544715448" y="3710.0" />
+              <point x="8886.746544715448" y="2768.0" />
+              <point x="8883.250687015248" y="2768.0" />
+              <point x="91.33333333333394" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="meta_request">
+              <point x="37.68699186991853" y="-26.0" />
+              <point x="5287.429345551833" y="3490.0" />
+              <point x="7907.810103088988" y="3490.0" />
+              <point x="74.66666666666697" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="mime-types-data">
+              <point x="-39.46747967479678" y="-26.0" />
+              <point x="5210.274874007117" y="3520.0" />
+              <point x="2213.1995637819555" y="3520.0" />
+              <point x="2213.1995637819555" y="1320.0" />
+              <point x="2227.7298198065755" y="1320.0" />
+              <point x="-22.166666666666515" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="slop">
+              <point x="-66.76829268292659" y="-26.0" />
+              <point x="5182.974060998988" y="3980.0" />
+              <point x="230.1359458957786" y="3980.0" />
+              <point x="230.1359458957786" y="2516.0" />
+              <point x="476.9443564882604" y="2516.0" />
+              <point x="-45.41666666666697" y="26.0" />
+            </edge>
+            <edge source="sprockets" target="concurrent-ruby">
+              <point x="-43.75" y="-26.0" />
+              <point x="5998.49265321285" y="1502.0" />
+              <point x="3856.300454049235" y="1502.0" />
+              <point x="63.5" y="26.0" />
+            </edge>
+            <edge source="activesupport" target="thread_safe">
+              <point x="-46.66666666666697" y="-26.0" />
+              <point x="5204.39783613968" y="274.0" />
+              <point x="5212.064502806347" y="274.0" />
+              <point x="5212.064502806347" y="102.0" />
+              <point x="5189.842280584125" y="102.0" />
+              <point x="-44.222222222222626" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="roxml">
+              <point x="-53.711382113820946" y="-26.0" />
+              <point x="5196.030971568093" y="3760.0" />
+              <point x="1087.3849296356148" y="3760.0" />
+              <point x="1087.3849296356148" y="898.0" />
+              <point x="1642.98344039114" y="898.0" />
+              <point x="-54.583333333333485" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="multi_xml">
+              <point x="-38.87398373983706" y="-26.0" />
+              <point x="5210.868369942077" y="3510.0" />
+              <point x="2328.6995637819555" y="3510.0" />
+              <point x="15.0" y="26.0" />
+            </edge>
+            <edge source="sass-rails" target="sprockets">
+              <point x="-11.33333333333303" y="-26.0" />
+              <point x="6484.570905245371" y="2668.0" />
+              <point x="6395.377815814476" y="2668.0" />
+              <point x="6395.377815814476" y="2156.0" />
+              <point x="6275.9430216802175" y="2156.0" />
+              <point x="6275.9430216802175" y="1904.0" />
+              <point x="6049.534319879518" y="1904.0" />
+              <point x="7.29166666666697" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="coffee-rails">
+              <point x="31.752032520324974" y="-26.0" />
+              <point x="5281.494386202239" y="3390.0" />
+              <point x="7463.230496042918" y="3390.0" />
+              <point x="63.66666666666697" y="26.0" />
+            </edge>
+            <edge source="tzinfo" target="thread_safe">
+              <point x="42.66666666666606" y="-26.0" />
+              <point x="10057.139633231633" y="82.0" />
+              <point x="5300.39783613968" y="82.0" />
+              <point x="66.33333333333303" y="26.0" />
+            </edge>
+            <edge source="actionpack" target="rails-html-sanitizer">
+              <point x="-36.94444444444434" y="-26.0" />
+              <point x="6477.786517615177" y="1432.0" />
+              <point x="6437.480962059621" y="1432.0" />
+              <point x="6437.480962059621" y="1090.0" />
+              <point x="4951.847395760276" y="1090.0" />
+              <point x="126.22222222222172" y="26.0" />
+            </edge>
+            <edge source="js_assets" target="sprockets">
+              <point x="13.83333333333303" y="-26.0" />
+              <point x="5459.556169473013" y="2698.0" />
+              <point x="5476.222836139681" y="2698.0" />
+              <point x="5476.222836139681" y="1854.0" />
+              <point x="5962.034319879518" y="1854.0" />
+              <point x="-80.20833333333303" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="rack-test">
+              <point x="41.841463414633836" y="-26.0" />
+              <point x="5291.583817096548" y="3560.0" />
+              <point x="8119.557191080286" y="3560.0" />
+              <point x="8119.557191080286" y="1632.0" />
+              <point x="7925.0670054200555" y="1632.0" />
+              <point x="41.5" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="coffee-script">
+              <point x="24.03658536585408" y="-26.0" />
+              <point x="5273.778939047768" y="3260.0" />
+              <point x="6869.324970286021" y="3260.0" />
+              <point x="-17.33333333333303" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="pry">
+              <point x="-58.45934959349597" y="-26.0" />
+              <point x="5191.283004088418" y="3840.0" />
+              <point x="891.4845231315512" y="3840.0" />
+              <point x="891.4845231315512" y="2758.0" />
+              <point x="869.1461084974053" y="2758.0" />
+              <point x="42.5" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="loofah">
+              <point x="-54.304878048780665" y="-26.0" />
+              <point x="5195.4374756331335" y="3770.0" />
+              <point x="1086.791433700655" y="3770.0" />
+              <point x="-11.083333333333485" y="26.0" />
+            </edge>
+            <edge source="yaml_db" target="rake">
+              <point x="40.75" y="-26.0" />
+              <point x="5671.972836139681" y="2698.0" />
+              <point x="5688.606639566398" y="2698.0" />
+              <point x="5688.606639566398" y="2266.0" />
+              <point x="5722.477917440494" y="2266.0" />
+              <point x="5722.477917440494" y="1984.0" />
+              <point x="6828.545847003163" y="1984.0" />
+              <point x="-42.75" y="26.0" />
+            </edge>
+            <edge source="activerecord" target="arel">
+              <point x="93.33333333333303" y="-26.0" />
+              <point x="5358.866807599814" y="1844.0" />
+              <point x="5646.957051502253" y="1844.0" />
+              <point x="-8.83333333333303" y="26.0" />
+            </edge>
+            <edge source="httmultiparty" target="mimemagic">
+              <point x="-73.0" y="-26.0" />
+              <point x="1677.5719215055333" y="2486.0" />
+              <point x="1250.8849296356148" y="2486.0" />
+              <point x="51.0" y="26.0" />
+            </edge>
+            <edge source="sass-rails" target="sass">
+              <point x="-68.0" y="-26.0" />
+              <point x="6427.904238578703" y="2718.0" />
+              <point x="5905.987571912037" y="2718.0" />
+              <point x="42.0" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="rack">
+              <point x="63.207317073171" y="-26.0" />
+              <point x="5312.949670755085" y="3920.0" />
+              <point x="9811.929345551831" y="3920.0" />
+              <point x="9811.929345551831" y="1120.0" />
+              <point x="8025.733672086722" y="1120.0" />
+              <point x="47.08333333333303" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="multipart-post">
+              <point x="-50.74390243902417" y="-26.0" />
+              <point x="5198.99845124289" y="3710.0" />
+              <point x="1312.9784255705745" y="3710.0" />
+              <point x="1312.9784255705745" y="2506.0" />
+              <point x="1561.059532640022" y="2506.0" />
+              <point x="-102.22222222222217" y="26.0" />
+            </edge>
+            <edge source="rails" target="railties">
+              <point x="49.94999999999982" y="-26.0" />
+              <point x="5190.733474266481" y="2346.0" />
+              <point x="8370.513733182024" y="2346.0" />
+              <point x="-63.45000000000073" y="26.0" />
+            </edge>
+            <edge source="annotate" target="activerecord">
+              <point x="-41.5" y="-26.0" />
+              <point x="6260.377815814476" y="2176.0" />
+              <point x="5335.533474266482" y="2176.0" />
+              <point x="70.0" y="26.0" />
+            </edge>
+            <edge source="jquery-tablesorter" target="railties">
+              <point x="-91.33333333333394" y="-26.0" />
+              <point x="8700.58402034858" y="2436.0" />
+              <point x="8459.813733182025" y="2436.0" />
+              <point x="25.850000000000364" y="26.0" />
+            </edge>
+            <edge source="actionpack" target="activesupport">
+              <point x="5.277777777777374" y="-26.0" />
+              <point x="6520.008739837399" y="1522.0" />
+              <point x="6646.32361527247" y="1522.0" />
+              <point x="6646.32361527247" y="496.0" />
+              <point x="5285.526041267886" y="496.0" />
+              <point x="34.46153846153902" y="26.0" />
+            </edge>
+            <edge source="jquery-rails" target="rails-dom-testing">
+              <point x="-65.33333333333303" y="-26.0" />
+              <point x="8163.317353681914" y="2316.0" />
+              <point x="8291.35817762647" y="2316.0" />
+              <point x="8291.35817762647" y="1180.0" />
+              <point x="6597.2167047033645" y="1180.0" />
+              <point x="105.19999999999982" y="26.0" />
+            </edge>
+            <edge source="bootstrap-sass" target="autoprefixer-rails">
+              <point x="-58.25" y="-26.0" />
+              <point x="4397.578570580399" y="2688.0" />
+              <point x="4448.030356464883" y="2688.0" />
+              <point x="66.25" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="nokogiri">
+              <point x="-57.86585365853625" y="-26.0" />
+              <point x="5191.876500023378" y="3830.0" />
+              <point x="907.6044418307383" y="3830.0" />
+              <point x="907.6044418307383" y="726.0" />
+              <point x="1452.9001735380534" y="726.0" />
+              <point x="-46.08333333333303" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="tilt">
+              <point x="13.353658536585499" y="-26.0" />
+              <point x="5263.0960122185" y="3080.0" />
+              <point x="6144.034319879517" y="3080.0" />
+              <point x="6144.034319879517" y="2768.0" />
+              <point x="6106.544520433161" y="2768.0" />
+              <point x="-23.25" y="26.0" />
+            </edge>
+            <edge source="rack-contrib" target="rack">
+              <point x="17.08333333333303" y="-26.0" />
+              <point x="7809.991636952687" y="2306.0" />
+              <point x="7897.13645937297" y="2306.0" />
+              <point x="7897.13645937297" y="2014.0" />
+              <point x="7977.0670054200555" y="2014.0" />
+              <point x="7977.0670054200555" y="1320.0" />
+              <point x="7981.789227642277" y="1320.0" />
+              <point x="3.138888888888687" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="git-version-bump">
+              <point x="25.22357723577261" y="-26.0" />
+              <point x="5274.965930917687" y="3280.0" />
+              <point x="7061.736555651874" y="3280.0" />
+              <point x="7061.736555651874" y="2296.0" />
+              <point x="7033.908303619354" y="2296.0" />
+              <point x="-111.25" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="protected_attributes">
+              <point x="-21.662601626016112" y="-26.0" />
+              <point x="5228.079752055898" y="3220.0" />
+              <point x="3625.214295392955" y="3220.0" />
+              <point x="3625.214295392955" y="2516.0" />
+              <point x="3563.343872725045" y="2516.0" />
+              <point x="-100.33333333333348" y="26.0" />
+            </edge>
+            <edge source="jquery-rails" target="thor">
+              <point x="87.11111111111131" y="-26.0" />
+              <point x="8315.761798126357" y="2516.0" />
+              <point x="8536.963733182025" y="2516.0" />
+              <point x="8536.963733182025" y="2014.0" />
+              <point x="9515.160481149504" y="2014.0" />
+              <point x="-4.58333333333394" y="26.0" />
+            </edge>
+            <edge source="meta_request" target="rack-contrib">
+              <point x="-24.888888888888687" y="-26.0" />
+              <point x="7808.254547533433" y="2768.0" />
+              <point x="7809.991636952687" y="2768.0" />
+              <point x="17.08333333333303" y="26.0" />
+            </edge>
+            <edge source="sprockets" target="rack">
+              <point x="14.58333333333303" y="-26.0" />
+              <point x="6056.825986546184" y="1642.0" />
+              <point x="6065.909319879517" y="1642.0" />
+              <point x="6065.909319879517" y="1230.0" />
+              <point x="7925.289227642277" y="1230.0" />
+              <point x="-53.36111111111131" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="httmultiparty">
+              <point x="-45.99593495935005" y="-26.0" />
+              <point x="5203.746418722564" y="3630.0" />
+              <point x="1732.3219215055333" y="3630.0" />
+              <point x="-18.25" y="26.0" />
+            </edge>
+            <edge source="rubyzoho" target="httmultiparty">
+              <point x="-69.20000000000005" y="-26.0" />
+              <point x="1966.1922467087852" y="2758.0" />
+              <point x="1805.3219215055333" y="2758.0" />
+              <point x="54.75" y="26.0" />
+            </edge>
+            <edge source="rails" target="activejob">
+              <point x="-16.649999999999636" y="-26.0" />
+              <point x="5124.133474266482" y="2386.0" />
+              <point x="4976.173733583493" y="2386.0" />
+              <point x="4976.173733583493" y="1824.0" />
+              <point x="4333.000822516603" y="1824.0" />
+              <point x="56.66666666666697" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="callsite">
+              <point x="33.53252032520322" y="-26.0" />
+              <point x="5283.274874007117" y="3420.0" />
+              <point x="7551.813829376251" y="3420.0" />
+              <point x="-35.75" y="26.0" />
+            </edge>
+            <edge source="railties" target="rake">
+              <point x="-5.875" y="-26.0" />
+              <point x="8428.088733182025" y="1734.0" />
+              <point x="6923.545847003163" y="1734.0" />
+              <point x="52.25" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="responders">
+              <point x="51.9308943089427" y="-26.0" />
+              <point x="5301.673247990857" y="3730.0" />
+              <point x="9004.856300813008" y="3730.0" />
+              <point x="9004.856300813008" y="2768.0" />
+              <point x="8966.000687015248" y="2768.0" />
+              <point x="-80.41666666666606" y="26.0" />
+            </edge>
+            <edge source="actionmailer" target="actionview">
+              <point x="41.80000000000018" y="-26.0" />
+              <point x="4740.815562450319" y="1894.0" />
+              <point x="4755.941032543702" y="1894.0" />
+              <point x="4755.941032543702" y="1632.0" />
+              <point x="4798.361239015283" y="1632.0" />
+              <point x="-39.58333333333303" y="26.0" />
+            </edge>
+            <edge source="rubyzoho" target="roxml">
+              <point x="11.533333333333303" y="-26.0" />
+              <point x="2046.9255800421183" y="2688.0" />
+              <point x="1963.1922467087852" y="2688.0" />
+              <point x="1963.1922467087852" y="878.0" />
+              <point x="1752.150107057807" y="878.0" />
+              <point x="54.583333333333485" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="sprockets-rails">
+              <point x="19.288617886179054" y="-26.0" />
+              <point x="5269.030971568093" y="3180.0" />
+              <point x="6656.924563781956" y="3180.0" />
+              <point x="6656.924563781956" y="2316.0" />
+              <point x="6663.683371370032" y="2316.0" />
+              <point x="103.55555555555566" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="arel">
+              <point x="6.8252032520322246" y="-26.0" />
+              <point x="5256.567556933946" y="2970.0" />
+              <point x="5746.706575977078" y="2970.0" />
+              <point x="5746.706575977078" y="1824.0" />
+              <point x="5699.957051502253" y="1824.0" />
+              <point x="44.16666666666697" y="26.0" />
+            </edge>
+            <edge source="responders" target="railties">
+              <point x="64.33333333333394" y="-26.0" />
+              <point x="9110.750687015248" y="2376.0" />
+              <point x="8488.013733182024" y="2376.0" />
+              <point x="54.04999999999927" y="26.0" />
+            </edge>
+            <edge source="sprockets-rails" target="sprockets">
+              <point x="-103.55555555555566" y="-26.0" />
+              <point x="6456.57226025892" y="1874.0" />
+              <point x="6093.284319879518" y="1874.0" />
+              <point x="51.04166666666697" y="26.0" />
+            </edge>
+            <edge source="railties" target="thor">
+              <point x="41.125" y="-26.0" />
+              <point x="8475.088733182025" y="1964.0" />
+              <point x="9469.327147816171" y="1964.0" />
+              <point x="-50.41666666666606" y="26.0" />
+            </edge>
+            <edge source="roxml" target="nokogiri">
+              <point x="-10.916666666666742" y="-26.0" />
+              <point x="1686.650107057807" y="736.0" />
+              <point x="1531.900173538053" y="736.0" />
+              <point x="32.916666666666515" y="26.0" />
+            </edge>
+            <edge source="actionpack" target="actionview">
+              <point x="-89.72222222222172" y="-26.0" />
+              <point x="6425.0087398374" y="1482.0" />
+              <point x="4893.361239015283" y="1482.0" />
+              <point x="55.41666666666697" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="autoprefixer-rails">
+              <point x="-10.386178861788721" y="-26.0" />
+              <point x="5239.3561748201255" y="3030.0" />
+              <point x="4328.828570580399" y="3030.0" />
+              <point x="4328.828570580399" y="2668.0" />
+              <point x="4359.69702313155" y="2668.0" />
+              <point x="-22.08333333333303" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="execjs">
+              <point x="-12.16666666666697" y="-26.0" />
+              <point x="5237.575687015247" y="3060.0" />
+              <point x="4238.780356464883" y="3060.0" />
+              <point x="4238.780356464883" y="2496.0" />
+              <point x="4232.474912043815" y="2496.0" />
+              <point x="-5.70833333333303" y="26.0" />
+            </edge>
+            <edge source="activesupport" target="tzinfo">
+              <point x="28.0" y="-26.0" />
+              <point x="5279.064502806347" y="234.0" />
+              <point x="9982.472966564965" y="234.0" />
+              <point x="-32.0" y="26.0" />
+            </edge>
+            <edge source="httmultiparty" target="multipart-post">
+              <point x="0.0" y="-26.0" />
+              <point x="1750.5719215055333" y="2456.0" />
+              <point x="1663.2817548622443" y="2456.0" />
+              <point x="0.0" y="26.0" />
+            </edge>
+            <edge source="actionmailer" target="mail">
+              <point x="-97.53333333333376" y="-26.0" />
+              <point x="4601.482229116985" y="1974.0" />
+              <point x="2766.99021418846" y="1974.0" />
+              <point x="9.416666666666515" y="26.0" />
+            </edge>
+            <edge source="coffee-rails" target="railties">
+              <point x="47.75" y="-26.0" />
+              <point x="7447.313829376251" y="2406.0" />
+              <point x="8398.713733182025" y="2406.0" />
+              <point x="-35.25" y="26.0" />
+            </edge>
+            <edge source="meta_request" target="railties">
+              <point x="49.777777777777374" y="-26.0" />
+              <point x="7882.921214200099" y="2748.0" />
+              <point x="7966.643436422321" y="2748.0" />
+              <point x="7966.643436422321" y="2426.0" />
+              <point x="8408.113733182025" y="2426.0" />
+              <point x="-25.850000000000364" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="annotate">
+              <point x="15.727642276422557" y="-26.0" />
+              <point x="5265.469995958337" y="3120.0" />
+              <point x="6378.988936434057" y="3120.0" />
+              <point x="6378.988936434057" y="2768.0" />
+              <point x="6357.211149147809" y="2768.0" />
+              <point x="55.33333333333303" y="26.0" />
+            </edge>
+            <edge source="rails-html-sanitizer" target="loofah">
+              <point x="94.66666666666697" y="-26.0" />
+              <point x="4920.291840204722" y="848.0" />
+              <point x="1153.291433700655" y="848.0" />
+              <point x="55.41666666666674" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="turn">
+              <point x="29.971544715446726" y="-26.0" />
+              <point x="5279.713898397361" y="3360.0" />
+              <point x="7265.563829376251" y="3360.0" />
+              <point x="37.0" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="warden">
+              <point x="53.711382113820946" y="-26.0" />
+              <point x="5303.453735795735" y="3760.0" />
+              <point x="9199.939634146343" y="3760.0" />
+              <point x="9199.939634146343" y="2768.0" />
+              <point x="9175.417353681914" y="2768.0" />
+              <point x="-62.5" y="26.0" />
+            </edge>
+            <edge source="sprockets-rails" target="activesupport">
+              <point x="77.66666666666697" y="-26.0" />
+              <point x="6637.794482481143" y="1964.0" />
+              <point x="6631.230962059622" y="1964.0" />
+              <point x="6631.230962059622" y="1592.0" />
+              <point x="6717.268059716916" y="1592.0" />
+              <point x="6717.268059716916" y="456.0" />
+              <point x="5308.500400242245" y="456.0" />
+              <point x="57.43589743589746" y="26.0" />
+            </edge>
+            <edge source="font-awesome-sass" target="sass">
+              <point x="0.0" y="-26.0" />
+              <point x="5989.534319879517" y="2748.0" />
+              <point x="5877.987571912037" y="2748.0" />
+              <point x="14.0" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="mini_portile2">
+              <point x="-70.32926829268308" y="-26.0" />
+              <point x="5179.413085389231" y="4040.0" />
+              <point x="51.94207317073142" y="4040.0" />
+              <point x="51.94207317073142" y="244.0" />
+              <point x="276.02595674752683" y="244.0" />
+              <point x="-18.08333333333303" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="jquery-rails">
+              <point x="43.028455284553274" y="-26.0" />
+              <point x="5292.7708089664675" y="3580.0" />
+              <point x="8228.057191080288" y="3580.0" />
+              <point x="8228.057191080288" y="2758.0" />
+              <point x="8163.317353681914" y="2758.0" />
+              <point x="-65.33333333333303" y="26.0" />
+            </edge>
+            <edge source="jquery-rails" target="railties">
+              <point x="-21.777777777777374" y="-26.0" />
+              <point x="8206.872909237469" y="2446.0" />
+              <point x="8417.513733182024" y="2446.0" />
+              <point x="-16.450000000000728" y="26.0" />
+            </edge>
+            <edge source="yaml_db" target="rails">
+              <point x="-67.91666666666697" y="-26.0" />
+              <point x="5563.306169473013" y="2628.0" />
+              <point x="5173.158474266482" y="2628.0" />
+              <point x="32.375" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="devise">
+              <point x="56.67886178861772" y="-26.0" />
+              <point x="5306.421215470532" y="3810.0" />
+              <point x="9379.017353681913" y="3810.0" />
+              <point x="46.33333333333394" y="26.0" />
+            </edge>
+            <edge source="railties" target="actionpack">
+              <point x="-64.625" y="-26.0" />
+              <point x="8369.338733182025" y="1784.0" />
+              <point x="6578.064295392955" y="1784.0" />
+              <point x="63.33333333333303" y="26.0" />
+            </edge>
+            <edge source="#grid168" target="spring">
+              <point x="44.80894308943061" y="-26.0" />
+              <point x="5294.551296771345" y="3610.0" />
+              <point x="8262.410849616872" y="3610.0" />
+              <point x="-45.33333333333394" y="26.0" />
+            </edge>
+          </edges>
+          <settings layout="Hierarchic Group" zoom="0.2230105465004794" x="5111.5" y="1986.3181427343077" />
+          <SelectedNodes>
+            <node>protected_attributes</node>
+          </SelectedNodes>
+          <Categories />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/offers/_sheet.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="479">
+          <caret line="110" column="14" selection-start-line="110" selection-start-column="14" selection-end-line="110" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/assets/javascripts/grid168.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="498" column="71" selection-start-line="498" selection-start-column="71" selection-end-line="498" selection-end-column="71" />
+        <state relative-caret-position="445">
+          <caret line="378" column="14" selection-start-line="378" selection-start-column="14" selection-end-line="378" selection-end-column="14" />
           <folding>
             <element signature="e#0#37#0" expanded="false" />
           </folding>

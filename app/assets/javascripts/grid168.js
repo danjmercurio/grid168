@@ -98,7 +98,10 @@ grid168 = (function () {
                     return this.toString().addCommas();
                 };
                 Number.prototype.toCurrency = function () {
-                    return '$' + this.toFixed(2).toString().addCommas();
+                    return this.toString().toCurrency();
+                };
+                Number.prototype.toNearestDollar = function () {
+                    return this.toString().toNearestDollar();
                 };
 
                 // jQuery helper for Animate.css
@@ -109,6 +112,7 @@ grid168 = (function () {
                             $(this).removeClass('animated ' + animationName);
                         });
                     },
+                    // Set the text on an input or standard html tag with this one function, rather than val() or text()
                     setText: function (text) {
                         var tagName = this.prop('tagName');
                         if (tagName.toLowerCase() === 'input') {
@@ -373,24 +377,6 @@ grid168 = (function () {
                     throw new Error('Duplicate or missing grid container DOM element.');
                 }
             },
-            getSelectedCells: function () {
-                return $('.clicked');
-            },
-            getHoursSum: function (cells) {
-                if (cells.length === 0) return 0;
-                var hours = 0;
-                cells.each(function () {
-                    hours += 0.5;
-                });
-                return hours;
-            },
-            getAudienceSum: function (cells) {
-                var sum = 0;
-                cells.each(function () {
-                    sum += parseFloat($(this).data('audience'));
-                });
-                return sum;
-            }
         },
         calc: {
             doCalc: function () {
