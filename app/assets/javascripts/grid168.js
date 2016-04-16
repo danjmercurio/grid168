@@ -392,11 +392,11 @@ grid168 = (function () {
                 var selectedCells = app.grid.cells.selected().fetch();
                 if (selectedCells.length < 1) throw new Error('No cells selected');
 
-                offer.weeklyHours = app.grid.getHoursSum(selectedCells);
+                offer.weeklyHours = this.calculateHoursSum(selectedCells);
                 offer.monthlyHours = offer.weeklyHours * 4;
                 offer.yearlyHours = offer.monthlyHours * 12;
 
-                var audienceSum = app.grid.getAudienceSum(selectedCells);
+                var audienceSum = this.calculateAudienceSum(selectedCells);
 
                 var annualSubRate = audienceSum * offer['247mvpdSubEstimate'];
                 var weeklySubRate = annualSubRate / 52;
@@ -474,10 +474,10 @@ grid168 = (function () {
                 // Now the daypart section...
                 jQuery.each(this.values.dayParts, function (dayPartName, dayPart) {
                     // Fill in the blanks
-                    $('#' + dayPartName + 'Audience').text(dayPart.audience);
-                    $('#' + dayPartName + 'Hours').text(dayPart.hours);
-                    $('#' + dayPartName + 'Rate').text(dayPart.rate);
-                    $('#' + dayPartName + 'WeeklyRate').text(dayPart.weeklyRate);
+                    $('#' + dayPartName + 'Audience').setText(dayPart.audience);
+                    $('#' + dayPartName + 'Hours').setText(dayPart.hours);
+                    $('#' + dayPartName + 'Rate').setText(dayPart.rate);
+                    $('#' + dayPartName + 'WeeklyRate').setText(dayPart.weeklyRate);
                 });
 
                 $('#runningAudienceTotal').text(offer.weeklyAudienceSum);

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160415225133) do
+ActiveRecord::Schema.define(version: 20160416035618) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email"
@@ -62,6 +62,41 @@ ActiveRecord::Schema.define(version: 20160415225133) do
     t.decimal "halfHourRate"
     t.decimal "mvpdSubscriberRate"
     t.decimal "mvpdOtaSubRate"
+    t.string "morningAudience"
+    t.string "morningRate"
+    t.string "morningHours"
+    t.string "morningWeeklyRate"
+    t.string "daytimeAudience"
+    t.string "daytimeRate"
+    t.string "daytimeHours"
+    t.string "daytimeWeeklyRate"
+    t.string "eveningNewsAudience"
+    t.string "eveningNewsRate"
+    t.string "eveningNewsHours"
+    t.string "eveningNewsWeeklyRate"
+    t.string "localPrimeTimeAudience"
+    t.string "localPrimeTimeRate"
+    t.string "localPrimeTimeHours"
+    t.string "localPrimeTimeWeeklyRate"
+    t.string "nationalPrimeTimeAudience"
+    t.string "nationalPrimeTimeRate"
+    t.string "nationalPrimeTimeHours"
+    t.string "nationalPrimeTimeWeeklyRate"
+    t.string "lateNewsAudience"
+    t.string "lateNewsRate"
+    t.string "lateNewsHours"
+    t.string "lateNewsWeeklyRate"
+    t.string "lateNightAudience"
+    t.string "lateNightRate"
+    t.string "lateNightHours"
+    t.string "lateNightWeeklyRate"
+    t.string "overnightsAudience"
+    t.string "overnightsRate"
+    t.string "overnightsHours"
+    t.string "overnightsWeeklyRate"
+    t.string "runningAudienceTotal"
+    t.string "runningHoursTotal"
+    t.string "runningWeeklyRateTotal"
   end
 
   create_table "offers_programmers", id: false, force: :cascade do |t|

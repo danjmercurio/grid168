@@ -5,6 +5,14 @@
     <%= f.hidden_field :mvpdSubscriberRate, :id => 'mvpdSubscriberRate' %>
     <%= f.hidden_field :mvpdOtaSubRate, :id => 'mvpdOTASubRate' %>
     <%= f.hidden_field :halfHourRate, :id => 'halfHourRate' %>
+    <% dayParts = %w(morning daytime eveningNews localPrimeTime nationalPrimeTime lateNews lateNight overnights) %>
+    <% dayParts.each do |daypart| -%>
+        <% %w(Audience Rate Hours WeeklyRate).each do |item| -%>
+            <% id = [daypart, item].join %>
+            <% name = "offer[#{id}]" %>
+            <input type="hidden" name="<%= name %>" id="<%= id %>"/>
+        <% end %>
+    <% end %>
     <div class="row">
       <div class="col-md-6">
         <h1><%= @outlet.name %></h1>
