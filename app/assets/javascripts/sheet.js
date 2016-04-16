@@ -163,11 +163,6 @@ var recalculateDayParts = function () {
         dayPart.hours === 0 ? dayPart.rate = 0 : dayPart.rate = dayPart.weeklyRate / dayPart.hours;
         runningWeeklyRateTotal += dayPart.weeklyRate;
 
-        // Fill in the blanks
-        $('#' + dayPartName + 'Audience').text(dayPart.audience.toString().toPercentage());
-        $('#' + dayPartName + 'Hours').text(dayPart.hours);
-        $('#' + dayPartName + 'Rate').text(dayPart.rate.toString().toNearestDollar());
-        $('#' + dayPartName + 'WeeklyRate').text(dayPart.weeklyRate.toString().toNearestDollar());
 
     });
 

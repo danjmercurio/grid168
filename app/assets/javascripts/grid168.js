@@ -108,8 +108,17 @@ grid168 = (function () {
                         $(this).addClass('animated ' + animationName).one(animationEnd, function () {
                             $(this).removeClass('animated ' + animationName);
                         });
+                    },
+                    setText: function (text) {
+                        var tagName = this.prop('tagName');
+                        if (tagName.toLowerCase() === 'input') {
+                            $(this).val(text);
+                        } else {
+                            $(this).text(text);
+                        }
                     }
                 });
+
 
                 // Style all select tags with select2 CSS
                 $('select').select2();
@@ -145,7 +154,7 @@ grid168 = (function () {
             // Controller-specific functionality
             switch (this.controller) {
                 case 'offers':
-                    if (this.action === 'new' || this.action === 'edit' || this.action === 'show') {
+                    if (app.action === 'new' || app.action === 'edit' || app.action === 'show') {
                         // Initialize the jQuery UI date picker
                         $('.dp').datepicker();
 
@@ -157,7 +166,7 @@ grid168 = (function () {
                     }
                     break;
                 case 'outlets':
-                    if (this.action === 'new' || this.action === 'edit') {
+                    if (app.action === 'new' || app.action === 'edit') {
                         // After the ready event fires, watch for changes in mvpd subs
                         // and OTA subs, and if they are both filled, use those values to autofill total homes
                         var totalHomes = $('input#outlet_total_homes');
@@ -184,6 +193,7 @@ grid168 = (function () {
                             $('form').change(doAutoFill);
                         }
                     }
+                    this.calc.doCalc();
                     break;
 
             }
@@ -201,7 +211,7 @@ grid168 = (function () {
             updateHiddenField: function () {
                 // In order for the backend to know which cells are selected on the form submit event, we have to update the hidden field #offer_time_cells
                 var holder = this.getCellHolder();
-                var selectedCells = this.getSelectedCells();
+                var selectedCells = this.cells.selected().fetch();
                 var that = this;
 
                 // Clear the cell holder element and JS cell holder values
@@ -217,8 +227,24 @@ grid168 = (function () {
                 });
                 holder.val(this.cellData);
             },
-            getCells: function () {
-                return $('.cell');
+            cells: {
+                list: null,
+                all: function () {
+                    this.list = $('.cell');
+                    return this;
+                },
+                selected: function () {
+                    this.list = $('.clicked');
+                    return this;
+                },
+                dayPart: function (dayPartName) {
+                    var selector = "[data-daypart='" + dayPartName + "']";
+                    this.list = this.list.filter(selector);
+                    return this;
+                },
+                fetch: function () {
+                    return this.list;
+                }
             },
             paint: function () {
                 var cellHolder = this.getCellHolder();
@@ -249,7 +275,7 @@ grid168 = (function () {
             },
             registerEventHandlers: function () {
                 var gridArea = this.getGridContainer();
-                var cells = this.getCells();
+                var cells = app.grid.cells.all().fetch();
 
                 var that = this;
 
@@ -273,7 +299,7 @@ grid168 = (function () {
                 if (app.action === 'edit' || app.action === 'new') {
                     // Set event handlers on buttons
                     $('#invert').click(function () {
-                        that.getCells().each(function () {
+                        cells.each(function () {
                             that.toggleCellState(this);
 
                         });
@@ -283,7 +309,7 @@ grid168 = (function () {
 
                     // The 'Select All' button
                     $('#selectAll').click(function () {
-                        that.getCells().each(function () {
+                        cells.each(function () {
                             if (!$(this).hasClass('clicked')) {
                                 that.toggleCellState(this);
                             }
@@ -293,7 +319,7 @@ grid168 = (function () {
                     });
                     // The 'Calculate' button
                     $('#calculate').click(function () {
-                        that.getSelectedCells().length > 0 ? app.calc.doCalc() : alert('You must select at least one cell.');
+                        that.cells.selected().fetch().length > 0 ? app.calc.doCalc() : alert('You must select at least one cell.');
                     });
 
                     // The 'reset' button
@@ -302,7 +328,7 @@ grid168 = (function () {
                             $(this).val('');
                         });
 
-                        that.getCells().each(function () {
+                        cells.each(function () {
                             if ($(this).hasClass('clicked')) {
                                 $(this).removeClass('clicked');
                             }
@@ -377,12 +403,12 @@ grid168 = (function () {
 
                 offer['247mvpdSubEstimate'] = $('#247mvpdSubEstimate').val().stripAndParse();
 
-                var selectedCells = app.grid.getSelectedCells();
+                var selectedCells = app.grid.cells.selected().fetch();
                 if (selectedCells.length < 1) throw new Error('No cells selected');
 
                 offer.weeklyHours = app.grid.getHoursSum(selectedCells);
                 offer.monthlyHours = offer.weeklyHours * 4;
-                offer.yearlyHours = offer.weeklyHours * 12;
+                offer.yearlyHours = offer.monthlyHours * 12;
 
                 var audienceSum = app.grid.getAudienceSum(selectedCells);
 
@@ -399,6 +425,35 @@ grid168 = (function () {
 
                 offer.mvpdSubRate = offer.yearlyRate / offer.mvpdSubscribers;
                 offer.mvpdOtaSubRate = offer.yearlyRate / offer.totalHomes;
+
+                // Daypart calculations
+                var dayParts = this.values.dayParts;
+
+                // Initialize values for running sums
+                offer.weeklyAudienceSum, offer.weeklyRateSum, offer.weeklyHoursSum = 0;
+
+                // Daypart-specific calculations
+                var that = this;
+                jQuery.each(dayParts, function (dayPartName, dayPart) {
+                    var cells = app.grid.cells.selected().dayPart(dayPartName).fetch();
+
+                    // Get the audience sum for the selected cells that fall under this daypart, and add it to the running total for the offer
+                    var audienceTemp = that.calculateAudienceSum(cells);
+                    offer.weeklyAudienceSum += audienceTemp;
+                    dayPart.audience = audienceTemp;
+
+                    var hoursTemp = that.calculateHoursSum(cells);
+                    offer.weeklyHoursSum += hoursTemp;
+                    dayPart.hours = hoursTemp;
+
+                    var weeklyRateTemp = dayPart.hours * offer.hourRate;
+                    offer.weeklyRateSum += weeklyRateTemp;
+                    dayPart.weeklyRate = weeklyRateTemp;
+                    dayPart.hours === 0 ? dayPart.rate = 0 : dayPart.rate = dayPart.weeklyRate / dayPart.hours;
+                });
+
+
+                // Now update the values on the page
                 this.updateValues(this.values);
 
             },
@@ -413,8 +468,10 @@ grid168 = (function () {
                 $('#monthlyRate').val(offer.monthlyRate.toCurrency());
                 $('#yearlyRate').val(offer.yearlyRate.toCurrency());
                 $('#totalHours').val(offer.weeklyHours);
-                if (this.action == 'show') {
+                if (app.action == 'show') {
                     $('#totalHoursHero').text(offer.weeklyHours);
+                    $('#hourlyRateHero').text(offer.hourRate);
+                    $('#grossMonthlyRateHero').text(offer.monthlyRate);
                 }
 
                 $('#weeklyHours').val(offer.weeklyHours);
@@ -428,7 +485,31 @@ grid168 = (function () {
 
                 $('#247mvpdSubEstimate').val(offer['247mvpdSubEstimate']);
 
+                // Now the daypart section...
+                jQuery.each(this.values.dayParts, function (dayPartName, dayPart) {
+                    // Fill in the blanks
+                    $('#' + dayPartName + 'Audience').text(dayPart.audience);
+                    $('#' + dayPartName + 'Hours').text(dayPart.hours);
+                    $('#' + dayPartName + 'Rate').text(dayPart.rate);
+                    $('#' + dayPartName + 'WeeklyRate').text(dayPart.weeklyRate);
+                });
 
+                $('#runningAudienceTotal').text(offer.weeklyAudienceSum);
+                $('#runningHoursTotal').text(offer.weeklyHoursSum);
+                $('#runningWeeklyRateTotal').text(offer.weeklyRateSum);
+            },
+            calculateAudienceSum: function (cells) {
+                if (cells.length === 0) return 0;
+                var audience = 0;
+                cells.each(function () {
+                    var temp = parseFloat($(this).data('audience'));
+                    if (!temp || temp <= 0 || typeof(temp) != "number") throw new Error('Unable to load audience value from cell: ' + this);
+                    audience += temp;
+                });
+                return audience;
+            },
+            calculateHoursSum: function (cells) {
+                return cells.length / 2;
             },
             values: {
                 offer: {
@@ -444,7 +525,10 @@ grid168 = (function () {
                     "yearlyHours": null,
                     "weeklyRate": null,
                     "monthlyRate": null,
-                    "yearlyRate": null
+                    "yearlyRate": null,
+                    "weeklyAudienceSum": null,
+                    "weeklyRateSum": null,
+                    "weeklyHoursSum": null
                 },
                 dayParts: {
                     "morning": {

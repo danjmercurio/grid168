@@ -39,7 +39,7 @@
         </div><!--.tile-title-->
         <div class="tile-body clearfix">
           <i class="fa fa-home"></i>
-          <h4 class="pull-right"><%= f.text_field :total_homes, :id => 'totalHomes' %></h4>
+          <h4 class="pull-right delimited" id="totalHomes"><%= @offer.outlet.total_homes %></h4>
         </div><!--.tile-body-->
         <div class="tile-footer">
           &nbsp;
@@ -71,7 +71,7 @@
         </div><!--.tile-title-->
         <div class="tile-body clearfix">
           <i class="fa fa-usd"></i>
-          <h4 class="pull-right"><%= f.text_field :hourly_rate, :id => 'hourlyRate' %></h4>
+          <h4 class="pull-right" id="hourlyRateHero"></h4>
         </div><!--.tile-body-->
         <div class="tile-footer">
           &nbsp;
@@ -86,7 +86,7 @@
         </div><!--.tile-title-->
         <div class="tile-body clearfix">
           <i class="fa fa-calendar"></i>
-          <h4 class="pull-right" id="grossMonthlyRate"></h4>
+          <h4 class="pull-right" id="grossMonthlyRateHero"></h4>
         </div><!--.tile-body-->
         <div class="tile-footer">
           &nbsp;
