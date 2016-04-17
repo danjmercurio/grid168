@@ -103,6 +103,9 @@ grid168 = (function () {
                 Number.prototype.toNearestDollar = function () {
                     return this.toString().toNearestDollar();
                 };
+                Number.prototype.toPercentage = function () {
+                    return (parseFloat(this) * 100).toFixed(2).toString() + '%';
+                };
 
                 // jQuery helper for Animate.css
                 $.fn.extend({
@@ -416,7 +419,11 @@ grid168 = (function () {
                 var dayParts = this.values.dayParts;
 
                 // Initialize values for running sums
-                offer.weeklyAudienceSum, offer.weeklyRateSum, offer.weeklyHoursSum = 0;
+                offer.weeklyAudienceSum = 0;
+                offer.weeklyRateSum = 0;
+                offer.weeklyHoursSum = 0;
+
+                console.log(offer.weeklyAudienceSum);
 
                 // Daypart-specific calculations
                 var that = this;
@@ -438,6 +445,7 @@ grid168 = (function () {
                     dayPart.hours === 0 ? dayPart.rate = 0 : dayPart.rate = dayPart.weeklyRate / dayPart.hours;
                 });
 
+                console.log(offer.weeklyAudienceSum);
 
                 // Now update the values on the page
                 this.updateValues(this.values);
@@ -446,7 +454,7 @@ grid168 = (function () {
             updateValues: function (values) {
                 var offer = values.offer;
                 // Begin filling in values
-                $('#totalHomes').val(offer.totalHomes.addCommas());
+                $('#totalHomes').setText(offer.totalHomes.addCommas());
                 $('#hourlyRate').val(function () {
                     return offer.hourRate.toCurrency();
                 });
@@ -455,9 +463,9 @@ grid168 = (function () {
                 $('#yearlyRate').val(offer.yearlyRate.toCurrency());
                 $('#totalHours').val(offer.weeklyHours);
                 if (app.action == 'show') {
-                    $('#totalHoursHero').text(offer.weeklyHours);
-                    $('#hourlyRateHero').text(offer.hourRate);
-                    $('#grossMonthlyRateHero').text(offer.monthlyRate);
+                    $('#totalHoursHero').text(offer.weeklyHours.toCurrency());
+                    $('#hourlyRateHero').text(offer.hourRate.toCurrency());
+                    $('#grossMonthlyRateHero').text(offer.monthlyRate.toCurrency());
                 }
 
                 $('#weeklyHours').val(offer.weeklyHours);
@@ -474,13 +482,13 @@ grid168 = (function () {
                 // Now the daypart section...
                 jQuery.each(this.values.dayParts, function (dayPartName, dayPart) {
                     // Fill in the blanks
-                    $('#' + dayPartName + 'Audience').setText(dayPart.audience);
+                    $('#' + dayPartName + 'Audience').setText(dayPart.audience.toPercentage());
                     $('#' + dayPartName + 'Hours').setText(dayPart.hours);
-                    $('#' + dayPartName + 'Rate').setText(dayPart.rate);
-                    $('#' + dayPartName + 'WeeklyRate').setText(dayPart.weeklyRate);
+                    $('#' + dayPartName + 'Rate').setText(dayPart.rate.toCurrency());
+                    $('#' + dayPartName + 'WeeklyRate').setText(dayPart.weeklyRate.toCurrency());
                 });
 
-                $('#runningAudienceTotal').text(offer.weeklyAudienceSum);
+                $('#runningAudienceTotal').text(offer.weeklyAudienceSum.toPercentage());
                 $('#runningHoursTotal').text(offer.weeklyHoursSum);
                 $('#runningWeeklyRateTotal').text(offer.weeklyRateSum);
             },
@@ -512,9 +520,9 @@ grid168 = (function () {
                     "weeklyRate": null,
                     "monthlyRate": null,
                     "yearlyRate": null,
-                    "weeklyAudienceSum": null,
-                    "weeklyRateSum": null,
-                    "weeklyHoursSum": null
+                    "weeklyAudienceSum": 0,
+                    "weeklyRateSum": 0,
+                    "weeklyHoursSum": 0
                 },
                 dayParts: {
                     "morning": {

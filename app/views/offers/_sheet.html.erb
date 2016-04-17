@@ -34,7 +34,7 @@
     <div class="col-sm-6 col-md-3 margin-b-30">
       <div class="tile red">
         <div class="tile-title clearfix">
-          Total Homes
+          Total MVPD and OTA Homes
           <span class="pull-right"></span>
         </div><!--.tile-title-->
         <div class="tile-body clearfix">
@@ -50,7 +50,7 @@
     <div class="col-sm-6 col-md-3 margin-b-30">
       <div class="tile green">
         <div class="tile-title clearfix">
-          Total Hours
+          Total Weekly Hours
           <span class="pull-right"></span>
         </div><!--.tile-title-->
         <div class="tile-body clearfix">
@@ -109,17 +109,26 @@
         <table class="table table-bordered">
           <tbody>
           <tr>
-            <td><strong>24/7 MVPD Sub Estimate</strong></td>
+            <td><strong>Total MVPD and OTA Homes</strong></td>
+            <td><%= o.text_field :total_homes, :id => 'totalHomes' %></td>
+            <td><strong>MVPD Subs</strong></td>
+            <td><%= o.text_field :subs, :id => 'mvpdSubscribers' %></td>
+            <td><strong>OTA Homes</strong></td>
+            <td><%= o.text_field :over_air, :id => 'otaHomes' %></td>
+
+          </tr>
+          <tr>
+            <td><strong>FTEH Rate for MVPD and OTA</strong></td>
             <td><%= f.text_field :dollar_amount, :id => '247mvpdSubEstimate' %></td>
-            <td>&nbsp;</td>
+            <td></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
           </tr>
           <tr>
-            <td><strong>Half Hour Rate</strong></td>
+            <td><strong>Gross Half Hour Rate</strong></td>
             <td><%= f.text_field :halfHourRate, :id => 'halfHourRate', :value => number_to_currency(@offer.halfHourRate) %></td>
-            <td><strong>Hour Rate</strong></td>
+            <td><strong>Gross Hour Rate</strong></td>
             <td><%= f.text_field :hourRate, :value => number_to_currency(@offer.hourly_rate), :id => 'hourlyRate' %></td>
             <td>&nbsp;</td>
             <td>&nbsp;</td>
@@ -141,11 +150,11 @@
             <td><input type="text" id="yearlyHours" value="<%= @offer.yearly_hours %>"/></td>
           </tr>
           <tr>
-            <td><strong>Weekly Rate</strong></td>
+            <td><strong>Gross Weekly Rate</strong></td>
             <td><input type="text" id="weeklyRate" value="<%= number_to_currency @offer.weekly_offer %>"/></td>
-            <td><strong>Monthly Rate</strong></td>
+            <td><strong>Gross Monthly Rate</strong></td>
             <td><input type="text" id="monthlyRate" value="<%= number_to_currency @offer.monthly_offer %>"/></td>
-            <td><strong>Yearly Rate</strong></td>
+            <td><strong>Gross Yearly Rate</strong></td>
             <td><input type="text" id="yearlyRate" value="<%= number_to_currency @offer.yearly_offer %>"/></td>
           </tr>
           </tbody>
@@ -172,71 +181,71 @@
           <tr>
             <td>&nbsp;</td>
             <td><strong>Time Period</strong></td>
-            <td><strong>Weekly Audience</strong></td>
-            <td><strong>Average Hour Rate</strong></td>
+            <td><strong>Est. % of Weekly Viewing</strong></td>
+            <td><strong>Est. Gross Hourly Rate</strong></td>
             <td><strong>Total Hours</strong></td>
-            <td><strong>Weekly Rate</strong></td>
+            <td><strong>Gross Weekly Rate</strong></td>
           </tr>
           </thead>
           <tbody>
-          <tr class="dayPartRow morning">
-            <td><strong>Early Morning</strong></td>
+          <tr>
+            <td class="dayPartRow morning"><strong>Early Morning</strong></td>
             <td>6am to 10am</td>
             <td id="morningAudience">&nbsp;</td>
             <td id="morningRate">&nbsp;</td>
             <td id="morningHours">&nbsp;</td>
             <td id="morningWeeklyRate">&nbsp;</td>
           </tr>
-          <tr class="dayPartRow daytime">
-            <td><strong>Daytime</strong></td>
+          <tr>
+            <td class="dayPartRow daytime"><strong>Daytime</strong></td>
             <td>10am to 4:30pm</td>
             <td id="daytimeAudience">&nbsp;</td>
             <td id="daytimeRate">&nbsp;</td>
             <td id="daytimeHours">&nbsp;</td>
             <td id="daytimeWeeklyRate">&nbsp;</td>
           </tr>
-          <tr class="dayPartRow eveningNews">
-            <td><strong>Evening News</strong></td>
+          <tr>
+            <td class="dayPartRow eveningNews"><strong>Evening News</strong></td>
             <td>4:30pm to 7pm</td>
             <td id="eveningNewsAudience">&nbsp;</td>
             <td id="eveningNewsRate">&nbsp;</td>
             <td id="eveningNewsHours">&nbsp;</td>
             <td id="eveningNewsWeeklyRate">&nbsp;</td>
           </tr>
-          <tr class="dayPartRow localPrimeTime">
-            <td><strong>Local Prime Time</strong></td>
+          <tr>
+            <td class="dayPartRow localPrimeTime"><strong>Local Prime Time</strong></td>
             <td>7pm to 8pm</td>
             <td id="localPrimeTimeAudience">&nbsp;</td>
             <td id="localPrimeTimeRate">&nbsp;</td>
             <td id="localPrimeTimeHours">&nbsp;</td>
             <td id="localPrimeTimeWeeklyRate">&nbsp;</td>
           </tr>
-          <tr class="dayPartRow nationalPrimeTime">
-            <td><strong>National Prime Time</strong></td>
+          <tr>
+            <td class="dayPartRow nationalPrimeTime"><strong>National Prime Time</strong></td>
             <td>8pm to 11pm</td>
             <td id="nationalPrimeTimeAudience">&nbsp;</td>
             <td id="nationalPrimeTimeRate">&nbsp;</td>
             <td id="nationalPrimeTimeHours">&nbsp;</td>
             <td id="nationalPrimeTimeWeeklyRate">&nbsp;</td>
           </tr>
-          <tr class="dayPartRow lateNews">
-            <td><strong>Late News</strong></td>
+          <tr>
+            <td class="dayPartRow lateNews"><strong>Late News</strong></td>
             <td>11pm to 11:30pm</td>
             <td id="lateNewsAudience"></td>
             <td id="lateNewsRate">&nbsp;</td>
             <td id="lateNewsHours"></td>
             <td id="lateNewsWeeklyRate"></td>
           </tr>
-          <tr class="dayPartRow lateNight">
-            <td><strong>Late Night</strong></td>
+          <tr>
+            <td class="dayPartRow lateNight"><strong>Late Night</strong></td>
             <td>11:30pm to 1am</td>
             <td id="lateNightAudience"></td>
             <td id="lateNightRate">&nbsp;</td>
             <td id="lateNightHours"></td>
             <td id="lateNightWeeklyRate"></td>
           </tr>
-          <tr class="dayPartRow overnights">
-            <td><strong>Overnights</strong></td>
+          <tr>
+            <td class="dayPartRow overnights"><strong>Overnights</strong></td>
             <td>1am to 6am</td>
             <td id="overnightsAudience"></td>
             <td id="overnightsRate">&nbsp;</td>
@@ -245,7 +254,7 @@
           </tr>
           <tr>
             <td><strong>Total Worksheet</strong></td>
-            <td>24 hours</td>
+            <td></td>
             <td id="runningAudienceTotal"></td>
             <td id="runningAverageRateTotal">&nbsp;</td>
             <td id="runningHoursTotal"></td>
