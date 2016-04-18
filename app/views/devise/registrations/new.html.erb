@@ -5,7 +5,7 @@
         <h1>Grid168</h1>
         <h3>Register a new account</h3>
         <%= devise_error_messages! %>
-        <%= form_for(resource, :as => resource_name, :url => session_path(resource_name), :class => 'm-t', :role => 'form') do |f| %>
+        <%= form_for(resource, :as => resource_name, :url => user_registration_path, :class => 'm-t', :role => 'form') do |f| %>
           <div class="form-group"><%= f.label :first_name %><br/>
             <%= f.text_field :first_name, class: 'form-username form-control' %>
           </div>

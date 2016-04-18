@@ -47,5 +47,7 @@ module Grid168
 
     # Handle exceptions with Rails router, not Rack (this is for clean error pages)
     config.exceptions_app = self.routes
+
+
   end
 end
