@@ -37,8 +37,8 @@ Grid168::Application.configure do
   # Email stuff
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      address: 'smtp.gmail.com',
-      port: 587,
+      address: 'localhost',
+      port: 1025,
       domain: 'grid168.com',
       user_name: 'noreply.grid168@gmail.com',
       password: ',H2;{2nNwG!)NJ8u',

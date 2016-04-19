@@ -176,74 +176,74 @@
         <tr>
           <td class="dayPartRow morning"><strong>Early Morning</strong></td>
           <td>6am to 10am</td>
-          <td id="morningAudience">&nbsp;</td>
-          <td id="morningRate">&nbsp;</td>
-          <td id="morningHours">&nbsp;</td>
-          <td id="morningWeeklyRate">&nbsp;</td>
+          <td id="morningAudience"><%= @offer.morningAudience %></td>
+          <td id="morningRate"><%= @offer.morningRate %></td>
+          <td id="morningHours"><%= @offer.morningHours %></td>
+          <td id="morningWeeklyRate"><%= @offer.morningWeeklyRate %></td>
         </tr>
         <tr>
           <td class="dayPartRow daytime"><strong>Daytime</strong></td>
           <td>10am to 4:30pm</td>
-          <td id="daytimeAudience">&nbsp;</td>
-          <td id="daytimeRate">&nbsp;</td>
-          <td id="daytimeHours">&nbsp;</td>
-          <td id="daytimeWeeklyRate">&nbsp;</td>
+          <td id="daytimeAudience"><%= @offer.daytimeAudience %></td>
+          <td id="daytimeRate"><%= @offer.daytimeRate %></td>
+          <td id="daytimeHours"><%= @offer.daytimeHours %></td>
+          <td id="daytimeWeeklyRate"><%= @offer.daytimeWeeklyRate %></td>
         </tr>
         <tr>
           <td class="dayPartRow eveningNews"><strong>Evening News</strong></td>
           <td>4:30pm to 7pm</td>
-          <td id="eveningNewsAudience">&nbsp;</td>
-          <td id="eveningNewsRate">&nbsp;</td>
-          <td id="eveningNewsHours">&nbsp;</td>
-          <td id="eveningNewsWeeklyRate">&nbsp;</td>
+          <td id="eveningNewsAudience"><%= @offer.eveningNewsAudience %></td>
+          <td id="eveningNewsRate"><%= @offer.eveningNewsRate %></td>
+          <td id="eveningNewsHours"><%= @offer.eveningNewsHours %></td>
+          <td id="eveningNewsWeeklyRate"><%= @offer.eveningNewsWeeklyRate %></td>
         </tr>
         <tr>
           <td class="dayPartRow localPrimeTime"><strong>Local Prime Time</strong></td>
           <td>7pm to 8pm</td>
-          <td id="localPrimeTimeAudience">&nbsp;</td>
-          <td id="localPrimeTimeRate">&nbsp;</td>
-          <td id="localPrimeTimeHours">&nbsp;</td>
-          <td id="localPrimeTimeWeeklyRate">&nbsp;</td>
+          <td id="localPrimeTimeAudience"><%= @offer.localPrimeTimeAudience %></td>
+          <td id="localPrimeTimeRate"><%= @offer.localPrimeTimeRate %></td>
+          <td id="localPrimeTimeHours"><%= @offer.localPrimeTimeHours %></td>
+          <td id="localPrimeTimeWeeklyRate"><%= @offer.localPrimeTimeWeeklyRate %></td>
         </tr>
         <tr>
           <td class="dayPartRow nationalPrimeTime"><strong>National Prime Time</strong></td>
           <td>8pm to 11pm</td>
-          <td id="nationalPrimeTimeAudience">&nbsp;</td>
-          <td id="nationalPrimeTimeRate">&nbsp;</td>
-          <td id="nationalPrimeTimeHours">&nbsp;</td>
-          <td id="nationalPrimeTimeWeeklyRate">&nbsp;</td>
+          <td id="nationalPrimeTimeAudience"><%= @offer.nationalPrimeTimeAudience %></td>
+          <td id="nationalPrimeTimeRate"><%= @offer.nationalPrimeTimeRate %></td>
+          <td id="nationalPrimeTimeHours"><%= @offer.nationalPrimeTimeHours %></td>
+          <td id="nationalPrimeTimeWeeklyRate"><%= @offer.nationalPrimeTimeWeeklyRate %></td>
         </tr>
         <tr>
           <td class="dayPartRow lateNews"><strong>Late News</strong></td>
           <td>11pm to 11:30pm</td>
-          <td id="lateNewsAudience"></td>
-          <td id="lateNewsRate">&nbsp;</td>
-          <td id="lateNewsHours"></td>
-          <td id="lateNewsWeeklyRate"></td>
+          <td id="lateNewsAudience"><%= @offer.lateNewsAudience %></td>
+          <td id="lateNewsRate"><%= @offer.lateNewsRate %></td>
+          <td id="lateNewsHours"><%= @offer.lateNewsHours %></td>
+          <td id="lateNewsWeeklyRate"><%= @offer.lateNewsWeeklyRate %></td>
         </tr>
         <tr>
           <td class="dayPartRow lateNight"><strong>Late Night</strong></td>
           <td>11:30pm to 1am</td>
-          <td id="lateNightAudience"></td>
-          <td id="lateNightRate">&nbsp;</td>
-          <td id="lateNightHours"></td>
-          <td id="lateNightWeeklyRate"></td>
+          <td id="lateNightAudience"><%= @offer.lateNightAudience %></td>
+          <td id="lateNightRate"><%= @offer.lateNightRate %></td>
+          <td id="lateNightHours"><%= @offer.lateNightHours %></td>
+          <td id="lateNightWeeklyRate"><%= @offer.lateNightWeeklyRate %></td>
         </tr>
         <tr>
           <td class="dayPartRow overnights"><strong>Overnights</strong></td>
           <td>1am to 6am</td>
-          <td id="overnightsAudience"></td>
-          <td id="overnightsRate">&nbsp;</td>
-          <td id="overnightsHours"></td>
-          <td id="overnightsWeeklyRate"></td>
+          <td id="overnightsAudience"><%= @offer.overnightsAudience %></td>
+          <td id="overnightsRate"><%= @offer.overnightsRate %>></td>
+          <td id="overnightsHours"><%= @offer.overnightsHours %></td>
+          <td id="overnightsWeeklyRate"><%= @offer.overnightsWeeklyRate %></td>
         </tr>
         <tr>
           <td><strong>Total Worksheet</strong></td>
           <td></td>
-          <td id="runningAudienceTotal"></td>
-          <td id="runningAverageRateTotal">&nbsp;</td>
-          <td id="runningHoursTotal"></td>
-          <td id="runningWeeklyRateTotal">&nbsp;</td>
+          <td id="runningAudienceTotal"><%= @offer.runningAudienceTotal %></td>
+          <td id="runningAverageRateTotal"></td>
+          <td id="runningHoursTotal"><%= @offer.runningHoursTotal %></td>
+          <td id="runningWeeklyRateTotal"><%= @offer.runningWeeklyRateTotal %></td>
         </tr>
         </tbody>
       </table>
