@@ -72,8 +72,17 @@ class OffersController < ApplicationController
 	end #end destroy action
 
 	def preview
-		@offer = Offer.where(:id => params[:id])
-	end
+    @offer = Offer.where(:id => params[:id]).first
+  end
+
+  def sendWorksheet
+    @offer = Offer.where(:id => params[:id]).first
+    toEmail = params[:toEmail]
+    carbonCopy = params[:carbonCopy]
+    WorksheetMailer.sendWorksheet(@offer, toEmail, carbonCopy)
+
+
+  end
 
 	def calculate
 

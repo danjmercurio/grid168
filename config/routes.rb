@@ -22,8 +22,10 @@ Grid168::Application.routes.draw do
 
 	get 'offers/:id/preview' => 'offers#preview'
 
+  post 'offers/:id/sendWorksheet' => 'offers#sendWorksheet'
 
-	# The priority is based upon order of creation:
+
+  # The priority is based upon order of creation:
 	# first created -> highest priority.
 
 	# Sample of regular route:

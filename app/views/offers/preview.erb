@@ -1,5 +1,24 @@
 <div class="row">
   <div class="col-md-12">
-    <%= render :partial => 'offers/email' %>
+    <div id="form">
+      <%= form_for @offer, :url => offer_path(@offer.id) + '/sendWorksheet', :method => :post do |f| %>
+          <h1>Send Email Preview</h1>
+          <blockquote>Below is a preview of the email to be sent. The recipient will not see this section or this
+            message.
+            To add a CC to the email, fill in the field above.
+          </blockquote>
+          <div class="form-group">
+            <label for="toEmail">To: </label><%= text_field_tag 'toEmail', nil, {:class => 'form-control', :placeholder => 'recipient@domain.com'} %>
+            <label for="carbonCopy">Cc: </label><%= text_field_tag 'carbonCopy', nil, {:class => 'form-control', :placeholder => 'recipient@domain.com'} %>
+          </div>
+
+          <p><%= f.submit 'Send', :class => 'btn btn-primary' %>&nbsp;</p>
+
+      <% end %>
+    </div>
+    <hr/>
+    <div style="border: 1px solid">
+      <%= render :partial => 'offers/email' %>
+    </div>
   </div>
 </div>
