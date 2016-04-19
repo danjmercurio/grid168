@@ -79,9 +79,8 @@ class OffersController < ApplicationController
     @offer = Offer.where(:id => params[:id]).first
     toEmail = params[:toEmail]
     carbonCopy = params[:carbonCopy]
-    WorksheetMailer.sendWorksheet(@offer, toEmail, carbonCopy)
-
-
+    subject = params[:subject]
+    @result = WorksheetMailer.sendWorksheet(@offer, toEmail, carbonCopy, subject)
   end
 
 	def calculate

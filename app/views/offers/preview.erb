@@ -8,8 +8,9 @@
             To add a CC to the email, fill in the field above.
           </blockquote>
           <div class="form-group">
-            <label for="toEmail">To: </label><%= text_field_tag 'toEmail', nil, {:class => 'form-control', :placeholder => 'recipient@domain.com'} %>
-            <label for="carbonCopy">Cc: </label><%= text_field_tag 'carbonCopy', nil, {:class => 'form-control', :placeholder => 'recipient@domain.com'} %>
+            <label for="toEmail">To: </label><%= email_field_tag 'toEmail', nil, {:class => 'form-control', :placeholder => 'recipient@domain.com'} %>
+            <label for="carbonCopy">Cc: </label><%= email_field_tag 'carbonCopy', nil, {:class => 'form-control', :placeholder => 'recipient@domain.com'} %>
+            <label for="subject">Subject: </label><%= text_field_tag 'subject', nil, {:class => 'form-control'} %>
           </div>
 
           <p><%= f.submit 'Send', :class => 'btn btn-primary' %>&nbsp;</p>
