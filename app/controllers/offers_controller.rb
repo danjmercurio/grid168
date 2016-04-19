@@ -71,6 +71,10 @@ class OffersController < ApplicationController
 	    end
 	end #end destroy action
 
+	def preview
+		@offer = Offer.where(:id => params[:id])
+	end
+
 	def calculate
 
 		respond_to do |format|

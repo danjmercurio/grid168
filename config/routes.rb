@@ -20,6 +20,8 @@ Grid168::Application.routes.draw do
 
 	root :to => "offers#index"
 
+	get 'offers/:id/preview' => 'offers#preview'
+
 
 	# The priority is based upon order of creation:
 	# first created -> highest priority.
