@@ -180,27 +180,23 @@ grid168 = (function () {
                         var mvpdSubs = $('input#outlet_subs');
                         var otaSubs = $('input#outlet_over_air');
 
-                        if (mvpdSubs.length && otaSubs.length) {
-                            mvpdSubs.val(mvpdSubs.val().stripAndParse().toString().addCommas());
-                            otaSubs.val(otaSubs.val().stripAndParse().toString().addCommas());
+                        var autoFillTotalHomes = function () {
+                            var total, i, j;
+                            i = mvpdSubs.val();
+                            j = otaSubs.val();
 
-                            var doAutoFill = function () {
-                                if (!!mvpdSubs.val()) mvpdSubs.val(mvpdSubs.val().stripAndParse().toString().addCommas());
-                                if (!!otaSubs.val()) otaSubs.val(otaSubs.val().stripAndParse().toString().addCommas());
+                            if (i && j) {
+                                total = (i.stripAndParse() + j.stripAndParse()).addCommas();
+                                totalHomes.val(total.addCommas());
+                            }
 
-                                if (!!mvpdSubs.val() && !!otaSubs.val() && !!totalHomes.val()) {
-                                    // Auto-calculate the total homes field if these two fields are both non-empty
-                                    var totalHomesSum = mvpdSubs.val().stripAndParse() + otaSubs.val().stripAndParse();
-                                    totalHomes.val(totalHomesSum.toString().addCommas());
-                                    console.log(totalHomesSum);
-                                }
-                            };
+                        };
 
-                            doAutoFill();
-                            $('form').change(doAutoFill);
-                        }
+                        mvpdSubs.blur(autoFillTotalHomes);
+                        otaSubs.blur(autoFillTotalHomes);
+
+
                     }
-                    this.calc.doCalc();
                     break;
 
             }
