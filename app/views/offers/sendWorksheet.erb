@@ -1,21 +1,34 @@
 <div class="row">
   <div class="col-md-12">
-    <% if !!@result %>
-        <h1>Email Sent</h1>
-        <h4>Worksheet email sent successfully to <a href="mailto:<%= @result.to.first %>"><%= @result.to.first %></a>
-          at <%= @result.date.rfc822 %>.</h4>
+    <h1>Send Worksheet Email</h1>
+    <hr/>
+    <div class="panel panel-default margin-b-30 ">
+      <!-- Start .panel -->
+      <div class="panel-heading">
+        <h4 class="panel-title">&nbsp;</h4>
+      </div>
+      <div class="panel-body">
+        <% if @error %>
+            <div class="panel panel-danger">
+              <div class="panel-heading"><i class="fa fa-warning"></i> Email Status</div>
+              <div class="panel-body">
+                <p>Email was not sent successfully. Check SMTP configuration and application logs.</p>
+                <p><strong>Reason: </strong><%= @error %></p>
+              </div>
+            </div>
+        <% else %>
+            <div class="panel panel-success">
+              <div class="panel-heading"><i class="fa fa-info-circle"></i> Email Status</div>
+              <div class="panel-body">Email sent successfully to
+                <a href="mailto:<%= @email.to.first %>"><%= @email.to.first %></a> at
+                <strong><%= @email.date.rfc822 %></strong>.
+              </div>
+            </div>
+        <% end %>
         <a href="<%= url_for offers_path %>">
-          <button class="btn btn-primary pull-right">Back</button>
+          <button type="button" class="btn btn-primary pull-right">Back</button>
         </a>
-    <% else %>
-        <h1>Email not sent.</h1>
-        <h4>Email was not sent due to the following errors: <%= @result.errors %></h4>
-        <a href="<%= url_for offers_path %>">
-          <button class="btn btn-primary pull-right">Back</button>
-        </a>
-
-
-        <p>Debug info: <%= @result %></p>
-    <% end %>
+      </div>
+    </div>
   </div>
 </div>

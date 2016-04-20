@@ -10,7 +10,6 @@ class ProgrammersController < ApplicationController
 			@programmers = current_user.programmers
 		end
 		@offers = current_user.offers
-		@sub_channel_offers = current_user.sub_channel_offers
 
 		respond_to do |format|
 			format.html # index.html.erb
@@ -19,6 +18,7 @@ class ProgrammersController < ApplicationController
 
 	# GET /programmers/1
 	# GET /programmers/1.json
+	# noinspection Rails3Deprecated
 	def show
 		@programmer = Programmer.find(params[:id])
 
@@ -39,6 +39,7 @@ class ProgrammersController < ApplicationController
 	end
 
 	# GET /programmers/1/edit
+	# noinspection Rails3Deprecated
 	def edit
 		@programmer = Programmer.find(params[:id])
 		@back_url = params[:back_url]
@@ -52,15 +53,16 @@ class ProgrammersController < ApplicationController
 		respond_to do |format|
 			if @programmer.save
 				path = params[:back_url] || @programmer
-				format.html { redirect_to path, notice: "Programmer was successfully created." }
+				format.html { redirect_to path, notice: 'Programmer was successfully created.' }
 			else
-				format.html { render :action => "new" }
+				format.html { render :action => 'new' }
 			end
 		end
 	end
 
 	# PUT /programmers/1
 	# PUT /programmers/1.json
+	# noinspection Rails3Deprecated
 	def update
 		@programmer = Programmer.find(params[:id])
 
@@ -69,13 +71,14 @@ class ProgrammersController < ApplicationController
 				path = params[:back_url] || @programmer
 				format.html { redirect_to path, :notice => 'Programmer was successfully updated.' }
 			else
-				format.html { render :action => "edit" }
+				format.html { render :action => 'edit' }
 			end
 		end
 	end
 
 	# DELETE /programmers/1
 	# DELETE /programmers/1.json
+	# noinspection Rails3Deprecated
 	def destroy
 		@programmer = Programmer.find(params[:id])
 		@programmer.destroy

@@ -1,9 +1,10 @@
+# noinspection Rails3Deprecated
 class OffersController < ApplicationController
 	before_action :authenticate_user!
   before_action :sanitizeParameters, :only => [:create, :update]
 
 	def new
-    @outlet = Outlet.where(:id => params[:outlet_id]).first
+    @outlet = Outlet.find(params[:outlet_id])
     @offer = Offer.new
     @offer.outlet = @outlet
     current_user.admin? ? @programmers = Programmer.all : current_user.programmers
@@ -45,7 +46,6 @@ class OffersController < ApplicationController
     end
   end
 
-
 	def create
 	    @offer = Offer.new(params[:offer])
 	    @outlet = @offer.outlet
@@ -72,15 +72,23 @@ class OffersController < ApplicationController
 	end #end destroy action
 
 	def preview
-    @offer = Offer.where(:id => params[:id]).first
+    @offer = Offer.find(params[:id])
   end
 
   def sendWorksheet
-    @offer = Offer.where(:id => params[:id]).first
+    @offer = Offer.find(params[:id])
     toEmail = params[:toEmail]
     carbonCopy = params[:carbonCopy]
     subject = params[:subject]
-    @result = WorksheetMailer.sendWorksheet(@offer, toEmail, carbonCopy, subject)
+
+    @error = false
+    if toEmail == '' || !toEmail.include?('@') || toEmail.length < 4
+      @error = 'Destination email address was not valid'
+    elsif subject == ''
+      @error = 'Email subject line was blank.'
+    else
+      @email = WorksheetMailer.sendWorksheet(@offer, toEmail, carbonCopy, subject).deliver
+    end
   end
 
 	def calculate
