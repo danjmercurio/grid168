@@ -4,12 +4,8 @@ class ProgrammersController < ApplicationController
 	# GET /programmers
 	# GET /programmers.json
 	def index
-		if current_user.admin?
-			@programmers = Programmer.all
-		else
-			@programmers = current_user.programmers
-		end
-		@offers = current_user.offers
+		current_user.admin? ? @programmers = Programmer.all : @programmers = current_user.programmers
+		current_user.admin? ? @offers = Offer.all : @offers = current_user.offers
 
 		respond_to do |format|
 			format.html # index.html.erb

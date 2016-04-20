@@ -68,57 +68,57 @@ outlet3.save
 
 puts "Create programmer sample.."
 programmer1 = admin.programmers.create name: "Gem Shopping",
-																						first_name: "gem",
-																						last_name: "shopping",
-																						email: "gem@gmail.com",
-																						phone: "12341234",
-																						programmer_type: 1
+																			 first_name: "gem",
+																			 last_name: "shopping",
+																			 email: "gem@gmail.com",
+																			 phone: "12341234",
+																			 programmer_type_id: 1
 
 programmer2 = admin.programmers.create name: "Grace to you",
-																						first_name: "grace",
-																						last_name: "show",
-																						email: "grace@gmail.com",
-																						phone: "12341234",
-																						programmer_type: 1
+																			 first_name: "grace",
+																			 last_name: "show",
+																			 email: "grace@gmail.com",
+																			 phone: "12341234",
+																			 programmer_type_id: 1
 
 programmer3 = test.programmers.create name: "Disney channel",
-																					first_name: "disney",
-																					last_name: "show",
-																					email: "disney@gmail.com",
-																					phone: "12341234",
-																					programmer_type: 1
-
-puts "Create offer sample.."
-offer1 = outlet1.offers.create yearly_offer: 1,
-										monthly_offer: 1,
-										weekly_offer: 1,
-										hourly_rate: 1,
-										total_hours: 1,
-										dollar_amount: 1,
-										user_id: 1
-offer1.programmer_ids = [1, 2]
-offer1.save
-
-offer2 = outlet3.offers.create yearly_offer: 2,
-										monthly_offer: 2,
-										weekly_offer: 2,
-										hourly_rate: 2,
-										total_hours: 2,
-										dollar_amount: 2,
-										user_id: 2
-offer2.programmer_ids = [2]
-offer2.save
-
-offer3 = outlet2.offers.create yearly_offer: 3,
-										monthly_offer: 3,
-										weekly_offer: 3,
-										hourly_rate: 3,
-										total_hours: 3,
-										dollar_amount: 3,
-										user_id: 1
-offer3.programmer_ids = [1]
-offer3.save
-
-puts "Create CSV sample.."
-puts "Invoking rake task database_values:insert"
-Rake::Task['database_values:insert'].invoke
+																			first_name: "disney",
+																			last_name: "show",
+																			email: "disney@gmail.com",
+																			phone: "12341234",
+																			programmer_type_id: 1
+#
+# puts "Create offer sample.."
+# offer1 = outlet1.offers.create yearly_offer: 1,
+# 										monthly_offer: 1,
+# 										weekly_offer: 1,
+# 										hourly_rate: 1,
+# 										total_hours: 1,
+# 										dollar_amount: 1,
+# 										user_id: 1
+# offer1.programmer_ids = [1, 2]
+# offer1.save
+#
+# offer2 = outlet3.offers.create yearly_offer: 2,
+# 										monthly_offer: 2,
+# 										weekly_offer: 2,
+# 										hourly_rate: 2,
+# 										total_hours: 2,
+# 										dollar_amount: 2,
+# 										user_id: 2
+# offer2.programmer_ids = [2]
+# offer2.save
+#
+# offer3 = outlet2.offers.create yearly_offer: 3,
+# 										monthly_offer: 3,
+# 										weekly_offer: 3,
+# 										hourly_rate: 3,
+# 										total_hours: 3,
+# 										dollar_amount: 3,
+# 										user_id: 1
+# offer3.programmer_ids = [1]
+# offer3.save
+#
+# puts "Create CSV sample.."
+# puts "Invoking rake task database_values:insert"
+# Rake::Task['database_values:insert'].invoke
