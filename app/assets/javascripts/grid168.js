@@ -484,9 +484,9 @@ grid168 = (function () {
                     $('#' + dayPartName + 'WeeklyRate').setText(dayPart.weeklyRate.toCurrency());
                 });
 
-                $('#runningAudienceTotal').text(offer.weeklyAudienceSum.toPercentage());
-                $('#runningHoursTotal').text(offer.weeklyHoursSum);
-                $('#runningWeeklyRateTotal').text(offer.weeklyRateSum);
+                $('#runningAudienceTotal').setText(offer.weeklyAudienceSum.toPercentage());
+                $('#runningHoursTotal').setText(offer.weeklyHoursSum);
+                $('#runningWeeklyRateTotal').setText(offer.weeklyRateSum);
             },
             calculateAudienceSum: function (cells) {
                 if (cells.length === 0) return 0;

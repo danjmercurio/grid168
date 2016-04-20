@@ -8,7 +8,7 @@ Grid168::Application.configure do
 
   # Log error messages when you accidentally call methods on nil.
   config.whiny_nils = true
-  
+
   # Disable eager loading
   config.eager_load = false
 
@@ -48,7 +48,7 @@ Grid168::Application.configure do
   #     enable_starttls_auto: true
   # }
 
-  # To send for real
+  #To send for real
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
       address: 'smtp.gmail.com',

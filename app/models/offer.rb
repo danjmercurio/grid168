@@ -23,17 +23,17 @@ class Offer < ActiveRecord::Base
 	has_many :notes, :dependent => :destroy
 
   attr_accessible :programmer_ids, :yearly_offer, :monthly_offer, :outlet_id, :weekly_hours,
-                  :monthly_hours, :yearly_hours, :weekly_offer, :hourly_rate, :total_hours,
-                  :dollar_amount, :user_id, :time_cells, :available_date, :grNotes, :dpNotes,
-                  :mvpdSubscriberRate, :mvpdOtaSubRate, :halfHourRate, :morningAudience,
-                  :morningRate, :morningHours, :morningWeeklyRate, :daytimeAudience, :daytimeRate,
-                  :daytimeHours, :daytimeWeeklyRate, :eveningNewsAudience, :eveningNewsRate,
-                  :eveningNewsHours, :eveningNewsWeeklyRate, :localPrimeTimeAudience, :localPrimeTimeRate,
-                  :localPrimeTimeHours, :localPrimeTimeWeeklyRate, :nationalPrimeTimeAudience,
-                  :nationalPrimeTimeRate, :nationalPrimeTimeHours, :nationalPrimeTimeWeeklyRate,
-                  :lateNewsAudience, :lateNewsRate, :lateNewsHours, :lateNewsWeeklyRate, :lateNightAudience,
-                  :lateNightRate, :lateNightHours, :lateNightWeeklyRate, :overnightsAudience, :overnightsRate,
-                  :overnightsHours, :overnightsWeeklyRate
+									:monthly_hours, :yearly_hours, :weekly_offer, :hourly_rate, :total_hours,
+									:dollar_amount, :user_id, :time_cells, :available_date, :grNotes, :dpNotes,
+									:mvpdSubscriberRate, :mvpdOtaSubRate, :halfHourRate, :morningAudience,
+									:morningRate, :morningHours, :morningWeeklyRate, :daytimeAudience, :daytimeRate,
+									:daytimeHours, :daytimeWeeklyRate, :eveningNewsAudience, :eveningNewsRate,
+									:eveningNewsHours, :eveningNewsWeeklyRate, :localPrimeTimeAudience, :localPrimeTimeRate,
+									:localPrimeTimeHours, :localPrimeTimeWeeklyRate, :nationalPrimeTimeAudience,
+									:nationalPrimeTimeRate, :nationalPrimeTimeHours, :nationalPrimeTimeWeeklyRate,
+									:lateNewsAudience, :lateNewsRate, :lateNewsHours, :lateNewsWeeklyRate, :lateNightAudience,
+									:lateNightRate, :lateNightHours, :lateNightWeeklyRate, :overnightsAudience, :overnightsRate,
+									:overnightsHours, :overnightsWeeklyRate, :runningAudienceTotal, :runningHoursTotal, :runningWeeklyRateTotal
 
   validates :dollar_amount, :presence => true,
 								numericality: { greater_than: 0 }

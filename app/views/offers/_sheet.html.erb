@@ -23,10 +23,10 @@
   <div class="col-md-6">
     <%= fields_for @offer.outlet do |o| -%>
         <h3><strong>MVPD Subscribers:</strong>
-          <%= o.text_field :subs, :class => 'form-control delimited', :id => 'mvpdSubscribers' %>
+          <%= o.text_field :subs, :class => 'delimited', :id => 'mvpdSubscribers' %>
         </h3>
-        <h3><strong>Over the Air Homes:</strong></h3>
-      <%= o.text_field :over_air, :class => 'form-control delimited', :id => 'otaHomes' %>
+        <h3><strong>Over the Air Homes:</strong>
+          <%= o.text_field :over_air, :class => 'delimited', :id => 'otaHomes' %></h3>
       <h3><strong>Time Zone:</strong> <%= @offer.outlet.time_zone %></h3>
     <h3><strong>Available Date:</strong> <%= @offer.available_date %></h3>
   </div>
@@ -110,11 +110,11 @@
           <tbody>
           <tr>
             <td><strong>Total MVPD and OTA Homes</strong></td>
-            <td><%= o.text_field :total_homes, :id => 'totalHomes' %></td>
+            <td><%= o.text_field :total_homes, :id => 'totalHomes', :class => 'delimited' %></td>
             <td><strong>MVPD Subs</strong></td>
-            <td><%= o.text_field :subs, :id => 'mvpdSubscribers' %></td>
+            <td><%= o.text_field :subs, :id => 'mvpdSubscribers', :class => 'delimited' %></td>
             <td><strong>OTA Homes</strong></td>
-            <td><%= o.text_field :over_air, :id => 'otaHomes' %></td>
+            <td><%= o.text_field :over_air, :id => 'otaHomes', :class => 'delimited' %></td>
 
           </tr>
           <tr>

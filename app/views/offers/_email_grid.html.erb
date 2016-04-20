@@ -1,0 +1,61 @@
+<% colors = {
+    :morning => '#FF0000',
+    :daytime => '#52FF00',
+    :eveningNews => '#00F5FF',
+    :localPrimeTime => '#FF00EB',
+    :nationalPrimeTime => '#FFFD00',
+    :lateNews => '#00FFA6',
+    :lateNight => '#00FFA6',
+    :overnights => '#A6451A'
+}
+
+   days = [['Monday', 0], ['Tuesday', 1], ['Wednesday', 2], ['Thursday', 3], ['Friday', 4], ['Saturday', 5], ['Sunday', 6]]
+
+   def cellSelected(day, time)
+     cell = "#{day}-#{time}"
+     return @offer.time_cells.split(',').include?(cell)
+   end
+
+   def getDayPart(time)
+     time = time.to_time
+     if time.between?('01:00'.to_time, '06:00'.to_time)
+       return :overnights end
+     if time.between?('06:00'.to_time, '10:00'.to_time)
+       return :morning end
+     if time.between?('10:00'.to_time, '16:30'.to_time)
+       return :daytime end
+     if time.between?('16:30'.to_time, '19:00'.to_time)
+       return :eveningNews end
+     if time.between?('19:00'.to_time, '20:00'.to_time)
+       return :localPrimeTime end
+     if time.between?('20:00'.to_time, '23:00'.to_time)
+       return :nationalPrimeTime end
+     if time.between?('23:00'.to_time, '23:30'.to_time)
+       return :lateNews end
+     return :lateNight
+   end
+
+
+%>
+<table width="100%">
+  <tr>
+    <% days.each do |day, num| %>
+        <td style="text-align: center;border: 1px solid; margin: 3px;"><strong><%= day %></strong></td>
+    <% end %>
+  </tr>
+  <% start = Time.new(0) %>
+  <% fin = start + (60 * 60 * 24) %>
+  <% while start < fin do -%>
+      <tr>
+        <% days.each do |day, num| -%>
+            <% if cellSelected(num, start.strftime('%H:%M')) %>
+                <% daypart = getDayPart(start.strftime('%H:%M')) %>
+                <td style="text-align: center;border: 1px solid; margin: 3px;" bgcolor="<%= colors[daypart] %>"><%= start.strftime('%H:%M') %></td>
+            <% else %>
+                <td style="text-align: center;border: 1px solid;margin: 3px;"><%= start.strftime('%H:%M') %></td>
+            <% end %>
+        <% end %>
+      </tr>
+      <% start += 30.minutes %>
+  <% end %>
+</table>

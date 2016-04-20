@@ -42,6 +42,11 @@
     text-align: right;
 }
 
+.halfSize {
+    width: 50%;
+}
+
+
 /* all the rows in the worksheet grid */
 .dayPartRow {
 
@@ -49,7 +54,7 @@
 
 /* worksheet grid rows and cells */
 .morning {
-    background-color: rgba(255, 0, 0, 0.5019607843137255);
+    background-color: rgba(255, 0, 0, 0.5);
 }
 
 .daytime {
@@ -77,5 +82,5 @@
 }
 
 .overnights {
-    background-color: rgba(166, 69, 26, 0.4745098039215686);
+    background-color: rgba(166, 69, 26, 0.47);
 }
