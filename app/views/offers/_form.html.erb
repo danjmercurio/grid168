@@ -132,7 +132,8 @@
           <% else %>
               <%= select('offer', 'programmer_ids', Programmer.order(:name).collect { |d| [d.name, d.id] }, {include_blank: true}) %>
           <% end %>
-          <div class="pull-right"><%= link_to 'Add a programmer', new_programmer_url, :class => 'btn btn-default' %></div>
+          <p>&nbsp;</p>
+          <p><%= link_to 'Add a programmer', new_programmer_url, :class => 'btn btn-default' %></p>
         </div>
         <br/>
         <div>
