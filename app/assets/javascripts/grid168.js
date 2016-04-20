@@ -10,7 +10,7 @@ grid168 = (function () {
         flash: null,
         initialize: function () {
             console.log(this);
-            if (typeof($) === "undefined") {
+            if ($ === "undefined") {
                 throw new Error('$ is not defined. Did jQuery load?');
             }
             $(document).ready(this.onDocumentReady());
@@ -148,7 +148,7 @@ grid168 = (function () {
                 // Apply styling and comma delimiters to all form inputs
                 $('.delimited').each(function () {
                     var v = $(this).val();
-                    v == "" ? $(this).val("") : $(this).val(v.stripAndParse().toString().addCommas());
+                    v === "" ? $(this).val("") : $(this).val(v.stripAndParse().toString().addCommas());
 
                     $(this).blur(function () {
                         var newVal = $(this).val();
@@ -170,6 +170,11 @@ grid168 = (function () {
 
                         // Do the calculations
                         this.calc.doCalc();
+
+                        // Set a global event handler for the page
+                        $('form').change(function () {
+                            app.calc.doCalc();
+                        });
                     }
                     break;
                 case 'outlets':
@@ -418,7 +423,7 @@ grid168 = (function () {
                 offer.weeklyAudienceSum = 0;
                 offer.weeklyRateSum = 0;
                 offer.weeklyHoursSum = 0;
-                
+
                 // Daypart-specific calculations
                 var that = this;
                 jQuery.each(dayParts, function (dayPartName, dayPart) {
@@ -446,7 +451,8 @@ grid168 = (function () {
             updateValues: function (values) {
                 var offer = values.offer;
                 // Begin filling in values
-                $('#totalHomes').setText(offer.totalHomes.addCommas());
+                $('input#totalHomes').val(offer.totalHomes.addCommas());
+                $('#totalHomesHero').text(offer.totalHomes.addCommas());
                 $('#hourlyRate').val(function () {
                     return offer.hourRate.toCurrency();
                 });
@@ -455,9 +461,9 @@ grid168 = (function () {
                 $('#yearlyRate').val(offer.yearlyRate.toCurrency());
                 $('#totalHours').val(offer.weeklyHours);
                 if (app.action == 'show') {
-                    $('#totalHoursHero').text(offer.weeklyHours.toCurrency());
-                    $('#hourlyRateHero').text(offer.hourRate.toCurrency());
-                    $('#grossMonthlyRateHero').text(offer.monthlyRate.toCurrency());
+                    $('#totalHoursHero').text(offer.weeklyHours);
+                    $('#hourlyRateHero').text(offer.hourRate.toCurrency().toNearestDollar());
+                    $('#grossMonthlyRateHero').text(offer.monthlyRate.toCurrency().toNearestDollar());
                 }
 
                 $('#weeklyHours').val(offer.weeklyHours);
@@ -482,7 +488,7 @@ grid168 = (function () {
 
                 $('#runningAudienceTotal').setText(offer.weeklyAudienceSum.toPercentage());
                 $('#runningHoursTotal').setText(offer.weeklyHoursSum);
-                $('#runningWeeklyRateTotal').setText(offer.weeklyRateSum);
+                $('#runningWeeklyRateTotal').setText(offer.weeklyRateSum.toCurrency());
             },
             calculateAudienceSum: function (cells) {
                 if (cells.length === 0) return 0;

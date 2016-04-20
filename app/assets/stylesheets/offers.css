@@ -37,16 +37,6 @@
     width: 100%;
 }
 
-.offerInput {
-    width: 75%;
-    text-align: right;
-}
-
-.halfSize {
-    width: 50%;
-}
-
-
 /* all the rows in the worksheet grid */
 .dayPartRow {
 
@@ -54,33 +44,33 @@
 
 /* worksheet grid rows and cells */
 .morning {
-    background-color: rgba(255, 0, 0, 0.5);
+    background-color: lightcyan;
 }
 
 .daytime {
-    background-color: rgba(82, 255, 0, 0.5019607843137255)
+    background-color: lightblue;
 }
 
 .eveningNews {
-    background-color: rgba(0, 245, 255, 0.5019607843137255)
+    background-color: lightgreen;
 }
 
 .localPrimeTime {
-    background-color: rgba(255, 0, 235, 0.4745098039215686)
+    background-color: palegoldenrod;
 }
 
 .nationalPrimeTime {
-    background-color: rgba(255, 253, 0, 0.5372549019607843)
+    background-color: thistle;
 }
 
 .lateNews {
-    background-color: rgba(255, 123, 0, 0.5019607843137255)
+    background-color: pink;
 }
 
 .lateNight {
-    background-color: rgba(0, 255, 166, 0.5019607843137255);
+    background-color: darkseagreen;
 }
 
 .overnights {
-    background-color: rgba(166, 69, 26, 0.47);
+    background-color: gainsboro;
 }
