@@ -43,14 +43,14 @@ ActiveRecord::Schema.define(version: 20160418230135) do
 
   create_table "offers", force: :cascade do |t|
     t.integer  "outlet_id"
-    t.float "yearly_offer", default: 0.0, null: false
-    t.float "monthly_offer", default: 0.0, null: false
-    t.float "weekly_offer", default: 0.0, null: false
-    t.float "hourly_rate", default: 0.0, null: false
-    t.float "total_hours", default: 0.0, null: false
+    t.float    "yearly_offer",                default: 0.0, null: false
+    t.float    "monthly_offer",               default: 0.0, null: false
+    t.float    "weekly_offer",                default: 0.0, null: false
+    t.float    "hourly_rate",                 default: 0.0, null: false
+    t.float    "total_hours",                 default: 0.0, null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.float "dollar_amount", default: 0.0, null: false
+    t.float    "dollar_amount",               default: 0.0, null: false
     t.integer  "user_id"
     t.string   "available_date"
     t.text     "time_cells"
@@ -59,44 +59,44 @@ ActiveRecord::Schema.define(version: 20160418230135) do
     t.float    "weekly_hours"
     t.float    "monthly_hours"
     t.float    "yearly_hours"
-    t.decimal "halfHourRate"
-    t.decimal "mvpdSubscriberRate"
-    t.decimal "mvpdOtaSubRate"
-    t.string "morningAudience"
-    t.string "morningRate"
-    t.string "morningHours"
-    t.string "morningWeeklyRate"
-    t.string "daytimeAudience"
-    t.string "daytimeRate"
-    t.string "daytimeHours"
-    t.string "daytimeWeeklyRate"
-    t.string "eveningNewsAudience"
-    t.string "eveningNewsRate"
-    t.string "eveningNewsHours"
-    t.string "eveningNewsWeeklyRate"
-    t.string "localPrimeTimeAudience"
-    t.string "localPrimeTimeRate"
-    t.string "localPrimeTimeHours"
-    t.string "localPrimeTimeWeeklyRate"
-    t.string "nationalPrimeTimeAudience"
-    t.string "nationalPrimeTimeRate"
-    t.string "nationalPrimeTimeHours"
-    t.string "nationalPrimeTimeWeeklyRate"
-    t.string "lateNewsAudience"
-    t.string "lateNewsRate"
-    t.string "lateNewsHours"
-    t.string "lateNewsWeeklyRate"
-    t.string "lateNightAudience"
-    t.string "lateNightRate"
-    t.string "lateNightHours"
-    t.string "lateNightWeeklyRate"
-    t.string "overnightsAudience"
-    t.string "overnightsRate"
-    t.string "overnightsHours"
-    t.string "overnightsWeeklyRate"
-    t.string "runningAudienceTotal"
-    t.string "runningHoursTotal"
-    t.string "runningWeeklyRateTotal"
+    t.decimal  "halfHourRate"
+    t.decimal  "mvpdSubscriberRate"
+    t.decimal  "mvpdOtaSubRate"
+    t.string   "morningAudience"
+    t.string   "morningRate"
+    t.string   "morningHours"
+    t.string   "morningWeeklyRate"
+    t.string   "daytimeAudience"
+    t.string   "daytimeRate"
+    t.string   "daytimeHours"
+    t.string   "daytimeWeeklyRate"
+    t.string   "eveningNewsAudience"
+    t.string   "eveningNewsRate"
+    t.string   "eveningNewsHours"
+    t.string   "eveningNewsWeeklyRate"
+    t.string   "localPrimeTimeAudience"
+    t.string   "localPrimeTimeRate"
+    t.string   "localPrimeTimeHours"
+    t.string   "localPrimeTimeWeeklyRate"
+    t.string   "nationalPrimeTimeAudience"
+    t.string   "nationalPrimeTimeRate"
+    t.string   "nationalPrimeTimeHours"
+    t.string   "nationalPrimeTimeWeeklyRate"
+    t.string   "lateNewsAudience"
+    t.string   "lateNewsRate"
+    t.string   "lateNewsHours"
+    t.string   "lateNewsWeeklyRate"
+    t.string   "lateNightAudience"
+    t.string   "lateNightRate"
+    t.string   "lateNightHours"
+    t.string   "lateNightWeeklyRate"
+    t.string   "overnightsAudience"
+    t.string   "overnightsRate"
+    t.string   "overnightsHours"
+    t.string   "overnightsWeeklyRate"
+    t.string   "runningAudienceTotal"
+    t.string   "runningHoursTotal"
+    t.string   "runningWeeklyRateTotal"
   end
 
   create_table "offers_programmers", id: false, force: :cascade do |t|
@@ -183,10 +183,10 @@ ActiveRecord::Schema.define(version: 20160418230135) do
     t.string   "title"
     t.string   "first_name"
     t.string   "last_name"
-    t.string "confirmation_token"
+    t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
-    t.string "unconfirmed_email"
+    t.string   "unconfirmed_email"
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true
