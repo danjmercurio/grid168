@@ -74,4 +74,6 @@ Grid168::Application.configure do
       enable_starttls_auto: true
   }
 
+  config.action_mailer.default_url_options = {:host => 'ancient-peak-77811.herokuapp.com'}
+
 end
