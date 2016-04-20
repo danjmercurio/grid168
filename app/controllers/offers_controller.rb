@@ -83,7 +83,7 @@ class OffersController < ApplicationController
 
     @error = false
     if toEmail == '' || !toEmail.include?('@') || toEmail.length < 4
-      @error = 'Destination email address was not valid'
+			@error = 'Destination email address was not valid.'
     elsif subject == ''
       @error = 'Email subject line was blank.'
     else

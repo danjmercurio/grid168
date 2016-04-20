@@ -1,261 +1,732 @@
-<div class="text-center"><h1>Grid 168 Worksheet</h1></div>
-<h2>Bid prepared by: <%= image_tag('across.png') %></h2>
-<hr/>
-<div class="col-md-6">
-  <h3><strong>Media Outlet:</strong> <%= @offer.outlet.name %></h3>
-  <h3><strong>Market:</strong> <%= @offer.outlet.dma.name %></h3>
-  <h3><strong>Media Type:</strong> <%= @offer.outlet.outlet_type.name %></h3>
-</div>
-<div class="col-md-6">
-  <h3><strong>MVPD Subscribers:</strong>
-    <%= @offer.outlet.subs %>
-  </h3>
-  <h3><strong>Over the Air Homes:</strong></h3>
-  <%= @offer.outlet.over_air %>
-  <h3><strong>Time Zone:</strong> <%= @offer.outlet.time_zone %></h3>
-  <h3><strong>Available Date:</strong> <%= @offer.available_date %></h3>
-</div>
-<div class="col-md-12" style="margin-top: 10px; ">
-  <div class="col-sm-6 col-md-3 margin-b-30">
-    <div class="tile red">
-      <div class="tile-title clearfix">
+<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
+<style type="text/css">
+  * {
+    font-family: 'Roboto';
+    font-size: 13px;
+    color: rgb(101, 101, 101);
+  }
+</style>
+<div class="text-center" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;text-align: center;">
+  <h1 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-size: 36px;margin: 0.67em 0;font-family: 'Roboto';font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;">Grid
+    168 Worksheet</h1></div>
+<h2 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Roboto';font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 24px;">Bid
+  prepared by:
+  <img src="https://i.imgur.com/WIJEUab.png" alt="Across Platforms" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;border: 0;vertical-align: middle;page-break-inside: avoid;max-width: 100% !important;">
+</h2>
+<hr style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: content-box;height: 0;margin-top: 20px;margin-bottom: 20px;border: 0;border-top: 1px solid #eeeeee;">
+
+<table>
+        <tbody>
+        <tr>
+          <td>
+            <div>
+              <h3 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Roboto';font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 16px;">
+                <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Media
+                  Outlet:</strong> WKTV</h3>
+              <h3 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Roboto';font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 16px;">
+                <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Market:</strong>
+                Albany</h3>
+              <h3 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Roboto';font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 16px;">
+                <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Media
+                  Type:</strong> Broadcast Network</h3>
+            </div>
+          </td>
+          <td>
+            <div class="col-md-6" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;position: relative;min-height: 1px;padding-left: 15px;padding-right: 15px;width: 50%;">
+              <h3 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Roboto';font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 16px;">
+                <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">MVPD
+                  Subscribers:</strong>
+                10000000
+              </h3>
+              <h3 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Roboto';font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 16px;">
+                <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Over
+                  the Air Homes:</strong></h3>
+              5000000
+              <h3 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Roboto';font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 16px;">
+                <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Time
+                  Zone:</strong> Pacific Time (US &amp; Canada)</h3>
+              <h3 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Roboto';font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 16px;">
+                <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Available
+                  Date:</strong> 04/20/2016</h3>
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+
+
+<div class="col-md-12" style="margin-top: 10px;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;position: relative;min-height: 1px;padding-left: 15px;padding-right: 15px;width: 100%;">
+  <div class="col-sm-6 col-md-3 margin-b-30" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;position: relative;min-height: 1px;padding-left: 15px;padding-right: 15px;width: 25%;margin-bottom: 30px;">
+    <div class="tile red" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;background-color: #fa4345;">
+      <div class="tile-title clearfix" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;color: #fff;text-transform: capitalize;background-color: rgba(255,255,255,0.1);padding: 3px 15px;">
         Total MVPD and OTA Homes
-        <span class="pull-right"></span>
+        <span class="pull-right" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;float: right;"></span>
       </div><!--.tile-title-->
-      <div class="tile-body clearfix">
-        <i class="fa fa-home"></i>
-        <h4 class="pull-right delimited" id="totalHomes"><%= @offer.outlet.total_homes %></h4>
+      <div class="tile-body clearfix" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 15px;">
+        <i class="fa fa-home" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;display: inline-block;font: normal normal normal 14px/1 FontAwesome;font-size: 35px;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #fff;"></i>
+        <h4 class="pull-right delimited" id="totalHomes" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-family: 'Roboto';font-weight: 400;line-height: 1.1;color: #fff;margin-top: 0px;margin-bottom: 10px;font-size: 35px;float: right;text-transform: uppercase;margin: 0px;">15000000</h4>
       </div><!--.tile-body-->
-      <div class="tile-footer">
+      <div class="tile-footer" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 4px 15px;color: #fff;background-color: rgba(255,255,255,0.1);">
         &nbsp;
       </div><!--.tile footer-->
     </div><!-- .tile-->
 
   </div><!-- .col -->
-  <div class="col-sm-6 col-md-3 margin-b-30">
-    <div class="tile green">
-      <div class="tile-title clearfix">
+  <div class="col-sm-6 col-md-3 margin-b-30" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;position: relative;min-height: 1px;padding-left: 15px;padding-right: 15px;width: 25%;margin-bottom: 30px;">
+    <div class="tile green" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;background-color: #91be24;">
+      <div class="tile-title clearfix" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;color: #fff;text-transform: capitalize;background-color: rgba(255,255,255,0.1);padding: 3px 15px;">
         Total Weekly Hours
-        <span class="pull-right"></span>
+        <span class="pull-right" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;float: right;"></span>
       </div><!--.tile-title-->
-      <div class="tile-body clearfix">
-        <i class="fa fa-clock-o"></i>
-        <h4 class="pull-right" id="totalHoursHero">&nbsp;</h4>
+      <div class="tile-body clearfix" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 15px;">
+        <i class="fa fa-clock-o" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;display: inline-block;font: normal normal normal 14px/1 FontAwesome;font-size: 35px;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #fff;"></i>
+        <h4 class="pull-right" id="totalHoursHero" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-family: 'Roboto';font-weight: 400;line-height: 1.1;color: #fff;margin-top: 0px;margin-bottom: 10px;font-size: 35px;float: right;text-transform: uppercase;margin: 0px;">&nbsp;</h4>
       </div><!--.tile-body-->
-      <div class="tile-footer">
+      <div class="tile-footer" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 4px 15px;color: #fff;background-color: rgba(255,255,255,0.1);">
         &nbsp;
       </div><!--.tile footer-->
     </div><!-- .tile-->
   </div><!--end .col-->
 
-  <div class="col-sm-6 col-md-3 margin-b-30">
-    <div class="tile blue">
-      <div class="tile-title clearfix">
+  <div class="col-sm-6 col-md-3 margin-b-30" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;position: relative;min-height: 1px;padding-left: 15px;padding-right: 15px;width: 25%;margin-bottom: 30px;">
+    <div class="tile blue" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;background-color: #165bf7;">
+      <div class="tile-title clearfix" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;color: #fff;text-transform: capitalize;background-color: rgba(255,255,255,0.1);padding: 3px 15px;">
         Average Gross Hourly Rate
-        <span class="pull-right"></span>
+        <span class="pull-right" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;float: right;"></span>
       </div><!--.tile-title-->
-      <div class="tile-body clearfix">
-        <i class="fa fa-usd"></i>
-        <h4 class="pull-right" id="hourlyRateHero"></h4>
+      <div class="tile-body clearfix" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 15px;">
+        <i class="fa fa-usd" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;display: inline-block;font: normal normal normal 14px/1 FontAwesome;font-size: 35px;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #fff;"></i>
+        <h4 class="pull-right" id="hourlyRateHero" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-family: 'Roboto';font-weight: 400;line-height: 1.1;color: #fff;margin-top: 0px;margin-bottom: 10px;font-size: 35px;float: right;text-transform: uppercase;margin: 0px;"></h4>
       </div><!--.tile-body-->
-      <div class="tile-footer">
+      <div class="tile-footer" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 4px 15px;color: #fff;background-color: rgba(255,255,255,0.1);">
         &nbsp;
       </div><!--.tile footer-->
     </div><!-- .tile-->
   </div><!--end .col-->
-  <div class="col-sm-6 col-md-3 margin-b-30">
-    <div class="tile purple">
-      <div class="tile-title clearfix">
+  <div class="col-sm-6 col-md-3 margin-b-30" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;position: relative;min-height: 1px;padding-left: 15px;padding-right: 15px;width: 25%;margin-bottom: 30px;">
+    <div class="tile purple" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;background-color: #972cf1;">
+      <div class="tile-title clearfix" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;color: #fff;text-transform: capitalize;background-color: rgba(255,255,255,0.1);padding: 3px 15px;">
         Average Gross Monthly Rate
-        <span class="pull-right"></span>
+        <span class="pull-right" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;float: right;"></span>
       </div><!--.tile-title-->
-      <div class="tile-body clearfix">
-        <i class="fa fa-calendar"></i>
-        <h4 class="pull-right" id="grossMonthlyRateHero"></h4>
+      <div class="tile-body clearfix" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 15px;">
+        <i class="fa fa-calendar" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;display: inline-block;font: normal normal normal 14px/1 FontAwesome;font-size: 35px;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #fff;"></i>
+        <h4 class="pull-right" id="grossMonthlyRateHero" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-family: 'Roboto';font-weight: 400;line-height: 1.1;color: #fff;margin-top: 0px;margin-bottom: 10px;font-size: 35px;float: right;text-transform: uppercase;margin: 0px;"></h4>
       </div><!--.tile-body-->
-      <div class="tile-footer">
+      <div class="tile-footer" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 4px 15px;color: #fff;background-color: rgba(255,255,255,0.1);">
         &nbsp;
       </div><!--.tile footer-->
     </div><!-- .tile-->
   </div><!--end .col-->
 </div>
-<h2>Gross Rate Worksheet</h2>
-<div class="col-md-12">
-  <div class="panel panel-default margin-b-30 ">
+<h2 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Roboto';font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 24px;">Gross
+  Rate Worksheet</h2>
+<div class="col-md-12" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;position: relative;min-height: 1px;padding-left: 15px;padding-right: 15px;width: 100%;">
+  <div class="panel panel-default margin-b-30 " style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;margin-bottom: 30px;background-color: #fff;border: 0px;border-radius: 0px;-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);box-shadow: 0px;border-color: #ddd;-webkit-border-radius: 0px;">
     <!-- Start .panel -->
-    <div class="panel-heading">
-      <h4 class="panel-title">&nbsp;</h4>
-      <div class="panel-actions">
-        <a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
-        <a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
+    <div class="panel-heading" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 10px 15px;border-bottom: 1px solid transparent;border-top-right-radius: 3px;border-top-left-radius: 3px;position: relative;color: #333;background-color: #eee;border-color: #f5f5f5;">
+      <h4 class="panel-title" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-family: 'Roboto';font-weight: 700;line-height: 1.1;color: inherit;margin-top: 0;margin-bottom: 0;font-size: 13px;text-transform: uppercase;">&nbsp;</h4>
+      <div class="panel-actions" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;right: 15px;position: absolute;top: 8px;">
+        <a href="#" class="panel-action panel-action-toggle" data-panel-toggle style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;background-color: transparent;color: #999;text-decoration: underline;transition: all 0.3s ease-in-out;display: inline-block;margin-left: 10px;"></a>
+        <a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;background-color: transparent;color: #999;text-decoration: underline;transition: all 0.3s ease-in-out;display: inline-block;margin-left: 10px;"></a>
       </div>
     </div>
-    <div class="panel-body">
-      <table class="table table-bordered">
-        <tbody>
-        <tr>
-          <td><strong>Total MVPD and OTA Homes</strong></td>
-          <td><%= @offer.outlet.total_homes %></td>
-          <td><strong>MVPD Subs</strong></td>
-          <td><%= @offer.outlet.subs %></td>
-          <td><strong>OTA Homes</strong></td>
-          <td><%= @offer.outlet.over_air %></td>
+    <div class="panel-body" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 15px;background-color: #f5f5f5;">
+      <table class="table table-bordered" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;border-collapse: collapse !important;border-spacing: 0;background-color: transparent;width: 100%;max-width: none !important;margin-bottom: 6px !important;border: 1px solid #ddd;clear: both;margin-top: 6px !important;">
+        <tbody style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">
+        <tr style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;page-break-inside: avoid;">
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Total
+              MVPD and OTA Homes</strong></td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">15000000</td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">MVPD
+              Subs</strong></td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">10000000</td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">OTA
+              Homes</strong></td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">5000000</td>
 
         </tr>
-        <tr>
-          <td><strong>FTEH Rate for MVPD and OTA</strong></td>
-          <td><%= @offer.dollar_amount %></td>
-          <td></td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
+        <tr style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;page-break-inside: avoid;">
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">FTEH
+              Rate for MVPD and OTA</strong></td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">0.25</td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"></td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">&nbsp;</td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">&nbsp;</td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">&nbsp;</td>
         </tr>
-        <tr>
-          <td><strong>Gross Half Hour Rate</strong></td>
-          <td><%= @offer.halfHourRate %></td>
-          <td><strong>Gross Hour Rate</strong></td>
-          <td><%= @offer.hourly_rate %></td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
+        <tr style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;page-break-inside: avoid;">
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Gross
+              Half Hour Rate</strong></td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">0.0</td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Gross
+              Hour Rate</strong></td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">465.03</td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">&nbsp;</td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">&nbsp;</td>
         </tr>
-        <tr>
-          <td><strong>MVPD Subscriber Rate</strong></td>
-          <td><%= @offer.mvpdSubscriberRate %></td>
-          <td><strong>MVPD-OTA Sub Rate</strong></td>
-          <td><%= @offer.mvpdOtaSubRate %>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
+        <tr style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;page-break-inside: avoid;">
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">MVPD
+              Subscriber Rate</strong></td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">0.375</td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">MVPD-OTA
+              Sub Rate</strong></td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">0.25
+          </td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">&nbsp;</td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">&nbsp;</td>
         </tr>
-        <tr>
-          <td><strong>Weekly Hours</strong></td>
-          <td><%= @offer.weekly_hours %></td>
-          <td><strong>Monthly Hours</strong></td>
-          <td><%= @offer.monthly_hours %></td>
-          <td><strong>Yearly Hours</strong></td>
-          <td><%= @offer.yearly_hours %></td>
+        <tr style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;page-break-inside: avoid;">
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Weekly
+              Hours</strong></td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">168.0</td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Monthly
+              Hours</strong></td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">672.0</td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Yearly
+              Hours</strong></td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">8064.0</td>
         </tr>
-        <tr>
-          <td><strong>Gross Weekly Rate</strong></td>
-          <td><%= number_to_currency @offer.weekly_offer %></td>
-          <td><strong>Gross Monthly Rate</strong></td>
-          <td><%= number_to_currency @offer.monthly_offer %></td>
-          <td><strong>Gross Yearly Rate</strong></td>
-          <td><%= number_to_currency @offer.yearly_offer %></td>
+        <tr style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;page-break-inside: avoid;">
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Gross
+              Weekly Rate</strong></td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">$78,125.00</td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Gross
+              Monthly Rate</strong></td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">$312,500.00</td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Gross
+              Yearly Rate</strong></td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">$3,750,000.00</td>
         </tr>
         </tbody>
       </table>
-      <textarea class="form-control"><%= @offer.grNotes %></textarea>
+      <textarea class="form-control" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;color: #555555;font: inherit;margin: 0;overflow: auto;font-family: 'Roboto';font-size: 14px;line-height: 1.42857143;display: block;width: 100%;height: auto;padding: 6px 12px;background-color: #fff;background-image: none;border: 1px solid #ccc;border-radius: 4px;-webkit-box-shadow: none;box-shadow: none;-webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;-o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;">notes for gross rate worksheet</textarea>
     </div>
   </div>
 </div>
-</div>
-<h2>Dayparts</h2>
-<div class="col-md-12">
-  <div class="panel panel-default margin-b-30 ">
+      </div>
+<h2 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Roboto';font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 24px;">Dayparts</h2>
+<div class="col-md-12" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;position: relative;min-height: 1px;padding-left: 15px;padding-right: 15px;width: 100%;">
+  <div class="panel panel-default margin-b-30 " style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;margin-bottom: 30px;background-color: #fff;border: 0px;border-radius: 0px;-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);box-shadow: 0px;border-color: #ddd;-webkit-border-radius: 0px;">
     <!-- Start .panel -->
-    <div class="panel-heading">
-      <h4 class="panel-title">&nbsp;</h4>
-      <div class="panel-actions">
-        <a href="#" class="panel-action panel-action-toggle" data-panel-toggle></a>
-        <a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss></a>
+    <div class="panel-heading" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 10px 15px;border-bottom: 1px solid transparent;border-top-right-radius: 3px;border-top-left-radius: 3px;position: relative;color: #333;background-color: #eee;border-color: #f5f5f5;">
+      <h4 class="panel-title" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-family: 'Roboto';font-weight: 700;line-height: 1.1;color: inherit;margin-top: 0;margin-bottom: 0;font-size: 13px;text-transform: uppercase;">&nbsp;</h4>
+      <div class="panel-actions" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;right: 15px;position: absolute;top: 8px;">
+        <a href="#" class="panel-action panel-action-toggle" data-panel-toggle style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;background-color: transparent;color: #999;text-decoration: underline;transition: all 0.3s ease-in-out;display: inline-block;margin-left: 10px;"></a>
+        <a href="#" class="panel-action panel-action-dismiss" data-panel-dismiss style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;background-color: transparent;color: #999;text-decoration: underline;transition: all 0.3s ease-in-out;display: inline-block;margin-left: 10px;"></a>
       </div>
     </div>
-    <div class="panel-body">
-      <table class="table table-bordered">
-        <thead>
-        <tr>
-          <td>&nbsp;</td>
-          <td><strong>Time Period</strong></td>
-          <td><strong>Est. % of Weekly Viewing</strong></td>
-          <td><strong>Est. Gross Hourly Rate</strong></td>
-          <td><strong>Total Hours</strong></td>
-          <td><strong>Gross Weekly Rate</strong></td>
+    <div class="panel-body" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 15px;background-color: #f5f5f5;">
+      <table class="table table-bordered" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;border-collapse: collapse !important;border-spacing: 0;background-color: transparent;width: 100%;max-width: none !important;margin-bottom: 6px !important;border: 1px solid #ddd;clear: both;margin-top: 6px !important;">
+        <thead style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;display: table-header-group;cursor: context-menu;">
+        <tr style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;page-break-inside: avoid;">
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 0;border: 1px solid #ddd !important;border-bottom-width: 2px;background-color: #fff !important;">&nbsp;</td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 0;border: 1px solid #ddd !important;border-bottom-width: 2px;background-color: #fff !important;">
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Time
+              Period</strong></td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 0;border: 1px solid #ddd !important;border-bottom-width: 2px;background-color: #fff !important;">
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Est.
+              % of Weekly Viewing</strong></td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 0;border: 1px solid #ddd !important;border-bottom-width: 2px;background-color: #fff !important;">
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Est.
+              Gross Hourly Rate</strong></td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 0;border: 1px solid #ddd !important;border-bottom-width: 2px;background-color: #fff !important;">
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Total
+              Hours</strong></td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 0;border: 1px solid #ddd !important;border-bottom-width: 2px;background-color: #fff !important;">
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Gross
+              Weekly Rate</strong></td>
         </tr>
         </thead>
-        <tbody>
-        <tr>
-          <td class="dayPartRow morning"><strong>Early Morning</strong></td>
-          <td>6am to 10am</td>
-          <td id="morningAudience"><%= @offer.morningAudience %></td>
-          <td id="morningRate"><%= @offer.morningRate %></td>
-          <td id="morningHours"><%= @offer.morningHours %></td>
-          <td id="morningWeeklyRate"><%= @offer.morningWeeklyRate %></td>
+        <tbody style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">
+        <tr style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;page-break-inside: avoid;">
+          <td class="dayPartRow morning" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Early
+              Morning</strong></td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">6am
+            to 10am
+          </td>
+          <td id="morningAudience" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">11.62%</td>
+          <td id="morningRate" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">$465.03</td>
+          <td id="morningHours" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">28</td>
+          <td id="morningWeeklyRate" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">$13,020.83</td>
         </tr>
-        <tr>
-          <td class="dayPartRow daytime"><strong>Daytime</strong></td>
-          <td>10am to 4:30pm</td>
-          <td id="daytimeAudience"><%= @offer.daytimeAudience %></td>
-          <td id="daytimeRate"><%= @offer.daytimeRate %></td>
-          <td id="daytimeHours"><%= @offer.daytimeHours %></td>
-          <td id="daytimeWeeklyRate"><%= @offer.daytimeWeeklyRate %></td>
+        <tr style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;page-break-inside: avoid;">
+          <td class="dayPartRow daytime" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Daytime</strong>
+          </td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">10am
+            to 4:30pm
+          </td>
+          <td id="daytimeAudience" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">25.30%</td>
+          <td id="daytimeRate" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">$465.03</td>
+          <td id="daytimeHours" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">45.5</td>
+          <td id="daytimeWeeklyRate" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">$21,158.85</td>
         </tr>
-        <tr>
-          <td class="dayPartRow eveningNews"><strong>Evening News</strong></td>
-          <td>4:30pm to 7pm</td>
-          <td id="eveningNewsAudience"><%= @offer.eveningNewsAudience %></td>
-          <td id="eveningNewsRate"><%= @offer.eveningNewsRate %></td>
-          <td id="eveningNewsHours"><%= @offer.eveningNewsHours %></td>
-          <td id="eveningNewsWeeklyRate"><%= @offer.eveningNewsWeeklyRate %></td>
+        <tr style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;page-break-inside: avoid;">
+          <td class="dayPartRow eveningNews" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Evening
+              News</strong></td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">4:30pm
+            to 7pm
+          </td>
+          <td id="eveningNewsAudience" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">13.75%</td>
+          <td id="eveningNewsRate" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">$465.03</td>
+          <td id="eveningNewsHours" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">17.5</td>
+          <td id="eveningNewsWeeklyRate" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">$8,138.02</td>
         </tr>
-        <tr>
-          <td class="dayPartRow localPrimeTime"><strong>Local Prime Time</strong></td>
-          <td>7pm to 8pm</td>
-          <td id="localPrimeTimeAudience"><%= @offer.localPrimeTimeAudience %></td>
-          <td id="localPrimeTimeRate"><%= @offer.localPrimeTimeRate %></td>
-          <td id="localPrimeTimeHours"><%= @offer.localPrimeTimeHours %></td>
-          <td id="localPrimeTimeWeeklyRate"><%= @offer.localPrimeTimeWeeklyRate %></td>
+        <tr style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;page-break-inside: avoid;">
+          <td class="dayPartRow localPrimeTime" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Local
+              Prime Time</strong></td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">7pm
+            to 8pm
+          </td>
+          <td id="localPrimeTimeAudience" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">7.00%</td>
+          <td id="localPrimeTimeRate" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">$465.03</td>
+          <td id="localPrimeTimeHours" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">7</td>
+          <td id="localPrimeTimeWeeklyRate" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">$3,255.21</td>
         </tr>
-        <tr>
-          <td class="dayPartRow nationalPrimeTime"><strong>National Prime Time</strong></td>
-          <td>8pm to 11pm</td>
-          <td id="nationalPrimeTimeAudience"><%= @offer.nationalPrimeTimeAudience %></td>
-          <td id="nationalPrimeTimeRate"><%= @offer.nationalPrimeTimeRate %></td>
-          <td id="nationalPrimeTimeHours"><%= @offer.nationalPrimeTimeHours %></td>
-          <td id="nationalPrimeTimeWeeklyRate"><%= @offer.nationalPrimeTimeWeeklyRate %></td>
+        <tr style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;page-break-inside: avoid;">
+          <td class="dayPartRow nationalPrimeTime" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">National
+              Prime Time</strong></td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">8pm
+            to 11pm
+          </td>
+          <td id="nationalPrimeTimeAudience" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">21.87%</td>
+          <td id="nationalPrimeTimeRate" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">$465.03</td>
+          <td id="nationalPrimeTimeHours" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">21</td>
+          <td id="nationalPrimeTimeWeeklyRate" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">$9,765.62</td>
         </tr>
-        <tr>
-          <td class="dayPartRow lateNews"><strong>Late News</strong></td>
-          <td>11pm to 11:30pm</td>
-          <td id="lateNewsAudience"><%= @offer.lateNewsAudience %></td>
-          <td id="lateNewsRate"><%= @offer.lateNewsRate %></td>
-          <td id="lateNewsHours"><%= @offer.lateNewsHours %></td>
-          <td id="lateNewsWeeklyRate"><%= @offer.lateNewsWeeklyRate %></td>
+        <tr style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;page-break-inside: avoid;">
+          <td class="dayPartRow lateNews" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Late
+              News</strong></td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">11pm
+            to 11:30pm
+          </td>
+          <td id="lateNewsAudience" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">2.85%</td>
+          <td id="lateNewsRate" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">$465.03</td>
+          <td id="lateNewsHours" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">3.5</td>
+          <td id="lateNewsWeeklyRate" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">$1,627.60</td>
         </tr>
-        <tr>
-          <td class="dayPartRow lateNight"><strong>Late Night</strong></td>
-          <td>11:30pm to 1am</td>
-          <td id="lateNightAudience"><%= @offer.lateNightAudience %></td>
-          <td id="lateNightRate"><%= @offer.lateNightRate %></td>
-          <td id="lateNightHours"><%= @offer.lateNightHours %></td>
-          <td id="lateNightWeeklyRate"><%= @offer.lateNightWeeklyRate %></td>
+        <tr style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;page-break-inside: avoid;">
+          <td class="dayPartRow lateNight" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Late
+              Night</strong></td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">11:30pm
+            to 1am
+          </td>
+          <td id="lateNightAudience" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">7.10%</td>
+          <td id="lateNightRate" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">$465.03</td>
+          <td id="lateNightHours" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">10.5</td>
+          <td id="lateNightWeeklyRate" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">$4,882.81</td>
         </tr>
-        <tr>
-          <td class="dayPartRow overnights"><strong>Overnights</strong></td>
-          <td>1am to 6am</td>
-          <td id="overnightsAudience"><%= @offer.overnightsAudience %></td>
-          <td id="overnightsRate"><%= @offer.overnightsRate %>></td>
-          <td id="overnightsHours"><%= @offer.overnightsHours %></td>
-          <td id="overnightsWeeklyRate"><%= @offer.overnightsWeeklyRate %></td>
+        <tr style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;page-break-inside: avoid;">
+          <td class="dayPartRow overnights" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Overnights</strong>
+          </td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">1am
+            to 6am
+          </td>
+          <td id="overnightsAudience" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">10.50%</td>
+          <td id="overnightsRate" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">$465.03></td>
+          <td id="overnightsHours" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">35</td>
+          <td id="overnightsWeeklyRate" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">$16,276.04</td>
         </tr>
-        <tr>
-          <td><strong>Total Worksheet</strong></td>
-          <td></td>
-          <td id="runningAudienceTotal"><%= @offer.runningAudienceTotal %></td>
-          <td id="runningAverageRateTotal"></td>
-          <td id="runningHoursTotal"><%= @offer.runningHoursTotal %></td>
-          <td id="runningWeeklyRateTotal"><%= @offer.runningWeeklyRateTotal %></td>
+        <tr style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;page-break-inside: avoid;">
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Total
+              Worksheet</strong></td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"></td>
+          <td id="runningAudienceTotal" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"></td>
+          <td id="runningAverageRateTotal" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"></td>
+          <td id="runningHoursTotal" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"></td>
+          <td id="runningWeeklyRateTotal" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"></td>
         </tr>
         </tbody>
       </table>
-      <textarea class="form-control"><%= @offer.dpNotes %></textarea>
+      <textarea class="form-control" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;color: #555555;font: inherit;margin: 0;overflow: auto;font-family: 'Roboto';font-size: 14px;line-height: 1.42857143;display: block;width: 100%;height: auto;padding: 6px 12px;background-color: #fff;background-image: none;border: 1px solid #ccc;border-radius: 4px;-webkit-box-shadow: none;box-shadow: none;-webkit-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;-o-transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;">after dayparts note</textarea>
     </div>
   </div>
 </div>
-<h2>Proposed Programming Schedule</h2>
-<div class="col-md-12 hours_div">
-  <div class="gridContainer">
-    <div class="gridContainerHeader" style="display:flex;">
-      <%= render :partial => 'offers/grid' %>
+<h2 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Roboto';font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 24px;">Proposed
+  Programming Schedule</h2>
+<div class="col-md-12 hours_div" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;position: relative;min-height: 1px;padding-left: 15px;padding-right: 15px;width: 100%;">
+  <div class="gridContainer" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">
+    <div class="gridContainerHeader" style="display: flex;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">
+      <div class="day" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">
+        <div class="dayLabel" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">Monday</div>
+        <div class="cell" data-selected="false" data-daypart="lateNight" data-day="0" data-time="00:00" data-audience="0.002975" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">00:00</div>
+        <div class="cell" data-selected="false" data-daypart="lateNight" data-day="0" data-time="00:30" data-audience="0.002975" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">00:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="0" data-time="01:00" data-audience="0.002275" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">01:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="0" data-time="01:30" data-audience="0.002275" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">01:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="0" data-time="02:00" data-audience="0.001575" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">02:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="0" data-time="02:30" data-audience="0.001575" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">02:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="0" data-time="03:00" data-audience="0.001225" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">03:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="0" data-time="03:30" data-audience="0.001225" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">03:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="0" data-time="04:00" data-audience="0.001050" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">04:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="0" data-time="04:30" data-audience="0.001050" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">04:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="0" data-time="05:00" data-audience="0.001225" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">05:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="0" data-time="05:30" data-audience="0.001225" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">05:30</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="0" data-time="06:00" data-audience="0.001575" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">06:00</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="0" data-time="06:30" data-audience="0.001575" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">06:30</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="0" data-time="07:00" data-audience="0.001925" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">07:00</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="0" data-time="07:30" data-audience="0.001925" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">07:30</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="0" data-time="08:00" data-audience="0.002100" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">08:00</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="0" data-time="08:30" data-audience="0.002100" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">08:30</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="0" data-time="09:00" data-audience="0.002275" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">09:00</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="0" data-time="09:30" data-audience="0.002275" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">09:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="0" data-time="10:00" data-audience="0.002275" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">10:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="0" data-time="10:30" data-audience="0.002275" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">10:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="0" data-time="11:00" data-audience="0.002450" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">11:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="0" data-time="11:30" data-audience="0.002450" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">11:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="0" data-time="12:00" data-audience="0.002625" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">12:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="0" data-time="12:30" data-audience="0.002625" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">12:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="0" data-time="13:00" data-audience="0.002800" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">13:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="0" data-time="13:30" data-audience="0.002800" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">13:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="0" data-time="14:00" data-audience="0.002800" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">14:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="0" data-time="14:30" data-audience="0.002800" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">14:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="0" data-time="15:00" data-audience="0.002975" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">15:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="0" data-time="15:30" data-audience="0.002975" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">15:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="0" data-time="16:00" data-audience="0.003150" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">16:00</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="0" data-time="16:30" data-audience="0.003150" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">16:30</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="0" data-time="17:00" data-audience="0.003675" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">17:00</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="0" data-time="17:30" data-audience="0.003675" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">17:30</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="0" data-time="18:00" data-audience="0.004375" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">18:00</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="0" data-time="18:30" data-audience="0.004375" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">18:30</div>
+        <div class="cell" data-selected="false" data-daypart="localPrimeTime" data-day="0" data-time="19:00" data-audience="0.004900" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">19:00</div>
+        <div class="cell" data-selected="false" data-daypart="localPrimeTime" data-day="0" data-time="19:30" data-audience="0.004900" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">19:30</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="0" data-time="20:00" data-audience="0.005250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">20:00</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="0" data-time="20:30" data-audience="0.005250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">20:30</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="0" data-time="21:00" data-audience="0.005425" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">21:00</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="0" data-time="21:30" data-audience="0.005425" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">21:30</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="0" data-time="22:00" data-audience="0.005075" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">22:00</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="0" data-time="22:30" data-audience="0.005075" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">22:30</div>
+        <div class="cell" data-selected="false" data-daypart="lateNews" data-day="0" data-time="23:00" data-audience="0.004025" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">23:00</div>
+        <div class="cell" data-selected="false" data-daypart="lateNight" data-day="0" data-time="23:30" data-audience="0.004025" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">23:30</div>
+      </div>
+      <div class="day" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">
+        <div class="dayLabel" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">Tuesday</div>
+        <div class="cell" data-selected="false" data-daypart="lateNight" data-day="1" data-time="00:00" data-audience="0.00265625" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">00:00</div>
+        <div class="cell" data-selected="false" data-daypart="lateNight" data-day="1" data-time="00:30" data-audience="0.00265625" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">00:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="1" data-time="01:00" data-audience="0.00203125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">01:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="1" data-time="01:30" data-audience="0.00203125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">01:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="1" data-time="02:00" data-audience="0.00140625" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">02:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="1" data-time="02:30" data-audience="0.00140625" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">02:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="1" data-time="03:00" data-audience="0.00109375" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">03:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="1" data-time="03:30" data-audience="0.00109375" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">03:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="1" data-time="04:00" data-audience="0.00093750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">04:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="1" data-time="04:30" data-audience="0.00093750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">04:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="1" data-time="05:00" data-audience="0.00109375" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">05:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="1" data-time="05:30" data-audience="0.00109375" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">05:30</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="1" data-time="06:00" data-audience="0.00140625" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">06:00</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="1" data-time="06:30" data-audience="0.00140625" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">06:30</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="1" data-time="07:00" data-audience="0.00171875" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">07:00</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="1" data-time="07:30" data-audience="0.00171875" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">07:30</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="1" data-time="08:00" data-audience="0.00187500" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">08:00</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="1" data-time="08:30" data-audience="0.00187500" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">08:30</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="1" data-time="09:00" data-audience="0.00203125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">09:00</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="1" data-time="09:30" data-audience="0.00203125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">09:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="1" data-time="10:00" data-audience="0.00203125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">10:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="1" data-time="10:30" data-audience="0.00203125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">10:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="1" data-time="11:00" data-audience="0.00218750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">11:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="1" data-time="11:30" data-audience="0.00218750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">11:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="1" data-time="12:00" data-audience="0.00234375" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">12:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="1" data-time="12:30" data-audience="0.00234375" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">12:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="1" data-time="13:00" data-audience="0.00250000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">13:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="1" data-time="13:30" data-audience="0.00250000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">13:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="1" data-time="14:00" data-audience="0.00250000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">14:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="1" data-time="14:30" data-audience="0.00250000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">14:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="1" data-time="15:00" data-audience="0.00265625" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">15:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="1" data-time="15:30" data-audience="0.00265625" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">15:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="1" data-time="16:00" data-audience="0.00281250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">16:00</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="1" data-time="16:30" data-audience="0.00281250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">16:30</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="1" data-time="17:00" data-audience="0.00328125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">17:00</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="1" data-time="17:30" data-audience="0.00328125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">17:30</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="1" data-time="18:00" data-audience="0.00390625" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">18:00</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="1" data-time="18:30" data-audience="0.00390625" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">18:30</div>
+        <div class="cell" data-selected="false" data-daypart="localPrimeTime" data-day="1" data-time="19:00" data-audience="0.00437500" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">19:00</div>
+        <div class="cell" data-selected="false" data-daypart="localPrimeTime" data-day="1" data-time="19:30" data-audience="0.00437500" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">19:30</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="1" data-time="20:00" data-audience="0.00468750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">20:00</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="1" data-time="20:30" data-audience="0.00468750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">20:30</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="1" data-time="21:00" data-audience="0.00484375" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">21:00</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="1" data-time="21:30" data-audience="0.00484375" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">21:30</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="1" data-time="22:00" data-audience="0.00453125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">22:00</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="1" data-time="22:30" data-audience="0.00453125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">22:30</div>
+        <div class="cell" data-selected="false" data-daypart="lateNews" data-day="1" data-time="23:00" data-audience="0.00359375" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">23:00</div>
+        <div class="cell" data-selected="false" data-daypart="lateNight" data-day="1" data-time="23:30" data-audience="0.00359375" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">23:30</div>
+      </div>
+      <div class="day" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">
+        <div class="dayLabel" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">Wednesday</div>
+        <div class="cell" data-selected="false" data-daypart="lateNight" data-day="2" data-time="00:00" data-audience="0.00265625" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">00:00</div>
+        <div class="cell" data-selected="false" data-daypart="lateNight" data-day="2" data-time="00:30" data-audience="0.00265625" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">00:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="2" data-time="01:00" data-audience="0.00203125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">01:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="2" data-time="01:30" data-audience="0.00203125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">01:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="2" data-time="02:00" data-audience="0.00140625" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">02:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="2" data-time="02:30" data-audience="0.00140625" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">02:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="2" data-time="03:00" data-audience="0.00109375" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">03:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="2" data-time="03:30" data-audience="0.00109375" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">03:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="2" data-time="04:00" data-audience="0.00093750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">04:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="2" data-time="04:30" data-audience="0.00093750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">04:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="2" data-time="05:00" data-audience="0.00109375" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">05:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="2" data-time="05:30" data-audience="0.00109375" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">05:30</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="2" data-time="06:00" data-audience="0.00140625" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">06:00</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="2" data-time="06:30" data-audience="0.00140625" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">06:30</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="2" data-time="07:00" data-audience="0.00171875" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">07:00</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="2" data-time="07:30" data-audience="0.00171875" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">07:30</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="2" data-time="08:00" data-audience="0.00187500" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">08:00</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="2" data-time="08:30" data-audience="0.00187500" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">08:30</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="2" data-time="09:00" data-audience="0.00203125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">09:00</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="2" data-time="09:30" data-audience="0.00203125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">09:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="2" data-time="10:00" data-audience="0.00203125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">10:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="2" data-time="10:30" data-audience="0.00203125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">10:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="2" data-time="11:00" data-audience="0.00218750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">11:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="2" data-time="11:30" data-audience="0.00218750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">11:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="2" data-time="12:00" data-audience="0.00234375" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">12:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="2" data-time="12:30" data-audience="0.00234375" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">12:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="2" data-time="13:00" data-audience="0.00250000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">13:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="2" data-time="13:30" data-audience="0.00250000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">13:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="2" data-time="14:00" data-audience="0.00250000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">14:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="2" data-time="14:30" data-audience="0.00250000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">14:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="2" data-time="15:00" data-audience="0.00265625" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">15:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="2" data-time="15:30" data-audience="0.00265625" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">15:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="2" data-time="16:00" data-audience="0.00281250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">16:00</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="2" data-time="16:30" data-audience="0.00281250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">16:30</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="2" data-time="17:00" data-audience="0.00328125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">17:00</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="2" data-time="17:30" data-audience="0.00328125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">17:30</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="2" data-time="18:00" data-audience="0.00390625" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">18:00</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="2" data-time="18:30" data-audience="0.00390625" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">18:30</div>
+        <div class="cell" data-selected="false" data-daypart="localPrimeTime" data-day="2" data-time="19:00" data-audience="0.00437500" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">19:00</div>
+        <div class="cell" data-selected="false" data-daypart="localPrimeTime" data-day="2" data-time="19:30" data-audience="0.00437500" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">19:30</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="2" data-time="20:00" data-audience="0.00468750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">20:00</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="2" data-time="20:30" data-audience="0.00468750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">20:30</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="2" data-time="21:00" data-audience="0.00484375" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">21:00</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="2" data-time="21:30" data-audience="0.00484375" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">21:30</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="2" data-time="22:00" data-audience="0.00453125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">22:00</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="2" data-time="22:30" data-audience="0.00453125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">22:30</div>
+        <div class="cell" data-selected="false" data-daypart="lateNews" data-day="2" data-time="23:00" data-audience="0.00359375" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">23:00</div>
+        <div class="cell" data-selected="false" data-daypart="lateNight" data-day="2" data-time="23:30" data-audience="0.00359375" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">23:30</div>
+      </div>
+      <div class="day" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">
+        <div class="dayLabel" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">Thursday</div>
+        <div class="cell" data-selected="false" data-daypart="lateNight" data-day="3" data-time="00:00" data-audience="0.00276250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">00:00</div>
+        <div class="cell" data-selected="false" data-daypart="lateNight" data-day="3" data-time="00:30" data-audience="0.00276250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">00:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="3" data-time="01:00" data-audience="0.00211250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">01:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="3" data-time="01:30" data-audience="0.00211250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">01:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="3" data-time="02:00" data-audience="0.00146250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">02:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="3" data-time="02:30" data-audience="0.00146250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">02:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="3" data-time="03:00" data-audience="0.00113750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">03:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="3" data-time="03:30" data-audience="0.00113750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">03:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="3" data-time="04:00" data-audience="0.00097500" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">04:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="3" data-time="04:30" data-audience="0.00097500" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">04:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="3" data-time="05:00" data-audience="0.00113750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">05:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="3" data-time="05:30" data-audience="0.00113750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">05:30</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="3" data-time="06:00" data-audience="0.00146250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">06:00</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="3" data-time="06:30" data-audience="0.00146250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">06:30</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="3" data-time="07:00" data-audience="0.00178750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">07:00</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="3" data-time="07:30" data-audience="0.00178750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">07:30</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="3" data-time="08:00" data-audience="0.00195000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">08:00</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="3" data-time="08:30" data-audience="0.00195000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">08:30</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="3" data-time="09:00" data-audience="0.00211250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">09:00</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="3" data-time="09:30" data-audience="0.00211250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">09:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="3" data-time="10:00" data-audience="0.00211250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">10:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="3" data-time="10:30" data-audience="0.00211250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">10:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="3" data-time="11:00" data-audience="0.00227500" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">11:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="3" data-time="11:30" data-audience="0.00227500" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">11:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="3" data-time="12:00" data-audience="0.00243750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">12:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="3" data-time="12:30" data-audience="0.00243750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">12:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="3" data-time="13:00" data-audience="0.00260000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">13:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="3" data-time="13:30" data-audience="0.00260000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">13:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="3" data-time="14:00" data-audience="0.00260000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">14:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="3" data-time="14:30" data-audience="0.00260000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">14:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="3" data-time="15:00" data-audience="0.00276250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">15:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="3" data-time="15:30" data-audience="0.00276250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">15:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="3" data-time="16:00" data-audience="0.00292500" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">16:00</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="3" data-time="16:30" data-audience="0.00292500" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">16:30</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="3" data-time="17:00" data-audience="0.00341250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">17:00</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="3" data-time="17:30" data-audience="0.00341250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">17:30</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="3" data-time="18:00" data-audience="0.00406250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">18:00</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="3" data-time="18:30" data-audience="0.00406250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">18:30</div>
+        <div class="cell" data-selected="false" data-daypart="localPrimeTime" data-day="3" data-time="19:00" data-audience="0.00455000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">19:00</div>
+        <div class="cell" data-selected="false" data-daypart="localPrimeTime" data-day="3" data-time="19:30" data-audience="0.00455000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">19:30</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="3" data-time="20:00" data-audience="0.00487500" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">20:00</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="3" data-time="20:30" data-audience="0.00487500" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">20:30</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="3" data-time="21:00" data-audience="0.00503750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">21:00</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="3" data-time="21:30" data-audience="0.00503750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">21:30</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="3" data-time="22:00" data-audience="0.00471250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">22:00</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="3" data-time="22:30" data-audience="0.00471250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">22:30</div>
+        <div class="cell" data-selected="false" data-daypart="lateNews" data-day="3" data-time="23:00" data-audience="0.00373750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">23:00</div>
+        <div class="cell" data-selected="false" data-daypart="lateNight" data-day="3" data-time="23:30" data-audience="0.00373750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">23:30</div>
+      </div>
+      <div class="day" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">
+        <div class="dayLabel" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">Friday</div>
+        <div class="cell" data-selected="false" data-daypart="lateNight" data-day="4" data-time="00:00" data-audience="0.00318750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">00:00</div>
+        <div class="cell" data-selected="false" data-daypart="lateNight" data-day="4" data-time="00:30" data-audience="0.00318750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">00:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="4" data-time="01:00" data-audience="0.00243750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">01:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="4" data-time="01:30" data-audience="0.00243750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">01:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="4" data-time="02:00" data-audience="0.00168750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">02:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="4" data-time="02:30" data-audience="0.00168750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">02:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="4" data-time="03:00" data-audience="0.00131250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">03:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="4" data-time="03:30" data-audience="0.00131250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">03:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="4" data-time="04:00" data-audience="0.00112500" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">04:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="4" data-time="04:30" data-audience="0.00112500" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">04:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="4" data-time="05:00" data-audience="0.00131250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">05:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="4" data-time="05:30" data-audience="0.00131250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">05:30</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="4" data-time="06:00" data-audience="0.00168750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">06:00</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="4" data-time="06:30" data-audience="0.00168750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">06:30</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="4" data-time="07:00" data-audience="0.00206250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">07:00</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="4" data-time="07:30" data-audience="0.00206250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">07:30</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="4" data-time="08:00" data-audience="0.00225000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">08:00</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="4" data-time="08:30" data-audience="0.00225000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">08:30</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="4" data-time="09:00" data-audience="0.00225000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">09:00</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="4" data-time="09:30" data-audience="0.00225000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">09:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="4" data-time="10:00" data-audience="0.00225000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">10:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="4" data-time="10:30" data-audience="0.00225000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">10:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="4" data-time="11:00" data-audience="0.00225000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">11:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="4" data-time="11:30" data-audience="0.00225000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">11:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="4" data-time="12:00" data-audience="0.00281250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">12:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="4" data-time="12:30" data-audience="0.00281250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">12:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="4" data-time="13:00" data-audience="0.00300000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">13:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="4" data-time="13:30" data-audience="0.00300000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">13:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="4" data-time="14:00" data-audience="0.00300000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">14:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="4" data-time="14:30" data-audience="0.00300000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">14:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="4" data-time="15:00" data-audience="0.00318750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">15:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="4" data-time="15:30" data-audience="0.00318750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">15:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="4" data-time="16:00" data-audience="0.00337500" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">16:00</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="4" data-time="16:30" data-audience="0.00337500" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">16:30</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="4" data-time="17:00" data-audience="0.00393750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">17:00</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="4" data-time="17:30" data-audience="0.00393750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">17:30</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="4" data-time="18:00" data-audience="0.00468750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">18:00</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="4" data-time="18:30" data-audience="0.00468750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">18:30</div>
+        <div class="cell" data-selected="false" data-daypart="localPrimeTime" data-day="4" data-time="19:00" data-audience="0.00525000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">19:00</div>
+        <div class="cell" data-selected="false" data-daypart="localPrimeTime" data-day="4" data-time="19:30" data-audience="0.00525000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">19:30</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="4" data-time="20:00" data-audience="0.00562500" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">20:00</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="4" data-time="20:30" data-audience="0.00562500" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">20:30</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="4" data-time="21:00" data-audience="0.00600000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">21:00</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="4" data-time="21:30" data-audience="0.00600000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">21:30</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="4" data-time="22:00" data-audience="0.00581250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">22:00</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="4" data-time="22:30" data-audience="0.00581250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">22:30</div>
+        <div class="cell" data-selected="false" data-daypart="lateNews" data-day="4" data-time="23:00" data-audience="0.00450000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">23:00</div>
+        <div class="cell" data-selected="false" data-daypart="lateNight" data-day="4" data-time="23:30" data-audience="0.00450000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">23:30</div>
+      </div>
+      <div class="day" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">
+        <div class="dayLabel" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">Saturday</div>
+        <div class="cell" data-selected="false" data-daypart="lateNight" data-day="5" data-time="00:00" data-audience="0.00340000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">00:00</div>
+        <div class="cell" data-selected="false" data-daypart="lateNight" data-day="5" data-time="00:30" data-audience="0.00340000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">00:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="5" data-time="01:00" data-audience="0.00260000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">01:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="5" data-time="01:30" data-audience="0.00260000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">01:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="5" data-time="02:00" data-audience="0.00180000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">02:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="5" data-time="02:30" data-audience="0.00180000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">02:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="5" data-time="03:00" data-audience="0.00140000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">03:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="5" data-time="03:30" data-audience="0.00140000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">03:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="5" data-time="04:00" data-audience="0.00120000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">04:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="5" data-time="04:30" data-audience="0.00120000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">04:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="5" data-time="05:00" data-audience="0.00140000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">05:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="5" data-time="05:30" data-audience="0.00140000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">05:30</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="5" data-time="06:00" data-audience="0.00180000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">06:00</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="5" data-time="06:30" data-audience="0.00180000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">06:30</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="5" data-time="07:00" data-audience="0.00220000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">07:00</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="5" data-time="07:30" data-audience="0.00220000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">07:30</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="5" data-time="08:00" data-audience="0.00300000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">08:00</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="5" data-time="08:30" data-audience="0.00300000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">08:30</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="5" data-time="09:00" data-audience="0.00300000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">09:00</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="5" data-time="09:30" data-audience="0.00300000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">09:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="5" data-time="10:00" data-audience="0.00300000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">10:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="5" data-time="10:30" data-audience="0.00300000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">10:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="5" data-time="11:00" data-audience="0.00320000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">11:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="5" data-time="11:30" data-audience="0.00320000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">11:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="5" data-time="12:00" data-audience="0.00320000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">12:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="5" data-time="12:30" data-audience="0.00320000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">12:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="5" data-time="13:00" data-audience="0.00320000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">13:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="5" data-time="13:30" data-audience="0.00320000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">13:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="5" data-time="14:00" data-audience="0.00320000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">14:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="5" data-time="14:30" data-audience="0.00320000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">14:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="5" data-time="15:00" data-audience="0.00340000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">15:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="5" data-time="15:30" data-audience="0.00340000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">15:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="5" data-time="16:00" data-audience="0.00360000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">16:00</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="5" data-time="16:30" data-audience="0.00360000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">16:30</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="5" data-time="17:00" data-audience="0.00420000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">17:00</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="5" data-time="17:30" data-audience="0.00420000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">17:30</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="5" data-time="18:00" data-audience="0.00500000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">18:00</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="5" data-time="18:30" data-audience="0.00500000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">18:30</div>
+        <div class="cell" data-selected="false" data-daypart="localPrimeTime" data-day="5" data-time="19:00" data-audience="0.00560000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">19:00</div>
+        <div class="cell" data-selected="false" data-daypart="localPrimeTime" data-day="5" data-time="19:30" data-audience="0.00560000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">19:30</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="5" data-time="20:00" data-audience="0.00560000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">20:00</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="5" data-time="20:30" data-audience="0.00560000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">20:30</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="5" data-time="21:00" data-audience="0.00560000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">21:00</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="5" data-time="21:30" data-audience="0.00560000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">21:30</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="5" data-time="22:00" data-audience="0.00500000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">22:00</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="5" data-time="22:30" data-audience="0.00500000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">22:30</div>
+        <div class="cell" data-selected="false" data-daypart="lateNews" data-day="5" data-time="23:00" data-audience="0.00440000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">23:00</div>
+        <div class="cell" data-selected="false" data-daypart="lateNight" data-day="5" data-time="23:30" data-audience="0.00440000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">23:30</div>
+      </div>
+      <div class="day" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">
+        <div class="dayLabel" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">Sunday</div>
+        <div class="cell" data-selected="false" data-daypart="lateNight" data-day="6" data-time="00:00" data-audience="0.0036125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">00:00</div>
+        <div class="cell" data-selected="false" data-daypart="lateNight" data-day="6" data-time="00:30" data-audience="0.0036125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">00:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="6" data-time="01:00" data-audience="0.0027625" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">01:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="6" data-time="01:30" data-audience="0.0027625" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">01:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="6" data-time="02:00" data-audience="0.0019125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">02:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="6" data-time="02:30" data-audience="0.0019125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">02:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="6" data-time="03:00" data-audience="0.0014875" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">03:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="6" data-time="03:30" data-audience="0.0014875" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">03:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="6" data-time="04:00" data-audience="0.0012750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">04:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="6" data-time="04:30" data-audience="0.0012750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">04:30</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="6" data-time="05:00" data-audience="0.0014875" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">05:00</div>
+        <div class="cell" data-selected="false" data-daypart="overnights" data-day="6" data-time="05:30" data-audience="0.0014875" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">05:30</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="6" data-time="06:00" data-audience="0.0019125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">06:00</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="6" data-time="06:30" data-audience="0.0019125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">06:30</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="6" data-time="07:00" data-audience="0.0023375" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">07:00</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="6" data-time="07:30" data-audience="0.0023375" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">07:30</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="6" data-time="08:00" data-audience="0.0031875" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">08:00</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="6" data-time="08:30" data-audience="0.0031875" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">08:30</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="6" data-time="09:00" data-audience="0.0031875" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">09:00</div>
+        <div class="cell" data-selected="false" data-daypart="morning" data-day="6" data-time="09:30" data-audience="0.0031875" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">09:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="6" data-time="10:00" data-audience="0.0031875" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">10:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="6" data-time="10:30" data-audience="0.0031875" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">10:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="6" data-time="11:00" data-audience="0.0034000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">11:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="6" data-time="11:30" data-audience="0.0034000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">11:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="6" data-time="12:00" data-audience="0.0034000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">12:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="6" data-time="12:30" data-audience="0.0034000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">12:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="6" data-time="13:00" data-audience="0.0034000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">13:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="6" data-time="13:30" data-audience="0.0034000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">13:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="6" data-time="14:00" data-audience="0.0034000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">14:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="6" data-time="14:30" data-audience="0.0034000" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">14:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="6" data-time="15:00" data-audience="0.0036125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">15:00</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="6" data-time="15:30" data-audience="0.0036125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">15:30</div>
+        <div class="cell" data-selected="false" data-daypart="daytime" data-day="6" data-time="16:00" data-audience="0.0038250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">16:00</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="6" data-time="16:30" data-audience="0.0038250" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">16:30</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="6" data-time="17:00" data-audience="0.0044625" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">17:00</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="6" data-time="17:30" data-audience="0.0044625" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">17:30</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="6" data-time="18:00" data-audience="0.0053125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">18:00</div>
+        <div class="cell" data-selected="false" data-daypart="eveningNews" data-day="6" data-time="18:30" data-audience="0.0053125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">18:30</div>
+        <div class="cell" data-selected="false" data-daypart="localPrimeTime" data-day="6" data-time="19:00" data-audience="0.0059500" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">19:00</div>
+        <div class="cell" data-selected="false" data-daypart="localPrimeTime" data-day="6" data-time="19:30" data-audience="0.0059500" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">19:30</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="6" data-time="20:00" data-audience="0.0059500" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">20:00</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="6" data-time="20:30" data-audience="0.0059500" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">20:30</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="6" data-time="21:00" data-audience="0.0059500" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">21:00</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="6" data-time="21:30" data-audience="0.0059500" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">21:30</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="6" data-time="22:00" data-audience="0.0053125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">22:00</div>
+        <div class="cell" data-selected="false" data-daypart="nationalPrimeTime" data-day="6" data-time="22:30" data-audience="0.0053125" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">22:30</div>
+        <div class="cell" data-selected="false" data-day="6" data-daypart="lateNews" data-time="23:00" data-audience="0.0046750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">23:00</div>
+        <div class="cell" data-selected="false" data-day="6" data-daypart="lateNight" data-time="23:30" data-audience="0.0046750" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">23:30</div>
+      </div>
     </div>
   </div>
 </div>
