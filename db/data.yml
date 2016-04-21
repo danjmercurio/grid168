@@ -3616,66 +3616,6 @@ programmer_types:
     - '2016-04-18 22:58:41.815615'
 
 ---
-programmers:
-  columns:
-  - id
-  - name
-  - description
-  - created_at
-  - updated_at
-  - user_id
-  - first_name
-  - last_name
-  - email
-  - phone
-  - programmer_type_id
-  records: 
-  - - 7
-    - Gem Shopping
-    - 
-    - '2016-04-20 00:11:47.040001'
-    - '2016-04-20 00:11:47.040001'
-    - 7
-    - gem
-    - shopping
-    - gem@gmail.com
-    - '12341234'
-    - 1
-  - - 8
-    - Grace to you
-    - 
-    - '2016-04-20 00:11:47.052354'
-    - '2016-04-20 00:11:47.052354'
-    - 7
-    - grace
-    - show
-    - grace@gmail.com
-    - '12341234'
-    - 1
-  - - 9
-    - Disney channel
-    - 
-    - '2016-04-20 00:11:47.069506'
-    - '2016-04-20 00:11:47.069506'
-    - 8
-    - disney
-    - show
-    - disney@gmail.com
-    - '12341234'
-    - 1
-  - - 10
-    - Cool Programming
-    - A really great programmer
-    - '2016-04-20 00:13:12.510572'
-    - '2016-04-20 00:13:12.510572'
-    - 2
-    - Tom
-    - Dave
-    - someone@cp.tv
-    - '23132321'
-    - 27
-
----
 states:
   columns:
   - id
@@ -3942,13 +3882,13 @@ users:
     - 
     - 
     - 
-    - 5
+    - 6
+    - '2016-04-21 19:45:31.173906'
     - '2016-04-20 01:06:25.941451'
-    - '2016-04-19 21:59:55.311081'
     - 127.0.0.1
     - 127.0.0.1
     - '2016-04-18 23:05:49.583885'
-    - '2016-04-20 01:06:25.944098'
+    - '2016-04-21 19:45:31.177130'
     - true
     - '234342'
     - mr
@@ -3958,3 +3898,63 @@ users:
     - '2016-04-18 23:06:54.016135'
     - '2016-04-18 23:05:49.585082'
     - 
+
+---
+programmers:
+  columns:
+  - id
+  - name
+  - description
+  - created_at
+  - updated_at
+  - user_id
+  - first_name
+  - last_name
+  - email
+  - phone
+  - programmerType
+  records: 
+  - - 7
+    - Gem Shopping
+    - 
+    - '2016-04-20 00:11:47.040001'
+    - '2016-04-21 19:58:16.673232'
+    - 7
+    - gem
+    - shopping
+    - gem@gmail.com
+    - '12341234'
+    - DRTV
+  - - 8
+    - Grace to you
+    - 
+    - '2016-04-20 00:11:47.052354'
+    - '2016-04-21 19:58:16.797808'
+    - 7
+    - grace
+    - show
+    - grace@gmail.com
+    - '12341234'
+    - DRTV
+  - - 9
+    - Disney channel
+    - 
+    - '2016-04-20 00:11:47.069506'
+    - '2016-04-21 19:58:16.872268'
+    - 8
+    - disney
+    - show
+    - disney@gmail.com
+    - '12341234'
+    - DRTV
+  - - 10
+    - Cool Programming
+    - A really great programmer
+    - '2016-04-20 00:13:12.510572'
+    - '2016-04-21 19:58:16.947726'
+    - 2
+    - Tom
+    - Dave
+    - someone@cp.tv
+    - '23132321'
+    - DRTV
