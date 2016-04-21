@@ -31,7 +31,8 @@
         <p><strong>Created At </strong><%= @programmer.created_at %></p>
         <p><strong>Email </strong><%= mail_to @programmer.email %></p>
         <p><strong>Phone </strong><%= @programmer.phone %></p>
-        <p><strong>Website </strong><a href="<%= @programmer.website %>" target="_new"><%= @programmer.website %></a></p>
+
+        <p><strong>Website </strong><a href="<%= @programmer.website.start_with?('http://') ? @programmer.website : 'http://' + @programmer.website %>" target="_new"><%= @programmer.website %></a></p>
         <div class="panel panel-info">
           <div class="panel-heading">Description</div>
           <div class="panel-body"><%= @programmer.description %></div>
