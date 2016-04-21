@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160421195655) do
+ActiveRecord::Schema.define(version: 20160421200236) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email"
@@ -150,6 +150,7 @@ ActiveRecord::Schema.define(version: 20160421195655) do
     t.string   "email"
     t.string   "phone"
     t.string   "programmerType"
+    t.string   "website"
   end
 
   create_table "programmers_sub_channel_offers", id: false, force: :cascade do |t|

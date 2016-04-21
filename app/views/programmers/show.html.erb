@@ -24,13 +24,14 @@
       <div class="panel-body">
         <p><strong>Name </strong><%= @programmer.name %></p>
 
-        <p><strong>Type </strong><%= @programmer.programmer_type.name %></p>
+        <p><strong>Type </strong><%= @programmer.programmerType %></p>
         <p><strong>First Name </strong><%= @programmer.first_name %></p>
         <p><strong>Last Name </strong><%= @programmer.last_name %></p>
         <p><strong>Updated At </strong><%= @programmer.updated_at %></p>
         <p><strong>Created At </strong><%= @programmer.created_at %></p>
-        <p><strong>Email </strong><%= @programmer.email %></p>
+        <p><strong>Email </strong><%= mail_to @programmer.email %></p>
         <p><strong>Phone </strong><%= @programmer.phone %></p>
+        <p><strong>Website </strong><a href="<%= @programmer.website %>" target="_new"><%= @programmer.website %></a></p>
         <div class="panel panel-info">
           <div class="panel-heading">Description</div>
           <div class="panel-body"><%= @programmer.description %></div>
@@ -42,7 +43,9 @@
 <div id="actions">
   <%= button_to 'Edit', edit_programmer_path(@programmer), :class => 'btn btn-primary', :method => :get %>
   <%= button_to 'Delete', @programmer, :confirm => 'Are you sure?', :method => :delete, :class => 'btn' %>
-  <%= button_to 'New Programmer', new_programmer_path(@programmer), :class => 'btn' %>
+  <%= link_to new_programmer_path do -%>
+    <button type="button" class="btn btn-default">New Programmer</button>
+  <% end %>
 </div>
 </div>
   </div>

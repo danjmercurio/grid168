@@ -32,6 +32,7 @@
                 <th>Last Name</th>
 								<th>Type</th>
                 <th>Email</th>
+                <th>URL</th>
                 <th>Phone</th>
 								<th>Created</th>
 								<th>Updated</th>
@@ -46,6 +47,7 @@
                   <td><%= programmer.last_name %></td>
                   <td><%= programmer.programmerType %></td>
                   <td><%= mail_to programmer.email %></td>
+                  <td><a href="<%= programmer.website %>" target="_new"><%= programmer.website %></a></td>
                   <td><%= number_to_phone programmer.phone %></td>
                   <td><%= programmer.created_at %></td>
                   <td><%= programmer.updated_at %></td>

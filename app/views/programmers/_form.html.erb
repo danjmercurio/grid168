@@ -26,6 +26,10 @@
       <div class="col-lg-10"><%= f.email_field :email, :class => 'form-control' %></div>
     </div>
     <div class="form-group">
+      <%= f.label :website, :class => 'col-lg-2 control-label' %>
+      <div class="col-lg-10"><%= f.text_field :website, :class => 'form-control' %></div>
+    </div>
+    <div class="form-group">
       <%= f.label :phone, :class => 'col-lg-2 control-label' %>
       <div class="col-lg-10"><%= f.text_field :phone, :class => 'form-control' %></div>
     </div>
@@ -36,7 +40,7 @@
     <div class="form-group">
       <%= f.label :type, :class => 'col-lg-2 col-md-3 control-label' %>
       <div class="col-lg-10 col-md-9">
-        <%= select('programmer', 'programmer_type_id', ProgrammerType.order(:name).collect { |d| [d.name, d.id] }) %>
+        <%= select('programmer', 'programmerType', ['General', 'DRTV', 'Home Shopping', 'Paid Religion', 'Programmer']) %>
       </div>
     </div>
 
