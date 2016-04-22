@@ -35,8 +35,9 @@
             </div><!--.tile-title-->
             <div class="tile-body clearfix">
                 <i class="fa fa-credit-card"></i>
-                <h4 class="pull-right"><font style=
-                "font-size:small;"><%= @outlet.dma.name %></font></h4>
+                <h4 class="pull-right" style="font-size: large;">
+                    <%= @outlet.dma.name %>
+                </h4>
             </div><!--.tile-body-->
             <div class="tile-footer">
                 &nbsp;
@@ -91,8 +92,12 @@
                     <thead>
                         <tr>
                             <th>Programmer</th>
-                            <th>Dollar Amount</th>
+                            <th>Monthly</th>
+                            <th>Offer Amount</th>
+                            <th>Weekly Hours</th>
+                            <th>Programmer Type</th>
                             <th>Created At</th>
+                            <th>User</th>
                             <th>Actions</th>
                         </tr>
                     </thead>
@@ -100,9 +105,12 @@
                         <%@outlet.offers.each do |offer| %><%offer.programmers.each do |programmer| %>
                         <tr>
                             <td><%= programmer.name %></td>
-                            <td>
-                            <%= number_to_currency offer.dollar_amount %></td>
-                            <td><%= offer.created_at %></td>
+                            <td><%= number_to_currency offer.monthly_offer %></td>
+                            <td><%= number_to_currency offer.dollar_amount %></td>
+                            <td><%= offer.weekly_hours %></td>
+                            <td><%= programmer.programmerType %></td>
+                            <td><%= offer.created_at.strftime("%m/%d/%y") %></td>
+                            <td><%= offer.user.first_name %></td>
                             <td>
                                 <div class="btn-group">
                                   <button type="button" class="btn btn-primary droptown-toggle" data-toggle="dropdown">
