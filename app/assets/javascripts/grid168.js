@@ -225,7 +225,7 @@ grid168 = (function () {
                 // Clear the cell holder element and JS cell holder values
                 holder.val('');
                 this.cellData = '';
-                
+
                 $(selectedCells).each(function () {
                     var day = $(this).data('day');
                     var time = $(this).data('time');
@@ -408,13 +408,13 @@ grid168 = (function () {
 
                 offer.yearlyRate = annualSubRate * offer.totalHomes;
                 offer.monthlyRate = offer.yearlyRate / 12;
-                offer.weeklyRate = offer.monthlyRate / 4;
+                offer.weeklyRate = offer.yearlyRate / 52;
 
                 offer.hourRate = offer.yearlyRate / offer.yearlyHours;
                 offer.halfHourRate = offer.hourRate / 2;
 
-                offer.mvpdSubRate = offer.yearlyRate / offer.mvpdSubscribers;
-                offer.mvpdOtaSubRate = offer.yearlyRate / offer.totalHomes;
+                offer.mvpdSubRate = offer.mvpdSubscribers * offer['247mvpdSubEstimate'];
+                offer.mvpdOtaSubRate = offer['247mvpdSubEstimate'] * offer.otaHomes;
 
                 // Daypart calculations
                 var dayParts = this.values.dayParts;
@@ -438,7 +438,7 @@ grid168 = (function () {
                     offer.weeklyHoursSum += hoursTemp;
                     dayPart.hours = hoursTemp;
 
-                    var weeklyRateTemp = dayPart.hours * offer.hourRate;
+                    var weeklyRateTemp = dayPart.audience * offer.yearlyRate;
                     offer.weeklyRateSum += weeklyRateTemp;
                     dayPart.weeklyRate = weeklyRateTemp;
                     dayPart.hours === 0 ? dayPart.rate = 0 : dayPart.rate = dayPart.weeklyRate / dayPart.hours;
@@ -466,14 +466,14 @@ grid168 = (function () {
                     $('#grossMonthlyRateHero').text(offer.monthlyRate.toCurrency().toNearestDollar());
                 }
 
-                $('#weeklyHours').val(offer.weeklyHours);
-                $('#monthlyHours').val(offer.monthlyHours);
-                $('#yearlyHours').val(offer.yearlyHours);
+                $('#weeklyHours').val(offer.weeklyHours.addCommas());
+                $('#monthlyHours').val(offer.monthlyHours.addCommas());
+                $('#yearlyHours').val(offer.yearlyHours.addCommas());
 
                 $('#halfHourRate').val(offer.halfHourRate.toCurrency());
 
-                $('#mvpdSubscriberRate').val(offer.mvpdSubRate);
-                $('#mvpdOTASubRate').val(offer.mvpdOtaSubRate);
+                $('#mvpdSubscriberRate').val(offer.mvpdSubRate.toCurrency());
+                $('#mvpdOTASubRate').val(offer.mvpdOtaSubRate.toCurrency());
 
                 $('#247mvpdSubEstimate').val(offer['247mvpdSubEstimate']);
 
