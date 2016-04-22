@@ -54,10 +54,9 @@
     <div class="form-group">
       <%= f.label :dma, "DMA", :class => 'col-lg-2 col-md-3 control-label' %>
       <div class="col-lg-10 col-md-9">
-        <%= select("outlet", "dma_id", Dma.order(:name).collect { |d| [d.name, d.id] }, {:include_blank => 'None', :class => 'form-control'}) %>
+        <%= select("outlet", "dma_id", options_for_select(Dma.order("id DESC").collect { |d| [d.name, d.id] })) %>
       </div>
     </div>
-
     <div class="form-group">
       <%= f.label :type, :class => 'col-lg-2 col-md-3 control-label' %>
       <div class="col-lg-10 col-md-9">
