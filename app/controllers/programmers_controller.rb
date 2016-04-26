@@ -77,7 +77,7 @@ class ProgrammersController < ApplicationController
 	# noinspection Rails3Deprecated
 	def destroy
 		@programmer = Programmer.find(params[:id])
-		@programmer.destroy
+		@programmer.delete
 
 		respond_to do |format|
 			format.html { redirect_to programmers_url }

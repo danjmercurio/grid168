@@ -1,12 +1,23 @@
+<% unless action_name == 'preview' || @emailMessage.empty? %>
+    <div>
+      <p><strong>Comments: </strong><%= @emailMessage %></p>
+    </div>
+<% end %>
+<div style="width:85%;margin-left:auto;margin-right:auto;">
 <div class="text-center" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;text-align: center;">
-  <h1 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-size: 36px;margin: 0.67em 0;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;">Grid
-    168 Worksheet</h1></div>
-<h2 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 24px;">Bid
-  prepared by:
-  <img src="https://i.imgur.com/WIJEUab.png" alt="Across Platforms" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;border: 0;vertical-align: middle;page-break-inside: avoid;max-width: 100% !important;">
+  <h2 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-size: 14pt;margin: 0.67em 0;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;">Across
+    Platforms Worksheet</h2></div>
+  <h2 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 10pt;">
+    <p>Prepared by:</p>
+    <p>Michael Kokernak<br/>
+      Direct: 617-390-7547<br/>
+      mkokernak@acrossplatforms.com</p>
+    <p>
+      <img src="https://i.imgur.com/WIJEUab.png" alt="Across Platforms" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;border: 0;vertical-align: middle;page-break-inside: avoid;max-width: 100% !important;">
+    </p>
 </h2>
 <hr style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: content-box;height: 0;margin-top: 20px;margin-bottom: 20px;border: 0;border-top: 1px solid #eeeeee;">
-
+  <p width="75%">
 <table style="width:100%;">
         <tbody>
         <tr>
@@ -28,12 +39,14 @@
           <td>
             <div class="margin-right: 10%;">
               <h3 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 16px;">
-                <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">MVPD
+                <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Estimated
+                  MVPD
                   Subscribers:</strong>
                 <%= number_with_delimiter @offer.outlet.subs %>
               </h3>
               <h3 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 16px;">
-                <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Over
+                <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Estimated
+                  Over
                   the Air Homes:</strong>
                 <%= number_with_delimiter @offer.outlet.over_air %>
               </h3>
@@ -360,4 +373,5 @@
   Programming Schedule</h2>
 <div>
   <%= render :partial => 'offers/email_grid' %>
+</div>
 </div>

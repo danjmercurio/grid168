@@ -7,7 +7,7 @@ class OffersController < ApplicationController
     @outlet = Outlet.find(params[:outlet_id])
     @offer = Offer.new
     @offer.outlet = @outlet
-    current_user.admin? ? @programmers = Programmer.all : current_user.programmers
+    @programmers = current_user.admin? ? @programmers = Programmer.all : Programmer.where(:user_id => current_user.id)
 	end
 
 	def index
@@ -27,7 +27,7 @@ class OffersController < ApplicationController
 	def edit
 		@offer = Offer.find(params[:id])
 		@outlet = Outlet.find(@offer.outlet.id)
-    current_user.admin? ? @programmers = Programmer.all : @programmers = @offer.user.programmers
+    @programmers = current_user.admin? ? @programmers = Programmer.all : Programmer.where(:user_id => current_user.id)
 		@url = params[:url]
     @notes = @offer.notes
 	end #end edit action
@@ -80,6 +80,7 @@ class OffersController < ApplicationController
     toEmail = params[:toEmail]
     carbonCopy = params[:carbonCopy]
     subject = params[:subject]
+    emailMessage = params[:emailMessage]
 
     @error = false
     if toEmail == '' || !toEmail.include?('@') || toEmail.length < 4
@@ -87,7 +88,7 @@ class OffersController < ApplicationController
     elsif subject == ''
       @error = 'Email subject line was blank.'
     else
-      @email = WorksheetMailer.sendWorksheet(@offer, toEmail, carbonCopy, subject).deliver
+      @email = WorksheetMailer.sendWorksheet(@offer, toEmail, carbonCopy, subject, emailMessage).deliver
     end
   end
 

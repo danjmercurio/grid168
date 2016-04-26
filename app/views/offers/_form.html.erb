@@ -127,23 +127,47 @@
         <br/>
         <div>
           <h1>Programmers</h1>
-          <% if @programmers.empty? %>
+          <% if @programmers.nil? || @programmers.empty? %>
               You must create a programmer record to associate with this offer before you can save it.
           <% else %>
-              <%= select('offer', 'programmer_ids', Programmer.order(:name).collect { |d| [d.name, d.id] }, {include_blank: true}) %>
+              <%= select('offer', 'programmer_ids', @programmers.order(:name).collect { |p| [p.name, p.id] }, {include_blank: true}) %>
           <% end %>
           <p>&nbsp;</p>
           <p><%= link_to 'Add a programmer', new_programmer_url, :class => 'btn btn-default' %></p>
         </div>
         <br/>
         <div>
-          <h1>Notes</h1>
-          <p>Add a note to the Gross Rate Worksheet</p>
-          <%= f.text_area :grNotes, :class => 'form-control offer_note' %>
+          <% if current_user.admin? %>
+
+
+              <h1>Notes</h1>
+              <p>Add a note to the Gross Rate Worksheet. Non-admin users will not see this.</p>
+<textarea class="form-control offer_note" rows="4" name="offer[grNotes]" id="offer_grNotes">Annual Rate for MVPD and OTA - Per OTA home and MVPD subscriber annual cost
+MVPD Subscriber Rate - Per subscriber annual cost (not including OTA)
+OTA Home Rate - Per OTA home annual cost (not including MVPD)
+</textarea>
+          <% else %>
+              <%= f.hidden_field :grNotes, :value => 'Annual Rate for MVPD and OTA - Per OTA home and MVPD subscriber annual cost
+MVPD Subscriber Rate - Per subscriber annual cost (not including OTA)
+OTA Home Rate - Per OTA home annual cost (not including MVPD)' %>
+          <% end %>
+          <% if current_user.admin? %>
           <br/>
-          <p>Add a note after Dayparts</p>
-          <%= f.text_area :dpNotes, :class => 'form-control offer_note' %>
+              <p>Add a note after Dayparts. Non-admin users will not see this.</p>
+          <textarea class="form-control offer_note" rows="4" name="offer[dpNotes]" id="offer_dpNotes">This worksheet is neither a bid nor an offer made on behalf of a programming supplier or on behalf of any other third-party.
+Across Platforms, Inc. is not acting as an agent for any third-party. This worksheet is merely an example of the terms that might be available, based upon the information mentioned in the worksheet, and Across Platforms' considerable expertise in the television industry.
+It is not a representation that these terms are available. With your permission, Across Platforms may submit this worksheet to various programming suppliers whose identities will be determined according to Across Platforms' sole and exclusive discretion.
+In the event there are any further negotiations between you and any programming supplier contacted by Across Platforms, then Across Platforms will be acting as an agent for the programming supplier, and will be paid a commission by the programming supplier if the negotiations result in a binding contract.
+</textarea>
+          <% else %>
+              <%= f.hidden_field :dpNotes, :value => "This worksheet is neither a bid nor an offer made on behalf of a programming supplier or on behalf of any other third-party.
+Across Platforms, Inc. is not acting as an agent for any third-party. This worksheet is merely an example of the terms that might be available, based upon the information mentioned in the worksheet, and Across Platforms' considerable expertise in the television industry.
+              It is not a representation that these terms are available. With your permission, Across Platforms may submit this worksheet to various programming suppliers whose identities will be determined according to Across Platforms' sole and exclusive discretion.
+In the event there are any further negotiations between you and any programming supplier contacted by Across Platforms, then Across Platforms will be acting as an agent for the programming supplier, and will be paid a commission by the programming supplier if the negotiations result in a binding contract." %>
+
+          <% end %>
         </div>
+
         <br/>
         <div>
           <p>Available Date</p>
