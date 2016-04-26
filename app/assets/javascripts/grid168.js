@@ -438,11 +438,13 @@ grid168 = (function () {
                     offer.weeklyHoursSum += hoursTemp;
                     dayPart.hours = hoursTemp;
 
-                    var weeklyRateTemp = dayPart.audience * offer.yearlyRate;
+                    var weeklyRateTemp = (dayPart.audience * offer.yearlyRate) / 52;
                     offer.weeklyRateSum += weeklyRateTemp;
                     dayPart.weeklyRate = weeklyRateTemp;
                     dayPart.hours === 0 ? dayPart.rate = 0 : dayPart.rate = dayPart.weeklyRate / dayPart.hours;
                 });
+
+                offer.weeklyRateSum = offer.weeklyRateSum;
 
                 // Now update the values on the page
                 this.updateValues(this.values);
