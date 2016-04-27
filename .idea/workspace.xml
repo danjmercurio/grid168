@@ -5,9 +5,8 @@
     <bookmark url="file://$PROJECT_DIR$/app/assets/javascripts/grid168.js" line="23" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="253a1b92-4cff-4d17-8db2-60a8dec7fc3d" name="Default" comment="Changed formulas&#10;Added mkokernak@acrossplatforms.com as reply-to header on all outgoing emails&#10;Fixed media outlet, market, type, time zone, and available date in email template&#10;Fixed daypart color key&#10;Fixed dayparts being incorrectly colored in grid&#10;Moved legal disclaimer to very bottom of email at 10pt font size">
+    <list default="true" id="253a1b92-4cff-4d17-8db2-60a8dec7fc3d" name="Default" comment="Fixed bug where yearly hours were being stored incorrectly">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/offers/_email.erb" afterPath="$PROJECT_DIR$/app/views/offers/_email.erb" />
     </list>
     <ignored path="grid168.iws" />
@@ -72,8 +71,8 @@
       <file leaf-file-name="_email.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/offers/_email.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="78">
-              <caret line="195" column="283" selection-start-line="195" selection-start-column="283" selection-end-line="195" selection-end-column="283" />
+            <state relative-caret-position="370">
+              <caret line="382" column="13" selection-start-line="382" selection-start-column="13" selection-end-line="382" selection-end-column="13" />
               <folding>
                 <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#2;n#div#1;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#2;n#div#1;n#!!top" expanded="true" />
@@ -760,14 +759,7 @@
       <workItem from="1461697959493" duration="8594000" />
       <workItem from="1461711762519" duration="5889000" />
       <workItem from="1461718580919" duration="3138000" />
-      <workItem from="1461724760638" duration="6412000" />
-    </task>
-    <task id="LOCAL-00026" summary="fixed edit offer view/loading of cells">
-      <created>1459930308076</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1459930308076</updated>
+      <workItem from="1461724760638" duration="6708000" />
     </task>
     <task id="LOCAL-00027" summary="added some definitions in display table of offer show view&#10;added button to go to show view in offer edit view">
       <created>1459930790453</created>
@@ -1105,7 +1097,14 @@
       <option name="project" value="LOCAL" />
       <updated>1461730368106</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="Fixed bug where yearly hours were being stored incorrectly">
+      <created>1461731207752</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1461731207752</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1126,7 +1125,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="230278000" />
+    <option name="totallyTimeSpent" value="230574000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1149,9 +1148,9 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776618" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29645094" sideWeight="0.46112886" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24920128" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2651357" sideWeight="0.49166667" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2651357" sideWeight="0.49166667" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32985386" sideWeight="0.6904906" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32985386" sideWeight="0.6904906" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32861635" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -1195,7 +1194,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="removed redundant functions" />
     <MESSAGE value="added dayparts info and running totals to offer model" />
     <MESSAGE value="made some requested changes to the sheet view partial&#10;added methods for casting a number to currency" />
     <MESSAGE value="created an email account and added in mailer&#10;devise sends confirm and lost password emails now" />
@@ -1220,7 +1218,8 @@
     <MESSAGE value="using jQuery UI .selectable for cell selection instead of rolling our own" />
     <MESSAGE value="added application css back to email preview action" />
     <MESSAGE value="Changed formulas&#10;Added mkokernak@acrossplatforms.com as reply-to header on all outgoing emails&#10;Fixed media outlet, market, type, time zone, and available date in email template&#10;Fixed daypart color key&#10;Fixed dayparts being incorrectly colored in grid&#10;Moved legal disclaimer to very bottom of email at 10pt font size" />
-    <option name="LAST_COMMIT_MESSAGE" value="Changed formulas&#10;Added mkokernak@acrossplatforms.com as reply-to header on all outgoing emails&#10;Fixed media outlet, market, type, time zone, and available date in email template&#10;Fixed daypart color key&#10;Fixed dayparts being incorrectly colored in grid&#10;Moved legal disclaimer to very bottom of email at 10pt font size" />
+    <MESSAGE value="Fixed bug where yearly hours were being stored incorrectly" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug where yearly hours were being stored incorrectly" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1592,8 +1591,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/offers/_email.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="78">
-          <caret line="195" column="283" selection-start-line="195" selection-start-column="283" selection-end-line="195" selection-end-column="283" />
+        <state relative-caret-position="370">
+          <caret line="382" column="13" selection-start-line="382" selection-start-column="13" selection-end-line="382" selection-end-column="13" />
           <folding>
             <element signature="n#style#0;n#td#0;n#tr#0;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#2;n#div#1;n#!!top" expanded="true" />
             <element signature="n#style#0;n#td#0;n#tr#1;n#tbody#0;n#table#0;n#div#1;n#div#0;n#div#2;n#div#1;n#!!top" expanded="true" />
