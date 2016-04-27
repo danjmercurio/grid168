@@ -6,10 +6,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="253a1b92-4cff-4d17-8db2-60a8dec7fc3d" name="Default" comment="added dollar sign to FTEH rate and fixed total subs hero number in email template">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/application_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/application_controller.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/offers/_email.erb" afterPath="$PROJECT_DIR$/app/views/offers/_email.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/offers/_sheet.html.erb" afterPath="$PROJECT_DIR$/app/views/offers/_sheet.html.erb" />
     </list>
     <ignored path="grid168.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -70,30 +67,32 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_email.erb" pinned="false" current-in-tab="false">
+      <file leaf-file-name="_email.erb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/views/offers/_email.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-360">
-              <caret line="7" column="128" selection-start-line="7" selection-start-column="128" selection-end-line="7" selection-end-column="128" />
+            <state relative-caret-position="36">
+              <caret line="2" column="57" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="57" />
               <folding>
+                <element signature="n#style#0;n#p#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-                <marker date="1461799705702" expanded="false" signature="701:970" placeholder="..." />
-                <marker date="1461799705702" expanded="false" signature="1713:1982" placeholder="..." />
-                <marker date="1461799705702" expanded="false" signature="2215:2484" placeholder="..." />
-                <marker date="1461799705702" expanded="false" signature="2713:2982" placeholder="..." />
-                <marker date="1461799705702" expanded="false" signature="3372:3641" placeholder="..." />
-                <marker date="1461799705702" expanded="false" signature="3959:4228" placeholder="..." />
-                <marker date="1461799705702" expanded="false" signature="4552:4821" placeholder="..." />
-                <marker date="1461799705702" expanded="false" signature="5056:5325" placeholder="..." />
-                <marker date="1461799705702" expanded="false" signature="6795:7067" placeholder="..." />
-                <marker date="1461799705702" expanded="false" signature="8666:8938" placeholder="..." />
-                <marker date="1461799705702" expanded="false" signature="10510:10782" placeholder="..." />
-                <marker date="1461799705702" expanded="false" signature="12387:12659" placeholder="..." />
-                <marker date="1461799705702" expanded="false" signature="13126:13395" placeholder="..." />
-                <marker date="1461799705702" expanded="false" signature="14327:14572" placeholder="..." />
-                <marker date="1461799705702" expanded="false" signature="29520:29789" placeholder="..." />
-                <marker date="1461799705702" expanded="false" signature="30707:30952" placeholder="..." />
-                <marker date="1461799705702" expanded="false" signature="54780:55049" placeholder="..." />
+                <element signature="n#style#0;n#h2#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <marker date="1461800587826" expanded="false" signature="751:1020" placeholder="..." />
+                <marker date="1461800587826" expanded="false" signature="1763:2032" placeholder="..." />
+                <marker date="1461800587826" expanded="false" signature="2265:2534" placeholder="..." />
+                <marker date="1461800587826" expanded="false" signature="2763:3032" placeholder="..." />
+                <marker date="1461800587826" expanded="false" signature="3422:3691" placeholder="..." />
+                <marker date="1461800587826" expanded="false" signature="4009:4278" placeholder="..." />
+                <marker date="1461800587826" expanded="false" signature="4602:4871" placeholder="..." />
+                <marker date="1461800587826" expanded="false" signature="5106:5375" placeholder="..." />
+                <marker date="1461800587826" expanded="false" signature="6845:7117" placeholder="..." />
+                <marker date="1461800587826" expanded="false" signature="8716:8988" placeholder="..." />
+                <marker date="1461800587826" expanded="false" signature="10560:10832" placeholder="..." />
+                <marker date="1461800587826" expanded="false" signature="12437:12709" placeholder="..." />
+                <marker date="1461800587826" expanded="false" signature="13176:13445" placeholder="..." />
+                <marker date="1461800587826" expanded="false" signature="14377:14622" placeholder="..." />
+                <marker date="1461800587826" expanded="false" signature="29570:29839" placeholder="..." />
+                <marker date="1461800587826" expanded="false" signature="30757:31002" placeholder="..." />
+                <marker date="1461800587826" expanded="false" signature="54830:55099" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -149,7 +148,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="development.rb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="development.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="503">
@@ -251,8 +250,8 @@
         <option value="$PROJECT_DIR$/app/views/offers/_sheet.html.erb" />
         <option value="$PROJECT_DIR$/app/mailers/application_mailer.rb" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/offers/_email.erb" />
         <option value="$PROJECT_DIR$/app/mailers/worksheet_mailer.rb" />
+        <option value="$PROJECT_DIR$/app/views/offers/_email.erb" />
       </list>
     </option>
   </component>
@@ -343,7 +342,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -357,11 +360,29 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="environments" />
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="offers" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grid168" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grid168" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -753,7 +774,7 @@
       <workItem from="1461711762519" duration="5889000" />
       <workItem from="1461718580919" duration="3138000" />
       <workItem from="1461724760638" duration="8149000" />
-      <workItem from="1461787512139" duration="8928000" />
+      <workItem from="1461787512139" duration="9420000" />
     </task>
     <task id="LOCAL-00029" summary="added recalculation to offer show view">
       <created>1460002524350</created>
@@ -1119,7 +1140,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="240943000" />
+    <option name="totallyTimeSpent" value="241435000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1132,7 +1153,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1053" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20234291" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776618" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -1140,7 +1161,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.028221512" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28183717" sideWeight="0.47803348" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776618" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29645094" sideWeight="0.46112886" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29645094" sideWeight="0.46112886" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24920128" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2651357" sideWeight="0.49166667" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1533,14 +1554,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/offers/preview.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="218" selection-start-line="10" selection-start-column="218" selection-end-line="10" selection-end-column="218" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/offers/_sheet.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -1565,33 +1578,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/offers/_email.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-360">
-          <caret line="7" column="128" selection-start-line="7" selection-start-column="128" selection-end-line="7" selection-end-column="128" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
-            <marker date="1461799705702" expanded="false" signature="701:970" placeholder="..." />
-            <marker date="1461799705702" expanded="false" signature="1713:1982" placeholder="..." />
-            <marker date="1461799705702" expanded="false" signature="2215:2484" placeholder="..." />
-            <marker date="1461799705702" expanded="false" signature="2713:2982" placeholder="..." />
-            <marker date="1461799705702" expanded="false" signature="3372:3641" placeholder="..." />
-            <marker date="1461799705702" expanded="false" signature="3959:4228" placeholder="..." />
-            <marker date="1461799705702" expanded="false" signature="4552:4821" placeholder="..." />
-            <marker date="1461799705702" expanded="false" signature="5056:5325" placeholder="..." />
-            <marker date="1461799705702" expanded="false" signature="6795:7067" placeholder="..." />
-            <marker date="1461799705702" expanded="false" signature="8666:8938" placeholder="..." />
-            <marker date="1461799705702" expanded="false" signature="10510:10782" placeholder="..." />
-            <marker date="1461799705702" expanded="false" signature="12387:12659" placeholder="..." />
-            <marker date="1461799705702" expanded="false" signature="13126:13395" placeholder="..." />
-            <marker date="1461799705702" expanded="false" signature="14327:14572" placeholder="..." />
-            <marker date="1461799705702" expanded="false" signature="29520:29789" placeholder="..." />
-            <marker date="1461799705702" expanded="false" signature="30707:30952" placeholder="..." />
-            <marker date="1461799705702" expanded="false" signature="54780:55049" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/mailers/worksheet_mailer.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
@@ -1613,6 +1599,43 @@
         <state relative-caret-position="503">
           <caret line="60" column="3" selection-start-line="60" selection-start-column="3" selection-end-line="60" selection-end-column="3" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/offers/preview.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="218" selection-start-line="10" selection-start-column="218" selection-end-line="10" selection-end-column="218" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/offers/_email.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="36">
+          <caret line="2" column="57" selection-start-line="2" selection-start-column="57" selection-end-line="2" selection-end-column="57" />
+          <folding>
+            <element signature="n#style#0;n#p#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <marker date="1461800587826" expanded="false" signature="751:1020" placeholder="..." />
+            <marker date="1461800587826" expanded="false" signature="1763:2032" placeholder="..." />
+            <marker date="1461800587826" expanded="false" signature="2265:2534" placeholder="..." />
+            <marker date="1461800587826" expanded="false" signature="2763:3032" placeholder="..." />
+            <marker date="1461800587826" expanded="false" signature="3422:3691" placeholder="..." />
+            <marker date="1461800587826" expanded="false" signature="4009:4278" placeholder="..." />
+            <marker date="1461800587826" expanded="false" signature="4602:4871" placeholder="..." />
+            <marker date="1461800587826" expanded="false" signature="5106:5375" placeholder="..." />
+            <marker date="1461800587826" expanded="false" signature="6845:7117" placeholder="..." />
+            <marker date="1461800587826" expanded="false" signature="8716:8988" placeholder="..." />
+            <marker date="1461800587826" expanded="false" signature="10560:10832" placeholder="..." />
+            <marker date="1461800587826" expanded="false" signature="12437:12709" placeholder="..." />
+            <marker date="1461800587826" expanded="false" signature="13176:13445" placeholder="..." />
+            <marker date="1461800587826" expanded="false" signature="14377:14622" placeholder="..." />
+            <marker date="1461800587826" expanded="false" signature="29570:29839" placeholder="..." />
+            <marker date="1461800587826" expanded="false" signature="30757:31002" placeholder="..." />
+            <marker date="1461800587826" expanded="false" signature="54830:55099" placeholder="..." />
+          </folding>
         </state>
       </provider>
     </entry>
