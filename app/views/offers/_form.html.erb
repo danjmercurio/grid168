@@ -61,6 +61,11 @@
               <a href="<%= url_for(offer_path(@offer.id)) + '/preview' %>">
                 <button type="button" class="btn btn-default"><i class="fa fa-envelope"></i> Send via Email</button>
               </a>
+              <a href="#">
+                <button type="button" class="btn btn-default" id="copyLinkButton" data-url="<%= offer_url(@offer.id) %>">
+                  <i class="fa fa-link"></i> Copy Offer Link
+                </button>
+              </a>
           <% end %>
         </div>
       </div>

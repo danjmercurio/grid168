@@ -176,6 +176,12 @@ grid168 = (function () {
                             app.calc.doCalc();
                         });
                     }
+                    if (app.action === 'edit') {
+                        $('#copyLinkButton').click(function () {
+                            var url = $(this).data('url');
+                            window.prompt('Copy to clipboard: CTRL-C, Enter', url);
+                        });
+                    }
                     break;
                 case 'outlets':
                     if (app.action === 'new' || app.action === 'edit') {
@@ -199,9 +205,8 @@ grid168 = (function () {
 
                         mvpdSubs.blur(autoFillTotalHomes);
                         otaSubs.blur(autoFillTotalHomes);
-
-
                     }
+
                     break;
 
             }

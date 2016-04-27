@@ -13,8 +13,6 @@
   </div>
 </div>
 <div class="row">
-</div>
-<div class="row">
   <div class="col-md-12">
     <div class="panel panel-default margin-b-30 ">
       <!-- Start .panel -->
@@ -38,15 +36,68 @@
           <div class="panel-body"><%= @programmer.description %></div>
         </div>
       </div><!--end .col-->
-</div>
-
-
-<div id="actions">
-  <%= button_to 'Edit', edit_programmer_path(@programmer), :class => 'btn btn-primary', :method => :get %>
-  <%= button_to 'Delete', @programmer, :confirm => 'Are you sure?', :method => :delete, :class => 'btn' %>
-  <%= link_to new_programmer_path do -%>
-    <button type="button" class="btn btn-default">New Programmer</button>
-  <% end %>
-</div>
-</div>
+    </div>
+    <div class="panel panel-default margin-b-30">
+      <!-- Start .panel -->
+      <div class="panel-heading">
+        <h4 class="panel-title">Offers</h4>
+        <div class="panel-actions">
+          <a class="panel-action panel-action-toggle" data-panel-toggle="" href="#"></a>
+          <a class="panel-action panel-action-dismiss" data-panel-dismiss="" href="#"></a>
+        </div>
+      </div>
+      <div class="panel-body">
+        <table class="table table-striped tablesorter">
+          <thead>
+          <tr>
+            <th>Outlet</th>
+            <th>Monthly</th>
+            <th>Offer Amount</th>
+            <th>Weekly Hours</th>
+            <th>Programmer Type</th>
+            <th>Created At</th>
+            <th>User</th>
+            <th>Actions</th>
+          </tr>
+          </thead>
+          <tbody>
+          <% @offers.each do |offer| %>
+              <tr>
+                <td><%= offer.outlet.name %></td>
+                <td><%= number_to_currency offer.monthly_offer %></td>
+                <td><%= number_to_currency offer.dollar_amount %></td>
+                <td><%= offer.weekly_hours %></td>
+                <td><%= @programmer.programmerType %></td>
+                <td><%= offer.created_at.strftime("%m/%d/%y") %></td>
+                <td><%= offer.user.first_name %></td>
+                <td>
+                  <div class="btn-group">
+                    <button type="button" class="btn btn-primary droptown-toggle" data-toggle="dropdown">
+                      Actions&nbsp;<span class="caret"></span></button>
+                    <ul class="dropdown-menu">
+                      <li><%= link_to 'Show', offer_path(offer) %></li>
+                      <li><%= link_to 'Edit', edit_offer_path(offer.id) %></li>
+                      <li><a href="<%= url_for offer_path(offer.id) %>/preview">Preview Email</a></li>
+                      <li><%= link_to 'Delete', offer_path(offer), method: :delete, confirm: 'Are you sure?' %></li>
+                    </ul>
+                  </div>
+                </td>
+              </tr>
+              <% end %><!-- end programmer -->
+          </tbody>
+        </table>
+      </div>
+    </div>
   </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <div id="actions">
+      <%= button_to 'Edit', edit_programmer_path(@programmer), :class => 'btn btn-primary', :method => :get %>
+      <%= button_to 'Delete', @programmer, :confirm => 'Are you sure?', :method => :delete, :class => 'btn' %>
+      <%= link_to new_programmer_path do -%>
+          <button type="button" class="btn btn-default">New Programmer</button>
+      <% end %>
+    </div>
+  </div>
+</div>

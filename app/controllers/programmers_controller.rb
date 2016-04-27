@@ -17,6 +17,7 @@ class ProgrammersController < ApplicationController
 	# noinspection Rails3Deprecated
 	def show
 		@programmer = Programmer.find(params[:id])
+    @offers = @programmer.offers
 
 		respond_to do |format|
 			format.html # show.html.erb
