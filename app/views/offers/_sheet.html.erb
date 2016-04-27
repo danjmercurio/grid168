@@ -118,7 +118,7 @@
 
           </tr>
           <tr>
-            <td><strong>FTEH Rate for MVPD and OTA</strong></td>
+            <td><strong>FTEH Annual Rate MVPD/OTA</strong></td>
             <td><%= f.text_field :dollar_amount, :id => '247mvpdSubEstimate' %></td>
             <td></td>
             <td>&nbsp;</td>
@@ -268,7 +268,7 @@
           </tr>
           </tbody>
         </table>
-        <pre><%= @offer.dpNotes %></pre>
+        <p>Estimated percentage of weekly viewing is a composite of publicly reported viewing trends across all television channels, and networks, based on live time of day viewing.</p>
       </div>
     </div>
     <% end %>
@@ -280,5 +280,9 @@
     <div class="gridContainerHeader" style="display:flex;">
       <%= render :partial => 'offers/grid' %>
     </div>
+  </div>
+  <br />
+  <div>
+    <p><%= @offer.dpNotes %></p>
   </div>
 </div>

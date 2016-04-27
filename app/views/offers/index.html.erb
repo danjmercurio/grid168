@@ -59,9 +59,9 @@
                   <td><%= number_with_delimiter offer.outlet.subs %></td>
                   <td><%= offer.total_hours %></td>
                   <td><%= offer.outlet.dma.name %></td>
-                  <td><%= offer.created_at %></td>
-                  <td><%= offer.updated_at %></td>
-                  <td><%= offer.user.email %></td>
+                  <td><%= offer.created_at.strftime "%m/%d/%Y" %></td>
+                  <td><%= offer.updated_at.strftime "%m/%d/%Y" %></td>
+                  <td><%= offer.user.first_name %></td>
                   <td>
                     <div class="btn-group">
                       <button type="button" class="btn btn-primary droptown-toggle" data-toggle="dropdown">

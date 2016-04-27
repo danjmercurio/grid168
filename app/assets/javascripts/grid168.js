@@ -490,7 +490,7 @@ grid168 = (function () {
                 $('#totalHours').val(offer.weeklyHours);
                 if (app.action == 'show') {
                     $('#totalHoursHero').text(offer.weeklyHours);
-                    $('#hourlyRateHero').text(offer.hourRate.toCurrency().toNearestDollar());
+                    $('#hourlyRateHero').text(Math.round10(offer.hourRate, -2).toCurrency());
                     $('#grossMonthlyRateHero').text(offer.monthlyRate.toCurrency().toNearestDollar());
                 }
 

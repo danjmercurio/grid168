@@ -52,9 +52,9 @@
                   <td><%= number_with_delimiter outlet.subs %></td>
                   <td><%= number_with_delimiter outlet.over_air %></td>
                   <td><%= number_with_delimiter outlet.total_homes %></td>
-                  <td><%= outlet.dma.name rescue "None" %></td>
+                  <td><%= outlet.dma.name rescue 'None' %></td>
                   <td><%= outlet.outlet_type.name %></td>
-                  <td><%= outlet.created_at.strftime "%m/%d/%Y" %></td>
+                  <td><%= outlet.created_at.strftime '%m/%d/%Y' %></td>
                   <td><%= outlet.user.first_name %></td>
                   <td>
                     <div class="btn-group">

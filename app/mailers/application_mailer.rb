@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'no-reply.grid168@gmail.com'
+  default from: 'mkokernak@acrossplatforms.com'
     # layout 'mailer'
 end

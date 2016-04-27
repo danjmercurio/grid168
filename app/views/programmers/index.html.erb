@@ -49,8 +49,8 @@
                   <td><%= mail_to programmer.email %></td>
                   <td><a href="<%= programmer.website.start_with?('http://') ? programmer.website : 'http://' + programmer.website %>" target="_new"><%= programmer.website %></a></td>
                   <td><%= number_to_phone programmer.phone %></td>
-                  <td><%= programmer.created_at %></td>
-                  <td><%= programmer.updated_at %></td>
+                  <td><%= programmer.created_at.strftime '%m/%d/%Y' %></td>
+                  <td><%= programmer.updated_at.strftime '%m/%d/%Y' %></td>
                   <td>
                     <div class="btn-group">
                       <button type="button" class="btn btn-primary droptown-toggle" data-toggle="dropdown">

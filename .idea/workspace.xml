@@ -5,9 +5,16 @@
     <bookmark url="file://$PROJECT_DIR$/app/assets/javascripts/grid168.js" line="23" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="253a1b92-4cff-4d17-8db2-60a8dec7fc3d" name="Default" comment="Fixed bug where yearly hours were being stored incorrectly">
+    <list default="true" id="253a1b92-4cff-4d17-8db2-60a8dec7fc3d" name="Default" comment="added dollar sign to FTEH rate and fixed total subs hero number in email template">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/grid168.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/grid168.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/mailers/application_mailer.rb" afterPath="$PROJECT_DIR$/app/mailers/application_mailer.rb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/offers/_email.erb" afterPath="$PROJECT_DIR$/app/views/offers/_email.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/offers/_sheet.html.erb" afterPath="$PROJECT_DIR$/app/views/offers/_sheet.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/offers/index.html.erb" afterPath="$PROJECT_DIR$/app/views/offers/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/offers/preview.erb" afterPath="$PROJECT_DIR$/app/views/offers/preview.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/outlets/index.html.erb" afterPath="$PROJECT_DIR$/app/views/outlets/index.html.erb" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/programmers/index.html.erb" afterPath="$PROJECT_DIR$/app/views/programmers/index.html.erb" />
     </list>
     <ignored path="grid168.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,51 +63,63 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="_form.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/offers/_form.html.erb">
+      <file leaf-file-name="grid168.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/assets/javascripts/grid168.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="43" column="74" selection-start-line="43" selection-start-column="74" selection-end-line="43" selection-end-column="74" />
-              <folding />
+            <state relative-caret-position="350">
+              <caret line="510" column="95" selection-start-line="510" selection-start-column="95" selection-end-line="510" selection-end-column="95" />
+              <folding>
+                <element signature="e#0#37#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_email.erb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="_email.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/offers/_email.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="287">
-              <caret line="70" column="416" selection-start-line="70" selection-start-column="416" selection-end-line="70" selection-end-column="416" />
+            <state relative-caret-position="292">
+              <caret line="158" column="133" selection-start-line="158" selection-start-column="129" selection-end-line="158" selection-end-column="133" />
+              <folding>
+                <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h2#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+                <marker date="1461798458258" expanded="false" signature="690:948" placeholder="..." />
+                <marker date="1461798458258" expanded="false" signature="1691:1949" placeholder="..." />
+                <marker date="1461798458258" expanded="false" signature="2182:2440" placeholder="..." />
+                <marker date="1461798458258" expanded="false" signature="2669:2927" placeholder="..." />
+                <marker date="1461798458258" expanded="false" signature="3317:3575" placeholder="..." />
+                <marker date="1461798458258" expanded="false" signature="3893:4151" placeholder="..." />
+                <marker date="1461798458258" expanded="false" signature="4475:4733" placeholder="..." />
+                <marker date="1461798458258" expanded="false" signature="4968:5226" placeholder="..." />
+                <marker date="1461798458258" expanded="false" signature="6696:6957" placeholder="..." />
+                <marker date="1461798458258" expanded="false" signature="8556:8817" placeholder="..." />
+                <marker date="1461798458258" expanded="false" signature="10389:10650" placeholder="..." />
+                <marker date="1461798458258" expanded="false" signature="12255:12516" placeholder="..." />
+                <marker date="1461798458258" expanded="false" signature="12983:13241" placeholder="..." />
+                <marker date="1461798458258" expanded="false" signature="14173:14407" placeholder="..." />
+                <marker date="1461798458258" expanded="false" signature="29355:29613" placeholder="..." />
+                <marker date="1461798458258" expanded="false" signature="30531:30765" placeholder="..." />
+                <marker date="1461798458258" expanded="false" signature="54593:54851" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="_sheet.html.erb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/offers/_sheet.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1678">
+              <caret line="127" column="14" selection-start-line="127" selection-start-column="14" selection-end-line="127" selection-end-column="14" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="_email_grid.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/offers/_email_grid.html.erb">
+      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/offers/index.html.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="576">
-              <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/layouts/application.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application_controller.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/application_controller.rb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="33" column="133" selection-start-line="33" selection-start-column="133" selection-end-line="33" selection-end-column="133" />
+            <state relative-caret-position="480">
+              <caret line="63" column="47" selection-start-line="63" selection-start-column="47" selection-end-line="63" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -109,48 +128,28 @@
       <file leaf-file-name="worksheet_mailer.rb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/mailers/worksheet_mailer.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
+            <state relative-caret-position="54">
+              <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="20160427012559_change_fields_to_string.rb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/db/migrate/20160427012559_change_fields_to_string.rb">
+      <file leaf-file-name="preview.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/offers/preview.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+            <state relative-caret-position="180">
+              <caret line="10" column="218" selection-start-line="10" selection-start-column="218" selection-end-line="10" selection-end-column="218" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/outlets/index.html.erb">
+      <file leaf-file-name="application_mailer.rb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/mailers/application_mailer.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1206">
-              <caret line="67" column="26" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/outlets/show.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2142">
-              <caret line="119" column="60" selection-start-line="119" selection-start-column="60" selection-end-line="119" selection-end-column="60" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/programmers/show.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1386">
-              <caret line="77" column="46" selection-start-line="77" selection-start-column="46" selection-end-line="77" selection-end-column="46" />
+            <state relative-caret-position="18">
+              <caret line="1" column="46" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
               <folding />
             </state>
           </provider>
@@ -194,10 +193,8 @@
         <option value="$PROJECT_DIR$/app/views/devise/registrations/new.html.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20160418225923_add_confirmableto_user.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20160418230135_add_confirmable_to_user.rb" />
-        <option value="$PROJECT_DIR$/app/views/offers/index.html.erb" />
         <option value="$PROJECT_DIR$/config/routes.rb" />
         <option value="$PROJECT_DIR$/app/mailers/sheet.rb" />
-        <option value="$PROJECT_DIR$/app/mailers/application_mailer.rb" />
         <option value="$PROJECT_DIR$/test/mailers/previews/worksheet_mailer_preview.rb" />
         <option value="$PROJECT_DIR$/app/views/worksheet_mailer/sendWorksheet.html.erb" />
         <option value="$PROJECT_DIR$/config/environments/test.rb" />
@@ -205,7 +202,6 @@
         <option value="$PROJECT_DIR$/app/views/offers/sendWorksheet.erb" />
         <option value="$PROJECT_DIR$/db/seeds.rb" />
         <option value="$PROJECT_DIR$/app/views/programmers/_form.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/programmers/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/layouts/tets" />
         <option value="$PROJECT_DIR$/app/helpers/offers_helper.rb" />
         <option value="$PROJECT_DIR$/app/models/offer.rb" />
@@ -213,13 +209,10 @@
         <option value="$PROJECT_DIR$/config/environments/production.rb" />
         <option value="$PROJECT_DIR$/config/locales/devise.en.yml" />
         <option value="$PROJECT_DIR$/app/views/layouts/_menu.html.erb" />
-        <option value="$PROJECT_DIR$/app/views/offers/_sheet.html.erb" />
         <option value="$PROJECT_DIR$/config/environments/development.rb" />
-        <option value="$PROJECT_DIR$/app/views/offers/preview.erb" />
         <option value="$PROJECT_DIR$/app/controllers/offers_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/programmers_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/outlets_controller.rb" />
-        <option value="$PROJECT_DIR$/app/views/outlets/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/outlets/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/programmers/show.html.erb" />
         <option value="$PROJECT_DIR$/db/migrate/20160427012559_change_fields_to_string.rb" />
@@ -228,8 +221,14 @@
         <option value="$PROJECT_DIR$/app/mailers/worksheet_mailer.rb" />
         <option value="$PROJECT_DIR$/app/controllers/application_controller.rb" />
         <option value="$PROJECT_DIR$/app/views/offers/_form.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/outlets/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/offers/index.html.erb" />
+        <option value="$PROJECT_DIR$/app/views/programmers/index.html.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/grid168.js" />
+        <option value="$PROJECT_DIR$/app/mailers/application_mailer.rb" />
+        <option value="$PROJECT_DIR$/app/views/offers/preview.erb" />
         <option value="$PROJECT_DIR$/app/views/offers/_email.erb" />
+        <option value="$PROJECT_DIR$/app/views/offers/_sheet.html.erb" />
       </list>
     </option>
   </component>
@@ -361,24 +360,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grid168" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grid168" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -788,14 +769,7 @@
       <workItem from="1461711762519" duration="5889000" />
       <workItem from="1461718580919" duration="3138000" />
       <workItem from="1461724760638" duration="8149000" />
-      <workItem from="1461787512139" duration="5662000" />
-    </task>
-    <task id="LOCAL-00028" summary="added dayparts table to show offer view">
-      <created>1459983137364</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1459983137364</updated>
+      <workItem from="1461787512139" duration="7376000" />
     </task>
     <task id="LOCAL-00029" summary="added recalculation to offer show view">
       <created>1460002524350</created>
@@ -1133,7 +1107,14 @@
       <option name="project" value="LOCAL" />
       <updated>1461793445912</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="added dollar sign to FTEH rate and fixed total subs hero number in email template">
+      <created>1461793699147</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1461793699147</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1154,7 +1135,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="237677000" />
+    <option name="totallyTimeSpent" value="239391000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1173,8 +1154,9 @@
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776618" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.302714" sideWeight="0.53887117" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.028221512" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.28183717" sideWeight="0.47803348" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776618" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.29645094" sideWeight="0.46112886" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29645094" sideWeight="0.46112886" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24920128" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2651357" sideWeight="0.49166667" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -1185,7 +1167,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.28183717" sideWeight="0.47803348" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -1223,7 +1204,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="made some requested changes to the sheet view partial&#10;added methods for casting a number to currency" />
     <MESSAGE value="created an email account and added in mailer&#10;devise sends confirm and lost password emails now" />
     <MESSAGE value="fixed autofill for total homes in outlets controller" />
     <MESSAGE value="added preview action on offer model and preview view template, as well as email partial" />
@@ -1248,7 +1228,8 @@
     <MESSAGE value="Changed formulas&#10;Added mkokernak@acrossplatforms.com as reply-to header on all outgoing emails&#10;Fixed media outlet, market, type, time zone, and available date in email template&#10;Fixed daypart color key&#10;Fixed dayparts being incorrectly colored in grid&#10;Moved legal disclaimer to very bottom of email at 10pt font size" />
     <MESSAGE value="Fixed bug where yearly hours were being stored incorrectly" />
     <MESSAGE value="Fixed bug with cell click event handlers" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed bug with cell click event handlers" />
+    <MESSAGE value="added dollar sign to FTEH rate and fixed total subs hero number in email template" />
+    <option name="LAST_COMMIT_MESSAGE" value="added dollar sign to FTEH rate and fixed total subs hero number in email template" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1270,13 +1251,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/mailers/application_mailer.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="36">
-          <caret line="2" column="18" selection-start-line="2" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/application.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="751">
@@ -1364,13 +1338,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/layouts/tets" />
-    <entry file="file://$PROJECT_DIR$/app/views/programmers/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="415">
-          <caret line="51" column="0" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/worksheet_mailer/sendWorksheet.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1485,32 +1452,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/offers/_sheet.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4860">
-          <caret line="270" column="12" selection-start-line="270" selection-start-column="12" selection-end-line="270" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/config/environments/development.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1080">
           <caret line="60" column="3" selection-start-line="60" selection-start-column="3" selection-end-line="60" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/offers/preview.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="233" selection-start-line="12" selection-start-column="233" selection-end-line="12" selection-end-column="233" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/offers/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="71" column="50" selection-start-line="71" selection-start-column="0" selection-end-line="72" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -1560,26 +1505,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/mailers/worksheet_mailer.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="144">
-          <caret line="8" column="0" selection-start-line="8" selection-start-column="0" selection-end-line="8" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db/migrate/20160427012559_change_fields_to_string.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/outlets/index.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1206">
-          <caret line="67" column="26" selection-start-line="67" selection-start-column="26" selection-end-line="67" selection-end-column="26" />
           <folding />
         </state>
       </provider>
@@ -1600,16 +1529,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/grid168.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="206">
-          <caret line="505" column="85" selection-start-line="505" selection-start-column="85" selection-end-line="505" selection-end-column="85" />
-          <folding>
-            <element signature="e#0#37#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/offers/_form.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="251">
@@ -1618,10 +1537,96 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/programmers/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="433">
+          <caret line="52" column="62" selection-start-line="52" selection-start-column="62" selection-end-line="52" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/outlets/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="386">
+          <caret line="56" column="55" selection-start-line="56" selection-start-column="55" selection-end-line="56" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/offers/index.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="63" column="47" selection-start-line="63" selection-start-column="47" selection-end-line="63" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/grid168.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="350">
+          <caret line="510" column="95" selection-start-line="510" selection-start-column="95" selection-end-line="510" selection-end-column="95" />
+          <folding>
+            <element signature="e#0#37#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/mailers/application_mailer.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="46" selection-start-line="1" selection-start-column="46" selection-end-line="1" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/mailers/worksheet_mailer.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="54">
+          <caret line="3" column="32" selection-start-line="3" selection-start-column="32" selection-end-line="3" selection-end-column="32" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/offers/preview.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="10" column="218" selection-start-line="10" selection-start-column="218" selection-end-line="10" selection-end-column="218" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/offers/_email.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="70" column="416" selection-start-line="70" selection-start-column="416" selection-end-line="70" selection-end-column="416" />
+        <state relative-caret-position="292">
+          <caret line="158" column="133" selection-start-line="158" selection-start-column="129" selection-end-line="158" selection-end-column="133" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#0;n#div#0;n#div#1;n#!!top" expanded="true" />
+            <marker date="1461798458258" expanded="false" signature="690:948" placeholder="..." />
+            <marker date="1461798458258" expanded="false" signature="1691:1949" placeholder="..." />
+            <marker date="1461798458258" expanded="false" signature="2182:2440" placeholder="..." />
+            <marker date="1461798458258" expanded="false" signature="2669:2927" placeholder="..." />
+            <marker date="1461798458258" expanded="false" signature="3317:3575" placeholder="..." />
+            <marker date="1461798458258" expanded="false" signature="3893:4151" placeholder="..." />
+            <marker date="1461798458258" expanded="false" signature="4475:4733" placeholder="..." />
+            <marker date="1461798458258" expanded="false" signature="4968:5226" placeholder="..." />
+            <marker date="1461798458258" expanded="false" signature="6696:6957" placeholder="..." />
+            <marker date="1461798458258" expanded="false" signature="8556:8817" placeholder="..." />
+            <marker date="1461798458258" expanded="false" signature="10389:10650" placeholder="..." />
+            <marker date="1461798458258" expanded="false" signature="12255:12516" placeholder="..." />
+            <marker date="1461798458258" expanded="false" signature="12983:13241" placeholder="..." />
+            <marker date="1461798458258" expanded="false" signature="14173:14407" placeholder="..." />
+            <marker date="1461798458258" expanded="false" signature="29355:29613" placeholder="..." />
+            <marker date="1461798458258" expanded="false" signature="30531:30765" placeholder="..." />
+            <marker date="1461798458258" expanded="false" signature="54593:54851" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/offers/_sheet.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1678">
+          <caret line="127" column="14" selection-start-line="127" selection-start-column="14" selection-end-line="127" selection-end-column="14" />
           <folding />
         </state>
       </provider>
