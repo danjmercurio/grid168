@@ -5,13 +5,9 @@
     <bookmark url="file://$PROJECT_DIR$/app/assets/javascripts/grid168.js" line="23" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="253a1b92-4cff-4d17-8db2-60a8dec7fc3d" name="Default" comment="added offers table to programmer show view">
+    <list default="true" id="253a1b92-4cff-4d17-8db2-60a8dec7fc3d" name="Default" comment="Changed all &quot;Show&quot; references to &quot;Display&quot;">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/grid168.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/grid168.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/controllers/outlets_controller.rb" afterPath="$PROJECT_DIR$/app/controllers/outlets_controller.rb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/outlets/index.html.erb" afterPath="$PROJECT_DIR$/app/views/outlets/index.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/outlets/show.html.erb" afterPath="$PROJECT_DIR$/app/views/outlets/show.html.erb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/programmers/show.html.erb" afterPath="$PROJECT_DIR$/app/views/programmers/show.html.erb" />
     </list>
     <ignored path="grid168.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -59,11 +55,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="grid168.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="grid168.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/grid168.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="5526">
-              <caret line="309" column="16" selection-start-line="309" selection-start-column="16" selection-end-line="309" selection-end-column="16" />
+            <state relative-caret-position="444">
+              <caret line="313" column="52" selection-start-line="313" selection-start-column="52" selection-end-line="313" selection-end-column="52" />
               <folding>
                 <element signature="e#0#37#0" expanded="false" />
               </folding>
@@ -85,13 +81,13 @@
         <entry file="file://$PROJECT_DIR$/app/views/outlets/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="186">
-              <caret line="118" column="60" selection-start-line="118" selection-start-column="60" selection-end-line="118" selection-end-column="60" />
+              <caret line="119" column="60" selection-start-line="119" selection-start-column="60" selection-end-line="119" selection-end-column="60" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="true">
+      <file leaf-file-name="show.html.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/programmers/show.html.erb">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="186">
@@ -171,10 +167,10 @@
         <option value="$PROJECT_DIR$/app/controllers/offers_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/programmers_controller.rb" />
         <option value="$PROJECT_DIR$/app/controllers/outlets_controller.rb" />
-        <option value="$PROJECT_DIR$/app/assets/javascripts/grid168.js" />
         <option value="$PROJECT_DIR$/app/views/outlets/index.html.erb" />
         <option value="$PROJECT_DIR$/app/views/outlets/show.html.erb" />
         <option value="$PROJECT_DIR$/app/views/programmers/show.html.erb" />
+        <option value="$PROJECT_DIR$/app/assets/javascripts/grid168.js" />
       </list>
     </option>
   </component>
@@ -735,14 +731,7 @@
       <workItem from="1461616050832" duration="1442000" />
       <workItem from="1461697959493" duration="8594000" />
       <workItem from="1461711762519" duration="5889000" />
-      <workItem from="1461718580919" duration="147000" />
-    </task>
-    <task id="LOCAL-00022" summary="new, edit offer views done&#10;many changes to offer js">
-      <created>1459370722317</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1459370722317</updated>
+      <workItem from="1461718580919" duration="962000" />
     </task>
     <task id="LOCAL-00023" summary="added notes migration">
       <created>1459371110776</created>
@@ -1080,7 +1069,14 @@
       <option name="project" value="LOCAL" />
       <updated>1461717415155</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Changed all &quot;Show&quot; references to &quot;Display&quot;">
+      <created>1461718740146</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1461718740147</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1101,7 +1097,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="220875000" />
+    <option name="totallyTimeSpent" value="221690000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1170,7 +1166,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="added mvpd subscriber rate to offer model" />
     <MESSAGE value="added mvpdOtaSubRate field to offer model" />
     <MESSAGE value="removed total homes from offer model since it is in outlet model and outlet belongs to offer" />
     <MESSAGE value="daypart calculations working again" />
@@ -1195,7 +1190,8 @@
     <MESSAGE value="Made note sections admin-only" />
     <MESSAGE value="Adjusted worksheet calculations in js" />
     <MESSAGE value="added offers table to programmer show view" />
-    <option name="LAST_COMMIT_MESSAGE" value="added offers table to programmer show view" />
+    <MESSAGE value="Changed all &quot;Show&quot; references to &quot;Display&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Changed all &quot;Show&quot; references to &quot;Display&quot;" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1528,16 +1524,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/grid168.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="5526">
-          <caret line="309" column="16" selection-start-line="309" selection-start-column="16" selection-end-line="309" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#37#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/outlets/index.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="582">
@@ -1549,7 +1535,7 @@
     <entry file="file://$PROJECT_DIR$/app/views/outlets/show.html.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="186">
-          <caret line="118" column="60" selection-start-line="118" selection-start-column="60" selection-end-line="118" selection-end-column="60" />
+          <caret line="119" column="60" selection-start-line="119" selection-start-column="60" selection-end-line="119" selection-end-column="60" />
           <folding />
         </state>
       </provider>
@@ -1559,6 +1545,16 @@
         <state relative-caret-position="186">
           <caret line="77" column="46" selection-start-line="77" selection-start-column="46" selection-end-line="77" selection-end-column="46" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/assets/javascripts/grid168.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="444">
+          <caret line="313" column="52" selection-start-line="313" selection-start-column="52" selection-end-line="313" selection-end-column="52" />
+          <folding>
+            <element signature="e#0#37#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -300,14 +300,21 @@ grid168 = (function () {
 
                 // TODO: event handler on grid mouseup, etc
 
-                cells.each(function () {
-                    var cell = this;
-                    $(cell).click(function () {
-                        clickCallback(cell);
-                        that.onGridChange();
-                    });
+                // cells.each(function () {
+                //     var cell = this;
+                //     $(cell).click(function () {
+                //         clickCallback(cell);
+                //         that.onGridChange();
+                //     });
+                // });
+
+                $('.gridContainerHeader').selectable({
+                    filter: '.cell',
+                    selecting: function (event, ui) {
+                        clickCallback(ui.selecting);
+                    }
                 });
-                
+
 
                 // Only the new and edit views have these buttons
                 if (app.action === 'edit' || app.action === 'new') {
