@@ -68,7 +68,7 @@
               </div><!--.tile-title-->
               <div class="tile-body clearfix" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 15px;height: 60px;">
                 <i class="fa fa-home" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;display: inline-block;font: normal normal normal 14px/1 FontAwesome;font-size: 35px;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #fff;"></i>
-                <h4 class="pull-right delimited" id="totalHomes" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight: 400;line-height: 1.1;color: #fff;margin-top: 0px;margin-bottom: 10px;font-size: 35px;float: right;text-transform: uppercase;margin: 0px;"><%= number_with_delimiter @offer.outlet.subs %></h4>
+                <h4 class="pull-right delimited" id="totalHomes" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;font-weight: 400;line-height: 1.1;color: #fff;margin-top: 0px;margin-bottom: 10px;font-size: 35px;float: right;text-transform: uppercase;margin: 0px;"><%= number_with_delimiter @offer.outlet.total_homes %></h4>
               </div><!--.tile-body-->
               <div class="tile-footer" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 4px 15px;color: #fff;background-color: rgba(255,255,255,0.1);">
                 &nbsp;
@@ -158,7 +158,7 @@
           <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
             <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">FTEH
               Rate for MVPD and OTA</strong></td>
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= @offer.dollar_amount %></td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= number_to_currency @offer.dollar_amount %></td>
           <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"></td>
           <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">&nbsp;</td>
           <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">&nbsp;</td>
