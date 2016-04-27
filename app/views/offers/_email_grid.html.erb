@@ -18,19 +18,19 @@
 
    def getDayPart(time)
      time = time.to_time
-     if time.between?('01:00'.to_time, '06:00'.to_time)
+     if time.between?('01:00'.to_time, '05:59'.to_time)
        return :overnights end
-     if time.between?('06:00'.to_time, '10:00'.to_time)
+     if time.between?('06:00'.to_time, '09:59'.to_time)
        return :morning end
-     if time.between?('10:00'.to_time, '16:30'.to_time)
+     if time.between?('10:00'.to_time, '16:29'.to_time)
        return :daytime end
-     if time.between?('16:30'.to_time, '19:00'.to_time)
+     if time.between?('16:30'.to_time, '18:59'.to_time)
        return :eveningNews end
-     if time.between?('19:00'.to_time, '20:00'.to_time)
+     if time.between?('19:00'.to_time, '19:59'.to_time)
        return :localPrimeTime end
-     if time.between?('20:00'.to_time, '23:00'.to_time)
+     if time.between?('20:00'.to_time, '22:59'.to_time)
        return :nationalPrimeTime end
-     if time.between?('23:00'.to_time, '23:30'.to_time)
+     if time.between?('23:00'.to_time, '23:29'.to_time)
        return :lateNews end
      return :lateNight
    end
