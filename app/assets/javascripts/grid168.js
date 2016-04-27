@@ -407,11 +407,12 @@ grid168 = (function () {
                 offer['247mvpdSubEstimate'] = $('#247mvpdSubEstimate').val().stripAndParse();
 
                 var selectedCells = app.grid.cells.selected().fetch();
-                if (selectedCells.length < 1) throw new Error('No cells selected');
+                if (selectedCells.length < 1) throw new Error('No cells selected.');
 
-                offer.weeklyHours = this.calculateHoursSum(selectedCells);
-                offer.monthlyHours = offer.weeklyHours * 4;
-                offer.yearlyHours = offer.monthlyHours * 12;
+                offer.weeklyHours = this.calculateHoursSum(selectedCells);  // 168 when all cells are selected
+                offer.yearlyHours = offer.weeklyHours * 52; // 168 * 52 = 8736 when all cells are selected
+                offer.monthlyHours = offer.yearlyHours / 12; // 8736 / 12 when all cells are selected
+
 
                 var audienceSum = this.calculateAudienceSum(selectedCells);
 
