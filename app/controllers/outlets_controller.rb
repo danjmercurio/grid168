@@ -31,7 +31,7 @@ class OutletsController < ApplicationController
 
 			respond_to do |format|
 				if @outlet.save
-					notice = "Outlet was successfully created."
+					notice = 'Outlet was successfully created.'
 					if count > 0
 						# save sub channel
 						for i in 0...count do
@@ -42,7 +42,7 @@ class OutletsController < ApplicationController
 								subs = (remove_comma(params[:sub_channel]["subs_#{i}"])).to_i
 								@outlet.sub_channels.create name: name, phone_number: phone_number,
 											sub_channel_type_id: type, subs: subs
-								notice = "Outlet and its sub channel were successfully created."
+								notice = 'Outlet and its sub channel were successfully created.'
 							end
 						end #end for i
 					end #end if count

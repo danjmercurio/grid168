@@ -307,6 +307,7 @@ grid168 = (function () {
                         that.onGridChange();
                     });
                 });
+                
 
                 // Only the new and edit views have these buttons
                 if (app.action === 'edit' || app.action === 'new') {
