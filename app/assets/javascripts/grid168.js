@@ -257,6 +257,14 @@ grid168 = (function () {
                 },
                 fetch: function () {
                     return this.list;
+                },
+                clear: function () {
+                    this.list.each(function () {
+                        if ($(this).hasClass('clicked')) {
+                            app.grid.toggleCellState(this);
+                        }
+                    });
+                    return this;
                 }
             },
             paint: function () {
@@ -287,7 +295,6 @@ grid168 = (function () {
 
             },
             registerEventHandlers: function () {
-                var gridArea = this.getGridContainer();
                 var cells = app.grid.cells.all().fetch();
 
                 var that = this;
@@ -295,18 +302,8 @@ grid168 = (function () {
                 var clickCallback = function (cell) {
                     console.log(cell);
                     that.toggleCellState(cell);
-
+                    that.onGridChange();
                 };
-
-                // TODO: event handler on grid mouseup, etc
-
-                // cells.each(function () {
-                //     var cell = this;
-                //     $(cell).click(function () {
-                //         clickCallback(cell);
-                //         that.onGridChange();
-                //     });
-                // });
 
                 $('.gridContainerHeader').selectable({
                     filter: '.cell',
@@ -315,28 +312,30 @@ grid168 = (function () {
                     }
                 });
 
+                cells.each(function () {
+                    var cell = this;
+                    $(cell).click(function () {
+                        clickCallback(cell);
+                    });
+                });
+
 
                 // Only the new and edit views have these buttons
                 if (app.action === 'edit' || app.action === 'new') {
                     // Set event handlers on buttons
                     $('#invert').click(function () {
-                        cells.each(function () {
-                            that.toggleCellState(this);
-
+                        app.grid.cells.all().fetch().each(function () {
+                            clickCallback(this);
                         });
-                        that.updateHiddenField();
-                        app.calc.doCalc();
                     });
 
                     // The 'Select All' button
                     $('#selectAll').click(function () {
                         cells.each(function () {
                             if (!$(this).hasClass('clicked')) {
-                                that.toggleCellState(this);
+                                clickCallback(cell);
                             }
                         });
-                        that.updateHiddenField();
-                        app.calc.doCalc();
                     });
                     // The 'Calculate' button
                     $('#calculate').click(function () {
@@ -345,21 +344,28 @@ grid168 = (function () {
 
                     // The 'reset' button
                     $('#reset').click(function () {
-                        $('input').each(function () {
+                        $("div.rate_info input[type='text']").each(function () {
+                            $(this).val(0);
+                        });
+                        app.grid.cells.all().clear();
+                    });
+
+                    $('#clear').click(function () {
+                        app.grid.cells.all().clear();
+                        $("div.rate_info input[type='text']").each(function () {
                             $(this).val('');
                         });
-
-                        cells.each(function () {
-                            if ($(this).hasClass('clicked')) {
-                                $(this).removeClass('clicked');
-                            }
-                        });
-                        app.calc.doCalc();
                     });
+
                     // On form submit (show offer view has no input of type submit)
-                    $("input[type='submit']").click(function () {
+                    $("input[type='submit']").click(function (e) {
                         // Make sure all our calculations are done before we submit
-                        app.calc.doCalc();
+                        if (app.grid.cells.selected().fetch().length === 0) {
+                            e.preventDefault();
+                            alert('You must select at least one cell.');
+                        } else {
+                            app.calc.doCalc();
+                        }
                     });
                 }
 
@@ -407,7 +413,13 @@ grid168 = (function () {
                 offer['247mvpdSubEstimate'] = $('#247mvpdSubEstimate').val().stripAndParse();
 
                 var selectedCells = app.grid.cells.selected().fetch();
-                if (selectedCells.length < 1) throw new Error('No cells selected.');
+                if (selectedCells.length < 1) {
+                    // if there are no cells selected just set everything to zero and return
+                    $("div.rate_info input[type='text']").each(function () {
+                        $(this).val(0);
+                    });
+                    return;
+                }
 
                 offer.weeklyHours = this.calculateHoursSum(selectedCells);  // 168 when all cells are selected
                 offer.yearlyHours = offer.weeklyHours * 52; // 168 * 52 = 8736 when all cells are selected
@@ -482,16 +494,16 @@ grid168 = (function () {
                     $('#grossMonthlyRateHero').text(offer.monthlyRate.toCurrency().toNearestDollar());
                 }
 
-                $('#weeklyHours').val(offer.weeklyHours.addCommas());
-                $('#monthlyHours').val(offer.monthlyHours.addCommas());
-                $('#yearlyHours').val(offer.yearlyHours.addCommas());
+                $('#weeklyHours').val(Math.round10(offer.weeklyHours, -1).addCommas());
+                $('#monthlyHours').val(Math.round10(offer.monthlyHours, -1).addCommas());
+                $('#yearlyHours').val(Math.round10(offer.yearlyHours, -1).addCommas());
 
                 $('#halfHourRate').val(offer.halfHourRate.toCurrency());
 
                 $('#mvpdSubscriberRate').val(offer.mvpdSubRate.toCurrency());
                 $('#mvpdOTASubRate').val(offer.mvpdOtaSubRate.toCurrency());
 
-                $('#247mvpdSubEstimate').val(offer['247mvpdSubEstimate']);
+                $('#247mvpdSubEstimate').val(offer['247mvpdSubEstimate'].toCurrency());
 
                 // Now the daypart section...
                 jQuery.each(this.values.dayParts, function (dayPartName, dayPart) {
