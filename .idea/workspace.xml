@@ -5,9 +5,9 @@
     <bookmark url="file://$PROJECT_DIR$/app/assets/javascripts/grid168.js" line="23" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="253a1b92-4cff-4d17-8db2-60a8dec7fc3d" name="Default" comment="Fixed select button">
+    <list default="true" id="253a1b92-4cff-4d17-8db2-60a8dec7fc3d" name="Default" comment="Hopefully fixed issues in Safari with grid event handlers">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/assets/javascripts/grid168.js" afterPath="$PROJECT_DIR$/app/assets/javascripts/grid168.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/views/offers/new.html.erb" afterPath="$PROJECT_DIR$/app/views/offers/new.html.erb" />
     </list>
     <ignored path="grid168.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -36,7 +36,7 @@
     <SUITE FILE_PATH="coverage/grid168@doc_app__grid168.coverage" NAME="doc:app: grid168 Coverage Results" MODIFIED="1457475798688" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="grid168" />
     <SUITE FILE_PATH="coverage/grid168@assets_precompile__grid168.coverage" NAME="assets:precompile: grid168 Coverage Results" MODIFIED="1457580290169" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="grid168" />
     <SUITE FILE_PATH="coverage/grid168@routes__grid168.coverage" NAME="routes: grid168 Coverage Results" MODIFIED="1459930616487" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="grid168" />
-    <SUITE FILE_PATH="coverage/grid168@Development__grid168.coverage" NAME="Development: grid168 Coverage Results" MODIFIED="1461864795388" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="grid168" />
+    <SUITE FILE_PATH="coverage/grid168@Development__grid168.coverage" NAME="Development: grid168 Coverage Results" MODIFIED="1461868043225" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="grid168" />
     <SUITE FILE_PATH="coverage/grid168@test__grid168.coverage" NAME="test: grid168 Coverage Results" MODIFIED="1461106456511" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="grid168" />
     <SUITE FILE_PATH="coverage/grid168@IRB_console__grid168.coverage" NAME="IRB console: grid168 Coverage Results" MODIFIED="1460758058515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="rcov" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" MODULE_NAME="grid168" />
   </component>
@@ -56,7 +56,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="grid168.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="grid168.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/assets/javascripts/grid168.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="245">
@@ -68,31 +68,31 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="new.html.erb" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/views/offers/new.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="35" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edit.html.erb" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/offers/edit.html.erb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="_email.erb" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/offers/_email.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
+            <state relative-caret-position="936">
               <caret line="52" column="296" selection-start-line="52" selection-start-column="296" selection-end-line="52" selection-end-column="296" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="_sheet.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/offers/_sheet.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="4" selection-start-line="12" selection-start-column="4" selection-end-line="12" selection-end-column="4" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.erb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/offers/index.html.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1134">
-              <caret line="63" column="47" selection-start-line="63" selection-start-column="47" selection-end-line="63" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -181,7 +181,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/assets/javascripts/offers.js" />
         <option value="$PROJECT_DIR$/db/migrate/20160415222229_addmvpd_subscriber_rate_to_offer.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20160415222729_addmvpd_ota_sub_rate_to_offer.rb" />
         <option value="$PROJECT_DIR$/db/migrate/20160415225133_remove_total_homes_from_offer.rb" />
@@ -232,6 +231,7 @@
         <option value="$PROJECT_DIR$/app/mailers/worksheet_mailer.rb" />
         <option value="$PROJECT_DIR$/app/views/offers/_email.erb" />
         <option value="$PROJECT_DIR$/app/assets/javascripts/grid168.js" />
+        <option value="$PROJECT_DIR$/app/views/offers/new.html.erb" />
       </list>
     </option>
   </component>
@@ -292,6 +292,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="RailsProjectView" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -382,33 +383,10 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grid168" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grid168" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="javascripts" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
-      <pane id="RailsProjectView" />
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -795,14 +773,8 @@
       <workItem from="1461718580919" duration="3138000" />
       <workItem from="1461724760638" duration="8149000" />
       <workItem from="1461787512139" duration="10011000" />
-      <workItem from="1461863775072" duration="2338000" />
-    </task>
-    <task id="LOCAL-00030" summary="added email field to media outlets model and view forms">
-      <created>1460003134348</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1460003134348</updated>
+      <workItem from="1461863775072" duration="2985000" />
+      <workItem from="1461867954606" duration="174000" />
     </task>
     <task id="LOCAL-00031" summary="added dayparts hour and audience calculations&#10;made visual changes to offer view">
       <created>1460436726876</created>
@@ -1140,7 +1112,14 @@
       <option name="project" value="LOCAL" />
       <updated>1461865916764</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="Hopefully fixed issues in Safari with grid event handlers">
+      <created>1461866586941</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1461866586941</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -1161,7 +1140,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="244364000" />
+    <option name="totallyTimeSpent" value="245185000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1176,7 +1155,7 @@
     <frame x="0" y="0" width="1920" height="1053" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20447284" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20660277" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32776618" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.302714" sideWeight="0.53887117" order="10" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.028221512" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -1230,7 +1209,6 @@
   <component name="VcsManagerConfiguration">
     <option name="CHECK_CODE_CLEANUP_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="CHECK_NEW_TODO" value="false" />
-    <MESSAGE value="fixed autofill for total homes in outlets controller" />
     <MESSAGE value="added preview action on offer model and preview view template, as well as email partial" />
     <MESSAGE value="added mailer and more views" />
     <MESSAGE value="started sending emails" />
@@ -1255,7 +1233,8 @@
     <MESSAGE value="Fixed bug with cell click event handlers" />
     <MESSAGE value="added dollar sign to FTEH rate and fixed total subs hero number in email template" />
     <MESSAGE value="Fixed select button" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed select button" />
+    <MESSAGE value="Hopefully fixed issues in Safari with grid event handlers" />
+    <option name="LAST_COMMIT_MESSAGE" value="Hopefully fixed issues in Safari with grid event handlers" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1277,13 +1256,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/application.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="751">
-          <caret line="49" column="0" selection-start-line="49" selection-start-column="0" selection-end-line="49" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/sub_channel_offers_controller.rb" />
     <entry file="file://$PROJECT_DIR$/test/unit/sub_channel_offer_test.rb" />
     <entry file="file://$PROJECT_DIR$/test/performance/browsing_test.rb">
@@ -1413,13 +1385,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/offers/edit.html.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="18">
-          <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/helpers/offers_helper.rb">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
@@ -1446,7 +1411,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
           <caret line="35" column="51" selection-start-line="35" selection-start-column="51" selection-end-line="35" selection-end-column="51" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1475,7 +1439,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="35" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1497,7 +1460,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="576">
           <caret line="32" column="45" selection-start-line="32" selection-start-column="45" selection-end-line="32" selection-end-column="45" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1512,7 +1474,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
           <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1618,7 +1579,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/offers/_email.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
+        <state relative-caret-position="936">
           <caret line="52" column="296" selection-start-line="52" selection-start-column="296" selection-end-line="52" selection-end-column="296" />
           <folding />
         </state>
@@ -1631,6 +1592,22 @@
           <folding>
             <element signature="e#0#37#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/offers/edit.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="1" column="39" selection-start-line="1" selection-start-column="39" selection-end-line="1" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/offers/new.html.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="35" selection-start-line="0" selection-start-column="35" selection-end-line="0" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>
