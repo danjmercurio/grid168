@@ -130,7 +130,7 @@
           </tr>
           <tr>
             <td><strong>Gross Half Hour Rate</strong></td>
-            <td><%= f.text_field :halfHourRate, :id => 'halfHourRate', :value => number_to_currency(@offer.halfHourRate) %></td>
+            <td><%= f.text_field :halfHourRate, :value => number_to_currency(@offer.halfHourRate), :id => 'halfHourRate' %></td>
             <td><strong>Gross Hour Rate</strong></td>
             <td><%= f.text_field :hourRate, :value => number_to_currency(@offer.hourly_rate), :id => 'hourlyRate' %></td>
             <td>&nbsp;</td>

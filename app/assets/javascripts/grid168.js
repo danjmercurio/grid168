@@ -432,7 +432,7 @@ grid168 = (function () {
 
                 var selectedCells = app.grid.cells.selected().fetch();
                 if (selectedCells.length < 1) {
-                    // if there are no cells selected just set everything to zero and return
+                    // If there are no cells selected just set everything to zero and return
                     $("div.rate_info input[type='text']").each(function () {
                         $(this).val(0);
                     });
