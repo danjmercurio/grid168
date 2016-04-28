@@ -271,7 +271,7 @@
           </tr>
           </tbody>
         </table>
-        <p>Estimated percentage of weekly viewing is a composite of publicly reported viewing trends across all television channels, and networks, based on live time of day viewing.</p>
+        <p><%= @offer.dpNotes %></p>
       </div>
     </div>
     <% end %>
@@ -286,6 +286,6 @@
   </div>
   <br />
   <div>
-    <p><%= @offer.dpNotes %></p>
+    <p><%= @offer.disclaimer %></p>
   </div>
 </div>
