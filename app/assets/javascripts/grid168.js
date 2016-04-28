@@ -130,11 +130,12 @@ grid168 = (function () {
                 // Style all select tags with select2 CSS
                 $('select').select2();
 
-                var flash = $('.flash');
-                app.flash = flash;
+                // Holder for flash element
+                app.flash = $('.flash');
+                var flash = app.flash;
 
                 // If a flash message was rendered, perform its exit animation
-                if (flash.length > 0) {
+                if (app.flash.length > 0) {
                     // If there was a flash, define this but don't call it (yet)
                     var bounceOut = function () {
                         flash.fadeOut(1000);
@@ -202,13 +203,10 @@ grid168 = (function () {
                             }
 
                         };
-
                         mvpdSubs.blur(autoFillTotalHomes);
                         otaSubs.blur(autoFillTotalHomes);
                     }
-
                     break;
-
             }
         },
         grid: {
@@ -295,6 +293,7 @@ grid168 = (function () {
 
             },
             registerEventHandlers: function () {
+                // Set event handlers on grid cells to allow them to be selected and deselected
                 var cells = app.grid.cells.all().fetch();
 
                 var that = this;
@@ -302,13 +301,14 @@ grid168 = (function () {
                 var clickCallback = function (cell) {
                     console.log(cell);
                     that.toggleCellState(cell);
-                    that.onGridChange();
                 };
 
+                // jQuery UI's .selectable method
                 $('.gridContainerHeader').selectable({
                     filter: '.cell',
                     selecting: function (event, ui) {
                         clickCallback(ui.selecting);
+                        that.onGridChange();
                     }
                 });
 
@@ -316,6 +316,7 @@ grid168 = (function () {
                     var cell = this;
                     $(cell).click(function () {
                         clickCallback(cell);
+                        that.onGridChange();
                     });
                 });
 
@@ -333,9 +334,10 @@ grid168 = (function () {
                     $('#selectAll').click(function () {
                         cells.each(function () {
                             if (!$(this).hasClass('clicked')) {
-                                clickCallback(cell);
+                                clickCallback(this);
                             }
                         });
+                        that.onGridChange();
                     });
                     // The 'Calculate' button
                     $('#calculate').click(function () {
