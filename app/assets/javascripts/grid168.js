@@ -457,8 +457,8 @@ grid168 = (function () {
                 offer.hourRate = offer.yearlyRate / offer.yearlyHours;
                 offer.halfHourRate = offer.hourRate / 2;
 
-                offer.mvpdSubRate = offer.mvpdSubscribers * offer['247mvpdSubEstimate'];
-                offer.mvpdOtaSubRate = offer['247mvpdSubEstimate'] * offer.otaHomes;
+                offer.mvpdSubRate = (offer.mvpdSubscribers * offer.yearlyRate) / offer.totalHomes;
+                offer.mvpdOtaSubRate = (offer.otaHomes * offer.yearlyRate) / offer.totalHomes;
 
                 // Daypart calculations
                 var dayParts = this.values.dayParts;
