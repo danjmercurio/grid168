@@ -296,6 +296,8 @@ grid168 = (function () {
                 // Set event handlers on grid cells to allow them to be selected and deselected
                 var cells = app.grid.cells.all().fetch();
 
+                var gridArea = this.getGridContainer();
+
                 var that = this;
 
                 var clickCallback = function (cell) {
@@ -303,21 +305,35 @@ grid168 = (function () {
                     that.toggleCellState(cell);
                 };
 
-                // jQuery UI's .selectable method
-                $('.gridContainerHeader').selectable({
-                    filter: '.cell',
-                    selecting: function (event, ui) {
-                        clickCallback(ui.selecting);
-                        that.onGridChange();
-                    }
-                });
+                // This causes problems in Safari
+                // // jQuery UI's .selectable method
+                // $('.gridContainerHeader').selectable({
+                //     filter: '.cell',
+                //     selecting: function (event, ui) {
+                //         clickCallback(ui.selecting);
+                //         that.onGridChange();
+                //     }
+                // });
 
                 cells.each(function () {
                     var cell = this;
-                    $(cell).click(function () {
+                    $(cell).mousedown(function () {
                         clickCallback(cell);
                         that.onGridChange();
                     });
+                });
+
+                gridArea.mousedown(function (e) {
+                    e.preventDefault();
+                    that.onGridChange();
+                    cells.mouseenter(function () {
+                        clickCallback(this);
+                    });
+                });
+
+                gridArea.mouseup(function () {
+                    that.onGridChange();
+                    cells.off('mouseenter');
                 });
 
 
