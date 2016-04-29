@@ -482,7 +482,7 @@ grid168 = (function () {
                     offer.weeklyHoursSum += hoursTemp;
                     dayPart.hours = hoursTemp;
 
-                    var weeklyRateTemp = (dayPart.audience * offer.yearlyRate) / 52;
+                    var weeklyRateTemp = (dayPart.audience * offer.weeklyRate);
                     offer.weeklyRateSum += weeklyRateTemp;
                     dayPart.weeklyRate = weeklyRateTemp;
                     dayPart.hours === 0 ? dayPart.rate = 0 : dayPart.rate = dayPart.weeklyRate / dayPart.hours;
