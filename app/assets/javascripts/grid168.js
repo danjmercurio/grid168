@@ -473,7 +473,7 @@ grid168 = (function () {
                 var that = this;
                 jQuery.each(dayParts, function (dayPartName, dayPart) {
                     var cells = app.grid.cells.selected().dayPart(dayPartName).fetch();
-                    
+
                     // Get the audience sum for the selected cells that fall under this daypart, and add it to the running total for the offer
                     var audienceTemp = that.calculateAudienceSum(cells);
                     offer.weeklyAudienceSum += audienceTemp;
@@ -483,9 +483,9 @@ grid168 = (function () {
                     offer.weeklyHoursSum += hoursTemp;
                     dayPart.hours = hoursTemp;
 
-                    var weeklyRateTemp = offer.yearlyRate;
-                    offer.weeklyRateSum += weeklyRateTemp;
-                    dayPart.weeklyRate = offer.weeklyRate;
+                    dayPart.hours === 0 ? dayPart.weeklyRate = 0 : dayPart.weeklyRate = offer.weeklyRate;
+
+                    offer.weeklyRateSum += dayPart.weeklyRate;
                     dayPart.hours === 0 ? dayPart.rate = 0 : dayPart.rate = dayPart.weeklyRate / dayPart.hours;
                 });
 
