@@ -469,6 +469,7 @@ grid168 = (function () {
                 offer.weeklyHoursSum = 0;
 
                 // Daypart-specific calculations
+                console.log('dayparts');
                 var that = this;
                 jQuery.each(dayParts, function (dayPartName, dayPart) {
                     var cells = app.grid.cells.selected().dayPart(dayPartName).fetch();
@@ -487,8 +488,6 @@ grid168 = (function () {
                     dayPart.weeklyRate = weeklyRateTemp;
                     dayPart.hours === 0 ? dayPart.rate = 0 : dayPart.rate = dayPart.weeklyRate / dayPart.hours;
                 });
-
-                offer.weeklyRateSum = offer.weeklyRateSum;
 
                 // Now update the values on the page
                 this.updateValues(this.values);
