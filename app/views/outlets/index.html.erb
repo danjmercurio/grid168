@@ -64,6 +64,7 @@
                         <li><%= link_to 'New Offer', new_outlet_offer_path(outlet) %></li>
                         <li><%= link_to 'Display', outlet_path(outlet) %></li>
                         <li><%= link_to 'Edit', edit_outlet_path(outlet) %></li>
+                        <li><%= link_to 'Delete', outlet_path(outlet), :method => :delete, :data => {:confirm => 'Are you sure?'} %></li>
                       </ul>
                     </div>
                   </td>

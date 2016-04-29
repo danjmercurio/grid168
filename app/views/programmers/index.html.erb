@@ -58,7 +58,7 @@
                       <ul class="dropdown-menu">
                         <li><a href="<%= url_for programmer_path(programmer.id) %>">Display</a></li>
                         <li><a href="<%= url_for edit_programmer_path(programmer.id) %>">Edit</a></li>
-                        <li><%= link_to 'Delete', programmer_path(programmer.id), :method => :delete %></li>
+                        <li><%= link_to 'Delete', programmer_path(programmer.id), :method => :delete, :data => {:confirm => 'Are you sure?'} %></li>
                       </ul>
                     </div>
                   </td>

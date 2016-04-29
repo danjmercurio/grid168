@@ -42,11 +42,10 @@ class OutletsController < ApplicationController
 								subs = (remove_comma(params[:sub_channel]["subs_#{i}"])).to_i
 								@outlet.sub_channels.create name: name, phone_number: phone_number,
 											sub_channel_type_id: type, subs: subs
-								notice = 'Outlet and its sub channel were successfully created.'
 							end
 						end #end for i
 					end #end if count
-					format.html { redirect_to :controller => 'outlets', :action => 'index', notice: notice }
+					format.html { redirect_to outlets_path, :notice => 'Outlet was successfully created.'}
 				else
 					format.html { render :action => "new" }
 				end
