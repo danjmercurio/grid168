@@ -521,7 +521,7 @@ grid168 = (function () {
                 $('#mvpdSubscriberRate').val(offer.mvpdSubRate.toCurrency());
                 $('#mvpdOTASubRate').val(offer.mvpdOtaSubRate.toCurrency());
 
-                $('#247mvpdSubEstimate').val(offer['247mvpdSubEstimate'].toCurrency());
+                $('#247mvpdSubEstimate').val('$' + offer['247mvpdSubEstimate'].toFixed(3).toString());
 
                 // Now the daypart section...
                 jQuery.each(this.values.dayParts, function (dayPartName, dayPart) {

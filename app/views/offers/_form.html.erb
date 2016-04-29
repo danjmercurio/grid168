@@ -51,8 +51,7 @@
           <h3><strong><%= f.label :subs, 'Subs:' %></strong> <%= number_with_delimiter @outlet.subs %></h3>
 
           <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
-          <div class="input-group">
-            <div class="input-group-addon">$</div>
+          <div class="form-group">
             <%= f.text_field :dollar_amount, :class => 'form-control', :placeholder => @offer.dollar_amount, :style => 'width: 30%;', :id => '247mvpdSubEstimate' %>
           </div>
         </div>
