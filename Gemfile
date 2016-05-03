@@ -1,29 +1,30 @@
 source 'http://rubygems.org'
 
 ruby '2.3.0'
-gem 'rails', '~> 4.2.4'#, git: 'git://github.com/rails/rails.git', branch: '4-2-stable'
+gem 'rails', :git => 'git://github.com/rails/rails.git', branch: '4-2-stable'
 
-gem 'protected_attributes'
+gem 'protected_attributes' # adds attr_accessible and attr_protected methods
 gem 'devise', :git => 'https://github.com/plataformatec/devise.git'
 gem 'devise-encryptable', :git => 'https://github.com/plataformatec/devise-encryptable.git'
 
-# Gems used only for assets and not required
-# in production environments by default.
-
+# CSS et al.
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-sass'
 gem 'sass-rails', '>= 3.2'
-gem 'coffee-rails'#, :git => 'https://github.com/spastorino/coffee-rails.git'
 gem 'uglifier'#, :git => 'https://github.com/lautis/uglifier.git'
+gem 'coffee-rails', '~> 4.1.0'
 
-gem 'jquery-rails'
-gem 'jquery-ui-rails'
+
+# JavaScript dependencies
+gem 'jquery-rails', :git => 'https://github.com/rails/jquery-rails.git'
+gem 'jquery-ui-rails', :git => 'https://github.com/joliss/jquery-ui-rails.git'
 gem 'jquery-tablesorter', :git => 'https://github.com/themilkman/jquery-tablesorter-rails.git'
-gem 'rails-jquery-autocomplete', :git => 'https://github.com/bigtunacan/rails-jquery-autocomplete.git'
+
 # This gem lends a helper to generate asset path compatible URLs in JavaScript files
 gem 'js_assets', :git => 'https://github.com/kavkaz/js_assets.git'
 # Fancy select tags
 gem 'select2-rails', :git => 'https://github.com/argerim/select2-rails.git'
+
 group :development do
   gem 'spring'
   gem 'annotate'
@@ -32,6 +33,7 @@ group :development do
   gem 'meta_request'
 end
 
+# Database backup/reset rake tasks
 gem 'yaml_db'
 
 group :production do
