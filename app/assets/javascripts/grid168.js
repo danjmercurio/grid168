@@ -157,7 +157,7 @@ grid168 = (function () {
                         $(this).val(newVal);
                     });
                 });
-                // Initialize menus and waves.js
+                // Initialize menus and effects
 
                 // Add body-small class if window less than 768px
                 if ($(this).width() < 769) {
@@ -176,7 +176,7 @@ grid168 = (function () {
 
                 });
 
-                // $(".nano").nanoScroller();
+                // $(".nano").nanoScroller(); (disabled)
 
                 // Panels
                 (function ($) {
@@ -244,7 +244,7 @@ grid168 = (function () {
                             });
                     });
 
-                })(jQuery);
+                }(jQuery));
 
                 // // Tooltips (disabled)
                 // $(function () {
@@ -588,7 +588,7 @@ grid168 = (function () {
                     offer.weeklyHoursSum += hoursTemp;
                     dayPart.hours = hoursTemp;
 
-                    dayPart.hours === 0 ? dayPart.weeklyRate = 0 : dayPart.weeklyRate = offer.weeklyRate;
+                    dayPart.hours === 0 ? dayPart.weeklyRate = 0 : dayPart.weeklyRate = (offer.weeklyRate * dayPart.audience);
 
                     offer.weeklyRateSum += dayPart.weeklyRate;
                     dayPart.hours === 0 ? dayPart.rate = 0 : dayPart.rate = dayPart.weeklyRate / dayPart.hours;
