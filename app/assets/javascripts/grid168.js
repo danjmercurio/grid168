@@ -246,16 +246,19 @@ grid168 = (function () {
 
                 })(jQuery);
 
-                //tooltips
+                // Tooltips
                 $(function () {
                     $('[data-toggle="tooltip"]').tooltip();
                     $('[data-toggle="popover"]').popover()
                 });
 
 
-                //waves effects
+                // Waves effects
                 Waves.attach('.button-wave', ['waves-button', 'waves-light']);
                 Waves.init();
+
+                // Make tables sortable
+                $('.tablesorter').tablesorter();
 
 
 
