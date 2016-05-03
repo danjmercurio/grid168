@@ -9,5 +9,8 @@
 //= require jquery-ui
 //= require bootstrap-sprockets
 //= require jquery-tablesorter
-//= require tables
 //= require select2
+//= require metisMenu.min
+//= require pace.min
+//= require waves.min
+//= require grid168

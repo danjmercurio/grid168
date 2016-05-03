@@ -9,17 +9,10 @@ Rails.application.config.assets.precompile += %w(
   jquery.flot.tooltip.min
   jquery.flot.resize
   jquery.flot.pie
-  pace.min
-  waves.min
-  custom.js
-  tables.coffee
+  pace.min.js
+  waves.min.js
   offers.css
-  offers.coffee
-  outletForm.js
-  input-mask/jquery.inputmask.bundle.min.js
-  grid.js
-  sheet.js
-  vanilla-masker.min.js
+  waves.min.js
   inputMasks.js
   grid168.js
 )
