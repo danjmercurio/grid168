@@ -246,11 +246,11 @@ grid168 = (function () {
 
                 })(jQuery);
 
-                // Tooltips
-                $(function () {
-                    $('[data-toggle="tooltip"]').tooltip();
-                    $('[data-toggle="popover"]').popover()
-                });
+                // // Tooltips (disabled)
+                // $(function () {
+                //     $('[data-toggle="tooltip"]').tooltip();
+                //     $('[data-toggle="popover"]').popover();
+                // });
 
 
                 // Waves effects
