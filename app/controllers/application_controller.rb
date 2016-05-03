@@ -19,22 +19,19 @@ class ApplicationController < ActionController::Base
     @outlets = Outlet.all.order(:name) # Ascending
   end
 
-  def remove_comma(num_string)
-  	num_string.gsub(",", "")
-  end #end remove_comma method
 
   def admin_only
     redirect_to '/404' unless current_user.admin?
   end
 
-  def sanitizeParameters
+  def sanitizeParameters # Some parameters coming from the client side have delimiters or commas. Add the parameter name to the inner array to sanitize it before committing to the database.
     params.each do |key, value|
-      if ["offer", "outlet"].include?(key)
+      if %w(offer outlet).include?(key)
         value.each do |k, v|
           if %w(subs over_air dollar_amount total_homes halfHourRate weekly_offer monthly_offer yearly_offer hourly_rate weekly_hours monthly_hours yearly_hours).include?(k)
             puts "Dirty parameter: {:#{k} => #{v}}"
-            params[key][k] = v.gsub(",", "").gsub("$", "")
-            puts "Cleaned: " + params[key][k]
+            params[key][k] = v.gsub(',', '').gsub('$', '')
+            puts 'Cleaned: ' + params[key][k]
           end
         end
       end
