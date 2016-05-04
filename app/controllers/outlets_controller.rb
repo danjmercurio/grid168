@@ -15,29 +15,16 @@ class OutletsController < ApplicationController
 	def new
 		@types = OutletType.all
 		@outlet = current_user.outlets.build
-
 	end #end new action
 
 	def create
-		if !params[:cancel].blank?
-			redirect_to outlets_path
-		else
-			count = params[:count_sub_channel].to_i
-			params[:outlet][:subs] = remove_comma(params[:outlet][:subs]) unless params[:outlet][:subs].blank?
-
-      @outlet = Outlet.new(params[:outlet])
-
-
-
-			respond_to do |format|
-				if @outlet.save
-					format.html { redirect_to outlets_path, :notice => 'Outlet was successfully created.'}
-				else
-					format.html { render :action => :new }
-				end
-			end #end respond_to
-		end
-
+		respond_to do |format|
+			if @outlet.save
+				format.html { redirect_to outlets_path, :notice => 'Outlet was successfully created.'}
+			else
+				format.html { render :action => :new }
+			end
+		end #end respond_to
 	end #end create action
 
 	def edit
