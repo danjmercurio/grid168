@@ -17,70 +17,71 @@
     <div class="panel-body">
       <%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => {:method => :put, :class => 'form-horizontal'}) do |f| %>
 
-          <div class="form-group"><%= f.label :first_name, :class => 'col-sm-2 control-label' %>
-            <div class="col-sm-10"><%= f.text_field :first_name, :class => 'form-control' %></div>
-          </div>
-
-          <div class="hr-line-dashed"></div>
-
-          <div class="form-group"><%= f.label :last_name, :class => 'col-sm-2 control-label' %>
-            <div class="col-sm-10"><%= f.text_field :last_name, :class => 'form-control' %></div>
-          </div>
-
-          <div class="hr-line-dashed"></div>
-
-          <div class="form-group"><%= f.label :title, :class => 'col-sm-2 control-label' %>
-            <div class="col-sm-10"><%= f.text_field :title, :class => 'form-control' %></div>
-          </div>
-
-          <div class="form-group"><%= f.label :phone, :class => 'col-sm-2 control-label' %>
-            <div class="col-sm-10"><%= f.phone_field :phone, :class => 'form-control' %></div>
-          </div>
-
-          <div class="hr-line-dashed"></div>
-
-          <div class="form-group"><%= f.label :email, :class => 'col-sm-2 control-label' %>
-            <div class="col-sm-10"><%= f.email_field :email, :class => 'form-control' %></div>
-          </div>
-
-          <div class="hr-line-dashed"></div>
-
-          <div class="form-group"><%= f.label 'New Password', :class => 'col-sm-2 control-label' %>
-            <div class="col-sm-10"><%= f.password_field :password, :autocomplete => 'off', :class => 'form-control' %></div>
-          </div>
-
-          <div class="form-group"><%= f.label :password_confirmation, :class => 'col-sm-2 control-label' %>
-            <div class="col-sm-10"><%= f.password_field :password_confirmation, :autocomplete => 'off', :class => 'form-control' %></div>
-          </div>
-
-          <div class="form-group"><%= f.label :current_password, :class => 'col-sm-2 control-label' %>
-            <div class="col-sm-10">
-              <%= f.password_field :current_password, :autocomplete => 'off', :class => 'form-control' %>
-              <span class="help-block m-b-none"><i>We need your current password to confirm your changes.</i></span>
-            </div>
-          </div>
-
-          <div class="form-group">
-            <div class="col-sm-10">
-              <h3>Cancel my account</h3>
-
-          <p><%= link_to "Cancel my account", registration_path(resource_name), :confirm => "Are you sure?", :method => :delete %></p>
+            <div class="form-group"><%= f.label :first_name, :class => 'col-sm-2 control-label' %>
+              <div class="col-sm-10"><%= f.text_field :first_name, :class => 'form-control' %></div>
             </div>
 
+            <div class="hr-line-dashed"></div>
 
-          <div class="hr-line-dashed"></div>
+            <div class="form-group"><%= f.label :last_name, :class => 'col-sm-2 control-label' %>
+              <div class="col-sm-10"><%= f.text_field :last_name, :class => 'form-control' %></div>
+            </div>
 
-          <div class="form-group">
-            <div class="col-sm-4 col-sm-offset-2" style="margin-top: 15px;">
-          <%= button_tag(type: 'submit', class: "btn btn-primary") do -%>
-            <i class="icon-ok icon-white"></i> Save
-          <% end %>
-          <%= link_to users_path, :class => 'btn cancel' do -%>
-            <i class="fa fa-remove"></i> Cancel
-          <% end %>
-        </div>
+            <div class="hr-line-dashed"></div>
+
+            <div class="form-group"><%= f.label :title, :class => 'col-sm-2 control-label' %>
+              <div class="col-sm-10"><%= f.text_field :title, :class => 'form-control' %></div>
+            </div>
+
+            <div class="form-group"><%= f.label :phone, :class => 'col-sm-2 control-label' %>
+              <div class="col-sm-10"><%= f.phone_field :phone, :class => 'form-control' %></div>
+            </div>
+
+            <div class="hr-line-dashed"></div>
+
+            <div class="form-group"><%= f.label :email, :class => 'col-sm-2 control-label' %>
+              <div class="col-sm-10"><%= f.email_field :email, :class => 'form-control' %></div>
+            </div>
+
+            <div class="hr-line-dashed"></div>
+
+            <div class="form-group"><%= f.label 'New Password', :class => 'col-sm-2 control-label' %>
+              <div class="col-sm-10"><%= f.password_field :password, :autocomplete => 'off', :class => 'form-control' %></div>
+            </div>
+
+            <div class="form-group"><%= f.label :password_confirmation, :class => 'col-sm-2 control-label' %>
+              <div class="col-sm-10"><%= f.password_field :password_confirmation, :autocomplete => 'off', :class => 'form-control' %></div>
+            </div>
+
+            <div class="form-group"><%= f.label :current_password, :class => 'col-sm-2 control-label' %>
+              <div class="col-sm-10">
+                <%= f.password_field :current_password, :autocomplete => 'off', :class => 'form-control' %>
+                <span class="help-block m-b-none"><i>We need your current password to confirm your changes.</i></span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <div class="col-sm-10">
+                <h3>Cancel my account</h3>
+
+                <p><%= link_to 'Cancel my account', registration_path(resource_name), :confirm => 'Are you sure?', :method => :delete %></p>
+            </div>
+
+
+            <div class="hr-line-dashed"></div>
+
+            <div class="form-group">
+              <div class="col-sm-4 col-sm-offset-2" style="margin-top: 15px;">
+            <%= button_tag(type: 'submit', class: 'btn btn-primary') do -%>
+              <i class="icon-ok icon-white"></i> Save
+            <% end %>
+            <%= link_to users_path, :class => 'btn cancel' do -%>
+              <i class="fa fa-remove"></i> Cancel
+            <% end %>
+            </div>
           </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

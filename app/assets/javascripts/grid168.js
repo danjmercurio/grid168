@@ -522,7 +522,7 @@ grid168 = (function () {
                 } else {
                     throw new Error('Duplicate or missing grid container DOM element.');
                 }
-            },
+            }
         },
         calc: {
             doCalc: function () {
