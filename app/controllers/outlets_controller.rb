@@ -18,6 +18,7 @@ class OutletsController < ApplicationController
 	end #end new action
 
 	def create
+		@outlet = Outlet.new(params[:outlet])
 		respond_to do |format|
 			if @outlet.save
 				format.html { redirect_to outlets_path, :notice => 'Outlet was successfully created.'}
