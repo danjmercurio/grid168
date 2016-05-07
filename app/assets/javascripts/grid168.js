@@ -591,7 +591,7 @@ grid168 = (function () {
                     dayPart.hours === 0 ? dayPart.weeklyRate = 0 : dayPart.weeklyRate = (offer.weeklyRate * dayPart.audience);
 
                     offer.weeklyRateSum += dayPart.weeklyRate;
-                    dayPart.hours === 0 ? dayPart.rate = 0 : dayPart.rate = dayPart.weeklyRate / dayPart.hours;
+                    dayPart.hours === 0 ? dayPart.rate = 0 : dayPart.rate = (dayPart.weeklyRate * dayPart.hours);
                 });
 
                 // Now update the values on the page
