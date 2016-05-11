@@ -7,9 +7,10 @@ grid168 = (function () {
     app = {
         controller: null,
         action: null,
+        development: false,
         flash: null,
         initialize: function () {
-            console.log(this);
+            // Check for jQuery dependency
             if ($ === "undefined") {
                 throw new Error('$ is not defined. Did jQuery load?');
             }
@@ -23,6 +24,7 @@ grid168 = (function () {
 
             this.controller = body.data('controller');
             this.action = body.data('action');
+            this.development = body.data('development');
 
             console.log(":controller => " + this.controller + ", :action => " + this.action);
 
@@ -260,8 +262,10 @@ grid168 = (function () {
                 // Make tables sortable
                 $('.tablesorter').tablesorter();
 
-
-
+                // Perform self tests for show view when in development mode
+                if (app.controller === 'offers' && app.action === 'show' && app.development) {
+                    app.test.doTests();
+                }
             })();
 
             // Controller-specific functionality
@@ -285,7 +289,7 @@ grid168 = (function () {
                     if (app.action === 'edit') {
                         $('#copyLinkButton').click(function () {
                             var url = $(this).data('url');
-                            window.prompt('Copy to clipboard: CTRL-C, Enter', url);
+                            window.prompt('Copy to clipboard: Ctrl-C, Enter', url);
                         });
                     }
                     break;
@@ -526,7 +530,7 @@ grid168 = (function () {
         },
         calc: {
             doCalc: function () {
-                console.log('Caught signal to recalculate.');
+                console.log('Caught signal to [re]calculate.');
                 var offer = this.values.offer;
                 offer.mvpdSubscribers = $('#mvpdSubscribers').val().stripAndParse();
                 offer.otaHomes = $('#otaHomes').val().stripAndParse();
@@ -574,7 +578,7 @@ grid168 = (function () {
                 offer.weeklyHoursSum = 0;
 
                 // Daypart-specific calculations
-                console.log('dayparts');
+                console.log('Calculating dayparts...');
                 var that = this;
                 jQuery.each(dayParts, function (dayPartName, dayPart) {
                     var cells = app.grid.cells.selected().dayPart(dayPartName).fetch();
@@ -743,6 +747,82 @@ grid168 = (function () {
                     }
                 }
             }
+        },
+        test: {
+            doTests: function () {
+                var failure = false;
+                $.each(this.tests, function(index, testObject) {
+                   if (!testObject.testFunction()) {
+                       failure = true;
+                       alert('Test #' + index + ' (' + testObject.name + ') failed.');
+                       throw new Error('Test #' + index + ' (' + testObject.name + ') failed.');
+                   }
+                });
+                if (!failure) console.log('All tests passed.');
+            },
+            tests: [
+                // Tests live as objects with name and testFunction attributes in this array.
+                // If testFunction returns false, it indicates a failed test. testFunctions should do all comparisons & assertions in their own closures and always return a boolean
+                {
+                    name: 'Simple test',
+                    testFunction: function() {
+                        // A placeholder test that always returns true
+                        return true;
+                    }
+                },
+                {
+                    name: 'Get correct number of selected hours',
+                    testFunction: function() {
+                        // Get every time cell on the page
+                        var allCells = app.grid.cells.all().fetch();
+                        // Select every one
+                        allCells.each(function() {
+                            app.grid.toggleCellState(this);
+                        });
+                        // The number of hours should equal 168
+                        var result1 = (app.calc.calculateHoursSum(app.grid.cells.selected().fetch()) === 168);
+
+                        // De-select all cells
+                        app.grid.cells.all().clear();
+
+                        // Hours should equal 0 with no cells selected
+                        var result2 = (app.calc.calculateHoursSum(app.grid.cells.selected().fetch()) === 0);
+
+                        // Select just one cell
+                        var firstCell = [app.grid.cells.all().fetch()[0]];
+                        app.grid.toggleCellState(firstCell);
+                        var result3 = (app.calc.calculateHoursSum(app.grid.cells.selected().fetch()) === 0.5);
+
+                        // Unselect the first cell
+                        app.grid.cells.all().clear();
+
+                        return result1 && result2 && result3;
+                    }
+                }, {
+                    name: 'Calculate the correct audience sum',
+                    testFunction: function() {
+                        // Select all cells
+                        var cells = app.grid.cells.all().fetch();
+                        cells.each(function() {
+                            app.grid.toggleCellState(this);
+                        });
+
+                        var selected = app.grid.cells.selected().fetch();
+                        var result1 = Math.round(app.calc.calculateAudienceSum(selected)) === 1;
+
+                        // Clear all cells
+                        app.grid.cells.all().clear();
+
+                        // Select the very first cell
+                        var firstCell = [app.grid.cells.all().fetch()[0]];
+                        app.grid.toggleCellState(firstCell);
+                        // The audience sum of the first cell should be 0.002975
+                        var result2 = (app.calc.calculateAudienceSum(app.grid.cells.selected().fetch()) === 0.002975);
+
+                        return result1 && result2;
+                    }
+                }
+            ]
         }
     };
 
