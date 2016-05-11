@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 ruby '2.3.0'
-gem 'rails', :git => 'git://github.com/rails/rails.git', branch: '4-2-stable'
+gem 'rails' #, :git => 'git://github.com/rails/rails.git', branch: '4-2-stable'
 
 gem 'protected_attributes' # adds attr_accessible and attr_protected methods
 gem 'devise', :git => 'https://github.com/plataformatec/devise.git'
