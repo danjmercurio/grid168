@@ -26,7 +26,7 @@ grid168 = (function () {
             this.action = body.data('action');
             this.development = body.data('development');
 
-            console.log(":controller => " + this.controller + ", :action => " + this.action);
+            console.log(":controller => " + this.controller + ", :action => " + this.action + ", :development => " + this.development);
 
             // Stuff we need to do for every page
             (function () {
