@@ -819,6 +819,9 @@ grid168 = (function () {
                         // The audience sum of the first cell should be 0.002975
                         var result2 = (app.calc.calculateAudienceSum(app.grid.cells.selected().fetch()) === 0.002975);
 
+                        // Clear all cells
+                        app.grid.cells.all().clear();
+
                         return result1 && result2;
                     }
                 }
