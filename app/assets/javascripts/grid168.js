@@ -279,11 +279,11 @@ grid168 = (function () {
                         this.grid.paint();
 
                         // Do the calculations
-                        this.calc.doCalc();
+                        this.calc.doCalc(app.calc.values);
 
                         // Set a global event handler for the page
                         $('form').change(function () {
-                            app.calc.doCalc();
+                            app.calc.doCalc(app.calc.values);
                         });
                     }
                     if (app.action === 'edit') {
@@ -410,7 +410,6 @@ grid168 = (function () {
                 var that = this;
 
                 var clickCallback = function (cell) {
-                    console.log(cell);
                     that.toggleCellState(cell);
                 };
 
@@ -466,7 +465,7 @@ grid168 = (function () {
                     });
                     // The 'Calculate' button
                     $('#calculate').click(function () {
-                        that.cells.selected().fetch().length > 0 ? app.calc.doCalc() : alert('You must select at least one cell.');
+                        that.cells.selected().fetch().length > 0 ? app.calc.doCalc(app.calc.values) : alert('You must select at least one cell.');
                     });
 
                     // The 'reset' button
@@ -491,7 +490,7 @@ grid168 = (function () {
                             e.preventDefault();
                             alert('You must select at least one cell.');
                         } else {
-                            app.calc.doCalc();
+                            app.calc.doCalc(app.calc.values);
                         }
                     });
                 }
@@ -514,7 +513,7 @@ grid168 = (function () {
                 // What to do when the grid is clicked.
 
                 // Update the calculations
-                app.calc.doCalc();
+                app.calc.doCalc(app.calc.values);
 
                 // Update the hidden element that holds cell data
                 this.updateHiddenField();
@@ -529,9 +528,9 @@ grid168 = (function () {
             }
         },
         calc: {
-            doCalc: function () {
+            doCalc: function (values) {
                 console.log('Caught signal to [re]calculate.');
-                var offer = this.values.offer;
+                var offer = values.offer;
                 offer.mvpdSubscribers = $('#mvpdSubscribers').val().stripAndParse();
                 offer.otaHomes = $('#otaHomes').val().stripAndParse();
                 offer.totalHomes = offer.mvpdSubscribers + offer.otaHomes;
@@ -570,7 +569,7 @@ grid168 = (function () {
                 offer.mvpdOtaSubRate = (offer.otaHomes * offer.yearlyRate) / offer.totalHomes;
 
                 // Daypart calculations
-                var dayParts = this.values.dayParts;
+                var dayParts = values.dayParts;
 
                 // Initialize values for running sums
                 offer.weeklyAudienceSum = 0;
