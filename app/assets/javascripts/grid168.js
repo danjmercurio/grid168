@@ -84,7 +84,7 @@ grid168 = (function () {
                 };
                 String.prototype.toCurrency = function () {
                     // return '$' + Math.round10(parseFloat(this), -2).toString();
-                    return '$' + this.stripAndParse().toFixed(2).toString().addCommas();
+                    return '$' + Math.round10(this.stripAndParse(), -2).addCommas();
                 };
                 String.prototype.addCommas = function () {
                     return this.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -264,7 +264,7 @@ grid168 = (function () {
 
                 // Perform self tests for show view when in development mode
                 if (app.controller === 'offers' && app.action === 'show' && app.development) {
-                    app.test.doTests();
+                    // app.test.doTests();
                 }
             })();
 
@@ -591,10 +591,15 @@ grid168 = (function () {
                     offer.weeklyHoursSum += hoursTemp;
                     dayPart.hours = hoursTemp;
 
-                    dayPart.hours === 0 ? dayPart.weeklyRate = 0 : dayPart.weeklyRate = (offer.weeklyRate * dayPart.audience);
+                    if (dayPart.hours === 0) {
+                        dayPart.weeklyRate = 0;
+                    } else {
+                        dayPart.weeklyRate = (offer.weeklyRate * dayPart.audience);
+                    }
+
 
                     offer.weeklyRateSum += dayPart.weeklyRate;
-                    dayPart.hours === 0 ? dayPart.rate = 0 : dayPart.rate = (dayPart.weeklyRate * dayPart.hours);
+                    dayPart.hours === 0 ? dayPart.rate = 0 : dayPart.rate = (dayPart.weeklyRate / dayPart.hours);
                 });
 
                 // Now update the values on the page
@@ -651,6 +656,7 @@ grid168 = (function () {
                     if (!temp || temp <= 0 || typeof(temp) != "number") throw new Error('Unable to load audience value from cell: ' + this);
                     audience += temp;
                 });
+
                 return audience;
             },
             calculateHoursSum: function (cells) {
