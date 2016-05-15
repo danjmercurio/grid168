@@ -65,11 +65,10 @@ Grid168::Application.configure do
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-      address: 'smtp.gmail.com',
+      address: 'smtp.zoho.com',
       port: 587,
-      domain: 'grid168.com',
-      user_name: 'noreply.grid168@gmail.com',
-      password: ',H2;{2nNwG!)NJ8u',
+      user_name: 'mkokernak@acrossplatforms.com',
+      password: 'mk565656',
       authentication: 'plain',
       enable_starttls_auto: true
   }
