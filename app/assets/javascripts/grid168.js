@@ -593,7 +593,7 @@ grid168 = (function () {
 
                     dayPart.weeklyRate = (offer.weeklyRate * dayPart.audience);
 
-                    dayPart.rate = dayPart.weeklyRate / dayPart.hours;
+                    dayPart.hours === 0 ? dayPart.rate = 0 : dayPart.rate = dayPart.weeklyRate / dayPart.hours;
 
                     offer.weeklyRateSum += dayPart.weeklyRate;
                 });
