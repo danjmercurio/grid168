@@ -591,20 +591,14 @@ grid168 = (function () {
                     offer.weeklyHoursSum += hoursTemp;
                     dayPart.hours = hoursTemp;
 
-                    if (dayPart.hours === 0) {
-                        dayPart.weeklyRate = 0;
-                    } else {
-                        dayPart.weeklyRate = (offer.weeklyRate * dayPart.audience);
-                    }
+                    dayPart.weeklyRate = (offer.weeklyRate * dayPart.audience);
 
+                    dayPart.rate = dayPart.weeklyRate / dayPart.hours;
 
                     offer.weeklyRateSum += dayPart.weeklyRate;
-                    dayPart.hours === 0 ? dayPart.rate = 0 : dayPart.rate = (dayPart.weeklyRate / dayPart.hours);
                 });
 
-                // Divide the Gross Weekly Rate running total by the running total audience sum. This should match the offer gross weekly rate in the section above
                 offer.weeklyRateSum = offer.weeklyRateSum / offer.weeklyAudienceSum;
-
 
                 // Now update the values on the page
                 this.updateValues(this.values);
