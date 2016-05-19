@@ -18,6 +18,22 @@
   </div>
 </div>
 <div class="row">
+  <div class="col-md-6">
+    <div class="navButtons">
+      <%= button_to 'New Media Outlet', new_outlet_path, {:class => 'btn btn-primary', :method => :get} %>
+      <%= button_to 'New Programmer', new_programmer_path, {:class => 'btn', :method => :get} %>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="filterBox">
+      <form class="mainnav-form" role="search">
+        <input type="text" class="form-control input-md" placeholder="Filter">
+        <button class="btn btn-sm mainnav-form-btn" type="button"><i class="fa fa-search"></i></button>
+      </form>
+    </div>
+  </div>
+</div>
+<div class="row">
   <div class="col-md-12">
     <div class="panel panel-default margin-b-30">
       <div class="panel-heading">
@@ -34,13 +50,14 @@
               <tr>
                 <th>Company Name</th>
                 <th>Offer Amount</th>
+                <th>Gross Yearly Rate</th>
                 <th>Outlet</th>
-                <th>Type</th>
                 <th>Subscribers</th>
-                <th>Hours</th>
                 <th>DMA</th>
+                <th>Type</th>
+                <th>Hours</th>
                 <th>Created</th>
-                <th>Updated</th>
+                <th>Status</th>
                 <th>User</th>
                 <th>Actions</th>
               </tr>
@@ -54,13 +71,14 @@
                     <% end %>
                   </td>
                   <td><%= number_to_currency offer.dollar_amount %></td>
+                  <td><%= number_to_currency offer.yearly_offer %></td>
                   <td><%= offer.outlet.name %></td>
-                  <td><%= offer.outlet.outlet_type.name %></td>
                   <td><%= number_with_delimiter offer.outlet.subs %></td>
-                  <td><%= offer.total_hours %></td>
                   <td><%= offer.outlet.dma.name %></td>
+                  <td><%= offer.outlet.outlet_type.name %></td>
+                  <td><%= offer.total_hours %></td>
                   <td><%= offer.created_at.strftime '%m/%d/%Y' %></td>
-                  <td><%= offer.updated_at.strftime '%m/%d/%Y' %></td>
+                  <td>Status</td>
                   <td><%= offer.user.first_name %></td>
                   <td>
                     <div class="btn-group">
@@ -81,6 +99,5 @@
         </div>
       </div>
     </div>
-    <form class="button_to" method="get" action="/outlets/new"><input class="btn btn-primary" type="submit" value="New Media Outlet" /></form>
   </div>
 </div>

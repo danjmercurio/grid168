@@ -13,20 +13,29 @@
 @import "select2";
 @import "select2-bootstrap";
 @import "animate.min";
-.flash {
-  display: none;
-}
-div#actions {
+
+// These are the button groups for navigation above and below tables
+div.navButtons {
   display: flex;
 }
-div#actions * {
-  margin-left: 3px;
+div.navButtons * {
+  margin: 3px;
 }
+
+// Rules for the filter text box to the right of the navigation buttons and its container(s)
+div.filterBox {
+  display: flex;
+  float: right;
+}
+
 .cancel {
   border: 1px solid;
 }
 thead {
   cursor: context-menu;
+}
+.flash {
+  display: none;
 }
 .alert-text {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
