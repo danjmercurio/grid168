@@ -254,31 +254,42 @@ grid168 = (function () {
                 //     $('[data-toggle="popover"]').popover();
                 // });
 
-
-                // Waves effects
-                Waves.attach('.button-wave', ['waves-button', 'waves-light']);
-                Waves.init();
-
-                // Get all tables
-                var tables = $('table');
-                // Make tables sortable
-                tables.tablesorter();
-
-                // Make tables filterable
-                tables.filterTable({
-                    minRows: 0,
-                    inputSelector: 'input.filterText',
-                    autofocus: true,
-                    ignoreColumns: [11]
-                });
-
-                $('input.filterText').focus();
-
-                // Perform self tests for show view when in development mode
-                if (app.controller === 'offers' && app.action === 'show' && app.development) {
-                    // app.test.doTests();
-                }
             })();
+
+            // Waves effects
+            Waves.attach('.button-wave', ['waves-button', 'waves-light']);
+            Waves.init();
+
+            // If there are tables...
+            if ($('table').length > 0) {
+                // Make sortable tables sort
+                $('.sortable').tablesorter();
+
+                // Make filterable tables filter
+                $('.filterable').filterTable({
+                minRows: 0,
+                inputSelector: 'input.filterText',
+                autofocus: true, // Not working for some reason? Done manually below
+                ignoreColumns: [$('th').length -1] // Always ignore the column at last index
+                    // (because it's just the actions menu button)
+                });
+                // Focus filter element so the user can just start typing
+                var f = function() {
+                    $('input.filterText').focus();
+                };
+                f();
+                // Bind Tab (key #9) to focus the filter text element
+                $('body').keyup(function (e) {
+                    if (e.keyCode === 9) {
+                        f();
+                    }
+                });
+            }
+
+            // TODO: Perform self tests for show view when in development mode
+            if (app.controller === 'offers' && app.action === 'show' && app.development) {
+                // app.test.doTests();
+            }
 
             // Controller-specific functionality
             switch (this.controller) {
@@ -327,6 +338,8 @@ grid168 = (function () {
                         mvpdSubs.blur(autoFillTotalHomes);
                         otaSubs.blur(autoFillTotalHomes);
                     }
+                    break;
+                case 'programmers':
                     break;
             }
         },

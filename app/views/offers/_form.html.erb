@@ -1,4 +1,4 @@
-<%= form_for @offer, :class => 'form-inline' do |f| -%>
+<%= form_for @offer do |f| -%>
     <%= f.hidden_field :time_cells, :value => @offer.time_cells %>
     <%= f.hidden_field :total_hours %>
     <%= f.hidden_field :outlet_id, :value => @offer.outlet.id %>
@@ -142,8 +142,15 @@
           <p>&nbsp;</p>
           <p><%= link_to 'Add a programmer', new_programmer_url, :class => 'btn btn-default' %></p>
         </div>
+        <div>
+          <p>Available Date</p>
+          <%= f.text_field :available_date, :class => 'form-control dp' %>
+        </div>
         <br/>
         <div>
+          <h1>Notes</h1>
+          <textarea class="form-control offer_note" name="offer[internalNotes]" id="offer_internalNotes"><%= @offer.internalNotes %></textarea>
+          <br />
           <% if current_user.admin? %>
               <h1>Admin Options</h1>
               <p>Add a note to the Gross Rate Worksheet</p>
@@ -167,12 +174,6 @@
           <% else %>
               <%= f.hidden_field :disclaimer %>
           <% end %>
-        </div>
-
-        <br/>
-        <div>
-          <p>Available Date</p>
-          <%= f.text_field :available_date, :class => 'form-control dp' %>
         </div>
         <br/>
         <div>

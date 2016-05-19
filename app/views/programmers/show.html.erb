@@ -62,7 +62,7 @@
         </div>
       </div>
       <div class="panel-body">
-        <table class="table table-striped tablesorter">
+        <table class="table table-striped sortable filterable">
           <thead>
           <tr>
             <th>Outlet</th>
@@ -88,7 +88,7 @@
                 <td><%= offer.weekly_hours %></td>
                 <td><%= offer.outlet.outlet_type.name %></td>
                 <td>Blank</td>
-                <td><%= "#{offer.grNotes}, #{offer.dpNotes}"[0, 100] unless offer.grNotes.blank? && offer.dpNotes.blank? %></td>
+                <td><%= offer.internalNotes[0, 99] %></td>
                 <td><%= offer.created_at.strftime '%m/%d/%y' %></td>
                 <td><%= offer.user.first_name %></td>
                 <td>
