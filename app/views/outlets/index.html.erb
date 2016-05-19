@@ -18,6 +18,19 @@
   </div>
 </div><!-- end .page title-->
 <div class="row">
+  <div class="col-md-6">
+    <div class="navButtons">
+      <%= button_to 'New Media Outlet', new_outlet_path, {:class => 'btn btn-primary', :method => :get} %>
+      <%= button_to 'New Programmer', new_programmer_path, {:class => 'btn', :method => :get} %>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="filterBox">
+      <input type="text" class="form-control input-md filterText" placeholder="Filter" type="search">
+    </div>
+  </div>
+</div>
+<div class="row">
   <div class="col-md-12">
     <div class="panel panel-default margin-b-30">
       <div class="panel-heading">
@@ -29,7 +42,7 @@
       </div>
       <div class="panel-body">
         <div class="table-responsive">
-          <table id="basic-datatables" class="table table-striped tablesorter">
+          <table id="basic-datatables" class="table table-striped">
             <thead>
               <tr>
                 <th>Name</th>
@@ -75,6 +88,5 @@
         </div>
       </div>
     </div>
-    <%= button_to('New Media Outlet', new_outlet_path, :method => :get, :class => 'btn btn-primary') %>
   </div>
 </div>

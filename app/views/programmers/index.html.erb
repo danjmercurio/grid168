@@ -13,6 +13,19 @@
   </div>
 </div><!-- end .page title-->
 <div class="row">
+  <div class="col-md-6">
+    <div class="navButtons">
+      <%= button_to 'New Media Outlet', new_outlet_path, {:class => 'btn btn-primary', :method => :get} %>
+      <%= button_to 'New Programmer', new_programmer_path, {:class => 'btn', :method => :get} %>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="filterBox">
+      <input type="text" class="form-control input-md filterText" placeholder="Filter" type="search">
+    </div>
+  </div>
+</div>
+<div class="row">
   <div class="col-md-12">
     <div class="panel panel-default margin-b-30">
       <div class="panel-heading">
@@ -24,17 +37,15 @@
       </div>
       <div class="panel-body">
         <div class="table-responsive">
-          <table id="basic-datatables" class="table table-striped tablesorter">
+          <table id="basic-datatables" class="table table-striped">
             <thead>
               <tr>
                 <th>Company Name</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-								<th>Type</th>
+                <th>Current Offers</th>
+                <th>Closed?</th>
+                <th>Last Offer Date</th>
                 <th>Email</th>
                 <th>URL</th>
-                <th>Phone</th>
-								<th>Created</th>
 								<th>Updated</th>
                 <th>Actions</th>
               </tr>
@@ -43,13 +54,11 @@
             <% @programmers.each do |programmer| %>
                 <tr>
                   <td><%= programmer.name %></td>
-                  <td><%= programmer.first_name %></td>
-                  <td><%= programmer.last_name %></td>
-                  <td><%= programmer.programmerType %></td>
+                  <td><%= programmer.offers.length %></td>
+                  <td>Blank</td>
+                  <td><%= programmer.offers.length > 0 ? programmer.offers.last.created_at.strftime('%m/%d/%Y') : 'No Offers' %></td>
                   <td><%= mail_to programmer.email %></td>
                   <td><a href="<%= programmer.website.start_with?('http://') ? programmer.website : 'http://' + programmer.website %>" target="_new"><%= programmer.website %></a></td>
-                  <td><%= number_to_phone programmer.phone %></td>
-                  <td><%= programmer.created_at.strftime '%m/%d/%Y' %></td>
                   <td><%= programmer.updated_at.strftime '%m/%d/%Y' %></td>
                   <td>
                     <div class="btn-group">
@@ -63,12 +72,11 @@
                     </div>
                   </td>
                 </tr>
-			<% end %><!-- end programmer -->
+			      <% end %><!-- end programmer -->
             </tbody>
           </table>
         </div>
       </div>
     </div>
-    <%= button_to('New Programmer', new_programmer_path, :method => :get, :class => 'btn btn-primary') %>
   </div>
 </div>
