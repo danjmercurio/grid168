@@ -27,6 +27,9 @@ div.filterBox {
   display: flex;
   float: right;
 }
+input.filterText {
+  margin: 3px;
+}
 
 .filter-table .quick { margin-left: 0.5em; font-size: 0.8em; text-decoration: none; }
 .filter-table .quick:hover { text-decoration: underline; }

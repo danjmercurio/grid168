@@ -13,6 +13,22 @@
   </div>
 </div>
 <div class="row">
+  <div class="col-md-6">
+    <div class="navButtons">
+      <%= button_to 'Edit', edit_programmer_path(@programmer), :class => 'btn btn-primary', :method => :get %>
+      <%= button_to 'Delete', @programmer, :confirm => 'Are you sure?', :method => :delete, :class => 'btn' %>
+      <%= link_to new_programmer_path do -%>
+          <button type="button" class="btn btn-default">New Programmer</button>
+      <% end %>
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="filterBox">
+      <input type="text" class="form-control input-md filterText" placeholder="Filter" type="search">
+    </div>
+  </div>
+</div>
+<div class="row">
   <div class="col-md-12">
     <div class="panel panel-default margin-b-30 ">
       <!-- Start .panel -->
@@ -21,12 +37,11 @@
       </div>
       <div class="panel-body">
         <p><strong>Name </strong><%= @programmer.name %></p>
-
         <p><strong>Type </strong><%= @programmer.programmerType %></p>
         <p><strong>First Name </strong><%= @programmer.first_name %></p>
         <p><strong>Last Name </strong><%= @programmer.last_name %></p>
-        <p><strong>Updated At </strong><%= @programmer.updated_at %></p>
-        <p><strong>Created At </strong><%= @programmer.created_at %></p>
+        <p><strong>Updated At </strong><%= @programmer.updated_at.strftime '%m/%d/%Y' %></p>
+        <p><strong>Created At </strong><%= @programmer.created_at.strftime '%m/%d/%Y' %></p>
         <p><strong>Email </strong><%= mail_to @programmer.email %></p>
         <p><strong>Phone </strong><%= @programmer.phone %></p>
 
@@ -51,10 +66,13 @@
           <thead>
           <tr>
             <th>Outlet</th>
-            <th>Monthly</th>
+            <th>DMA</th>
+            <th>Yearly</th>
             <th>Offer Amount</th>
             <th>Weekly Hours</th>
-            <th>Programmer Type</th>
+            <th>Media Type</th>
+            <th>Status</th>
+            <th>Notes</th>
             <th>Created At</th>
             <th>User</th>
             <th>Actions</th>
@@ -64,11 +82,14 @@
           <% @offers.each do |offer| %>
               <tr>
                 <td><%= offer.outlet.name %></td>
-                <td><%= number_to_currency offer.monthly_offer %></td>
+                <td><%= offer.outlet.dma.name %></td>
+                <td><%= number_to_currency offer.yearly_offer %></td>
                 <td><%= number_to_currency offer.dollar_amount %></td>
                 <td><%= offer.weekly_hours %></td>
-                <td><%= @programmer.programmerType %></td>
-                <td><%= offer.created_at.strftime("%m/%d/%y") %></td>
+                <td><%= offer.outlet.outlet_type.name %></td>
+                <td>Blank</td>
+                <td><%= "#{offer.grNotes}, #{offer.dpNotes}"[0, 100] unless offer.grNotes.blank? && offer.dpNotes.blank? %></td>
+                <td><%= offer.created_at.strftime '%m/%d/%y' %></td>
                 <td><%= offer.user.first_name %></td>
                 <td>
                   <div class="btn-group">
@@ -87,17 +108,6 @@
           </tbody>
         </table>
       </div>
-    </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-md-12">
-    <div id="actions">
-      <%= button_to 'Edit', edit_programmer_path(@programmer), :class => 'btn btn-primary', :method => :get %>
-      <%= button_to 'Delete', @programmer, :confirm => 'Are you sure?', :method => :delete, :class => 'btn' %>
-      <%= link_to new_programmer_path do -%>
-          <button type="button" class="btn btn-default">New Programmer</button>
-      <% end %>
     </div>
   </div>
 </div>
