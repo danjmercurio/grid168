@@ -259,8 +259,20 @@ grid168 = (function () {
                 Waves.attach('.button-wave', ['waves-button', 'waves-light']);
                 Waves.init();
 
+                // Get all tables
+                var tables = $('table');
                 // Make tables sortable
-                $('.tablesorter').tablesorter();
+                tables.tablesorter();
+
+                // Make tables filterable
+                tables.filterTable({
+                    minRows: 0,
+                    inputSelector: 'input.filterText',
+                    autofocus: true,
+                    ignoreColumns: [11]
+                });
+
+                $('input.filterText').focus();
 
                 // Perform self tests for show view when in development mode
                 if (app.controller === 'offers' && app.action === 'show' && app.development) {

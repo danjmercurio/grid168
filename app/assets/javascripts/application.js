@@ -13,4 +13,5 @@
 //= require metisMenu.min
 //= require pace.min
 //= require waves.min
+//= require jquery.filtertable.min
 //= require grid168
