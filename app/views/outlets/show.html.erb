@@ -1,17 +1,17 @@
 <div class="row">
-        <div class="col-sm-12">
-            <div class="page-title">
-                <h1><%= @outlet.name %> <small></small></h1>
-                <ol class="breadcrumb">
-                    <li>
-                        <a href="#"><i class="fa fa-home"></i></a>
-                    </li>
-                    <li>Media Outlets</li>
-                    <li class="active">Show Media Outlet</li>
-                </ol>
-            </div>
-        </div>
-    </div>
+  <div class="col-sm-12">
+      <div class="page-title">
+          <h1><%= @outlet.name %> <small></small></h1>
+          <ol class="breadcrumb">
+              <li>
+                  <a href="#"><i class="fa fa-home"></i></a>
+              </li>
+              <li>Media Outlets</li>
+              <li class="active">Show Media Outlet</li>
+          </ol>
+      </div>
+  </div>
+</div>
 <div class="row">
     <div class="col-sm-6 col-md-3 margin-b-30">
         <div class="tile red">
@@ -75,6 +75,15 @@
     </div><!--end .col-->
 </div>
 <div class="row">
+  <div class="col-sm-12">
+    <div class="navButtons">
+      <%= button_to "Edit", edit_outlet_path(@outlet), :class => 'btn btn-primary', :method => :get %>
+      <%= button_to 'Delete', @outlet, :confirm => 'Are you sure?', :method => :delete, :class => 'btn' %>
+      <%= button_to 'New Offer', new_outlet_offer_path(@outlet), :class => 'btn', :method => :get %>
+    </div>
+  </div>
+</div>
+<div class="row">
     <div class="col-md-12">
         <div class="panel panel-default margin-b-30">
             <!-- Start .panel -->
@@ -131,7 +140,4 @@
             </div>
         </div><!-- End .panel -->
     </div><!--end .col-->
-</div>
-<div id="actions">
-    <%= button_to "Edit", edit_outlet_path(@outlet), :class => 'btn btn-primary', :method => :get %><%= button_to 'Delete', @outlet, :confirm => 'Are you sure?', :method => :delete, :class => 'btn' %><%= button_to 'New Offer', new_outlet_offer_path(@outlet), :class => 'btn', :method => :get %>
 </div>
