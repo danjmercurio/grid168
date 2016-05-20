@@ -45,6 +45,7 @@
           <table id="basic-datatables" class="table table-striped sortable filterable">
             <thead>
               <tr>
+                <th>Created</th>
                 <th>Company Name</th>
                 <th>Offer Amount</th>
                 <th>Gross Yearly Rate</th>
@@ -53,7 +54,6 @@
                 <th>DMA</th>
                 <th>Type</th>
                 <th>Hours</th>
-                <th>Created</th>
                 <th>Status</th>
                 <th>User</th>
                 <th>Actions</th>
@@ -62,6 +62,7 @@
             <tbody>
               <% @offers.each do |offer| %>
                 <tr>
+                  <td><%= offer.created_at.strftime '%m/%d/%Y' %></td>
                   <td>
                       <% offer.programmers.each do |p| %>
                       <%= p.name %>
@@ -74,7 +75,6 @@
                   <td><%= offer.outlet.dma.name %></td>
                   <td><%= offer.outlet.outlet_type.name %></td>
                   <td><%= offer.total_hours %></td>
-                  <td><%= offer.created_at.strftime '%m/%d/%Y' %></td>
                   <td>Status</td>
                   <td><%= offer.user.first_name %></td>
                   <td>

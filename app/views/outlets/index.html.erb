@@ -45,6 +45,7 @@
           <table id="basic-datatables" class="table table-striped sortable filterable">
             <thead>
               <tr>
+                <th>Created At</th>
                 <th>Name</th>
                 <th>Offers</th>
                 <th>MVPD Subs</th>
@@ -52,7 +53,6 @@
                 <th>Total Homes</th>
                 <th>Market</th>
                 <th>Media Type</th>
-                <th>Created At</th>
                 <th>User</th>
                 <th>&nbsp;</th>
               </tr>
@@ -60,6 +60,7 @@
             <tbody>
               <% @outlets.each do |outlet| -%>
                 <tr>
+                  <td><%= outlet.created_at.strftime '%m/%d/%Y' %></td>
                   <td><%= outlet.name %></td>
                   <td><%= outlet.offers.count %></td>
                   <td><%= number_with_delimiter outlet.subs %></td>
@@ -67,7 +68,6 @@
                   <td><%= number_with_delimiter outlet.total_homes %></td>
                   <td><%= outlet.dma.name rescue 'None' %></td>
                   <td><%= outlet.outlet_type.name %></td>
-                  <td><%= outlet.created_at.strftime '%m/%d/%Y' %></td>
                   <td><%= outlet.user.first_name %></td>
                   <td>
                     <div class="btn-group">
