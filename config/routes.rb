@@ -4,10 +4,6 @@ Grid168::Application.routes.draw do
 		resources :offers
 	end
 
-	resources :sub_channels do
-		resources :sub_channel_offers
-	end
-
 	resources :offers do
 		resources :notes
 	end
@@ -18,12 +14,15 @@ Grid168::Application.routes.draw do
 
   resources :users
 
-	root :to => "offers#index"
+	root :to => 'offers#index'
 
 	get 'offers/:id/preview' => 'offers#preview'
 
   post 'offers/:id/sendWorksheet' => 'offers#sendWorksheet'
 
+  post 'offers/:id/setClosedWon' => 'offers#setClosedWon'
+
+  post 'offers/:id/setClosedLost' => 'offers#setClosedLost'
 
   # The priority is based upon order of creation:
 	# first created -> highest priority.
@@ -84,7 +83,7 @@ Grid168::Application.routes.draw do
 
   # HTTP Errors
   %w( 404 422 500 ).each do |code|
-    get code, :to => "errors#show", :code => code
+    get code, :to => 'errors#show', :code => code
   end
 
 end

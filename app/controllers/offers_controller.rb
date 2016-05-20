@@ -18,6 +18,7 @@ MVPD Subscriber Rate - Per subscriber annual cost (not including OTA)
 OTA Home Rate - Per OTA home annual cost (not including MVPD)
 '
     @offer.dpNotes = 'Estimated percentage of weekly viewing is a composite of publicly reported viewing trends across all television channels, and networks, based on live time of day viewing.'
+		@offer.status = 'Current'
 	end
 
 	def index
@@ -57,28 +58,30 @@ OTA Home Rate - Per OTA home annual cost (not including MVPD)
   end
 
 	def create
-	    @offer = Offer.new(params[:offer])
-	    @outlet = @offer.outlet
-	    @offer.user = current_user
-			respond_to do |format|
-				if @offer.save
-	      	# format.html { redirect_to programmer_path(:id => @offer.programmer_id), :notice => 'Offer was successfully created.' }
-					format.html { redirect_to edit_offer_path(@offer.id), notice: "Offer was created successfully" }
-				else
-					format.html { redirect_to :back, flash[:alert] = @offer.errors }
-				end
-			end #end respond_to
-	end #end create action
+		@offer = Offer.new(params[:offer])
+		@outlet = @offer.outlet
+		@offer.user = current_user
+		respond_to do |format|
+			if @offer.save
+				# format.html { redirect_to programmer_path(:id => @offer.programmer_id), :notice => 'Offer was successfully created.' }
+				format.html { redirect_to edit_offer_path(@offer.id), notice: "Offer was created successfully" }
+			else
+				format.html { redirect_to :back, flash[:alert] = @offer.errors }
+			end
+		end
+	end
 
 	def destroy
-		# @outlet = Outlet.find(params[:outlet_id])
 		@offer = Offer.find(params[:id])
 		@offer.destroy
 
 		respond_to do |format|
-		    format.html { redirect_to :back }
-		    format.js { render :nothing => true }
-	    end
+		  if @offer.destroy
+			  format.html { redirect_to :back, :notice => 'Offer deleted successfully.' }
+			else
+				format.html { redirect_to :back, :error => 'Offer could not be deleted.' }
+			end
+		end
 	end #end destroy action
 
 	def preview
@@ -102,32 +105,27 @@ OTA Home Rate - Per OTA home annual cost (not including MVPD)
     end
   end
 
-	def calculate
-
+	def setClosedWon
+		@offer = Offer.find(params[:id])
+		@offer.status = 'Closed Won'
 		respond_to do |format|
-			format.js
+			if @offer.save
+				format.html {
+					redirect_to offers_path, :notice => 'Offer status updated successfully.'
+				}
+			end
 		end
-	end #end calculate action
+	end
 
-	def reset
-
+	def setClosedLost
+		@offer = Offer.find(params[:id])
+		@offer.status = 'Closed Lost'
 		respond_to do |format|
-			format.js
+			if @offer.save
+				format.html {
+					redirect_to offers_path, :notice => 'Offer status updated successfully.'
+				}
+			end
 		end
-	end #end reset action
-
-	def process_cell_clicked(cell_arr)
-		str = ""
-		params[:cell].each do |k, v|
-			if v.eql?("1")
-				str += k + ";"
-			end #end if clicked cell
-		end #end cell_arr iterator
-		str = str.chomp(';')
-  end
-
-  #end process_cell_clicked method
-
-  private
-
+	end
 end
