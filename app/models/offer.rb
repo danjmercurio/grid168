@@ -33,7 +33,7 @@ class Offer < ActiveRecord::Base
 									:nationalPrimeTimeRate, :nationalPrimeTimeHours, :nationalPrimeTimeWeeklyRate,
 									:lateNewsAudience, :lateNewsRate, :lateNewsHours, :lateNewsWeeklyRate, :lateNightAudience,
 									:lateNightRate, :lateNightHours, :lateNightWeeklyRate, :overnightsAudience, :overnightsRate,
-									:overnightsHours, :overnightsWeeklyRate, :runningAudienceTotal, :runningHoursTotal, :runningWeeklyRateTotal, :disclaimer, :internalNotes
+									:overnightsHours, :overnightsWeeklyRate, :runningAudienceTotal, :runningHoursTotal, :runningWeeklyRateTotal, :disclaimer, :internalNotes, :status
 
   validates :dollar_amount, :presence => true,
 								numericality: { greater_than: 0 }
