@@ -76,7 +76,7 @@
                   <td><%= offer.outlet.outlet_type.name %></td>
                   <td><%= offer.total_hours %></td>
                   <td><%= offer.status.blank? ? 'Open' : offer.status %></td>
-                  <td><%= offer.user.first_name %></td>
+                  <td><%= offer.user.first_name rescue '' %></td>
                   <td>
                     <div class="btn-group">
                       <button type="button" class="btn btn-primary droptown-toggle" data-toggle="dropdown">

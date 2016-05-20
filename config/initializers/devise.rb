@@ -4,7 +4,7 @@ Devise.setup do |config|
   # ==> Mailer Configuration
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class with default "from" parameter.
-  config.mailer_sender = "no-reply.grid168@gmail.com"
+  config.mailer_sender = 'mkokernak@acrossplatforms.com'
   
   config.secret_key = 'cb1adf63b1095979f4865299468b8128c57ff775ae11d0f0eb68ec41b69c2f0c4651f543964c1a2b3160b6d2b6ba093b6bc0e344be3cf4d78a22fa08a8d9400a'
 
