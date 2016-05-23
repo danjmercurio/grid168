@@ -612,19 +612,17 @@ grid168 = (function () {
                     offer.weeklyAudienceSum += audienceTemp;
                     dayPart.audience = audienceTemp;
 
+                    dayPart.weeklyRate = (dayPart.audience / audienceSum) * offer.weeklyRate;
+
                     var hoursTemp = that.calculateHoursSum(cells);
                     offer.weeklyHoursSum += hoursTemp;
                     dayPart.hours = hoursTemp;
-
-                    dayPart.weeklyRate = (offer.weeklyRate * dayPart.audience);
 
                     dayPart.hours === 0 ? dayPart.rate = 0 : dayPart.rate = dayPart.weeklyRate / dayPart.hours;
 
                     offer.weeklyRateSum += dayPart.weeklyRate;
                 });
-
-                offer.weeklyRateSum = offer.weeklyRateSum / offer.weeklyAudienceSum;
-
+                
                 // Now update the values on the page
                 this.updateValues(this.values);
 
