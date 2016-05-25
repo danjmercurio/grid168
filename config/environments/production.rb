@@ -77,6 +77,6 @@ Grid168::Application.configure do
 
   config.action_dispatch.default_headers['X-Frame-Options'] = 'ALLOW-FROM http://grid168.acrossplatforms.com'
 
-  config.action_dispatch.default_headers['Access-Control-Allow-Origin'] = 'ALLOW-FROM http://acrossplatforms.com'
+  config.action_dispatch.default_headers['Access-Control-Allow-Origin'] = '*'
 
 end
