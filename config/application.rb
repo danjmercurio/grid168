@@ -48,6 +48,11 @@ module Grid168
     # Handle exceptions with Rails router, not Rack (this is for clean error pages)
     config.exceptions_app = self.routes
 
-
+    # Set headers allowing iframes and cross origin requests from acrossplatforms.com
+    config.action_dispatch.default_headers = {
+        'Access-Control-Allow-Origin' => 'http://acrossplatforms.com',
+        'Access-Control-Request-Method' => %w{GET POST OPTIONS}.join(","),
+        'X-Frame-Options' => 'ALLOW-FROM http://grid168.acrossplatforms.com'
+    }
   end
 end

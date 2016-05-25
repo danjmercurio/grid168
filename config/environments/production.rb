@@ -74,9 +74,4 @@ Grid168::Application.configure do
   }
 
   config.action_mailer.default_url_options = {:host => 'acrossplatforms.com'}
-
-  config.action_dispatch.default_headers['X-Frame-Options'] = 'ALLOW-FROM http://grid168.acrossplatforms.com'
-
-  config.action_dispatch.default_headers['Access-Control-Allow-Origin'] = '*'
-
 end
