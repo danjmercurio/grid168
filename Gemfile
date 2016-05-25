@@ -1,6 +1,5 @@
 source 'http://rubygems.org'
 
-ruby '2.3.0'
 gem 'rails' #, :git => 'git://github.com/rails/rails.git', branch: '4-2-stable'
 
 gem 'protected_attributes' # adds attr_accessible and attr_protected methods
@@ -38,7 +37,7 @@ gem 'yaml_db'
 
 group :production do
   gem 'rails_12factor'
-  gem 'pg'
+  gem 'mysql'
 end
 
 gem 'rubyzoho', :git => 'https://github.com/amalc/rubyzoho'

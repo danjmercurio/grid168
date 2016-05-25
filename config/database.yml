@@ -27,7 +27,8 @@ test:
 #  timeout: 5000
 
 production:
-  adapter: postgresql
+  adapter: mysql
   reconnect: true
   database: grid168
   pool: 5
+  user: root
