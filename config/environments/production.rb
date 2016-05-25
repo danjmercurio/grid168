@@ -72,6 +72,6 @@ Grid168::Application.configure do
       authentication: 'plain',
       enable_starttls_auto: true
   }
-  # This is necessary for Heroku
-  # config.action_mailer.default_url_options = {:host => 'acrossplatforms.com'}
+
+  config.action_mailer.default_url_options = {:host => 'acrossplatforms.com'}
 end
