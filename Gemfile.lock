@@ -158,10 +158,10 @@ GEM
     minitest (5.8.4)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
+    mysql (2.9.1)
     nokogiri (1.6.7.2)
       mini_portile2 (~> 2.0.0.rc2)
     orm_adapter (0.5.0)
-    pg (0.18.4)
     protected_attributes (1.1.3)
       activemodel (>= 4.0.1, < 5.0)
     pry (0.10.3)
@@ -258,7 +258,7 @@ DEPENDENCIES
   jquery-ui-rails!
   js_assets!
   meta_request
-  pg
+  mysql
   protected_attributes
   pry-rails
   rails
@@ -272,8 +272,5 @@ DEPENDENCIES
   uglifier
   yaml_db
 
-RUBY VERSION
-   ruby 2.3.0p0
-
 BUNDLED WITH
-   1.12.3
+   1.12.4

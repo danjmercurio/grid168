@@ -68,7 +68,7 @@
                   <td><%= number_with_delimiter outlet.total_homes %></td>
                   <td><%= outlet.dma.name rescue 'None' %></td>
                   <td><%= outlet.outlet_type.name %></td>
-                  <td><%= outlet.user.first_name %></td>
+                  <td><%= outlet.user.first_name rescue 'None' %></td>
                   <td>
                     <div class="btn-group">
                       <button type="button" class="btn btn-primary droptown-toggle" data-toggle="dropdown">
