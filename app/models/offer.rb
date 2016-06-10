@@ -17,6 +17,8 @@
 #
 
 class Offer < ActiveRecord::Base
+	after_initialize :set_defaults, :unless => :persisted?
+
 	belongs_to :outlet
 	has_and_belongs_to_many :programmers
 	belongs_to :user
@@ -50,4 +52,22 @@ class Offer < ActiveRecord::Base
 	def list_programmer_names
 		self.programmers.select(:name).map{|x| x.name}
 	end
+
+
+	private
+
+	def set_defaults
+		self.disclaimer ||= "This worksheet is neither a bid nor an offer made on behalf of a programming supplier or on behalf of any other third-party.
+    Across Platforms, Inc. is not acting as an agent for any third-party. This worksheet is merely an example of the terms that might be available, based upon the information mentioned in the worksheet, and Across Platforms' considerable expertise in the television industry.
+    It is not a representation that these terms are available. With your permission, Across Platforms may submit this worksheet to various programming suppliers whose identities will be determined according to Across Platforms' sole and exclusive discretion.
+    In the event there are any further negotiations between you and any programming supplier contacted by Across Platforms, then Across Platforms will be acting as an agent for the programming supplier, and will be paid a commission by the programming supplier if the negotiations result in a binding contract.
+    "
+
+    self.grNotes ||= 'Annual Rate for MVPD and OTA - Per OTA home and MVPD subscriber annual cost\nMVPD Subscriber Rate - Per subscriber annual cost (not including OTA)
+    OTA Home Rate - Per OTA home annual cost (not including MVPD)'
+
+    self.dpNotes ||= 'Estimated percentage of weekly viewing is a composite of publicly reported viewing trends across all television channels, and networks, based on live time of day viewing.'
+    self.status ||= 'Current'
+
+  end
 end
