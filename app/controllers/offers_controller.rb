@@ -95,6 +95,7 @@ class OffersController < ApplicationController
 
   def sendWorksheet
     @offer = Offer.find(params[:id])
+    @outlet = @offer.outlet
     toEmail = params[:toEmail]
     carbonCopy = params[:carbonCopy]
     subject = params[:subject]
