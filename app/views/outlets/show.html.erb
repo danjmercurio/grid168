@@ -106,6 +106,7 @@
                             <th>Weekly Hours</th>
                             <th>Programmer Type</th>
                             <th>Created At</th>
+                            <th>Status</th>
                             <th>User</th>
                             <th>Actions</th>
                         </tr>
@@ -120,16 +121,19 @@
                             <td><%= offer.weekly_hours %></td>
                             <td><%= programmer.programmerType %></td>
                             <td><%= offer.created_at.strftime("%m/%d/%y") %></td>
+                            <td><%= offer.status %></td>
                             <td><%= offer.user.first_name %></td>
                             <td>
                                 <div class="btn-group">
                                   <button type="button" class="btn btn-primary droptown-toggle" data-toggle="dropdown">
                                     Actions&nbsp;<span class="caret"></span></button>
                                   <ul class="dropdown-menu">
-                                    <li><%= link_to 'Display', offer_path(offer) %></li>
-                                    <li><%= link_to 'Edit', edit_outlet_offer_path(@outlet, offer) %></li>
+                                    <li><a href="<%= url_for offer_path(offer.id) %>">Display</a></li>
+                                    <li><a href="<%= url_for edit_offer_path(offer.id) %>">Edit</a></li>
                                     <li><a href="<%= url_for offer_path(offer.id) %>/preview">Preview Email</a></li>
-                                    <li><%= link_to 'Delete', offer_path(offer), method: :delete, confirm: 'Are you sure?' %></li>
+                                    <li><%= link_to 'Closed Won', offer_path(offer.id) + '/setClosedWon', :method => :post, :data => {:confirm => 'Are you sure?'} %></li>
+                                    <li><%= link_to 'Closed Lost', offer_path(offer.id) + '/setClosedLost', :method => :post, :data => {:confirm => 'Are you sure?'} %></li>
+                                    <li><%= link_to 'Delete', offer_path(offer.id), :method => :delete, :data => {:confirm => 'Are you sure?'} %></li>
                                   </ul>
                                 </div>
                             </td>

@@ -116,9 +116,13 @@ class OffersController < ApplicationController
 		respond_to do |format|
 			if @offer.save
 				format.html {
-					redirect_to offers_path, :notice => 'Offer status updated successfully.'
+					redirect_to :back, :notice => 'Offer status updated successfully.'
 				}
-			end
+      else
+        format.html {
+          redirect_to :back, :error => 'Error: offer could not be updated.'
+        }
+      end
 		end
 	end
 
@@ -128,8 +132,12 @@ class OffersController < ApplicationController
 		respond_to do |format|
 			if @offer.save
 				format.html {
-					redirect_to offers_path, :notice => 'Offer status updated successfully.'
+					redirect_to :back, :notice => 'Offer status updated successfully.'
 				}
+      else
+        format.html {
+          redirect_to :back, :error => 'Error: offer could not be updated.'
+        }
 			end
 		end
 	end
