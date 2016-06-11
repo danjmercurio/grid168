@@ -47,8 +47,8 @@
               <h3 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 16px;">
                 <strong>Programmer Website:</strong> <a href="<%= @offer.programmers.first.website.start_with?('http://') ? @offer.programmers.first.website : 'http://' + @offer.programmers.first.website %>" target="_new"><%= @offer.programmers.first.website %></a>
               </h3>
-
-
+              <h3 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 16px;">
+                <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Programmer Description:</strong> <%= @offer.programmers.first.description %></h3>
             </div>
           </td>
           <td>&nbsp;</td>
@@ -73,10 +73,6 @@
               <h3 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 16px;">
                 <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Available
                   Date:</strong> <%= @offer.available_date %></h3>
-              <div style="overflow-wrap: break-word;max-width: 350px;">
-                <h3 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 16px;">
-                  <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Programmer Description:</strong> <%= @offer.programmers.first.description %></h3>
-              </div>
             </div>
           </td>
         </tr>
