@@ -22,9 +22,12 @@ class Outlet < ActiveRecord::Base
   belongs_to :outlet_type
 	with_options :dependent => :destroy do |o|
 		o.has_many :offers
-	end
+  end
 
-	attr_accessible :name, :first_name, :last_name, :phone_number, :description, :subs, :dma_id, :user_id,
+  after_initialize :set_defaults, :unless => :persisted?
+
+
+  attr_accessible :name, :first_name, :last_name, :phone_number, :description, :subs, :dma_id, :user_id,
 									:outlet_type_id, :time_zone, :programming, :over_air, :total_homes, :email, :website
 
 	validates :name, :first_name, :last_name, :phone_number, :dma_id, :subs, :outlet_type, :presence => true
@@ -43,6 +46,12 @@ class Outlet < ActiveRecord::Base
 
 	def fullname
 		self.first_name + ' ' + self.last_name
-	end
+  end
+
+  private
+
+  def set_defaults
+    self.website ||= ''
+  end
 
 end
