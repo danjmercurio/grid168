@@ -90,6 +90,7 @@ class OffersController < ApplicationController
 
 	def preview
     @offer = Offer.find(params[:id])
+    @outlet = @offer.outlet
   end
 
   def sendWorksheet

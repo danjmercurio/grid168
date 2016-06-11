@@ -29,7 +29,7 @@ class Outlet < ActiveRecord::Base
 
 	validates :name, :first_name, :last_name, :phone_number, :dma_id, :subs, :outlet_type, :presence => true
 
-	validates :name, uniqueness: { case_sensitive: false, message: "This outlet name already exists" }
+	validates :name, uniqueness: { case_sensitive: false, message: 'This outlet name already exists' }
 
 	def count_offer
 		self.offers.count

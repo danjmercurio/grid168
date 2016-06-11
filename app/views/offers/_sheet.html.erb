@@ -18,11 +18,14 @@
   <div class="text-center"><h1>Grid 168 Worksheet</h1></div>
     <h2>Bid prepared by: <%= image_tag('across.png') %></h2>
   <hr/>
+<div class="row">
   <div class="col-md-6">
     <h3><strong>Media Outlet:</strong> <%= @offer.outlet.name %></h3>
     <h3><strong>Market:</strong> <%= @offer.outlet.dma.name %></h3>
     <h3><strong>Media Type:</strong> <%= @outlet.outlet_type.name %></h3>
+    <h3><strong>Media Outlet Website:</strong> <a href="<%= @outlet.website.start_with?('http://') ? @outlet.website : 'http://' + @outlet.website %>" target="_new"><%= @outlet.website %></a></h3>
   </div>
+
   <div class="col-md-6">
     <%= fields_for @offer.outlet do |o| -%>
         <h3><strong>MVPD Subscribers:</strong>
@@ -33,6 +36,17 @@
       <h3><strong>Time Zone:</strong> <%= @offer.outlet.time_zone %></h3>
     <h3><strong>Available Date:</strong> <%= @offer.available_date %></h3>
   </div>
+  <hr />
+  <div class="col-md-6">
+    <h3><strong>Programmer Name:</strong> <%= @offer.programmers.first.name %></h3>
+    <h3><strong>Programmer Type:</strong> <%= @offer.programmers.first.programmerType %></h3>
+    <h3><strong>Programmer Website:</strong> <a href="<%= @offer.programmers.first.website.start_with?('http://') ? @offer.programmers.first.website : 'http://' + @offer.programmers.first.website %>" target="_new"><%= @offer.programmers.first.website %></a></h3>
+  </div>
+  <div class="col-md-6">
+    <h3><strong>Programmer Description:</strong></h3>
+    <p><%= @offer.programmers.first.description %></p>
+  </div>
+</div>
   <div class="col-md-12" style="margin-top: 10px; ">
     <div class="col-sm-6 col-md-3 margin-b-30">
       <div class="tile red">
