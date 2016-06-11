@@ -41,8 +41,9 @@
             <thead>
               <tr>
                 <th>Company Name</th>
-                <th>Current Offers</th>
-                <th>Closed?</th>
+                <th>Current</th>
+                <th>Lost</th>
+                <th>Won</th>
                 <th>Last Offer Date</th>
                 <th>Email</th>
                 <th>URL</th>
@@ -55,7 +56,8 @@
                 <tr>
                   <td><%= programmer.name %></td>
                   <td><%= programmer.offers.length %></td>
-                  <td>Blank</td>
+                  <td><%= programmer.lost %></td>
+                  <td><%= programmer.won %></td>
                   <td><%= programmer.offers.length > 0 ? programmer.offers.last.created_at.strftime('%m/%d/%Y') : 'No Offers' %></td>
                   <td><%= mail_to programmer.email %></td>
                   <td><a href="<%= programmer.website.start_with?('http://') ? programmer.website : 'http://' + programmer.website %>" target="_new"><%= programmer.website %></a></td>

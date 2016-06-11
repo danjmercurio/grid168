@@ -23,4 +23,12 @@ class Programmer < ActiveRecord::Base
 	validates :name, presence: true
 
 	attr_accessible :first_name, :last_name, :description, :name, :email, :phone, :website, :programmerType
+
+	def won
+		self.offers.where(:status => 'Closed Won').length
+	end
+
+	def lost
+		self.offers.where(:status => 'Closed Lost').length
+	end
 end

@@ -64,7 +64,7 @@
                 <tr>
                   <td><%= outlet.created_at.strftime '%m/%d/%Y' %></td>
                   <td><%= outlet.name %></td>
-                  <td><%= outlet.offers.count %></td>
+                  <td><%= outlet.offers.length %></td>
                   <td><%= outlet.lost %></td>
                   <td><%= outlet.won %></td>
                   <td><%= number_with_delimiter outlet.subs %></td>
