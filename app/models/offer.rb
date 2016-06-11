@@ -53,7 +53,6 @@ class Offer < ActiveRecord::Base
 		self.programmers.select(:name).map{|x| x.name}
 	end
 
-
 	private
 
 	def set_defaults

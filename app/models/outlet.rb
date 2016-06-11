@@ -33,7 +33,17 @@ class Outlet < ActiveRecord::Base
 
 	def count_offer
 		self.offers.count
-	end
+  end
+
+  # Return the number of offers of this outlet with status "Closed Won"
+  def won
+    self.offers.where(:status => 'Closed Won').length
+  end
+
+  # Return the number of offers of this outlet with status "Closed Lost"
+  def lost
+    self.offers.where(:status => 'Closed Lost').length
+  end
 
 	# check if contain sub channel, and sub channel has sub offer
 	def contain_sub_offers?

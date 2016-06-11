@@ -47,7 +47,9 @@
               <tr>
                 <th>Created At</th>
                 <th>Name</th>
-                <th>Offers</th>
+                <th>Current</th>
+                <th>Lost</th>
+                <th>Won</th>
                 <th>MVPD Subs</th>
                 <th>Over Air</th>
                 <th>Total Homes</th>
@@ -63,6 +65,8 @@
                   <td><%= outlet.created_at.strftime '%m/%d/%Y' %></td>
                   <td><%= outlet.name %></td>
                   <td><%= outlet.offers.count %></td>
+                  <td><%= outlet.lost %></td>
+                  <td><%= outlet.won %></td>
                   <td><%= number_with_delimiter outlet.subs %></td>
                   <td><%= number_with_delimiter outlet.over_air %></td>
                   <td><%= number_with_delimiter outlet.total_homes %></td>
