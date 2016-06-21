@@ -53,3 +53,25 @@ thead {
 .flash-padding {
   padding: 5px;
 }
+
+// Styles for the Zoho contact search forms
+.contact {
+  background: snow;
+  border: 0;
+  margin: 5px;
+  padding: 5px;
+  height: 175px;
+  overflow: overlay;
+}
+.contact-details {
+
+}
+.contact-details * {
+  display:block;
+}
+.contact-actions {
+
+}
+//.contactFillButton {
+//  float: right;
+//}

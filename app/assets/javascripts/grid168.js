@@ -291,6 +291,9 @@ grid168 = (function () {
                 // app.test.doTests();
             }
 
+            // Add event handlers for zoho contact search forms
+            app.zoho.initialize();
+
             // Controller-specific functionality
             switch (this.controller) {
                 case 'offers':
@@ -852,6 +855,69 @@ grid168 = (function () {
                     }
                 }
             ]
+        },
+        zoho: {
+            initialize: function () {
+                // Prepare the page for the Zoho contact search. Add event handler on click button
+                if ($('#zohoSearch').length === 1) {
+                    // If there is a Zoho search button on this page...
+
+                    // Reference to the container, eventual destination of contacts
+                    var container = $('#zohoContactsContainer');
+
+                    $('#zohoSearch').click(function () {
+                        var nameField = $('#zohoSearchName').val();
+                        var emailField = $('#zohoSearchEmail').val();
+                        container.empty();
+                        container.text('Loading...');
+                        var contacts = app.zoho.getContacts(nameField, emailField);
+
+                    });
+                }
+            },
+            getContacts: function (name, email) {
+                // Assemble an AJAX request for our Zoho controller
+                var container = $('#zohoContactsContainer');
+                console.log("Calling Zoho API...");
+                var request = $.ajax({
+                    url: '/zoho/getContacts',
+                    method: 'GET',
+                    data: {email: email, name: name},
+                    dataType: 'json',
+                    success: function (data) {
+                        container.empty();
+                        if (data && data.length > 0) {
+                            $.each(data, function (index, element) {
+                                var contactBlock = document.createElement('div');
+
+                                $(contactBlock).addClass('contact');
+                                $(contactBlock).append("<h2>" + element.first_name + " " + element.last_name + "</h2>");
+                                var leftDiv = document.createElement('div');
+                                $(leftDiv).addClass('col-sm-6 contact-details');
+                                if (element.email) $(leftDiv).append('<span>' + element.email + '</span>');
+                                if (element.phone) $(leftDiv).append('<span>' + element.phone + '</span>');
+                                if (element.title) $(leftDiv).append('<span>' + element.title + '</span>');
+                                contactBlock.appendChild(leftDiv);
+
+                                var rightDiv = document.createElement('div');
+                                $(rightDiv).addClass('col-sm-6');
+                                $(rightDiv).css("text-align", "right");
+                                $(rightDiv).html('<button class="contactFillButton btn btn-default" type="button">Autofill</button>');
+                                contactBlock.appendChild(rightDiv);
+
+                                container.append(contactBlock);
+                            });
+
+                        } else {
+                            container.append("<b>No results found</b>");
+                        }
+                    },
+                    error: function () {
+                        container.empty();
+                        container.append("<b>Error: Lost connection to server.</b>");
+                    }
+                });
+            }
         }
     };
 

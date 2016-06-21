@@ -1,6 +1,6 @@
 Grid168::Application.routes.draw do
 
-  get 'zoho/getContact'
+  get 'zoho/getContacts' => 'zoho#getContacts'
 
 	resources :outlets do
 		resources :offers
