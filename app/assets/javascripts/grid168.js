@@ -937,7 +937,7 @@ grid168 = (function () {
                                     $('#' + currentController + '_first_name').val($(this).attr('data-first-name'));
                                     $('#' + currentController + '_last_name').val($(this).attr('data-last-name'));
                                     $('#' + currentController + '_website').val($(this).attr('data-website'));
-                                    $('#' + currentController + '_subs').val($(this).attr('data-mvpd-subs'));
+                                    $('#' + currentController + '_subs').val($(this).attr('data-mvpd-subs').addCommas());
 
                                     var type = $(this).attr('data-media-type');
                                     var typeOption = $("option:contains(" + type + ")").val();
