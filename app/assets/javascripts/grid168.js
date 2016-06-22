@@ -866,11 +866,15 @@ grid168 = (function () {
                     var container = $('#zohoContactsContainer');
 
                     $('#zohoSearch').click(function () {
-                        var nameField = $('#zohoSearchName').val();
-                        var emailField = $('#zohoSearchEmail').val();
+                        var nameField = $('#zohoSearchName');
+                        var name = nameField.val();
+                        var emailField = $('#zohoSearchEmail');
+                        var email = emailField.val();
+                        emailField.val('');
+                        nameField.val('');
                         container.empty();
                         container.text('Loading...');
-                        var contacts = app.zoho.getContacts(nameField, emailField);
+                        var contacts = app.zoho.getContacts(name, email);
 
                     });
                 }
@@ -925,10 +929,11 @@ grid168 = (function () {
 
                                 $(fillButton).click(function () {
                                     console.log(element);
+
                                     // Insert values
                                     $('#' + currentController + '_name').val($(this).attr('data-name'));
                                     $('#' + currentController + '_email').val($(this).attr('data-email'));
-                                    $('#' + currentController + '_phone_number').val($(this).attr('data-phone'));
+                                    $('#' + currentController + '_phone').val($(this).attr('data-phone'));
                                     $('#' + currentController + '_first_name').val($(this).attr('data-first-name'));
                                     $('#' + currentController + '_last_name').val($(this).attr('data-last-name'));
                                     $('#' + currentController + '_website').val($(this).attr('data-website'));
