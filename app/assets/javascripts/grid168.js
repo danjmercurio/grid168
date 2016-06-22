@@ -902,7 +902,59 @@ grid168 = (function () {
                                 var rightDiv = document.createElement('div');
                                 $(rightDiv).addClass('col-sm-6');
                                 $(rightDiv).css("text-align", "right");
-                                $(rightDiv).html('<button class="contactFillButton btn btn-default" type="button">Autofill</button>');
+
+                                // Initialize a button and set data attributes thereon
+                                var fillButton = document.createElement('button');
+                                $(fillButton).addClass('contactFillButton btn btn-default');
+                                $(fillButton).attr('type', 'button');
+                                $(fillButton).text('AutoFill');
+                                if (element.company) $(fillButton).attr('data-name', element.company);
+                                if (element.email) $(fillButton).attr('data-email', element.email);
+                                if (element.phone) $(fillButton).attr('data-phone', element.phone);
+                                if (element.first_name) $(fillButton).attr('data-first-name', element.first_name);
+                                if (element.last_name) $(fillButton).attr('data-last-name', element.last_name);
+                                if (element.website) $(fillButton).attr('data-website', element.website);
+                                if (element.mvpd_subs) $(fillButton).attr('data-mvpd-subs', element.mvpd_subs);
+                                if (element.media_type) $(fillButton).attr('data-media-type', element.media_type);
+
+                                if (element.market) $(fillButton).attr('data-market', element.market.split(',')[0]);
+
+
+                                // depluralize the current controller (outlets -> outlet)
+                                var currentController = app.controller.substr(0, app.controller.length - 1);
+
+                                $(fillButton).click(function () {
+                                    console.log(element);
+                                    // Insert values
+                                    $('#' + currentController + '_name').val($(this).attr('data-name'));
+                                    $('#' + currentController + '_email').val($(this).attr('data-email'));
+                                    $('#' + currentController + '_phone_number').val($(this).attr('data-phone'));
+                                    $('#' + currentController + '_first_name').val($(this).attr('data-first-name'));
+                                    $('#' + currentController + '_last_name').val($(this).attr('data-last-name'));
+                                    $('#' + currentController + '_website').val($(this).attr('data-website'));
+                                    $('#' + currentController + '_subs').val($(this).attr('data-mvpd-subs'));
+
+                                    var type = $(this).attr('data-media-type');
+                                    var typeOption = $("option:contains(" + type + ")").val();
+                                    console.log(type, typeOption);
+
+                                    $("#outlet_outlet_type_id").val(typeOption).trigger('change');
+
+
+                                    // get id of dma option tag
+                                    var market = $(this).attr('data-market');
+                                    var dmaOption = $("option:contains(" + market  + ")").val();
+                                    $("#outlet_dma_id").val(dmaOption).trigger('change');
+                                    $('#' + currentController + '_dma_id').val(market);
+
+                                    console.log(market);
+
+
+
+
+                                });
+
+                                rightDiv.appendChild(fillButton);
                                 contactBlock.appendChild(rightDiv);
 
                                 container.append(contactBlock);

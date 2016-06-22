@@ -1,7 +1,7 @@
 <%= form_for @outlet, :html => {:class => 'form-horizontal group-border stripped'} do |f| %>
     <% if @outlet.errors.any? %>
         <div id="error_explanation">
-          <h2><%= pluralize(@outlet.errors.count, "error") %> prohibited this outlet from being saved:</h2>
+          <h2><%= pluralize(@outlet.errors.count, 'error') %> prohibited this outlet from being saved:</h2>
           <ul>
             <% @outlet.errors.full_messages.each do |msg| %>
                 <li><%= msg %></li>
@@ -23,7 +23,7 @@
     </div>
     <div class="form-group">
       <%= f.label :phone_number, 'Phone', :class => 'col-lg-2 control-label' %>
-      <div class="col-lg-10"><%= f.text_field :phone_number, :class => 'form-control' %></div>
+      <div class="col-lg-10"><%= f.text_field :phone_number, :class => 'form-control', :id => 'programmer_phone' %></div>
     </div>
 
     <div class="form-group">
