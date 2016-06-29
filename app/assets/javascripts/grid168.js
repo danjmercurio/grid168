@@ -899,8 +899,9 @@ grid168 = (function () {
                                 var leftDiv = document.createElement('div');
                                 $(leftDiv).addClass('col-sm-6 contact-details');
                                 if (element.email) $(leftDiv).append('<span>' + element.email + '</span>');
-                                if (element.phone) $(leftDiv).append('<span>' + element.phone + '</span>');
-                                if (element.title) $(leftDiv).append('<span>' + element.title + '</span>');
+                                if (element.company) $(leftDiv).append('<span>Company: ' + element.company + '</span>');
+                                if (element.media_type) $(leftDiv).append('<span>Media Type: ' + element.media_type + '</span>');
+                                if (element.market) $(leftDiv).append('<span>Market: ' + element.market + '</span>');
                                 contactBlock.appendChild(leftDiv);
 
                                 var rightDiv = document.createElement('div');
