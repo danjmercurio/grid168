@@ -7,3 +7,4 @@ RubyZoho.configure do |config|
   config.ignore_fields_with_bad_names = true # Ignores field with special characters in the name (Release 1.8)
   # Currently only Quotes are suported
 end
+

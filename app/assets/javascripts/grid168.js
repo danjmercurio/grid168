@@ -866,27 +866,27 @@ grid168 = (function () {
                     var container = $('#zohoContactsContainer');
 
                     $('#zohoSearch').click(function () {
-                        var nameField = $('#zohoSearchName');
-                        var name = nameField.val();
-                        var emailField = $('#zohoSearchEmail');
-                        var email = emailField.val();
-                        emailField.val('');
-                        nameField.val('');
+                        var searchTerm = $('#zohoSearchTerm').val();
+                        var searchBy = $('#zohoSearchBy').val();
                         container.empty();
-                        container.text('Loading...');
-                        var contacts = app.zoho.getContacts(name, email);
+                        if (!searchTerm || searchTerm === '' || searchTerm.length <= 2) {
+                            container.text('You must enter a search term of at least 3 characters');
+                        } else {
+                            container.text('Loading...');
+                            var contacts = app.zoho.getContacts(searchTerm, searchBy);
+                        }
 
                     });
                 }
             },
-            getContacts: function (name, email) {
+            getContacts: function (searchTerm, searchBy) {
                 // Assemble an AJAX request for our Zoho controller
                 var container = $('#zohoContactsContainer');
                 console.log("Calling Zoho API...");
                 var request = $.ajax({
                     url: '/zoho/getContacts',
                     method: 'GET',
-                    data: {email: email, name: name},
+                    data: {searchTerm: searchTerm, searchBy: searchBy},
                     dataType: 'json',
                     success: function (data) {
                         container.empty();
@@ -929,7 +929,6 @@ grid168 = (function () {
                                 var currentController = app.controller.substr(0, app.controller.length - 1);
 
                                 $(fillButton).click(function () {
-                                    console.log(element);
 
                                     // Insert values
                                     $('#' + currentController + '_name').val($(this).attr('data-name'));
@@ -938,14 +937,14 @@ grid168 = (function () {
                                     $('#' + currentController + '_first_name').val($(this).attr('data-first-name'));
                                     $('#' + currentController + '_last_name').val($(this).attr('data-last-name'));
                                     $('#' + currentController + '_website').val($(this).attr('data-website'));
-                                    $('#' + currentController + '_subs').val($(this).attr('data-mvpd-subs').addCommas());
+                                    if ($(this).attr('data-mvpd-subs')) {
+                                        $('#' + currentController + '_subs').val($(this).attr('data-mvpd-subs').addCommas());
+                                    }
 
                                     var type = $(this).attr('data-media-type');
                                     var typeOption = $("option:contains(" + type + ")").val();
-                                    console.log(type, typeOption);
 
                                     $("#outlet_outlet_type_id").val(typeOption).trigger('change');
-
 
                                     // get id of dma option tag
                                     var market = $(this).attr('data-market');
@@ -953,11 +952,8 @@ grid168 = (function () {
                                     $("#outlet_dma_id").val(dmaOption).trigger('change');
                                     $('#' + currentController + '_dma_id').val(market);
 
-                                    console.log(market);
-
-
-
-
+                                    $("html, body").animate({ scrollTop: 0 }, "slow");
+                                    return false;
                                 });
 
                                 rightDiv.appendChild(fillButton);
