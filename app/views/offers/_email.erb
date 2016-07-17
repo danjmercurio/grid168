@@ -3,23 +3,30 @@
       <p style="font-family: 'Tahoma Regular' !important;"><strong>Comments: </strong><%= @emailMessage %></p>
     </div>
 <% end %>
-<div style="width:85%;margin-left:auto;margin-right:auto;font-family:'Tahoma Regular' !important;">
-<div class="text-center" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;text-align: center;">
-  <h2 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-size: 14pt;margin: 0.67em 0;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;">Across
-    Platforms Worksheet</h2></div>
-  <h2 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 10pt;">
-    <p>Prepared by:</p>
-    <p>Michael Kokernak<br/>
-      Direct: 617-390-7547<br/>
-      mkokernak@acrossplatforms.com</p>
-    <p>
-      <%= image_tag('http://i.imgur.com/SdYFWDL.png', {
-          :style => '-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;border: 0;vertical-align: middle;page-break-inside: avoid;max-width: 100% !important;',
-          :alt => 'Across Platforms'
-      }) %>
-    </p>
-</h2>
-<hr style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: content-box;height: 0;margin-top: 20px;margin-bottom: 20px;border: 0;border-top: 1px solid #eeeeee;">
+<div style="margin-left:auto;margin-right:auto;font-family:'Tahoma Regular' !important;background-color:gainsboro;">
+  <table style="background-color:white;width: 85%;margin-left:auto;margin-right:auto;">
+    <tr>
+      <td width="100%">
+        <div class="text-center" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;text-align: center;">
+          <h2 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-size: 14pt;margin: 0.67em 0;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;"> <%= image_tag('http://i.imgur.com/SdYFWDL.png', {
+              :style => '-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;border: 0;vertical-align: middle;page-break-inside: avoid;max-width: 100% !important;',
+              :alt => 'Across Platforms'
+          }) %> Worksheet</h2></div><hr style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: content-box;height: 0;margin-top: 20px;margin-bottom: 20px;border: 0;border-top: 1px solid #eeeeee;">
+      </td>
+    </tr>
+    <tr>
+      <td width="25%">cell 1</td><td width="25%">cell 2</td><td width="25%">cell 3</td><td width="25%">cell 4</td>
+    </tr>
+    <tr>
+      <td width="50%">
+        PREPARED BY:<br />
+        Michael Kokernak
+        Direct: 617-390-7547
+      </td><td width="50%">img here</td>
+    </tr>
+  </table>
+
+
   <p width="75%">
 <table style="width:100%;">
         <tbody>
@@ -35,9 +42,12 @@
               <h3 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 16px;">
                 <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Media
                   Type:</strong> <%= @offer.outlet.outlet_type.name %></h3>
+              <% if @outlet.website %>
               <h3 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 16px;">
+
                 <strong>Media Outlet Website:</strong> <a href="<%= @outlet.website.start_with?('http://') ? @outlet.website : 'http://' + @outlet.website %>" target="_new"><%= @outlet.website %></a>
               </h3>
+                  <% end %>
               <h3 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 16px;">
                 <strong>Programmer Name:</strong> <%= @offer.programmers.first.name %>
               </h3>

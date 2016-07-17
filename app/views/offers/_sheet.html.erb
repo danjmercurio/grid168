@@ -23,7 +23,8 @@
     <h3><strong>Media Outlet:</strong> <%= @offer.outlet.name %></h3>
     <h3><strong>Market:</strong> <%= @offer.outlet.dma.name %></h3>
     <h3><strong>Media Type:</strong> <%= @outlet.outlet_type.name %></h3>
-    <h3><strong>Media Outlet Website:</strong> <a href="<%= @outlet.website.start_with?('http://') ? @outlet.website : 'http://' + @outlet.website %>" target="_new"><%= @outlet.website %></a></h3>
+    <% if @outlet.website %>
+        <h3><strong>Media Outlet Website:</strong> <a href="<%= @outlet.website.start_with?('http://') ? @outlet.website : 'http://' + @outlet.website %>" target="_new"><%= @outlet.website %></a></h3><% end %>
   </div>
 
   <div class="col-md-6">

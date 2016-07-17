@@ -13,6 +13,18 @@
   </div>
 </div>
 <div class="row">
+  <div class="col-sm-6">
+    <p><strong>Media Type: </strong><%= @outlet.outlet_type.name %></p>
+    <% if @outlet.website %><p><strong>Website:</strong> <a href="<%= @outlet.website.start_with?('http://') ? @outlet.website : 'http://' + @outlet.website %>" target="_new"><%= @outlet.website %></a></p><% end %>
+    <p><strong>Time Zone:</strong> <%= @outlet.time_zone %></p>
+  </div>
+  <div class="col-sm-6">
+    <p><strong>Contact:</strong> <%= @outlet.first_name %> <%= @outlet.last_name %></p>
+    <p><strong>Phone:</strong> <%= @outlet.phone_number %></p>
+    <p><strong>Email:</strong> <%= mail_to @outlet.email %></p>
+  </div>
+</div>
+<div class="row">
     <div class="col-sm-6 col-md-3 margin-b-30">
         <div class="tile red">
             <div class="tile-title clearfix">
@@ -75,11 +87,16 @@
     </div><!--end .col-->
 </div>
 <div class="row">
-  <div class="col-sm-12">
+  <div class="col-sm-6">
     <div class="navButtons">
       <%= button_to 'Edit', edit_outlet_path(@outlet), :class => 'btn btn-primary', :method => :get %>
       <%= button_to 'Delete', @outlet, :confirm => 'Are you sure?', :method => :delete, :class => 'btn' %>
       <%= button_to 'New Offer', new_outlet_offer_path(@outlet), :class => 'btn', :method => :get %>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="filterBox">
+      <input type="text" class="form-control input-md filterText" placeholder="Filter" type="search">
     </div>
   </div>
 </div>
@@ -97,18 +114,19 @@
                 </div>
             </div>
             <div class="panel-body">
-                <table class="table table-striped tablesorter">
+                <table class="table table-striped tablesorter filterable">
                     <thead>
                         <tr>
-                            <th>Programmer</th>
-                            <th>Monthly</th>
-                            <th>Offer Amount</th>
-                            <th>Weekly Hours</th>
-                            <th>Programmer Type</th>
-                            <th>Created At</th>
-                            <th>Status</th>
-                            <th>User</th>
-                            <th>Actions</th>
+                          <th>Programmer</th>
+                          <th>Status</th>
+                          <th>Yearly</th>
+                          <th>Offer Amount</th>
+                          <th>Weekly Hours</th>
+                          <th>Programmer Type</th>
+                          <th>Created At</th>
+                          <th>Notes</th>
+                          <th>User</th>
+                          <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -116,12 +134,13 @@
                         <% offer.programmers.each do |programmer| %>
                         <tr>
                             <td><%= programmer.name %></td>
-                            <td><%= number_to_currency offer.monthly_offer %></td>
+                            <td><%= offer.status %></td>
+                            <td><%= number_to_currency offer.yearly_offer %></td>
                             <td><%= number_to_currency offer.dollar_amount %></td>
                             <td><%= offer.weekly_hours %></td>
                             <td><%= programmer.programmerType %></td>
                             <td><%= offer.created_at.strftime("%m/%d/%y") %></td>
-                            <td><%= offer.status %></td>
+                            <td><%= offer.internalNotes rescue ''%></td>
                             <td><%= offer.user.first_name %></td>
                             <td>
                                 <div class="btn-group">
