@@ -6,7 +6,7 @@
     :nationalPrimeTime => 'thistle',
     :lateNews => 'pink',
     :lateNight => 'darkseagreen',
-    :overnights => 'gainsboro'
+    :overnights => '#f7caa0'
 }
 
    days = [['Monday', 0], ['Tuesday', 1], ['Wednesday', 2], ['Thursday', 3], ['Friday', 4], ['Saturday', 5], ['Sunday', 6]]
@@ -40,7 +40,7 @@
 <table width="100%">
   <tr>
     <% days.each do |day, num| %>
-        <td style="text-align: center;border: 1px solid; margin: 3px;"><strong><%= day %></strong></td>
+        <td style="background-color:lightgrey;text-align: center;border: 1px solid; margin: 3px;"><strong><%= day %></strong></td>
     <% end %>
   </tr>
   <% start = Time.new(0) %>

@@ -3,108 +3,43 @@
       <p style="font-family: 'Tahoma Regular' !important;"><strong>Comments: </strong><%= @emailMessage %></p>
     </div>
 <% end %>
-<div style="margin-left:auto;margin-right:auto;font-family:'Tahoma Regular' !important;background-color:gainsboro;">
-  <table style="background-color:white;width: 85%;margin-left:auto;margin-right:auto;">
+<div style="margin-left:auto;margin-right:auto;background-color:gainsboro;"> <!-- container div -->
+  <div style="margin-left:auto;margin-right:auto;width:90%;background-color:white;"> <!-- main div -->
+  <table style="background-color:white;margin-left:auto;margin-right:auto;width:100%;">
     <tr>
       <td width="100%">
         <div class="text-center" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;text-align: center;">
           <h2 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-size: 14pt;margin: 0.67em 0;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;"> <%= image_tag('http://i.imgur.com/SdYFWDL.png', {
               :style => '-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;border: 0;vertical-align: middle;page-break-inside: avoid;max-width: 100% !important;',
               :alt => 'Across Platforms'
-          }) %> Worksheet</h2></div><hr style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: content-box;height: 0;margin-top: 20px;margin-bottom: 20px;border: 0;border-top: 1px solid #eeeeee;">
+          }) %> <font style="font-family:Helvetica, Arial, sans-serif;color:#49c0ba;font-size: 30px;">Worksheet</font>  </h2></div><hr style="width:85%;color:#49c0ba;height:5px;border: 0;background-color: #49c0ba;">
       </td>
     </tr>
-    <tr>
-      <td width="25%">cell 1</td><td width="25%">cell 2</td><td width="25%">cell 3</td><td width="25%">cell 4</td>
-    </tr>
-    <tr>
-      <td width="50%">
-        PREPARED BY:<br />
-        Michael Kokernak
-        Direct: 617-390-7547
-      </td><td width="50%">img here</td>
-    </tr>
+
   </table>
 
 
-  <p width="75%">
-<table style="width:100%;">
+<table style="width:85%;margin-left:auto;margin-right:auto;">
         <tbody>
         <tr>
           <td>
-            <div class="margin-left: 10%;">
-              <h3 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 16px;">
-                <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Media
-                  Outlet:</strong> <%= @offer.outlet.name %></h3>
-              <h3 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 16px;">
-                <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Market:</strong>
-                <%= @offer.outlet.dma.name %></h3>
-              <h3 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 16px;">
-                <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Media
-                  Type:</strong> <%= @offer.outlet.outlet_type.name %></h3>
-              <% if @outlet.website %>
-              <h3 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 16px;">
-
-                <strong>Media Outlet Website:</strong> <a href="<%= @outlet.website.start_with?('http://') ? @outlet.website : 'http://' + @outlet.website %>" target="_new"><%= @outlet.website %></a>
-              </h3>
-                  <% end %>
-              <h3 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 16px;">
-                <strong>Programmer Name:</strong> <%= @offer.programmers.first.name %>
-              </h3>
-              <h3 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 16px;">
-                <strong>Programmer Type:</strong> <%= @offer.programmers.first.programmerType %>
-              </h3>
-              <h3 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 16px;">
-                <strong>Programmer Website:</strong> <a href="<%= @offer.programmers.first.website.start_with?('http://') ? @offer.programmers.first.website : 'http://' + @offer.programmers.first.website %>" target="_new"><%= @offer.programmers.first.website %></a>
-              </h3>
-              <h3 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 16px;">
-                <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Programmer Description:</strong> <%= @offer.programmers.first.description %></h3>
-            </div>
-          </td>
-          <td>&nbsp;</td>
-          <td>&nbsp;</td>
-          <td>
-            <div class="margin-right: 10%;">
-              <h3 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 16px;">
-                <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Estimated
-                  MVPD
-                  Subscribers:</strong>
-                <%= number_with_delimiter @offer.outlet.subs %>
-              </h3>
-              <h3 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 16px;">
-                <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Estimated
-                  Over
-                  the Air Homes:</strong>
-                <%= number_with_delimiter @offer.outlet.over_air %>
-              </h3>
-              <h3 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 16px;">
-                <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Time
-                  Zone:</strong> <%= @offer.outlet.time_zone %></h3>
-              <h3 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 16px;">
-                <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Available
-                  Date:</strong> <%= @offer.available_date %></h3>
-            </div>
-          </td>
-        </tr>
-        <tr>
-          <td>
             <div class="tile red" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;background-color: #fa4345;">
-              <div class="tile-title clearfix" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;color: #fff;text-transform: capitalize;background-color: rgba(255,255,255,0.1);padding: 3px 15px;">
+              <div class="tile-title clearfix" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;color: #fff;text-transform: capitalize;background-color: darkorange;padding: 3px 15px;">
                 Total MVPD and OTA Homes
                 <span class="pull-right" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;float: right;"></span>
               </div><!--.tile-title-->
-              <div class="tile-body clearfix" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 15px;height: 60px;">
+              <div class="tile-body clearfix" style="background-color:darkorange;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 15px;height: 60px;">
                 <i class="fa fa-home" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;display: inline-block;font: normal normal normal 14px/1 FontAwesome;font-size: 35px;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #fff;"></i>
-                <h4 class="pull-right delimited" id="totalHomes" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: #fff;margin-top: 0px;margin-bottom: 10px;font-size: 35px;float: right;text-transform: uppercase;margin: 0px;"><%= number_with_delimiter @offer.outlet.total_homes %></h4>
+                <h4 class="pull-right delimited" id="totalHomes" style="background-color:darkorange;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: #fff;margin-top: 0px;margin-bottom: 10px;font-size: 35px;float: right;text-transform: uppercase;margin: 0px;"><%= number_with_delimiter @offer.outlet.total_homes %></h4>
               </div><!--.tile-body-->
-              <div class="tile-footer" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 4px 15px;color: #fff;background-color: rgba(255,255,255,0.1);">
+              <div class="tile-footer" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 4px 15px;color: #fff;background-color: darkorange;">
                 &nbsp;
               </div><!--.tile footer-->
             </div><!-- .tile-->
           </td>
           <td>
-            <div class="tile green" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;background-color: #91be24;">
-              <div class="tile-title clearfix" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;color: #fff;text-transform: capitalize;background-color: rgba(255,255,255,0.1);padding: 3px 15px;">
+            <div class="tile green" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;background-color: #f68247;">
+              <div class="tile-title clearfix" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;color: #fff;text-transform: capitalize;background-color: #f68247;padding: 3px 15px;">
                 Total Weekly Hours
                 <span class="pull-right" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;float: right;"></span>
               </div><!--.tile-title-->
@@ -112,14 +47,14 @@
                 <i class="fa fa-clock-o" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;display: inline-block;font: normal normal normal 14px/1 FontAwesome;font-size: 35px;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #fff;"></i>
                 <h4 class="pull-right" id="totalHoursHero" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: #fff;margin-top: 0px;margin-bottom: 10px;font-size: 35px;float: right;text-transform: uppercase;margin: 0px;"><%= @offer.total_hours %></h4>
               </div><!--.tile-body-->
-              <div class="tile-footer" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 4px 15px;color: #fff;background-color: rgba(255,255,255,0.1);">
+              <div class="tile-footer" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 4px 15px;color: #fff;background-color: #f68247;">
                 &nbsp;
               </div><!--.tile footer-->
             </div><!-- .tile-->
           </td>
           <td>
-            <div class="tile blue" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;background-color: #165bf7;">
-              <div class="tile-title clearfix" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;color: #fff;text-transform: capitalize;background-color: rgba(255,255,255,0.1);padding: 3px 15px;">
+            <div class="tile blue" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;background-color: #3693d6;">
+              <div class="tile-title clearfix" style="background-color:#3693d6;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;color: #fff;text-transform: capitalize;padding: 3px 15px;">
                 Average Gross Hourly Rate
                 <span class="pull-right" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;float: right;"></span>
               </div><!--.tile-title-->
@@ -127,14 +62,14 @@
                 <i class="fa fa-usd" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;display: inline-block;font: normal normal normal 14px/1 FontAwesome;font-size: 35px;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #fff;"></i>
                 <h4 class="pull-right" id="hourlyRateHero" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: #fff;margin-top: 0px;margin-bottom: 10px;font-size: 35px;float: right;text-transform: uppercase;margin: 0px;"><%= number_to_currency @offer.hourly_rate %></h4>
               </div><!--.tile-body-->
-              <div class="tile-footer" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 4px 15px;color: #fff;background-color: rgba(255,255,255,0.1);">
+              <div class="tile-footer" style="background-color:#3693d6;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 4px 15px;">
                 &nbsp;
               </div><!--.tile footer-->
             </div><!-- .tile-->
           </td>
           <td>
-            <div class="tile purple" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;background-color: #972cf1;">
-              <div class="tile-title clearfix" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;color: #fff;text-transform: capitalize;background-color: rgba(255,255,255,0.1);padding: 3px 15px;">
+            <div class="tile purple" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;background-color: #24aa65;">
+              <div class="tile-title clearfix" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;color: #fff;text-transform: capitalize;background-color: #24aa65;padding: 3px 15px;">
                 Average Gross Monthly Rate
                 <span class="pull-right" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;float: right;"></span>
               </div><!--.tile-title-->
@@ -142,7 +77,7 @@
                 <i class="fa fa-calendar" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;display: inline-block;font: normal normal normal 14px/1 FontAwesome;font-size: 35px;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;color: #fff;"></i>
                 <h4 class="pull-right" id="grossMonthlyRateHero" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: #fff;margin-top: 0px;margin-bottom: 10px;font-size: 35px;float: right;text-transform: uppercase;margin: 0px;"><%= number_to_currency @offer.monthly_offer %></h4>
               </div><!--.tile-body-->
-              <div class="tile-footer" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 4px 15px;color: #fff;background-color: rgba(255,255,255,0.1);">
+              <div class="tile-footer" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 4px 15px;color: #fff;background-color: #24aa65;">
                 &nbsp;
               </div><!--.tile footer-->
             </div><!-- .tile-->
@@ -150,10 +85,76 @@
         </tr>
         </tbody>
       </table>
+
+    <br />
+    <table width="100%">
+      <tr>
+        <td style="padding: 15px;"><strong>PREPARED BY:<br />
+        Michael Kokernak<br />
+        Direct: 617-390-7547<br />
+        </strong></td>
+        <td style="text-align:right;padding:15px;"><img src="http://i.imgur.com/wFdPaZe.png"></td>
+      </tr>
+    </table>
+    <table width="100%">
+      <tr><td style="padding: 15px;color: #009a9b;font-weight:bold;">MEDIA OUTLET INFORMATION</td><td style="color: #009a9b;font-weight:bold;">PROGRAMMER INFORMATION</td></tr>
+    </table>
+  <table width="100%">
+    <tr>
+      <td style="padding: 15px;">
+
+
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">NAME:</strong> <%= @offer.outlet.name %>
+            <br />
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Market:</strong>
+            <%= @offer.outlet.dma.name %>
+            <br />
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">
+              Type:</strong> <%= @offer.outlet.outlet_type.name %>
+        <br />
+          <% if @outlet.website %>
+
+
+                <strong>Media Outlet Website:</strong> <a href="<%= @outlet.website.start_with?('http://') ? @outlet.website : 'http://' + @outlet.website %>" target="_new"><%= @outlet.website %></a>
+            <br />
+          <% end %>
+
+
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Estimated
+              MVPD
+              Subscribers:</strong>
+            <%= number_with_delimiter @offer.outlet.subs %>
+          <br />
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Estimated
+              Over
+              the Air Homes:</strong>
+            <%= number_with_delimiter @offer.outlet.over_air %>
+          <br />
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Time
+              Zone:</strong> <%= @offer.outlet.time_zone %>
+
+
+
+      </td>
+      <td>
+        <strong>Name:</strong> <%= @offer.programmers.first.name %>
+        <br />
+        <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Available
+          Date:</strong> <%= @offer.available_date %>
+        <br />
+
+        <strong>Type:</strong> <%= @offer.programmers.first.programmerType %>
+        <br />
+        <strong>Website:</strong> <a href="<%= @offer.programmers.first.website.start_with?('http://') ? @offer.programmers.first.website : 'http://' + @offer.programmers.first.website %>" target="_new"><%= @offer.programmers.first.website %></a>
+        <br />
+        <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Description:</strong> <%= @offer.programmers.first.description %>
+      </td>
+    </tr>
+  </table>
 <br/>
-<h2 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 24px;">Gross
-  Rate Worksheet</h2>
-<div class="col-md-12" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;position: relative;min-height: 1px;padding-left: 15px;padding-right: 15px;width: 100%;">
+    <div style="margin-left:auto;margin-right:auto;text-align:center;"><font style="font-family:Helvetica, Arial, sans-serif;color:#49c0ba;font-size: 30px;">Gross Rate Worksheet</font><hr style="width:90%;color:#49c0ba;height:5px;border: 0;background-color: #49c0ba;"></div>
+
+  <div class="col-md-12" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;position: relative;min-height: 1px;padding-left: 15px;padding-right: 15px;width: 100%;">
   <div class="panel panel-default margin-b-30 " style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;margin-bottom: 30px;background-color: #fff;border: 0px;border-radius: 0px;-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);box-shadow: 0px;border-color: #ddd;-webkit-border-radius: 0px;">
     <!-- Start .panel -->
     <div class="panel-heading" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 10px 15px;border-bottom: 1px solid transparent;border-top-right-radius: 3px;border-top-left-radius: 3px;position: relative;color: #333;background-color: #eee;border-color: #f5f5f5;">
@@ -167,79 +168,79 @@
       <table class="table table-bordered" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;border-collapse: collapse !important;border-spacing: 0;background-color: transparent;width: 100%;max-width: none !important;margin-bottom: 6px !important;border: 1px solid #ddd;clear: both;margin-top: 6px !important;">
         <tbody style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;">
         <tr style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;page-break-inside: avoid;">
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;">
             <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Total
               MVPD and OTA Homes</strong></td>
           <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= number_with_delimiter @offer.outlet.total_homes %></td>
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;">
             <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">MVPD
               Subs</strong></td>
           <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= number_with_delimiter @offer.outlet.subs %></td>
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;">
             <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">OTA
               Homes</strong></td>
           <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= number_with_delimiter @offer.outlet.over_air %></td>
 
         </tr>
         <tr style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;page-break-inside: avoid;">
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;">
             <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">FTEH
               Annual Rate MVPD/OTA</strong></td>
           <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= number_to_currency @offer.dollar_amount %></td>
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"></td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;"></td>
           <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">&nbsp;</td>
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">&nbsp;</td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;">&nbsp;</td>
           <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">&nbsp;</td>
         </tr>
         <tr style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;page-break-inside: avoid;">
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;">
             <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Gross
               Half Hour Rate</strong></td>
           <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= number_to_currency @offer.halfHourRate %></td>
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;">
             <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Gross
               Hour Rate</strong></td>
           <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= number_to_currency @offer.hourly_rate %></td>
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">&nbsp;</td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;">&nbsp;</td>
           <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">&nbsp;</td>
         </tr>
         <tr style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;page-break-inside: avoid;">
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;">
             <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">MVPD
               Yearly Rate</strong></td>
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= @offer.mvpdSubscriberRate %></td>
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= number_to_currency @offer.mvpdSubscriberRate %></td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;">
             <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">OTA
               Yearly Rate</strong></td>
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= @offer.mvpdOtaSubRate %>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= number_to_currency @offer.mvpdOtaSubRate %>
           </td>
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">&nbsp;</td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;">&nbsp;</td>
           <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">&nbsp;</td>
         </tr>
         <tr style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;page-break-inside: avoid;">
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;">
             <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Weekly
               Hours</strong></td>
           <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= number_with_delimiter @offer.weekly_hours %></td>
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;">
             <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Monthly
               Hours</strong></td>
           <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= number_with_delimiter @offer.monthly_hours %></td>
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;">
             <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Yearly
               Hours</strong></td>
           <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= number_with_delimiter @offer.yearly_hours %></td>
         </tr>
         <tr style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;page-break-inside: avoid;">
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;">
             <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Gross
               Weekly Rate</strong></td>
           <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= number_to_currency @offer.weekly_offer %></td>
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;">
             <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Gross
               Monthly Rate</strong></td>
           <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= number_to_currency @offer.monthly_offer %></td>
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;">
             <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Gross
               Yearly Rate</strong></td>
           <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= number_to_currency @offer.yearly_offer %></td>
@@ -250,7 +251,8 @@
     </div>
   </div>
 </div>
-<h2 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 24px;">Dayparts</h2>
+    <div style="margin-left:auto;margin-right:auto;text-align:center;"><font style="font-family:Helvetica, Arial, sans-serif;color:#49c0ba;font-size: 30px;">Dayparts</font><hr style="width:90%;color:#49c0ba;height:5px;border: 0;background-color: #49c0ba;"></div>
+
 <div class="col-md-12" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;position: relative;min-height: 1px;padding-left: 15px;padding-right: 15px;width: 100%;">
   <div class="panel panel-default margin-b-30 " style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;margin-bottom: 30px;background-color: #fff;border: 0px;border-radius: 0px;-webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);box-shadow: 0px;border-color: #ddd;-webkit-border-radius: 0px;">
     <!-- Start .panel -->
@@ -266,19 +268,19 @@
         <thead style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;display: table-header-group;cursor: context-menu;">
         <tr style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;page-break-inside: avoid;">
           <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 0;border: 1px solid #ddd !important;border-bottom-width: 2px;background-color: #fff !important;">&nbsp;</td>
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 0;border: 1px solid #ddd !important;border-bottom-width: 2px;background-color: #fff !important;">
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 0;border: 1px solid #ddd !important;border-bottom-width: 2px;background-color: lightgrey !important;">
             <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Time
               Period</strong></td>
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 0;border: 1px solid #ddd !important;border-bottom-width: 2px;background-color: #fff !important;">
+          <td style="background-color: lightgrey;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 0;border: 1px solid #ddd !important;border-bottom-width: 2px;">
             <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Est.
               % of Weekly Viewing</strong></td>
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 0;border: 1px solid #ddd !important;border-bottom-width: 2px;background-color: #fff !important;">
+          <td style="background-color: lightgrey;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 0;border: 1px solid #ddd !important;border-bottom-width: 2px;">
             <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Est.
               Gross Hourly Rate</strong></td>
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 0;border: 1px solid #ddd !important;border-bottom-width: 2px;background-color: #fff !important;">
-            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Total
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 0;border: 1px solid #ddd !important;border-bottom-width: 2px;background-color: lightgrey !important;">
+            <strong style="background-color: lightgrey;-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Total
               Hours</strong></td>
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 0;border: 1px solid #ddd !important;border-bottom-width: 2px;background-color: #fff !important;">
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 0;border: 1px solid #ddd !important;border-bottom-width: 2px;background-color: lightgrey !important;">
             <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Gross
               Weekly Rate</strong></td>
         </tr>
@@ -288,7 +290,7 @@
           <td class="dayPartRow morning" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightcyan !important;">
             <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Early
               Morning</strong></td>
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">6am
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;">6am
             to 10am
           </td>
           <td id="morningAudience" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= @offer.morningAudience %></td>
@@ -300,7 +302,7 @@
           <td class="dayPartRow daytime" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightblue !important;">
             <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Daytime</strong>
           </td>
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">10am
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;">10am
             to 4:30pm
           </td>
           <td id="daytimeAudience" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= @offer.daytimeAudience %></td>
@@ -312,7 +314,7 @@
           <td class="dayPartRow eveningNews" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgreen !important;">
             <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Evening
               News</strong></td>
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">4:30pm
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;">4:30pm
             to 7pm
           </td>
           <td id="eveningNewsAudience" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= @offer.eveningNewsAudience %></td>
@@ -324,7 +326,7 @@
           <td class="dayPartRow localPrimeTime" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: palegoldenrod !important;">
             <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Local
               Prime Time</strong></td>
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">7pm
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;">7pm
             to 8pm
           </td>
           <td id="localPrimeTimeAudience" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= @offer.localPrimeTimeAudience %></td>
@@ -336,7 +338,7 @@
           <td class="dayPartRow nationalPrimeTime" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: thistle !important;">
             <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">National
               Prime Time</strong></td>
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">8pm
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;">8pm
             to 11pm
           </td>
           <td id="nationalPrimeTimeAudience" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= @offer.nationalPrimeTimeAudience %></td>
@@ -348,7 +350,7 @@
           <td class="dayPartRow lateNews" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: pink !important;">
             <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Late
               News</strong></td>
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">11pm
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;">11pm
             to 11:30pm
           </td>
           <td id="lateNewsAudience" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= @offer.lateNewsAudience %></td>
@@ -360,7 +362,7 @@
           <td class="dayPartRow lateNight" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: darkseagreen !important;">
             <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Late
               Night</strong></td>
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">11:30pm
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;">11:30pm
             to 1am
           </td>
           <td id="lateNightAudience" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= @offer.lateNightAudience %></td>
@@ -369,10 +371,10 @@
           <td id="lateNightWeeklyRate" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= @offer.lateNightWeeklyRate %></td>
         </tr>
         <tr style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;page-break-inside: avoid;">
-          <td class="dayPartRow overnights" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: gainsboro !important;">
+          <td class="dayPartRow overnights" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #f7caa0 !important;">
             <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Overnights</strong>
           </td>
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">1am
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;">1am
             to 6am
           </td>
           <td id="overnightsAudience" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= @offer.overnightsAudience %></td>
@@ -381,14 +383,14 @@
           <td id="overnightsWeeklyRate" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= @offer.overnightsWeeklyRate %></td>
         </tr>
         <tr style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;page-break-inside: avoid;">
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;">
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;">
             <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Total
               Worksheet</strong></td>
-          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"></td>
-          <td id="runningAudienceTotal" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= @offer.runningAudienceTotal %></td>
-          <td id="runningAverageRateTotal" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"></td>
-          <td id="runningHoursTotal" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= @offer.runningHoursTotal %></td>
-          <td id="runningWeeklyRateTotal" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: #fff !important;"><%= @offer.runningWeeklyRateTotal %></td>
+          <td style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;"></td>
+          <td id="runningAudienceTotal" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;"><%= @offer.runningAudienceTotal %></td>
+          <td id="runningAverageRateTotal" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;"></td>
+          <td id="runningHoursTotal" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;"><%= @offer.runningHoursTotal %></td>
+          <td id="runningWeeklyRateTotal" style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;padding: 8px;line-height: 1.42857143;vertical-align: top;border-top: 1px solid #ddd;border: 1px solid #ddd !important;background-color: lightgrey !important;"><%= @offer.runningWeeklyRateTotal %></td>
         </tr>
         </tbody>
       </table>
@@ -396,8 +398,8 @@
     </div>
   </div>
 </div>
-<h2 style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;orphans: 3;widows: 3;page-break-after: avoid;font-family: 'Tahoma Regular' !important;font-weight: 400;line-height: 1.1;color: inherit;margin-top: 0px;margin-bottom: 10px;font-size: 24px;">Proposed
-  Programming Schedule</h2>
+    <div style="margin-left:auto;margin-right:auto;text-align:center;"><font style="font-family:Helvetica, Arial, sans-serif;color:#49c0ba;font-size: 30px;">Proposed Programming Schedule</font><hr style="width:90%;color:#49c0ba;height:5px;border: 0;background-color: #49c0ba;"></div>
+
 <div>
   <%= render :partial => 'offers/email_grid' %>
 </div>
@@ -405,4 +407,5 @@
   <div id="disclaimer">
     <p style="font-size: 10pt;"><%= @offer.disclaimer %></p>
   </div>
+</div>
 </div>
