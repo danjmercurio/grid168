@@ -9,7 +9,7 @@
           </blockquote>
           <div class="form-group">
             <label for="toEmail">To: </label><%= email_field_tag 'toEmail', nil, {:class => 'form-control', :placeholder => 'recipient@domain.com', :value => "#{@offer.outlet.email}, #{@offer.programmers.first.email}"} %>
-            <label for="carbonCopy">Cc: </label><%= email_field_tag 'carbonCopy', nil, {:class => 'form-control', :placeholder => 'recipient@domain.com'} %>
+            <label for="carbonCopy">Cc: </label><%= email_field_tag 'carbonCopy', nil, {:class => 'form-control', :value => current_user.email} %>
             <label for="subject">Subject: </label><%= text_field_tag 'subject', nil, {:class => 'form-control', :value => "Worksheet #{@offer.outlet.name} and #{@offer.programmers.first.name} - Yearly Est. Rate: #{number_to_currency @offer.yearly_offer}"} %>
           </div>
           <div class="form-group">
