@@ -26,6 +26,8 @@ Grid168::Application.routes.draw do
 
   post 'offers/:id/setClosedLost' => 'offers#setClosedLost'
 
+  get 'zoho/export_potential' => 'zoho#export_potential'
+
   # The priority is based upon order of creation:
 	# first created -> highest priority.
 
