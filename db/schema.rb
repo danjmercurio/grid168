@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160610210614) do
+ActiveRecord::Schema.define(version: 20160719033747) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email"
@@ -43,14 +43,14 @@ ActiveRecord::Schema.define(version: 20160610210614) do
 
   create_table "offers", force: :cascade do |t|
     t.integer  "outlet_id"
-    t.float    "yearly_offer",                default: 0.0, null: false
-    t.float    "monthly_offer",               default: 0.0, null: false
-    t.float    "weekly_offer",                default: 0.0, null: false
-    t.float    "hourly_rate",                 default: 0.0, null: false
-    t.float    "total_hours",                 default: 0.0, null: false
+    t.float    "yearly_offer",                default: 0.0,   null: false
+    t.float    "monthly_offer",               default: 0.0,   null: false
+    t.float    "weekly_offer",                default: 0.0,   null: false
+    t.float    "hourly_rate",                 default: 0.0,   null: false
+    t.float    "total_hours",                 default: 0.0,   null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.float    "dollar_amount",               default: 0.0, null: false
+    t.float    "dollar_amount",               default: 0.0,   null: false
     t.integer  "user_id"
     t.string   "available_date"
     t.text     "time_cells"
@@ -100,6 +100,7 @@ ActiveRecord::Schema.define(version: 20160610210614) do
     t.text     "disclaimer"
     t.text     "internalNotes"
     t.text     "status"
+    t.boolean  "zoho_exported",               default: false
   end
 
   create_table "offers_programmers", id: false, force: :cascade do |t|

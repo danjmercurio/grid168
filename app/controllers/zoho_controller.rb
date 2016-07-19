@@ -43,6 +43,8 @@ class ZohoController < ApplicationController
       respond_to do |format|
         format.html {
           if RubyZoho::Crm::Potential.find_by_id(saved.id).length > 0
+            @offer.zoho_exported = true
+            @offer.save
             redirect_to :back, :notice => 'Potential successfully exported to Zoho'
           else
             redirect_to :back, :error => 'Error!'
