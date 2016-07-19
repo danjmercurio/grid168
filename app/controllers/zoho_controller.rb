@@ -36,10 +36,8 @@ class ZohoController < ApplicationController
         :closing_date => @offer.created_at.strftime('%F'),
         :total_subs => @offer.outlet.total_homes
             })
-    pp @potential
     begin
       saved = @potential.save
-      pp saved
       respond_to do |format|
         format.html {
           if RubyZoho::Crm::Potential.find_by_id(saved.id).length > 0
