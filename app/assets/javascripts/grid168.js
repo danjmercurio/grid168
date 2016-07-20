@@ -921,6 +921,7 @@ grid168 = (function () {
                                 if (element.website) $(fillButton).attr('data-website', element.website);
                                 if (element.mvpd_subs) $(fillButton).attr('data-mvpd-subs', element.mvpd_subs);
                                 if (element.media_type) $(fillButton).attr('data-media-type', element.media_type);
+                                if (element.ota_homes) $(fillButton).attr('data-ota-homes', element.ota_homes);
 
                                 if (element.market) $(fillButton).attr('data-market', element.market.split(',')[0]);
 
@@ -930,6 +931,8 @@ grid168 = (function () {
 
                                 $(fillButton).click(function () {
 
+
+
                                     // Insert values
                                     $('#' + currentController + '_name').val($(this).attr('data-name'));
                                     $('#' + currentController + '_email').val($(this).attr('data-email'));
@@ -937,9 +940,28 @@ grid168 = (function () {
                                     $('#' + currentController + '_first_name').val($(this).attr('data-first-name'));
                                     $('#' + currentController + '_last_name').val($(this).attr('data-last-name'));
                                     $('#' + currentController + '_website').val($(this).attr('data-website'));
+
+                                    var totalHomes = 0;
                                     if ($(this).attr('data-mvpd-subs')) {
                                         $('#' + currentController + '_subs').val($(this).attr('data-mvpd-subs').addCommas());
+                                        totalHomes += parseInt($(this).attr('data-mvpd-subs'));
+                                    } else {
+                                        $('#' + currentController + '_subs').val('');
                                     }
+                                    if ($(this).attr('data-ota-homes')) {
+                                        $('#' + currentController + '_over_air').val($(this).attr('data-ota-homes').addCommas());
+                                        totalHomes += parseInt($(this).attr('data-ota-homes'));
+
+                                    } else {
+                                        $('#' + currentController + '_over_air').val('');
+                                    }
+
+                                    if (totalHomes > 0) {
+                                        $('#' + currentController + '_total_homes').val(totalHomes.addCommas());
+                                    } else {
+                                        $('#' + currentController + '_total_homes').val('');
+                                    }
+
 
                                     var type = $(this).attr('data-media-type');
                                     var typeOption = $("option:contains(" + type + ")").val();
