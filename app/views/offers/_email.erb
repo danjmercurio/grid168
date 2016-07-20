@@ -97,14 +97,14 @@
       </tr>
     </table>
     <table width="100%">
-      <tr><td style="padding: 15px;color: #009a9b;font-weight:bold;">MEDIA OUTLET INFORMATION</td><td style="color: #009a9b;font-weight:bold;">PROGRAMMER INFORMATION</td></tr>
+      <tr><td style="width:50%;padding: 15px;color: #009a9b;font-weight:bold;">MEDIA OUTLET INFORMATION</td><td style="color: #009a9b;font-weight:bold;">PROGRAMMER INFORMATION</td></tr>
     </table>
   <table width="100%">
     <tr>
-      <td style="padding: 15px;">
+      <td style="vertical-align:super;padding: 15px;width:50%;">
 
 
-            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">NAME:</strong> <%= @offer.outlet.name %>
+            <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Name:</strong> <%= @offer.outlet.name %>
             <br />
             <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Market:</strong>
             <%= @offer.outlet.dma.name %>
@@ -136,7 +136,7 @@
 
 
       </td>
-      <td>
+      <td style="width:50%;vertical-align:super;">
         <strong>Name:</strong> <%= @offer.programmers.first.name %>
         <br />
         <strong style="-webkit-box-sizing: border-box;-moz-box-sizing: border-box;box-sizing: border-box;font-weight: bold;">Available

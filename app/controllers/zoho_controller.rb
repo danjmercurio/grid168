@@ -94,7 +94,5 @@ class ZohoController < ApplicationController
     #      :lead_conversion_time,
     #      :sales_cycle_duration,
     #      :overall_sales_duration],
-
-
   end
 end
