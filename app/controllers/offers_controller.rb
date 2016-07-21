@@ -7,8 +7,8 @@ class OffersController < ApplicationController
     @outlet = Outlet.find(params[:outlet_id])
     @offer = Offer.new
     @offer.outlet = @outlet
-    @programmers = current_user.admin? ? @programmers = Programmer.all : Programmer.where(:user_id => current_user.id)
-
+    # @programmers = current_user.admin? ? @programmers = Programmer.all : Programmer.where(:user_id => current_user.id)
+    @programmers = Programmer.all
 	end
 
 	def index
@@ -28,7 +28,10 @@ class OffersController < ApplicationController
 	def edit
 		@offer = Offer.find(params[:id])
 		@outlet = Outlet.find(@offer.outlet.id)
-    @programmers = current_user.admin? ? @programmers = Programmer.all : Programmer.where(:user_id => current_user.id)
+    # @programmers = current_user.admin? ? @programmers = Programmer.all : Programmer.where(:user_id => current_user.id)
+
+		@programmers = Programmer.all
+
 		@url = params[:url]
     @notes = @offer.notes
 	end #end edit action
