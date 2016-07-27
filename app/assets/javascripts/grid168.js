@@ -902,6 +902,8 @@ grid168 = (function () {
                                 if (element.company) $(leftDiv).append('<span>Company: ' + element.company + '</span>');
                                 if (element.media_type) $(leftDiv).append('<span>Media Type: ' + element.media_type + '</span>');
                                 if (element.market) $(leftDiv).append('<span>Market: ' + element.market + '</span>');
+                                if (element.affiliate_time_zone) $(leftDiv).append('<span>Time Zone: ' + element.affiliate_time_zone + '</span>');
+
                                 contactBlock.appendChild(leftDiv);
 
                                 var rightDiv = document.createElement('div');
@@ -922,7 +924,7 @@ grid168 = (function () {
                                 if (element.mvpd_subs) $(fillButton).attr('data-mvpd-subs', element.mvpd_subs);
                                 if (element.media_type) $(fillButton).attr('data-media-type', element.media_type);
                                 if (element.ota_homes) $(fillButton).attr('data-ota-homes', element.ota_homes);
-
+                                if (element.affiliate_time_zone) $(fillButton).attr('data-time-zone', element.affiliate_time_zone);
                                 if (element.market) $(fillButton).attr('data-market', element.market.split(',')[0]);
 
 
@@ -930,7 +932,7 @@ grid168 = (function () {
                                 var currentController = app.controller.substr(0, app.controller.length - 1);
 
                                 $(fillButton).click(function () {
-
+                                    console.log(element);
 
 
                                     // Insert values
@@ -940,6 +942,13 @@ grid168 = (function () {
                                     $('#' + currentController + '_first_name').val($(this).attr('data-first-name'));
                                     $('#' + currentController + '_last_name').val($(this).attr('data-last-name'));
                                     $('#' + currentController + '_website').val($(this).attr('data-website'));
+
+                                    if ($(this).attr('data-time-zone')) {
+                                        var timeZone = $(this).attr('data-time-zone');
+                                        timeZone = timeZone.substring(0, timeZone.indexOf(' '));
+                                        var timeZoneOption = $("option:contains(" + timeZone + ")").val();
+                                        $('#' + currentController + '_time_zone').val(timeZoneOption).trigger('change');
+                                    }
 
                                     var totalHomes = 0;
                                     if ($(this).attr('data-mvpd-subs')) {
