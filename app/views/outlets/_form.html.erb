@@ -21,6 +21,12 @@
       <%= f.label :last_name, 'Last Name', :class => 'col-lg-2 control-label' %>
       <div class="col-lg-10"><%= f.text_field :last_name, :class => 'form-control' %></div>
     </div>
+
+    <div class="form-group">
+      <%= f.label :title, 'Title', :class => 'col-lg-2 control-label' %>
+      <div class="col-lg-10"><%= f.text_field :title, :class => 'form-control' %></div>
+    </div>
+
     <div class="form-group">
       <%= f.label :phone_number, 'Phone', :class => 'col-lg-2 control-label' %>
       <div class="col-lg-10"><%= f.text_field :phone_number, :class => 'form-control', :id => 'outlet_phone' %></div>
@@ -73,8 +79,8 @@
       <%= f.label :time_zone, :class => 'col-lg-2 col-md-3 control-label' %>
       <div class="col-lg-10 col-md-9">
         <%= f.select(:time_zone, options_for_select(['Atlantic (GMT-04:00)', 'Eastern (GMT-05:00)', 'Central (GMT-06:00)',
-                                                     'Mountain (GMT-07:00)', 'Pacific (GMT-08:00)', 'Alaska (GMT-09:00)', 'Hawaii-Aleutian Islands (GMT-10:00)',
-                                                     'America Samoa (GMT -11:00)', 'Marshalls Islands (GMT+12:00)', 'Guam (GMT+10:00)', 'Palau (GMT+9:00)', 'Samoa Standard Time'])) %>
+              'Mountain (GMT-07:00)', 'Pacific (GMT-08:00)', 'Alaska (GMT-09:00)', 'Hawaii-Aleutian Islands (GMT-10:00)',
+              'America Samoa (GMT -11:00)', 'Marshalls Islands (GMT+12:00)', 'Guam (GMT+10:00)', 'Palau (GMT+9:00)', 'Samoa Standard Time'])) %>
       </div>
     </div>
 
