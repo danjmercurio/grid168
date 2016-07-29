@@ -986,8 +986,8 @@ grid168 = (function () {
                                     var market = $(this).attr('data-market');
                                     var dmaOption = $("option:contains(" + market  + ")").val();
                                     $("#outlet_dma_id").val(dmaOption).trigger('change');
-                                    $('#' + currentController + '_dma_id').val(market);
 
+                                    // Scroll to top of page
                                     $("html, body").animate({ scrollTop: 0 }, "slow");
                                     return false;
                                 });
