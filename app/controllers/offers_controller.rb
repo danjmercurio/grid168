@@ -12,11 +12,7 @@ class OffersController < ApplicationController
 	end
 
 	def index
-		if current_user.admin?
-			@offers = Offer.all
-		else
-			@offers = current_user.offers
-		end
+    @offers = Offer.all
 	end
 
 	def show

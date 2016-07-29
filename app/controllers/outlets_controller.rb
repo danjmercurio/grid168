@@ -3,7 +3,7 @@ class OutletsController < ApplicationController
 
 
 	def index
-		current_user.admin? ? @outlets = Outlet.all : @outlets = current_user.outlets
+		@outlets = Outlet.all
 	end #end index action
 
 	def show
