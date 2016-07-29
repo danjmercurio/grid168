@@ -43,6 +43,11 @@
     </div>
 
     <div class="form-group">
+      <%= f.label :contour_map, 'Contour Map URL', :class => 'col-lg-2 control-label' %>
+      <div class="col-lg-10"><%= f.text_field :contour_map, :class => 'form-control', :id => 'contour_map' %></div>
+    </div>
+
+    <div class="form-group">
       <%= f.label :programming, :class => 'col-lg-2 control-label' %>
       <div class="col-lg-10"><%= f.text_field :programming, :class => 'form-control' %></div>
     </div>
@@ -82,11 +87,6 @@
               'Mountain (GMT-07:00)', 'Pacific (GMT-08:00)', 'Alaska (GMT-09:00)', 'Hawaii-Aleutian Islands (GMT-10:00)',
               'America Samoa (GMT -11:00)', 'Marshalls Islands (GMT+12:00)', 'Guam (GMT+10:00)', 'Palau (GMT+9:00)', 'Samoa Standard Time'])) %>
       </div>
-    </div>
-
-    <div class="form-group">
-      <%= f.label :contour_map, 'Contour Map URL', :class => 'col-lg-2 control-label' %>
-      <div class="col-lg-10"><%= f.text_field :contour_map, :class => 'form-control', :id => 'contour_map' %></div>
     </div>
 
     <div class="form-group">
