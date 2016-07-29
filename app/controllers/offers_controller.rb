@@ -109,7 +109,11 @@ class OffersController < ApplicationController
     elsif subject == ''
       @error = 'Email subject line was blank.'
     else
-      @email = WorksheetMailer.sendWorksheet(@offer, toEmail, carbonCopy, subject, emailMessage).deliver
+      if params[:offer] && params[:offer][:attachment]
+        @email = WorksheetMailer.sendWorksheet(@offer, toEmail, carbonCopy, subject, emailMessage, params[:offer][:attachment]).deliver
+      else
+        @email = WorksheetMailer.sendWorksheet(@offer, toEmail, carbonCopy, subject, emailMessage, nil).deliver
+      end
     end
   end
 
