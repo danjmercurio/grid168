@@ -16,6 +16,9 @@
   <div class="col-sm-6">
     <p><strong>Media Type: </strong><%= @outlet.outlet_type.name %></p>
     <% if @outlet.website %><p><strong>Website:</strong> <a href="<%= @outlet.website.start_with?('http://') ? @outlet.website : 'http://' + @outlet.website %>" target="_new"><%= @outlet.website %></a></p><% end %>
+    <% if @outlet.contour_map %><p><strong>Contour Map:</strong>
+    <a target="_new" href="<%= @outlet.contour_map %>"><%= @outlet.contour_map %></a></p>
+    <% end %>
     <p><strong>Time Zone:</strong> <%= @outlet.time_zone %></p>
   </div>
   <div class="col-sm-6">

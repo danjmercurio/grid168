@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160719033747) do
+ActiveRecord::Schema.define(version: 20160729061042) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email"
@@ -134,6 +134,7 @@ ActiveRecord::Schema.define(version: 20160719033747) do
     t.integer  "total_homes"
     t.string   "email"
     t.string   "website"
+    t.string "contour_map"
   end
 
   add_index "outlets", ["name"], name: "index_outlets_on_name", unique: true

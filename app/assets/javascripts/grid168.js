@@ -926,6 +926,7 @@ grid168 = (function () {
                                 if (element.ota_homes) $(fillButton).attr('data-ota-homes', element.ota_homes);
                                 if (element.affiliate_time_zone) $(fillButton).attr('data-time-zone', element.affiliate_time_zone);
                                 if (element.market) $(fillButton).attr('data-market', element.market.split(',')[0]);
+                                if (element.contour_map) $(fillButton).attr('data-contour-map', element.contour_map);
 
 
                                 // depluralize the current controller (outlets -> outlet)
@@ -969,6 +970,10 @@ grid168 = (function () {
                                         $('#' + currentController + '_total_homes').val(totalHomes.addCommas());
                                     } else {
                                         $('#' + currentController + '_total_homes').val('');
+                                    }
+
+                                    if ($(this).attr('data-contour-map')) {
+                                        $('#contour_map').val($(this).attr('data-contour-map'));
                                     }
 
 
