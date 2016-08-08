@@ -22,7 +22,7 @@ class ZohoController < ApplicationController
     @offer = Offer.find(params[:id])
     @potential = RubyZoho::Crm::Potential.new({
                                                   :create_date => @offer.created_at.strftime('%F'),
-                                                  :comments => "Offer Amount: $#{@offer.dollar_amount.to_s}, Total Hours: #{@offer.total_hours.to_s}",
+                                                  :comments => "Offer Amount: $#{@offer.dollar_amount.round(2).to_s}, Total Hours: #{@offer.total_hours.to_s}",
                                                   :customer_name => @offer.programmers.first.name,
                                                   :amount => @offer.yearly_offer,
                                                   :affiliate_name => @offer.outlet.name,
@@ -35,7 +35,7 @@ class ZohoController < ApplicationController
                                                   :customer_type => @offer.programmers.first.programmerType,
                                                   :closing_date => @offer.created_at.strftime('%F'),
                                                   :total_subs => @offer.outlet.total_homes
-            })
+                                              })
     begin
       saved = @potential.save
       respond_to do |format|
