@@ -153,6 +153,9 @@
                                     <li><a href="<%= url_for offer_path(offer.id) %>">Display</a></li>
                                     <li><a href="<%= url_for edit_offer_path(offer.id) %>">Edit</a></li>
                                     <li><a href="<%= url_for offer_path(offer.id) %>/preview">Preview Email</a></li>
+                                    <% unless offer.zoho_exported %>
+                                        <li><%= link_to 'Export to Zoho', zoho_export_potential_path + '?id=' + offer.id.to_s, :data => {:confirm => 'Are you sure you want to export this offer to Zoho?'} %></li>
+                                    <% end %>
                                     <li><%= link_to 'Closed Won', offer_path(offer.id) + '/setClosedWon', :method => :post, :data => {:confirm => 'Are you sure?'} %></li>
                                     <li><%= link_to 'Closed Lost', offer_path(offer.id) + '/setClosedLost', :method => :post, :data => {:confirm => 'Are you sure?'} %></li>
                                     <li><%= link_to 'Delete', offer_path(offer.id), :method => :delete, :data => {:confirm => 'Are you sure?'} %></li>
