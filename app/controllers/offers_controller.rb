@@ -52,21 +52,6 @@ class OffersController < ApplicationController
 		@offer.user = current_user
 		respond_to do |format|
 			if @offer.save
-				# begin
-				# 	# The offer was saved in our database. Create a Zoho potential with the offer details, and save it to Zoho via an API call
-				# 	@potential = RubyZoho::Crm::Potential.new({
-				# 			:mvpd_subs => @offer.outlet.subs,
-				# 			:created_by => @offer.user.first_name,
-				# 			:market => @offer.outlet.dma.name,
-				# 			:comments => @offer.comments,
-				# 			:media_type => @offer.outlet.outlet_type.name,
-				# 			:contact_name => @offer.outlet.fullname,
-				# 			:total_subs => @offer.outlet.total_homes,
-				#
-				# 																						})
-				# rescue Exception => e
-        #
-				# end
 				format.html { redirect_to edit_offer_path(@offer.id), notice: 'Offer was created successfully' }
 			else
 				format.html { redirect_to :back, flash[:alert] = @offer.errors }
