@@ -33,7 +33,6 @@ class ZohoController < ApplicationController
                                                   :stage => @offer.status ||= 'Open', # If status is nil, just use Open
                                                   :potential_owner => @offer.user.name,
                                                   :customer_type => @offer.programmers.first.programmerType,
-                                                  :closing_date => @offer.created_at.strftime('%F'),
                                                   :total_subs => @offer.outlet.total_homes
                                               })
     begin
