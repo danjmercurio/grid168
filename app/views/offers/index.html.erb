@@ -75,7 +75,7 @@
                   <td><%= offer.outlet.dma.name %></td>
                   <td><%= offer.outlet.outlet_type.name %></td>
                   <td><%= offer.total_hours %></td>
-                  <td><%= offer.status.blank? ? 'Open' : offer.status %></td>
+                  <td><%= offer.status %></td>
                   <td><%= offer.user.first_name rescue '' %></td>
                   <td>
                     <div class="btn-group">

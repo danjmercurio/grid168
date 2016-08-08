@@ -21,20 +21,20 @@ class ZohoController < ApplicationController
   def export_potential
     @offer = Offer.find(params[:id])
     @potential = RubyZoho::Crm::Potential.new({
-        :create_date => @offer.created_at.strftime('%F'),
-        :comments => "Offer Amount: $#{@offer.dollar_amount.to_s}, Total Hours: #{@offer.total_hours.to_s}",
-        :customer_name => @offer.programmers.first.name,
-        :amount => @offer.yearly_offer,
-        :affiliate_name => @offer.outlet.name,
-        :potential_name => "#{@offer.programmers.first.name} - #{@offer.outlet.name} - #{@offer.outlet.dma.name}",
-        :mvpd_subs => @offer.outlet.subs.to_s,
-        :market => @offer.outlet.dma.name,
-        :media_type => @offer.outlet.outlet_type.name,
-        :stage => @offer.status,
-        :potential_owner => @offer.user.name,
-        :customer_type => @offer.programmers.first.programmerType,
-        :closing_date => @offer.created_at.strftime('%F'),
-        :total_subs => @offer.outlet.total_homes
+                                                  :create_date => @offer.created_at.strftime('%F'),
+                                                  :comments => "Offer Amount: $#{@offer.dollar_amount.to_s}, Total Hours: #{@offer.total_hours.to_s}",
+                                                  :customer_name => @offer.programmers.first.name,
+                                                  :amount => @offer.yearly_offer,
+                                                  :affiliate_name => @offer.outlet.name,
+                                                  :potential_name => "#{@offer.programmers.first.name} - #{@offer.outlet.name} - #{@offer.outlet.dma.name}",
+                                                  :mvpd_subs => @offer.outlet.subs.to_s,
+                                                  :market => @offer.outlet.dma.name,
+                                                  :media_type => @offer.outlet.outlet_type.name,
+                                                  :stage => @offer.status ||= 'Open', # If status is nil, just use Open
+                                                  :potential_owner => @offer.user.name,
+                                                  :customer_type => @offer.programmers.first.programmerType,
+                                                  :closing_date => @offer.created_at.strftime('%F'),
+                                                  :total_subs => @offer.outlet.total_homes
             })
     begin
       saved = @potential.save
