@@ -34,7 +34,8 @@ class ZohoController < ApplicationController
                                                   :potential_owner => @offer.user.name,
                                                   :customer_type => @offer.programmers.first.programmerType,
                                                   :total_subs => @offer.outlet.total_homes,
-                                                  :category => @offer.programmers.first.programmerType
+                                                  :category => @offer.programmers.first.programmerType,
+                                                  :contact_name => @offer.outlet.fullname
                                               })
     begin
       saved = @potential.save
