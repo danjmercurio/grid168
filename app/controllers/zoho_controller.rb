@@ -30,10 +30,11 @@ class ZohoController < ApplicationController
                                                   :mvpd_subs => @offer.outlet.subs.to_s,
                                                   :market => @offer.outlet.dma.name,
                                                   :media_type => @offer.outlet.outlet_type.name,
-                                                  :stage => @offer.status ||= 'Open', # If status is nil, just use Open
+                                                  :stage => @offer.status ||= 'Current', # If status is nil, just use Current
                                                   :potential_owner => @offer.user.name,
                                                   :customer_type => @offer.programmers.first.programmerType,
-                                                  :total_subs => @offer.outlet.total_homes
+                                                  :total_subs => @offer.outlet.total_homes,
+                                                  :category => @offer.programmers.first.programmerType
                                               })
     begin
       saved = @potential.save
