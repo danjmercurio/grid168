@@ -928,6 +928,8 @@ grid168 = (function () {
                                 if (element.market) $(fillButton).attr('data-market', element.market.split(',')[0]);
                                 if (element.contour_map) $(fillButton).attr('data-contour-map', element.contour_map);
                                 if (element.title) $(fillButton).attr('data-title', element.title);
+                                if (element.contactid) $(fillButton).attr('data-contact-id', element.contactid);
+
 
 
                                 // depluralize the current controller (outlets -> outlet)
@@ -945,6 +947,7 @@ grid168 = (function () {
                                     $('#' + currentController + '_last_name').val($(this).attr('data-last-name'));
                                     $('#' + currentController + '_website').val($(this).attr('data-website'));
                                     $('#' + currentController + '_title').val($(this).attr('data-title'));
+                                    $('#zoho_contact_id').val($(this).attr('data-contact-id'));
 
                                     if ($(this).attr('data-time-zone')) {
                                         var timeZone = $(this).attr('data-time-zone');
