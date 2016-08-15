@@ -6,7 +6,7 @@ class WorksheetMailer < ApplicationMailer
     if attachment_file
       attachments[attachment_file.original_filename] = File.read(attachment_file.tempfile)
     end
-    mail(to: toEmail, cc: carbonCopy, subject: subject, reply_to: 'grid168reply@acrossplatforms.com', template_path: 'offers',
+    mail(to: toEmail, cc: carbonCopy, subject: subject, reply_to: @offer.user.email, template_path: 'offers',
          :template_name => '_email')
   end
 end
