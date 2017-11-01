@@ -51,6 +51,7 @@
                 <th>Gross Yearly Rate</th>
                 <th>Outlet</th>
                 <th>Subscribers</th>
+                <th>OTA Homes</th>
                 <th>Market</th>
                 <th>Type</th>
                 <th>Hours</th>
@@ -72,6 +73,7 @@
                   <td><%= number_to_currency offer.yearly_offer %></td>
                   <td><%= offer.outlet.name %></td>
                   <td><%= number_with_delimiter offer.outlet.subs %></td>
+                  <td><%= number_with_delimiter offer.outlet.over_air %></td>
                   <td><%= offer.outlet.dma.name %></td>
                   <td><%= offer.outlet.outlet_type.name %></td>
                   <td><%= offer.total_hours %></td>
