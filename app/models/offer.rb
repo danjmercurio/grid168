@@ -24,7 +24,7 @@ class Offer < ActiveRecord::Base
 	belongs_to :user
 	has_many :notes, :dependent => :destroy
 
-  attr_accessible :programmer_ids, :yearly_offer, :monthly_offer, :outlet_id, :weekly_hours,
+  	attr_accessible :programmer_ids, :yearly_offer, :monthly_offer, :outlet_id, :weekly_hours,
 									:monthly_hours, :yearly_hours, :weekly_offer, :hourly_rate, :total_hours,
 									:dollar_amount, :user_id, :time_cells, :available_date, :grNotes, :dpNotes,
 									:mvpdSubscriberRate, :mvpdOtaSubRate, :halfHourRate, :morningAudience,
@@ -35,9 +35,13 @@ class Offer < ActiveRecord::Base
 									:nationalPrimeTimeRate, :nationalPrimeTimeHours, :nationalPrimeTimeWeeklyRate,
 									:lateNewsAudience, :lateNewsRate, :lateNewsHours, :lateNewsWeeklyRate, :lateNightAudience,
 									:lateNightRate, :lateNightHours, :lateNightWeeklyRate, :overnightsAudience, :overnightsRate,
-									:overnightsHours, :overnightsWeeklyRate, :runningAudienceTotal, :runningHoursTotal, :runningWeeklyRateTotal, :disclaimer, :internalNotes, :status
+									:overnightsHours, :overnightsWeeklyRate, :runningAudienceTotal, :runningHoursTotal, :runningWeeklyRateTotal,
+									:disclaimer,
+									:internalNotes,
+									:status,
+									:programming
 
-  validates :dollar_amount, :presence => true,
+  	validates :dollar_amount, :presence => true,
 								numericality: { greater_than: 0 }
 
 	validates :total_hours, numericality: {

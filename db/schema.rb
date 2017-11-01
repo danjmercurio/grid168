@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160809022217) do
+ActiveRecord::Schema.define(version: 20171101035638) do
 
   create_table "admins", force: :cascade do |t|
     t.string   "email"
@@ -101,6 +101,7 @@ ActiveRecord::Schema.define(version: 20160809022217) do
     t.text     "internalNotes"
     t.string   "status",                      default: "Current"
     t.boolean  "zoho_exported",               default: false
+    t.string   "programming"
   end
 
   create_table "offers_programmers", id: false, force: :cascade do |t|
@@ -117,11 +118,11 @@ ActiveRecord::Schema.define(version: 20160809022217) do
   end
 
   create_table "outlets", force: :cascade do |t|
-    t.string "name", null: false
+    t.string   "name",            null: false
     t.string   "description"
-    t.integer "subs", null: false
-    t.integer "dma_id", null: false
-    t.integer "user_id", null: false
+    t.integer  "subs",            null: false
+    t.integer  "dma_id",          null: false
+    t.integer  "user_id",         null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "first_name"
@@ -136,7 +137,7 @@ ActiveRecord::Schema.define(version: 20160809022217) do
     t.string   "website"
     t.string   "contour_map"
     t.string   "title"
-    t.string "zoho_contact_id"
+    t.string   "zoho_contact_id"
   end
 
   add_index "outlets", ["name"], name: "index_outlets_on_name", unique: true

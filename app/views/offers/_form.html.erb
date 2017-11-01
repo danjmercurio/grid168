@@ -145,14 +145,14 @@
         </div>
         <br/>
         <div>
-          <h1>Programmers</h1>
+          <h2>Potential Block Programmer</h2>
           <% if @programmers.nil? || @programmers.empty? %>
               You must create a programmer record to associate with this offer before you can save it.
           <% else %>
               <%= select('offer', 'programmer_ids', @programmers.order(:name).collect { |p| [p.name, p.id] }, {include_blank: true}) %>
           <% end %>
           <p>&nbsp;</p>
-          <p><%= link_to 'Add a programmer', new_programmer_url, :class => 'btn btn-default' %></p>
+          <p><%= link_to 'Add a Block Programmer', new_programmer_url, :class => 'btn btn-default' %></p>
         </div>
         <div>
           <p>Available Date</p>

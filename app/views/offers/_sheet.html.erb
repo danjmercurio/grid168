@@ -39,10 +39,12 @@
   </div>
   <hr />
   <div class="col-md-6">
-    <h3><strong>Programmer Name:</strong> <%= @offer.programmers.first.name %></h3>
-    <h3><strong>Programmer Type:</strong> <%= @offer.programmers.first.programmerType %></h3>
-    <h3><strong>Programmer Website:</strong> <a href="<%= @offer.programmers.first.website.start_with?('http://') ? @offer.programmers.first.website : 'http://' + @offer.programmers.first.website %>" target="_new"><%= @offer.programmers.first.website %></a></h3>
-    <h3><strong>Programmer Description:</strong></h3>
+        <h3><strong>Programming:</strong> <%= @offer.programming %> </h3>
+
+    <h3><strong>Potential Block Programmer:</strong> <%= @offer.programmers.first.name %></h3>
+    <h3><strong>Potential Block Programmer Type:</strong> <%= @offer.programmers.first.programmerType %></h3>
+    <h3><strong>Potential Block Programmer Website:</strong> <a href="<%= @offer.programmers.first.website.start_with?('http://') ? @offer.programmers.first.website : 'http://' + @offer.programmers.first.website %>" target="_new"><%= @offer.programmers.first.website %></a></h3>
+    <h3><strong>Potential Block Programmer Description:</strong></h3>
     <p><%= @offer.programmers.first.description %></p>
   </div>
 </div>
