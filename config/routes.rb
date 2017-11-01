@@ -28,6 +28,9 @@ Grid168::Application.routes.draw do
 
   get 'zoho/export_potential' => 'zoho#export_potential'
 
+  get '/offers/:id/reassign' => 'offers#reassign'
+  post '/offers/:id/reassign' => 'offers#reassign'
+
   # The priority is based upon order of creation:
 	# first created -> highest priority.
 

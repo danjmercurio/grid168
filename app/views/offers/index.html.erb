@@ -90,6 +90,7 @@
                         <% end %>
                         <li><%= link_to 'Closed Won', offer_path(offer.id) + '/setClosedWon', :method => :post, :data => {:confirm => 'Are you sure?'} %></li>
                         <li><%= link_to 'Closed Lost', offer_path(offer.id) + '/setClosedLost', :method => :post, :data => {:confirm => 'Are you sure?'} %></li>
+                        <li><%= link_to 'Reassign', offer_path(offer.id) + '/reassign' %></li>
                         <li><%= link_to 'Delete', offer_path(offer.id), :method => :delete, :data => {:confirm => 'Are you sure?'} %></li>
                       </ul>
                     </div>

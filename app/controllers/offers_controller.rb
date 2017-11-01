@@ -29,8 +29,28 @@ class OffersController < ApplicationController
 		@programmers = Programmer.all
 
 		@url = params[:url]
-    @notes = @offer.notes
+    	@notes = @offer.notes
 	end #end edit action
+
+	def reassign
+		@offer = Offer.find(params[:id])
+		respond_to do |format|
+			format.html {
+				if request.post?
+					if not User.find(params[:user][:id]).nil?
+						@offer.user_id = params[:user][:id]
+						if @offer.save
+							redirect_to '/offers', :notice => 'Offer reassigned to ' + @offer.user.name
+						else
+							redirect_to '/offers/' + @offer.id.to_s + '/reassign', :error => 'Could not save offer'
+						end
+					else 
+						redirect_to '/offers/' + @offer.id.to_s + '/reassign', :error => 'No such user exists'
+					end
+				end
+			}
+		end
+	end
 
 	def update
 		@offer = Offer.find(params[:id])

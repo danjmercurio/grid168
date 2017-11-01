@@ -318,6 +318,12 @@ grid168 = (function () {
                             window.prompt('Copy to clipboard: Ctrl-C, Enter', url);
                         });
                     }
+                    if (app.action === 'reassign') {
+                            var reassignSelect = $("select#user_id");
+                            reassignSelect.select2({width:"50%"});
+                            reassignSelect.val(reassignSelectDefaultId); // reassignSelectDefaultId is filled in by rails in offers#reassign view
+                            reassignSelect.trigger('change');
+                    }
                     break;
                 case 'outlets':
                     if (app.action === 'new' || app.action === 'edit') {
