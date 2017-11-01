@@ -347,6 +347,12 @@ grid168 = (function () {
                         mvpdSubs.blur(autoFillTotalHomes);
                         otaSubs.blur(autoFillTotalHomes);
                     }
+                    if (app.action === 'edit') {
+                        var timeZone = $('input#timeZoneHidden').val(); // Get the current time zone from a hidden value in the form
+                        var tzSelect = $('select#outlet_time_zone');
+                        tzSelect.val(timeZone);
+                        tzSelect.trigger('change'); // Force the select element to change to the correct time zone
+                    }
                     break;
                 case 'programmers':
                     break;
