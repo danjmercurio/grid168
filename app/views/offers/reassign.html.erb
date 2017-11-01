@@ -1,0 +1,22 @@
+<script type="text/javascript">
+var reassignSelectDefaultId = "<%= @offer.user.id %>";
+var reassignSelectDefaultName = "<%= @offer.user.name %>";
+</script>
+<div class="row">
+  <div class="col-md-12">
+    <h1>Reassign Potential</h1>
+    <hr/>
+    <div class="panel panel-default margin-b-30 ">
+      <!-- Start .panel -->
+      <div class="panel-heading">
+        <h4 class="panel-title">&nbsp;</h4>
+      </div>
+      <div class="panel-body">
+        <h3>Select a user to reassign potential to:</h3>
+        <%= form_tag('/offers/' + @offer.id.to_s + '/reassign') do -%>
+          <%= select 'user', 'id', User.all.collect {|u| [u.name, u.id]}, {include_blank: false} %>
+          <%= submit_tag 'Reassign', {data:{confirm:"Are you sure?"},style: "float:right;"} %>
+        <% end %>
+      </div>
+    </div>
+  </div>
