@@ -155,7 +155,11 @@
           <p><%= link_to 'Add a Block Programmer', new_programmer_url, :class => 'btn btn-default' %></p>
         </div>
         <div>
-          <p>Available Date</p>
+          <p><strong>Programming</strong></p>
+          <%= f.text_field :programming, :class => 'form-control' %>
+        </div><br />
+        <div>
+          <p><strong>Available Date</strong></p>
           <%= f.text_field :available_date, :class => 'form-control dp' %>
         </div>
         <br/>
