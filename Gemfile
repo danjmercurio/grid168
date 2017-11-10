@@ -6,6 +6,9 @@ gem 'protected_attributes' # adds attr_accessible and attr_protected methods
 gem 'devise', :git => 'https://github.com/plataformatec/devise.git'
 gem 'devise-encryptable', :git => 'https://github.com/plataformatec/devise-encryptable.git'
 
+# avatar image uploading
+gem 'paperclip'
+
 # CSS et al.
 gem 'bootstrap-sass', '~> 3.3.6'
 gem 'font-awesome-sass'
