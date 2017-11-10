@@ -37,7 +37,7 @@ class User < ActiveRecord::Base
 
 	# Setup accessible (or protected) attributes for your model
 	attr_accessible :email, :password, :password_confirmation, :remember_me, :phone, :title,
-                  :first_name, :last_name, :admin
+                  :first_name, :last_name, :admin, :address, :description
 
 	validates :first_name, :last_name, presence: true
 	
