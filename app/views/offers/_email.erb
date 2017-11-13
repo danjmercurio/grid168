@@ -89,9 +89,15 @@
     <table width="100%">
       <tr>
         <td style="padding: 15px;"><strong>PREPARED BY:<br />
-        <%= @offer.user.name %><br />
-        <%= @offer.user.phone %><br />
-        </strong></td>
+          <%= @offer.user.name %><br />
+          <%= @offer.user.title %><br />
+          <%= @offer.user.email %><br />
+          <%= @offer.user.phone %><br />
+          <%= @offer.user.description %>
+          </strong>
+        </td>
+        <td>        <li class="avatar"><img class="avatar" src="<%= User.find(params[:id]).avatar.url %>"></li>
+</td>
         <td style="text-align:right;padding:50px;"><%= image_tag('http://grid168.acrossplatforms.com/launchpad-banner.png') %></td>
       </tr>
     </table>
