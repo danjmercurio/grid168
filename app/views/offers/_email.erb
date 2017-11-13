@@ -96,7 +96,7 @@
           <%= @offer.user.description %>
           </strong>
         </td>
-        <td>        <li class="avatar"><img class="avatar" src="<%= User.find(params[:id]).avatar.url %>"></li>
+        <td>        <li class="avatar"><img class="avatar" src="<%= @offer.user.avatar.url %>"></li>
 </td>
         <td style="text-align:right;padding:50px;"><%= image_tag('http://grid168.acrossplatforms.com/launchpad-banner.png') %></td>
       </tr>
