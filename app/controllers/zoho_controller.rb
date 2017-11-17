@@ -38,14 +38,15 @@ class ZohoController < ApplicationController
                                                   :contactid => @offer.outlet.zoho_contact_id,
                                                   :over_air => @offer.outlet.over_air,
                                                   :comments => @offer.internalNotes,
-                                                  :closing_date => @offer.available_date
+                                                  :closing_date => @offer.available_date,
+                                                  :potential_number => @offer.id.to_s
                                               })
     begin
       saved = @potential.save
       respond_to do |format|
         format.html {
           if RubyZoho::Crm::Potential.find_by_id(saved.id).length > 0
-            @offer.zoho_exported = true
+            @offer.zoho_exported = true unless Rails.env.development? # Only mark exported in production
             @offer.save
             redirect_to :back, :notice => 'Potential successfully exported to Zoho'
           else
