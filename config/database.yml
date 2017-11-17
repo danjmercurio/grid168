@@ -31,5 +31,5 @@ production:
   reconnect: true
   database: grid168
   pool: 5
-  user: <%= ENV['GRID168_DB_USER'] %>
-  password: <%= ENV['GRID168_DB_PASSWORD'] %>
+  user: <%= ENV['DB_USER'] %>
+  password: <%= ENV['DB_PASSWORD'] %>
