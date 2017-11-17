@@ -39,13 +39,13 @@
   </div>
   <hr />
   <div class="col-md-6">
-        <h3><strong>Programming:</strong> <%= @offer.programming %> </h3>
+        <h3><strong>Programming:</strong> <%= @offer.programming rescue 'None' %> </h3>
 
-    <h3><strong>Potential Block Programmer:</strong> <%= @offer.programmers.first.name %></h3>
-    <h3><strong>Potential Block Programmer Type:</strong> <%= @offer.programmers.first.programmerType %></h3>
-    <h3><strong>Potential Block Programmer Website:</strong> <a href="<%= @offer.programmers.first.website.start_with?('http://') ? @offer.programmers.first.website : 'http://' + @offer.programmers.first.website %>" target="_new"><%= @offer.programmers.first.website %></a></h3>
+    <h3><strong>Potential Block Programmer:</strong> <%= @offer.programmers.first.name rescue 'None' %></h3>
+    <h3><strong>Potential Block Programmer Type:</strong> <%= @offer.programmers.first.programmerType rescue 'None' %></h3>
+    <h3><strong>Potential Block Programmer Website:</strong> <a href="<%= @offer.programmers.first.website.start_with?('http://') ? @offer.programmers.first.website : 'http://' + @offer.programmers.first.website  rescue ''%>" target="_new"><%= @offer.programmers.first.website rescue '' %></a></h3>
     <h3><strong>Potential Block Programmer Description:</strong></h3>
-    <p><%= @offer.programmers.first.description %></p>
+    <p><%= @offer.programmers.first.description rescue 'No programmer currently associated with this record.' %></p>
   </div>
 </div>
   <div class="col-md-12" style="margin-top: 10px; ">

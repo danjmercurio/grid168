@@ -273,6 +273,8 @@ grid168 = (function () {
                 ignoreColumns: [$('th').length -1] // Always ignore the column at last index
                     // (because it's just the actions menu button)
                 });
+
+
                 // Focus filter element so the user can just start typing
                 var f = function() {
                     $('input.filterText').focus();
@@ -323,6 +325,35 @@ grid168 = (function () {
                             reassignSelect.select2({width:"50%"});
                             reassignSelect.val(reassignSelectDefaultId); // reassignSelectDefaultId is filled in by rails in offers#reassign view
                             reassignSelect.trigger('change');
+                    }
+                    if (app.action === 'index') {
+                        // Stuff for dropdown filter
+                        var filterSelectElement = $('select#filterByColumn');
+                        //filterSelectElement.select2('container').addClass('margin5');
+                        filterSelectElement.change(function() {
+                            // TODO: Clean this up
+                            if (this.value === 'all') {
+                                $('tr').show();
+                            }
+                            if (this.value === 'current') {
+                                $('tr').show();
+                                $('tr').has("td.closedLost").hide();
+                                $('tr').has("td.closedWon").hide();
+                            } 
+                            if (this.value === 'closedLost') {
+                                $('tr').show();
+                                $('tr').has("td.closedWon").hide();
+                                $('tr').has("td.current").hide();
+
+                            }
+                            if (this.value === 'closedWon') {
+                                $('tr').show();
+                                $('tr').has("td.closedLost").hide();
+                                $('tr').has("td.current").hide();
+                            }
+                            //var queryString = 'td:not(:contains(\'' + this.value + '\'))';
+                            //console.log(queryString);
+                        });
                     }
                     break;
                 case 'outlets':

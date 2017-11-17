@@ -9,8 +9,7 @@
     <%= f.hidden_field :runningHoursTotal, :id => 'runningHoursTotal' %>
     <%= f.hidden_field :runningWeeklyRateTotal, :id => 'runningWeeklyRateTotal' %>
 
-    <% dayParts = %w(morning daytime eveningNews localPrimeTime nationalPrimeTime lateNews lateNight overnights) %>
-    <% dayParts.each do |daypart| -%>
+    <% %w(morning daytime eveningNews localPrimeTime nationalPrimeTime lateNews lateNight overnights).each do |daypart| -%>
         <% %w(Audience Rate Hours WeeklyRate).each do |item| -%>
             <% id = [daypart, item].join %>
             <% name = "offer[#{id}]" %>
@@ -47,6 +46,7 @@
       </div>
       <div class="col-md-6">
         <div class="form-group">
+          <h3><strong>Potential #:</strong> <%= @outlet.id.to_s %></h3>
           <h3><strong><%= f.label :dma, 'DMA:' %></strong> <%= @outlet.dma.name rescue 'None' %></h3>
           <h3><strong><%= f.label :subs, 'Subs:' %></strong> <%= number_with_delimiter @outlet.subs %></h3>
 
