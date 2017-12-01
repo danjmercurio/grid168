@@ -4,20 +4,40 @@ class OffersController < ApplicationController
   before_action :sanitizeParameters, :only => [:create, :update]
 
 	def new
-    @outlet = Outlet.find(params[:outlet_id])
-    @offer = Offer.new
-    @offer.outlet = @outlet
-    # @programmers = current_user.admin? ? @programmers = Programmer.all : Programmer.where(:user_id => current_user.id)
-    @programmers = Programmer.all
+	    @outlet = Outlet.find(params[:outlet_id])
+	    @offer = Offer.new
+	    @offer.outlet = @outlet
+	    # @programmers = current_user.admin? ? @programmers = Programmer.all : Programmer.where(:user_id => current_user.id)
+	    @programmers = Programmer.all
 	end
 
 	def index
-    @offers = Offer.all
+    	@offers = Offer.all
+	end
+
+	def getDRTV
+		list = []
+		@offers = Offer.includes(:outlet)
+		@offers.each do |offer|
+			programmers = offer.programmers
+			programmers.each do |prog|
+				if prog.name == 'LifehacksDRTV'
+					if offer.status == "Current"
+						list.push([:offer => offer, :outlet_type => offer.outlet.outlet_type.name])
+					end
+				end
+			end
+		end
+		respond_to do |format|
+			format.json {
+				render :json => list
+			}
+		end
 	end
 
 	def show
 		@offer = Offer.find(params[:id])
-    @outlet = @offer.outlet
+    	@outlet = @offer.outlet
 		@programmers = @offer.programmers
 	end #end show action
 

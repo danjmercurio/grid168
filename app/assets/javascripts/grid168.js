@@ -354,6 +354,53 @@ grid168 = (function () {
                             //var queryString = 'td:not(:contains(\'' + this.value + '\'))';
                             //console.log(queryString);
                         });
+
+                        // Charts
+                        var chartData = $.getJSON('/getDRTV.json', function(data) {
+                            console.log(data);
+
+                            var cableSystems = 0;
+                            $.each(data, function(index, item) {
+                                if (item[0]['outlet_type'] == 'Cable System') {
+                                    cableSystems++;
+                                }
+                            });
+
+                            var lowPower = 0;
+                            $.each(data, function(index, item) {
+                                if (item[0]['outlet_type'] == "Low Power - Cable") {
+                                    lowPower++;
+                                }
+                            });
+
+                            var fullPower = 0;
+                            $.each(data, function(index, item) {
+                                if (item[0]['outlet_type'] == "Full Power TV Station") {
+                                    fullPower++;
+                                }
+                            });
+
+                            
+                            var ctx = document.getElementById("pieChart").getContext('2d');
+                            var pieChart = new Chart(ctx, {
+                                type: 'pie',
+                                data: {
+                                datasets: [{
+                                    data: [cableSystems, lowPower, fullPower]
+                                }],
+
+                                // These labels appear in the legend and in the tooltips when hovering different arcs
+                                labels: [
+                                    ['Active LifehacksDRTV by cable systems by cable subscribers'],
+                                    'Active LifehacksDRTV by LPTV cable over the air homes ',
+                                    'Active LifehacksDRTV by full power over the air homes '
+                                ],
+
+                            }
+                            });
+                        });
+
+
                     }
                     break;
                 case 'outlets':
