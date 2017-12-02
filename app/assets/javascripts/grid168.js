@@ -382,8 +382,15 @@ grid168 = (function () {
 
                             
                             var ctx = document.getElementById("pieChart").getContext('2d');
+                            ctx.canvas.width = 200;
+                            ctx.canvas.height = 200;
+                            var options = { 
+                                responsive: false,
+                                maintainAspectRatio: false
+                            }
                             var pieChart = new Chart(ctx, {
                                 type: 'pie',
+                                options: options,
                                 data: {
                                 datasets: [{
                                     data: [cableSystems, lowPower, fullPower]
