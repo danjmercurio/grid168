@@ -68,7 +68,7 @@ Grid168::Application.configure do
       address: 'smtp.zoho.com',
       port: 587,
       user_name: 'mkokernak@acrossplatforms.com',
-      password: 'mk565656',
+      password: 'msk565656',
       authentication: 'plain',
       enable_starttls_auto: true
   }
